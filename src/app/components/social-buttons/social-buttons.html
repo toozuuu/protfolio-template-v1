@@ -1,0 +1,22 @@
+<div class="social-buttons">
+  <button class="default" title="Resume" (click)="onViewResume()">
+   Resume
+  </button>
+  <button class="icon" title="GitHub">
+    <a href="https://github.com/toozuuu" target="_blank" rel="noopener">
+      <img src="assets/icons/github.svg" alt="" />
+    </a>
+  </button>
+  <button class="icon" title="LinkedIn">
+    <a href="https://www.linkedin.com/in/sachindilshan/" target="_blank" rel="noopener">
+      <img src="assets/icons/linkedin.svg" alt="" />
+    </a>
+  </button>
+  @if(!hideEmail){
+  <button class="icon" title="Email">
+    <a href="mailto:sachindilshan040@gmail.com">
+      <img src="assets/icons/email.svg" alt="" />
+    </a>
+  </button>
+  }
+</div>

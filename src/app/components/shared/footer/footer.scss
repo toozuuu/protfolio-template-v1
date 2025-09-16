@@ -1,0 +1,20 @@
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-inline: 20px;
+  margin-top: 3rem;
+
+  .note h1 {
+    font-size: 18px;
+  }
+
+  .copyright {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+}
