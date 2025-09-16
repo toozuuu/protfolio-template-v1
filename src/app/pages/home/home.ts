@@ -13,6 +13,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { Header } from '../../components/shared/header/header';
 import { Footer } from '../../components/shared/footer/footer';
 import { SocialButtons } from '../../components/social-buttons/social-buttons';
+import {TranslatePipe} from '@ngx-translate/core';
 
 export interface Project {
   title: string;
@@ -25,7 +26,7 @@ export interface Project {
 
 @Component({
   selector: 'app-home',
-  imports: [Header, Footer, SocialButtons],
+  imports: [Header, Footer, SocialButtons, TranslatePipe],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

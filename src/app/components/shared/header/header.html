@@ -1,18 +1,38 @@
 <div class="header-section">
-  <div class="header-item" (click)="scrollToSection('work-section')">Work</div>
-  <div class="header-item" (click)="scrollToSection('about-section')">About</div>
-  <div class="header-item" (click)="onViewResume()">Resume</div>
+  <!-- Navigation -->
+  <div class="header-item" (click)="scrollToSection('work-section')">
+    {{ 'header.work' | translate }}
+  </div>
+  <div class="header-item" (click)="scrollToSection('about-section')">
+    {{ 'header.about' | translate }}
+  </div>
+  <div class="header-item" (click)="onViewResume()">
+    {{ 'header.resume' | translate }}
+  </div>
 
+  <!-- Language select (uses ngModel) -->
+  <select
+    class="lang-select"
+    [ngModel]="lang.lang"
+    (ngModelChange)="lang.use($event)"
+    aria-label="Select language">
+    <option value="en">English</option>
+    <option value="sv">Svenska</option>
+    <option value="si">සිංහල</option>
+  </select>
+
+  <!-- Theme toggle -->
   <button
     type="button"
     class="header-item theme-toggle"
     (click)="toggleTheme()"
     [attr.aria-pressed]="themeService.theme === 'dark'"
     [title]="themeService.theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'">
-
     <img
-      ngSrc="{{ themeService.theme === 'dark' ? 'assets/moon.png' : 'assets/light.png' }}"
+      [ngSrc]="themeService.theme === 'dark' ? 'assets/moon.png' : 'assets/light.png'"
       [attr.alt]="themeService.theme === 'dark' ? 'Dark mode' : 'Light mode'"
-      width="24" height="24" priority />
+      width="24"
+      height="24"
+      priority />
   </button>
 </div>

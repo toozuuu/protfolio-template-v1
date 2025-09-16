@@ -3,21 +3,15 @@
 
   <div class="introduction-section reveal">
     <div class="col">
-      <h1 class="cursor typewriter-animation">Hello, I'm Sachin Dilshan.</h1>
+      <h1 class="cursor typewriter-animation">{{ 'intro.greeting' | translate }}</h1>
       <br />
       <div class="name-speak">
-        /sa-chin dil-shaan/
+        {{ 'intro.speak' | translate }}
         <img src="assets/speaker.png" alt="" (click)="onPlayAudio()" />
       </div>
-      <p class="reveal stagger-1">
-        Welcome 👋 I’m Sachin, an Associate Technical Lead at We Make Platforms based in Sri Lanka.
-        I’m currently advancing my career with over 5 years of experience in Frontend Development,
-        UI/UX Design, and Cloud-based application development. Passionate about turning creative
-        ideas into seamless web experiences, I focus on building scalable, user-friendly
-        applications using Angular and modern frontend frameworks. 🚀
-      </p>
+      <p class="reveal stagger-1">{{ 'intro.welcome' | translate }}</p>
 
-      <h2 class="reveal stagger-2">I'm currently working with,</h2>
+      <h2 class="reveal stagger-2">{{ 'intro.workingWith' | translate }}</h2>
       <ul class="reveal stagger-3">
         <li>Angular</li>
         <li>TypeScript</li>
@@ -37,7 +31,8 @@
 
   <app-social-buttons class="reveal fade stagger-1"></app-social-buttons>
 
-  <!-- Optional Work section
+  <!-- Optional Work section -->
+  <!--
   <div class="work-section reveal" id="work-section">
     <h1 class="section-title">Featured Projects</h1>
     <app-project-card [projectDetails]="projects"></app-project-card>
@@ -45,69 +40,48 @@
   -->
 
   <div class="about-section reveal" id="about-section">
-    <h1 class="section-title">About Me</h1>
+    <h1 class="section-title">{{ 'about.title' | translate }}</h1>
 
     <div class="section1 reveal stagger-1">
       <img src="assets/My_Photo.jpg" alt="" />
       <div class="details">
-        <h1 class="reveal stagger-2">Sachin Dilshan</h1>
-        <p class="about reveal stagger-3">
-          Hi there ✌️ nice to meet you! I’m Sachin, an Associate Technical Lead at
-          <b
-            ><a href="https://www.wemakeplatforms.io/" target="_blank" rel="noopener noreferrer"
-              >We Make Platforms</a
-            ></b
-          >
-          based in Sri Lanka. <br /><br />
-          I’m passionate about turning creative ideas into real, working web experiences. My focus
-          is on building scalable, user-friendly frontend applications with Angular, where my goal
-          is to design products that not only look great but also feel smooth and intuitive to use.
-          I started my career as a Trainee Associate Software Engineer and grew into senior roles,
-          where I sharpened both my coding and leadership skills. As a Senior Software Engineer, I
-          led the development of key features that significantly boosted user engagement—seeing
-          those improvements make a real difference was one of my proudest career moments. One
-          project I’m especially proud of was delivering high-performance REST APIs for a Jira
-          ticketing system under tight deadlines. It challenged me to balance speed and quality, and
-          it strengthened my ability to thrive under pressure. Beyond work, I enjoy exploring new
-          technologies, contributing to open-source projects, and collaborating with
-          cross-functional teams to create seamless, responsive user experiences. <br /><br />
-          I believe in continuous learning and sharing knowledge to grow together in this
-          fast-moving tech world. When I’m not coding, you’ll often find me exploring creative
-          ideas, keeping up with the latest in frontend trends, or experimenting with design. 🚀
-        </p>
+        <h1 class="reveal stagger-2">{{ 'about.name' | translate }}</h1>
+        <p class="about reveal stagger-3">{{ 'about.bio' | translate }}</p>
       </div>
     </div>
 
     <div class="section2">
+      <!-- Education -->
       <div class="education reveal">
-        <h1 class="reveal stagger-1">Education</h1>
+        <h1 class="reveal stagger-1">{{ 'education.title' | translate }}</h1>
 
         <div class="educationItem reveal stagger-2">
           <h1>
             <a href="https://www.canterbury.ac.uk/" target="_blank" rel="noopener noreferrer">
-              Canterbury Christ Church University, UK
+              {{ 'education.ccc.school' | translate }}
             </a>
           </h1>
-          <h2>BSc (Hons) in Computing</h2>
-          <span>Jan 2021 – Jan 2022</span>
-          <span>First Class Honors</span>
+          <h2>{{ 'education.ccc.degree' | translate }}</h2>
+          <span>{{ 'education.ccc.time' | translate }}</span>
+          <span>{{ 'education.ccc.honors' | translate }}</span>
         </div>
 
         <div class="educationItem reveal stagger-3">
           <h1>
             <a href="https://www.ijse.lk/" target="_blank" rel="noopener noreferrer">
-              Institute of Java & Software Engineering, LK
+              {{ 'education.ijse.school' | translate }}
             </a>
           </h1>
-          <h2>Higher Diploma in Software Engineering</h2>
-          <span>Jan 2017 – Jan 2019</span>
+          <h2>{{ 'education.ijse.degree' | translate }}</h2>
+          <span>{{ 'education.ijse.time' | translate }}</span>
         </div>
 
+        <!-- Skills -->
         <div class="skills-section reveal stagger-4">
-          <h1>Core Competencies</h1>
+          <h1>{{ 'skills.title' | translate }}</h1>
 
           <div class="skill-item">
-            <h1>Frontend Development</h1>
+            <h1>{{ 'skills.frontend' | translate }}</h1>
             <div class="tags">
               <div class="item">Angular</div>
               <div class="item">ReactJS</div>
@@ -119,7 +93,7 @@
           </div>
 
           <div class="skill-item">
-            <h1>Backend Development</h1>
+            <h1>{{ 'skills.backend' | translate }}</h1>
             <div class="tags">
               <div class="item">Spring Boot</div>
               <div class="item">REST APIs</div>
@@ -127,7 +101,7 @@
           </div>
 
           <div class="skill-item">
-            <h1>UI/UX Design</h1>
+            <h1>{{ 'skills.uiux' | translate }}</h1>
             <div class="tags">
               <div class="item">Figma</div>
               <div class="item">Zeplin</div>
@@ -135,7 +109,7 @@
           </div>
 
           <div class="skill-item">
-            <h1>DevOps & CI/CD</h1>
+            <h1>{{ 'skills.devops' | translate }}</h1>
             <div class="tags">
               <div class="item">Docker</div>
               <div class="item">Git</div>
@@ -143,7 +117,7 @@
           </div>
 
           <div class="skill-item">
-            <h1>Testing</h1>
+            <h1>{{ 'skills.testing' | translate }}</h1>
             <div class="tags">
               <div class="item">Postman</div>
               <div class="item">Swagger</div>
@@ -151,7 +125,7 @@
           </div>
 
           <div class="skill-item">
-            <h1>Agile Methodologies</h1>
+            <h1>{{ 'skills.agile' | translate }}</h1>
             <div class="tags">
               <div class="item">Scrum</div>
               <div class="item">Jira</div>
@@ -161,19 +135,20 @@
         </div>
       </div>
 
+      <!-- Experiences -->
       <div class="experiences reveal">
-        <h1 class="reveal stagger-1">Experiences</h1>
+        <h1 class="reveal stagger-1">{{ 'experience.title' | translate }}</h1>
 
-        <!-- We Make Platforms -->
+        <!-- WMP -->
         <div class="experienceItem reveal stagger-2">
           <h1>
             <a href="https://www.wemakeplatforms.io/" target="_blank" rel="noopener noreferrer">
-              We Make Platforms
+              {{ 'experience.wmp.company' | translate }}
             </a>
           </h1>
-          <h2>Technical Lead - Frontend</h2>
-          <span>Aug 2022 - Present</span>
-          <span>Remote</span>
+          <h2>{{ 'experience.wmp.role' | translate }}</h2>
+          <span>{{ 'experience.wmp.time' | translate }}</span>
+          <span>{{ 'experience.wmp.location' | translate }}</span>
 
           <div
             class="collapsible"
@@ -213,16 +188,16 @@
           </button>
         </div>
 
-        <!-- Epic Lanka -->
+        <!-- Epic -->
         <div class="experienceItem reveal stagger-3">
           <h1>
             <a href="https://www.epictechnology.lk/" target="_blank" rel="noopener noreferrer">
-              Epic Lanka
+              {{ 'experience.epic.company' | translate }}
             </a>
           </h1>
-          <h2>Software Engineer</h2>
-          <span>Aug 2020 - Jul 2022</span>
-          <span>On-site</span>
+          <h2>{{ 'experience.epic.role' | translate }}</h2>
+          <span>{{ 'experience.epic.time' | translate }}</span>
+          <span>{{ 'experience.epic.location' | translate }}</span>
 
           <div
             class="collapsible"
@@ -263,16 +238,16 @@
           </button>
         </div>
 
-        <!-- ZinCat Technology -->
+        <!-- ZinCat -->
         <div class="experienceItem reveal stagger-4">
           <h1>
             <a href="https://zincat.net/" target="_blank" rel="noopener noreferrer">
-              ZinCat Technology
+              {{ 'experience.zincat.company' | translate }}
             </a>
           </h1>
-          <h2>Software Developer</h2>
-          <span>Aug 2019 - Aug 2020</span>
-          <span>On-site</span>
+          <h2>{{ 'experience.zincat.role' | translate }}</h2>
+          <span>{{ 'experience.zincat.time' | translate }}</span>
+          <span>{{ 'experience.zincat.location' | translate }}</span>
 
           <div
             class="collapsible"
@@ -313,16 +288,16 @@
           </button>
         </div>
 
-        <!-- Ceyentra Technologies -->
+        <!-- Ceyentra -->
         <div class="experienceItem reveal stagger-4">
           <h1>
             <a href="https://ceyentra.com/" target="_blank" rel="noopener noreferrer">
-              Ceyentra Technologies
+              {{ 'experience.ceyentra.company' | translate }}
             </a>
           </h1>
-          <h2>Internship</h2>
-          <span>Jan 2019 - Aug 2019</span>
-          <span>On-site</span>
+          <h2>{{ 'experience.ceyentra.role' | translate }}</h2>
+          <span>{{ 'experience.ceyentra.time' | translate }}</span>
+          <span>{{ 'experience.ceyentra.location' | translate }}</span>
 
           <div
             class="collapsible"
@@ -362,8 +337,7 @@
         </div>
       </div>
     </div>
-      <app-footer class="reveal fade"></app-footer>
 
+    <app-footer class="reveal fade"></app-footer>
   </div>
-
 </div>
