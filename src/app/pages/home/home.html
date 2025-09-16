@@ -1,17 +1,20 @@
 <div class="home-section">
-  <app-header></app-header>
-  <div class="introduction-section">
+  <app-header class="reveal fade"></app-header>
+
+  <div class="introduction-section reveal">
     <div class="col">
       <h1 class="cursor typewriter-animation">Hello, I'm Sachin Dilshan.</h1>
-      <p>
+
+      <p class="reveal stagger-1">
         Welcome 👋 I’m Sachin, an Associate Technical Lead at We Make Platforms based in Sri Lanka.
         I’m currently advancing my career with over 5 years of experience in Frontend Development,
         UI/UX Design, and Cloud-based application development. Passionate about turning creative
         ideas into seamless web experiences, I focus on building scalable, user-friendly
         applications using Angular and modern frontend frameworks. 🚀
       </p>
-      <h2>I'm currently working with,</h2>
-      <ul>
+
+      <h2 class="reveal stagger-2">I'm currently working with,</h2>
+      <ul class="reveal stagger-3">
         <li>Angular</li>
         <li>TypeScript</li>
         <li>HTML/SCSS & Javascript</li>
@@ -22,25 +25,31 @@
         <li>AWS</li>
       </ul>
     </div>
-    <div class="col">
-      <img src="assets/My_Photo.jpg" alt="" class="profile-picture" />
+
+    <div class="col reveal stagger-2">
+      <img src="assets/My_Photo.jpg" alt="Sachin Dilshan" class="profile-picture" />
     </div>
   </div>
-  <app-social-buttons></app-social-buttons>
 
-  <div class="work-section" id="work-section">
+  <app-social-buttons class="reveal fade stagger-1"></app-social-buttons>
+
+  <!-- Optional Work section
+  <div class="work-section reveal" id="work-section">
     <h1 class="section-title">Featured Projects</h1>
     <app-project-card [projectDetails]="projects"></app-project-card>
   </div>
-  <div class="about-section" id="about-section">
+  -->
+
+  <div class="about-section reveal" id="about-section">
     <h1 class="section-title">About Me</h1>
-    <div class="section1">
+
+    <div class="section1 reveal stagger-1">
       <img src="assets/My_Photo.jpg" alt="" />
       <div class="details">
-        <h1>Sachin Dilshan</h1>
-        <p class="about">
+        <h1 class="reveal stagger-2">Sachin Dilshan</h1>
+        <p class="about reveal stagger-3">
           Hi there ✌️ nice to meet you! I’m Sachin, an Associate Technical Lead at
-          <b><a href="https://www.wemakeplatforms.io/" target="_blank">We Make Platforms</a></b>
+          <b><a href="https://www.wemakeplatforms.io/" target="_blank" rel="noopener noreferrer">We Make Platforms</a></b>
           based in Sri Lanka. <br /><br />
           I’m passionate about turning creative ideas into real, working web experiences. My focus
           is on building scalable, user-friendly frontend applications with Angular, where my goal
@@ -60,135 +69,215 @@
         </p>
       </div>
     </div>
+
     <div class="section2">
-      <div class="education">
-        <h1>Education</h1>
-        <div class="educationItem">
-          <h1><a href="https://www.canterbury.ac.uk/" target="_blank">Canterbury Christ Church University, UK</a></h1>
+      <div class="education reveal">
+        <h1 class="reveal stagger-1">Education</h1>
+
+        <div class="educationItem reveal stagger-2">
+          <h1>
+            <a href="https://www.canterbury.ac.uk/" target="_blank" rel="noopener noreferrer">
+              Canterbury Christ Church University, UK
+            </a>
+          </h1>
           <h2>BSc (Hons) in Computing</h2>
           <span>Jan 2021 – Jan 2022</span>
           <span>First Class Honors</span>
         </div>
 
-        <div class="educationItem">
-          <h1><a href="https://www.ijse.lk/" target="_blank">Institute of Java & Software Engineering, LK</a></h1>
+        <div class="educationItem reveal stagger-3">
+          <h1>
+            <a href="https://www.ijse.lk/" target="_blank" rel="noopener noreferrer">
+              Institute of Java & Software Engineering, LK
+            </a>
+          </h1>
           <h2>Higher Diploma in Software Engineering</h2>
           <span>Jan 2017 – Jan 2019</span>
         </div>
+
+        <div class="skills-section reveal stagger-4">
+          <h1>Core Competencies</h1>
+
+          <div class="skill-item">
+            <h1>Frontend Development</h1>
+            <div class="tags">
+              <div class="item">Angular</div>
+              <div class="item">ReactJS</div>
+              <div class="item">Ionic</div>
+              <div class="item">JavaScript</div>
+              <div class="item">TypeScript</div>
+              <div class="item">NextJS</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <h1>Backend Development</h1>
+            <div class="tags">
+              <div class="item">Spring Boot</div>
+              <div class="item">REST APIs</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <h1>UI/UX Design</h1>
+            <div class="tags">
+              <div class="item">Figma</div>
+              <div class="item">Zeplin</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <h1>DevOps & CI/CD</h1>
+            <div class="tags">
+              <div class="item">Docker</div>
+              <div class="item">Git</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <h1>Testing</h1>
+            <div class="tags">
+              <div class="item">Postman</div>
+              <div class="item">Swagger</div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <h1>Agile Methodologies</h1>
+            <div class="tags">
+              <div class="item">Scrum</div>
+              <div class="item">Jira</div>
+              <div class="item">Confluence</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="experiences">
-        <h1>Experiences</h1>
-        <div class="experienceItem">
-          <h1><a href="https://www.wemakeplatforms.io/" target="_blank">We Make Platforms</a></h1>
+
+      <div class="experiences reveal">
+        <h1 class="reveal stagger-1">Experiences</h1>
+
+        <!-- We Make Platforms -->
+        <div class="experienceItem reveal stagger-2">
+          <h1>
+            <a href="https://www.wemakeplatforms.io/" target="_blank" rel="noopener noreferrer">
+              We Make Platforms
+            </a>
+          </h1>
           <h2>Technical Lead - Frontend</h2>
           <span>Aug 2022 - Present</span>
           <span>Remote</span>
-          <ul>
-            <li>
-              Spearheaded the development of front-end features using the Angular framework, playing
-              a key role in delivering the majority of user interface components within project
-              timelines.
-            </li>
-            <li>
-              Translated UI designs from Figma and Zeplin into responsive, high-quality
-              implementations that significantly enhanced user experience, as reflected in positive
-              user feedback.
-            </li>
-            <li>
-              Conducted detailed code reviews for junior developers, fostering a culture of
-              collaboration and improving code quality by reducing issues identified after
-              deployment.
-            </li>
-            <li>
-              Shared best practices and technical knowledge across the team, helping to streamline
-              development workflows and accelerate onboarding for new developers.
-            </li>
-          </ul>
+
+          <div class="collapsible"
+               [class.expanded]="isExpanded('wmp')"
+               [style.maxHeight]="isExpanded('wmp') ? '9999px' : '8.5rem'">
+            <ul>
+              <li>Spearheaded the development of front-end features using the Angular framework, playing a key role in delivering the majority of user interface components within project timelines.</li>
+              <li>Translated UI designs from Figma and Zeplin into responsive, high-quality implementations that significantly enhanced user experience, as reflected in positive user feedback.</li>
+              <li>Conducted detailed code reviews for junior developers, fostering a culture of collaboration and improving code quality by reducing issues identified after deployment.</li>
+              <li>Shared best practices and technical knowledge across the team, helping to streamline development workflows and accelerate onboarding for new developers.</li>
+            </ul>
+          </div>
+
+          <button type="button"
+                  class="see-more-btn"
+                  (click)="toggle('wmp')"
+                  [attr.aria-expanded]="isExpanded('wmp')">
+            {{ isExpanded('wmp') ? 'See less' : 'See more' }}
+          </button>
         </div>
-        <div class="experienceItem">
-          <h1><a href="https://www.epictechnology.lk/" target="_blank">Epic Lanka</a></h1>
+
+        <!-- Epic Lanka -->
+        <div class="experienceItem reveal stagger-3">
+          <h1>
+            <a href="https://www.epictechnology.lk/" target="_blank" rel="noopener noreferrer">
+              Epic Lanka
+            </a>
+          </h1>
           <h2>Software Engineer</h2>
           <span>Aug 2020 - Jul 2022</span>
           <span>On-site</span>
-          <ul>
-            <li>
-              Developed high-performance REST APIs for a JIRA ticketing application within a tight
-              deadline of three weeks, ensuring seamless integration with existing systems and
-              enhancing user experience.
-            </li>
-            <li>
-              Collaborated on five major projects utilizing the Angular framework, contributing to
-              front-end development that improved overall application performance by 25% and user
-              satisfaction rates significantly.
-            </li>
-            <li>
-              Provided consistent status updates to management and leadership teams during project
-              phases, facilitating informed decision-making and timely interventions that reduced
-              project delays by 15%.
-            </li>
-            <li>
-              Engaged in code reviews and peer programming sessions with team members to enhance
-              coding standards and share best practices that led to a 30% reduction in bugs during
-              the testing phase.
-            </li>
-          </ul>
+
+          <div class="collapsible"
+               [class.expanded]="isExpanded('epic')"
+               [style.maxHeight]="isExpanded('epic') ? '9999px' : '8.5rem'">
+            <ul>
+              <li>Developed high-performance REST APIs for a JIRA ticketing application within a tight deadline of three weeks, ensuring seamless integration with existing systems and enhancing user experience.</li>
+              <li>Collaborated on five major projects utilizing the Angular framework, contributing to front-end development that improved overall application performance by 25% and user satisfaction rates significantly.</li>
+              <li>Provided consistent status updates to management and leadership teams during project phases, facilitating informed decision-making and timely interventions that reduced project delays by 15%.</li>
+              <li>Engaged in code reviews and peer programming sessions with team members to enhance coding standards and share best practices that led to a 30% reduction in bugs during the testing phase.</li>
+            </ul>
+          </div>
+
+          <button type="button"
+                  class="see-more-btn"
+                  (click)="toggle('epic')"
+                  [attr.aria-expanded]="isExpanded('epic')">
+            {{ isExpanded('epic') ? 'See less' : 'See more' }}
+          </button>
         </div>
-        <div class="experienceItem">
-          <h1><a href="https://zincat.net/" target="_blank">ZinCat Technology</a></h1>
+
+        <!-- ZinCat Technology -->
+        <div class="experienceItem reveal stagger-4">
+          <h1>
+            <a href="https://zincat.net/" target="_blank" rel="noopener noreferrer">
+              ZinCat Technology
+            </a>
+          </h1>
           <h2>Software Developer</h2>
           <span>Aug 2019 - Aug 2020</span>
           <span>On-site</span>
-          <ul>
-            <li>
-              Designed and developed a robust business logic execution front end for a local
-              e-commerce platform, enhancing user experience and increasing engagement by an
-              estimated 30% post-launch.
-            </li>
-            <li>
-              Collaborated closely with cross-functional teams to ensure seamless integration of the
-              front end with backend services, leading to a 25% reduction in load times during peak
-              traffic.
-            </li>
-            <li>
-              Implemented responsive design principles to ensure compatibility across various
-              devices, contributing to higher customer satisfaction ratings as evidenced by user
-              feedback surveys.
-            </li>
-            <li>
-              Conducted thorough testing and debugging of the application prior to launch, which
-              resulted in minimizing post-deployment issues and ensuring a smooth user experience
-              from day one.
-            </li>
-          </ul>
+
+          <div class="collapsible"
+               [class.expanded]="isExpanded('zincat')"
+               [style.maxHeight]="isExpanded('zincat') ? '9999px' : '8.5rem'">
+            <ul>
+              <li>Designed and developed a robust business logic execution front end for a local e-commerce platform, enhancing user experience and increasing engagement by an estimated 30% post-launch.</li>
+              <li>Collaborated closely with cross-functional teams to ensure seamless integration of the front end with backend services, leading to a 25% reduction in load times during peak traffic.</li>
+              <li>Implemented responsive design principles to ensure compatibility across various devices, contributing to higher customer satisfaction ratings as evidenced by user feedback surveys.</li>
+              <li>Conducted thorough testing and debugging of the application prior to launch, which resulted in minimizing post-deployment issues and ensuring a smooth user experience from day one.</li>
+            </ul>
+          </div>
+
+          <button type="button"
+                  class="see-more-btn"
+                  (click)="toggle('zincat')"
+                  [attr.aria-expanded]="isExpanded('zincat')">
+            {{ isExpanded('zincat') ? 'See less' : 'See more' }}
+          </button>
         </div>
-        <div class="experienceItem">
-          <h1><a href="https://ceyentra.com/" target="_blank">Ceyentra Technologies</a></h1>
+
+        <!-- Ceyentra Technologies -->
+        <div class="experienceItem reveal stagger-4">
+          <h1>
+            <a href="https://ceyentra.com/" target="_blank" rel="noopener noreferrer">
+              Ceyentra Technologies
+            </a>
+          </h1>
           <h2>Internship</h2>
           <span>Jan 2019 - Aug 2019</span>
           <span>On-site</span>
-          <ul>
-            <li>
-              Implemented software systems utilizing the Ionic framework for app development,
-              contributing to a 30% increase in project delivery efficiency during the tenure at
-              Ceyentra Technologies.
-            </li>
-            <li>
-              Collaborated with cross-functional teams to design and develop innovative solutions,
-              enhancing team productivity by 25% through effective communication and shared
-              objectives.
-            </li>
-            <li>
-              Successfully delivered multiple projects on time and within budget constraints,
-              demonstrating strong problem-solving abilities that reduced project overruns by 15%.
-            </li>
-            <li>
-              Engaged in continuous learning of industry-standard tools and technologies, leading to
-              improved coding practices that elevated overall software quality by 20%.
-            </li>
-          </ul>
+
+          <div class="collapsible"
+               [class.expanded]="isExpanded('ceyentra')"
+               [style.maxHeight]="isExpanded('ceyentra') ? '9999px' : '8.5rem'">
+            <ul>
+              <li>Implemented software systems utilizing the Ionic framework for app development, contributing to a 30% increase in project delivery efficiency during the tenure at Ceyentra Technologies.</li>
+              <li>Collaborated with cross-functional teams to design and develop innovative solutions, enhancing team productivity by 25% through effective communication and shared objectives.</li>
+              <li>Successfully delivered multiple projects on time and within budget constraints, demonstrating strong problem-solving abilities that reduced project overruns by 15%.</li>
+              <li>Engaged in continuous learning of industry-standard tools and technologies, leading to improved coding practices that elevated overall software quality by 20%.</li>
+            </ul>
+          </div>
+
+          <button type="button"
+                  class="see-more-btn"
+                  (click)="toggle('ceyentra')"
+                  [attr.aria-expanded]="isExpanded('ceyentra')">
+            {{ isExpanded('ceyentra') ? 'See less' : 'See more' }}
+          </button>
         </div>
       </div>
     </div>
   </div>
+
+  <app-footer class="reveal fade"></app-footer>
 </div>
-<app-footer></app-footer>
