@@ -4,7 +4,11 @@
   <div class="introduction-section reveal">
     <div class="col">
       <h1 class="cursor typewriter-animation">Hello, I'm Sachin Dilshan.</h1>
-
+      <br />
+      <div class="name-speak">
+        /sa-chin dil-shaan/
+        <img src="assets/speaker.png" alt="" (click)="onPlayAudio()" />
+      </div>
       <p class="reveal stagger-1">
         Welcome 👋 I’m Sachin, an Associate Technical Lead at We Make Platforms based in Sri Lanka.
         I’m currently advancing my career with over 5 years of experience in Frontend Development,
@@ -49,7 +53,11 @@
         <h1 class="reveal stagger-2">Sachin Dilshan</h1>
         <p class="about reveal stagger-3">
           Hi there ✌️ nice to meet you! I’m Sachin, an Associate Technical Lead at
-          <b><a href="https://www.wemakeplatforms.io/" target="_blank" rel="noopener noreferrer">We Make Platforms</a></b>
+          <b
+            ><a href="https://www.wemakeplatforms.io/" target="_blank" rel="noopener noreferrer"
+              >We Make Platforms</a
+            ></b
+          >
           based in Sri Lanka. <br /><br />
           I’m passionate about turning creative ideas into real, working web experiences. My focus
           is on building scalable, user-friendly frontend applications with Angular, where my goal
@@ -167,21 +175,40 @@
           <span>Aug 2022 - Present</span>
           <span>Remote</span>
 
-          <div class="collapsible"
-               [class.expanded]="isExpanded('wmp')"
-               [style.maxHeight]="isExpanded('wmp') ? '9999px' : '8.5rem'">
+          <div
+            class="collapsible"
+            [class.expanded]="isExpanded('wmp')"
+            [style.maxHeight]="isExpanded('wmp') ? '9999px' : '8.5rem'"
+          >
             <ul>
-              <li>Spearheaded the development of front-end features using the Angular framework, playing a key role in delivering the majority of user interface components within project timelines.</li>
-              <li>Translated UI designs from Figma and Zeplin into responsive, high-quality implementations that significantly enhanced user experience, as reflected in positive user feedback.</li>
-              <li>Conducted detailed code reviews for junior developers, fostering a culture of collaboration and improving code quality by reducing issues identified after deployment.</li>
-              <li>Shared best practices and technical knowledge across the team, helping to streamline development workflows and accelerate onboarding for new developers.</li>
+              <li>
+                Spearheaded the development of front-end features using the Angular framework,
+                playing a key role in delivering the majority of user interface components within
+                project timelines.
+              </li>
+              <li>
+                Translated UI designs from Figma and Zeplin into responsive, high-quality
+                implementations that significantly enhanced user experience, as reflected in
+                positive user feedback.
+              </li>
+              <li>
+                Conducted detailed code reviews for junior developers, fostering a culture of
+                collaboration and improving code quality by reducing issues identified after
+                deployment.
+              </li>
+              <li>
+                Shared best practices and technical knowledge across the team, helping to streamline
+                development workflows and accelerate onboarding for new developers.
+              </li>
             </ul>
           </div>
 
-          <button type="button"
-                  class="see-more-btn"
-                  (click)="toggle('wmp')"
-                  [attr.aria-expanded]="isExpanded('wmp')">
+          <button
+            type="button"
+            class="see-more-btn"
+            (click)="toggle('wmp')"
+            [attr.aria-expanded]="isExpanded('wmp')"
+          >
             {{ isExpanded('wmp') ? 'See less' : 'See more' }}
           </button>
         </div>
@@ -197,21 +224,41 @@
           <span>Aug 2020 - Jul 2022</span>
           <span>On-site</span>
 
-          <div class="collapsible"
-               [class.expanded]="isExpanded('epic')"
-               [style.maxHeight]="isExpanded('epic') ? '9999px' : '8.5rem'">
+          <div
+            class="collapsible"
+            [class.expanded]="isExpanded('epic')"
+            [style.maxHeight]="isExpanded('epic') ? '9999px' : '8.5rem'"
+          >
             <ul>
-              <li>Developed high-performance REST APIs for a JIRA ticketing application within a tight deadline of three weeks, ensuring seamless integration with existing systems and enhancing user experience.</li>
-              <li>Collaborated on five major projects utilizing the Angular framework, contributing to front-end development that improved overall application performance by 25% and user satisfaction rates significantly.</li>
-              <li>Provided consistent status updates to management and leadership teams during project phases, facilitating informed decision-making and timely interventions that reduced project delays by 15%.</li>
-              <li>Engaged in code reviews and peer programming sessions with team members to enhance coding standards and share best practices that led to a 30% reduction in bugs during the testing phase.</li>
+              <li>
+                Developed high-performance REST APIs for a JIRA ticketing application within a tight
+                deadline of three weeks, ensuring seamless integration with existing systems and
+                enhancing user experience.
+              </li>
+              <li>
+                Collaborated on five major projects utilizing the Angular framework, contributing to
+                front-end development that improved overall application performance by 25% and user
+                satisfaction rates significantly.
+              </li>
+              <li>
+                Provided consistent status updates to management and leadership teams during project
+                phases, facilitating informed decision-making and timely interventions that reduced
+                project delays by 15%.
+              </li>
+              <li>
+                Engaged in code reviews and peer programming sessions with team members to enhance
+                coding standards and share best practices that led to a 30% reduction in bugs during
+                the testing phase.
+              </li>
             </ul>
           </div>
 
-          <button type="button"
-                  class="see-more-btn"
-                  (click)="toggle('epic')"
-                  [attr.aria-expanded]="isExpanded('epic')">
+          <button
+            type="button"
+            class="see-more-btn"
+            (click)="toggle('epic')"
+            [attr.aria-expanded]="isExpanded('epic')"
+          >
             {{ isExpanded('epic') ? 'See less' : 'See more' }}
           </button>
         </div>
@@ -227,21 +274,41 @@
           <span>Aug 2019 - Aug 2020</span>
           <span>On-site</span>
 
-          <div class="collapsible"
-               [class.expanded]="isExpanded('zincat')"
-               [style.maxHeight]="isExpanded('zincat') ? '9999px' : '8.5rem'">
+          <div
+            class="collapsible"
+            [class.expanded]="isExpanded('zincat')"
+            [style.maxHeight]="isExpanded('zincat') ? '9999px' : '8.5rem'"
+          >
             <ul>
-              <li>Designed and developed a robust business logic execution front end for a local e-commerce platform, enhancing user experience and increasing engagement by an estimated 30% post-launch.</li>
-              <li>Collaborated closely with cross-functional teams to ensure seamless integration of the front end with backend services, leading to a 25% reduction in load times during peak traffic.</li>
-              <li>Implemented responsive design principles to ensure compatibility across various devices, contributing to higher customer satisfaction ratings as evidenced by user feedback surveys.</li>
-              <li>Conducted thorough testing and debugging of the application prior to launch, which resulted in minimizing post-deployment issues and ensuring a smooth user experience from day one.</li>
+              <li>
+                Designed and developed a robust business logic execution front end for a local
+                e-commerce platform, enhancing user experience and increasing engagement by an
+                estimated 30% post-launch.
+              </li>
+              <li>
+                Collaborated closely with cross-functional teams to ensure seamless integration of
+                the front end with backend services, leading to a 25% reduction in load times during
+                peak traffic.
+              </li>
+              <li>
+                Implemented responsive design principles to ensure compatibility across various
+                devices, contributing to higher customer satisfaction ratings as evidenced by user
+                feedback surveys.
+              </li>
+              <li>
+                Conducted thorough testing and debugging of the application prior to launch, which
+                resulted in minimizing post-deployment issues and ensuring a smooth user experience
+                from day one.
+              </li>
             </ul>
           </div>
 
-          <button type="button"
-                  class="see-more-btn"
-                  (click)="toggle('zincat')"
-                  [attr.aria-expanded]="isExpanded('zincat')">
+          <button
+            type="button"
+            class="see-more-btn"
+            (click)="toggle('zincat')"
+            [attr.aria-expanded]="isExpanded('zincat')"
+          >
             {{ isExpanded('zincat') ? 'See less' : 'See more' }}
           </button>
         </div>
@@ -257,27 +324,46 @@
           <span>Jan 2019 - Aug 2019</span>
           <span>On-site</span>
 
-          <div class="collapsible"
-               [class.expanded]="isExpanded('ceyentra')"
-               [style.maxHeight]="isExpanded('ceyentra') ? '9999px' : '8.5rem'">
+          <div
+            class="collapsible"
+            [class.expanded]="isExpanded('ceyentra')"
+            [style.maxHeight]="isExpanded('ceyentra') ? '9999px' : '8.5rem'"
+          >
             <ul>
-              <li>Implemented software systems utilizing the Ionic framework for app development, contributing to a 30% increase in project delivery efficiency during the tenure at Ceyentra Technologies.</li>
-              <li>Collaborated with cross-functional teams to design and develop innovative solutions, enhancing team productivity by 25% through effective communication and shared objectives.</li>
-              <li>Successfully delivered multiple projects on time and within budget constraints, demonstrating strong problem-solving abilities that reduced project overruns by 15%.</li>
-              <li>Engaged in continuous learning of industry-standard tools and technologies, leading to improved coding practices that elevated overall software quality by 20%.</li>
+              <li>
+                Implemented software systems utilizing the Ionic framework for app development,
+                contributing to a 30% increase in project delivery efficiency during the tenure at
+                Ceyentra Technologies.
+              </li>
+              <li>
+                Collaborated with cross-functional teams to design and develop innovative solutions,
+                enhancing team productivity by 25% through effective communication and shared
+                objectives.
+              </li>
+              <li>
+                Successfully delivered multiple projects on time and within budget constraints,
+                demonstrating strong problem-solving abilities that reduced project overruns by 15%.
+              </li>
+              <li>
+                Engaged in continuous learning of industry-standard tools and technologies, leading
+                to improved coding practices that elevated overall software quality by 20%.
+              </li>
             </ul>
           </div>
 
-          <button type="button"
-                  class="see-more-btn"
-                  (click)="toggle('ceyentra')"
-                  [attr.aria-expanded]="isExpanded('ceyentra')">
+          <button
+            type="button"
+            class="see-more-btn"
+            (click)="toggle('ceyentra')"
+            [attr.aria-expanded]="isExpanded('ceyentra')"
+          >
             {{ isExpanded('ceyentra') ? 'See less' : 'See more' }}
           </button>
         </div>
       </div>
     </div>
+      <app-footer class="reveal fade"></app-footer>
+
   </div>
 
-  <app-footer class="reveal fade"></app-footer>
 </div>

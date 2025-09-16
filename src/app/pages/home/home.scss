@@ -27,12 +27,18 @@ body {
 
 .home-section .introduction-section h1 {
   line-height: 1.15;
-  margin: 0 0 1rem;
 }
 
 .home-section .introduction-section p {
   max-width: 70ch;
-  margin: 0 0 1.25rem;
+  margin: 0 0 1.5rem;
+  margin-top: 1rem;
+}
+
+.name-speak {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .home-section .introduction-section h2 {
@@ -68,7 +74,6 @@ body {
   margin-inline: auto;
   padding-block: 4rem 1rem;
   margin-top: 6rem;
-  margin-bottom: 6rem;
   scroll-margin-top: 80px;
   display: grid;
   gap: 2rem;
@@ -109,6 +114,7 @@ body {
   flex-direction: column;
   gap: 0.5rem;
   margin-top: 30px;
+  margin-bottom: 60px;
 }
 
 .about-section .section2 .education .educationItem h1,
@@ -194,18 +200,17 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   padding: 0.5rem 0.75rem;
   border: 1px solid currentColor;
   border-radius: 8px;
   background: transparent;
-  cursor: pointer;
   font: inherit;
-  width: 150px;
+  width: 100px;
   justify-content: center;
   position: absolute;
   right: 0;
-  bottom: -20px;
+  bottom: -40px;
 }
 
 .cursor {
@@ -404,77 +409,4 @@ body {
   .collapsible {
     transition: none;
   }
-}
-
-
-/* ---------- Terminal Card ---------- */
-.terminal-card {
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: linear-gradient(180deg, rgba(18,18,18,0.9) 0%, rgba(10,10,10,0.9) 100%);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-}
-
-.terminal-titlebar {
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-  padding: .6rem .85rem;
-  background: #1d1d1f;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  position: relative;
-}
-
-.terminal-titlebar .dot {
-  width: 12px; height: 12px; border-radius: 50%;
-  display: inline-block;
-}
-.terminal-titlebar .red { background: #ff5f56; }
-.terminal-titlebar .yellow { background: #ffbd2e; }
-.terminal-titlebar .green { background: #27c93f; }
-.terminal-titlebar .title {
-  position: absolute; left: 50%; transform: translateX(-50%);
-  font-size: 12px; opacity: .8;
-}
-
-.terminal-body {
-  margin: 0;
-  padding: 1rem 1.25rem 1.25rem;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 14px;
-  line-height: 1.5;
-  white-space: pre-wrap;
-  color: #e6e6e6;
-  min-height: 220px;
-}
-
-.terminal-actions {
-  display: flex;
-  gap: .5rem;
-  padding: 0 1.25rem 1rem;
-}
-.terminal-btn {
-  padding: .4rem .7rem;
-  border: 1px solid rgba(255,255,255,0.2);
-  background: transparent;
-  color: inherit;
-  border-radius: 8px;
-  cursor: pointer;
-}
-.terminal-btn:hover { border-color: rgba(255,255,255,0.35); }
-
-/* Optional blinking cursor */
-.cli-caret::after {
-  content: "▍";
-  display: inline-block;
-  margin-left: 2px;
-  animation: blink 1s steps(1) infinite;
-}
-@keyframes blink { 50% { opacity: 0; } }
-
-/* Make links in terminal look like CLI output hints */
-.terminal-link {
-  text-decoration: underline;
-  opacity: .9;
 }
