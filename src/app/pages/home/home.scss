@@ -1,0 +1,258 @@
+.home-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.home-section app-header {
+  width: min(1200px, 90%);
+  margin-inline: auto;
+}
+
+.home-section .introduction-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 6rem;
+  width: min(1200px, 90%);
+  padding-block: 4rem 1rem;
+  margin-inline: auto;
+}
+
+.home-section .introduction-section h1 {
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+.home-section .introduction-section p {
+  max-width: 70ch;
+  margin: 0 0 1.25rem;
+}
+
+.home-section .introduction-section h2 {
+  margin: 2rem 0 0.75rem;
+}
+
+.home-section .introduction-section ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.home-section .introduction-section .col .profile-picture {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  object-fit: cover;
+}
+
+.cursor {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto 0 0;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  font-size: clamp(22px, 3vw, 36px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: left;
+  --chars: 28;
+}
+
+.typewriter-animation {
+  animation: typewriter 5s steps(var(--chars)) 0.8s 1 both, blinkingCursor 0.5s step-end 10 0.8s both;
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: calc(var(--chars) * 1ch); }
+}
+
+@keyframes blinkingCursor {
+  0% { border-right-color: rgba(255, 255, 255, 0.75); }
+  50% { border-right-color: transparent; }
+  100% { border-right-color: transparent; }
+}
+
+/* Work section – no inherited grid */
+.work-section {
+  width: min(1200px, 90%);
+  margin-inline: auto;
+  padding-block: 4rem 1rem;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  display: block;
+}
+
+/* About section – dedicated layout */
+.about-section {
+  width: min(1200px, 90%);
+  margin-inline: auto;
+  padding-block: 4rem 1rem;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  scroll-margin-top: 80px;
+  display: grid;
+  gap: 2rem;
+}
+
+.about-section .section1 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.about-section .section1 img {
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.about-section .section1 .details h1 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.about-section .section2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 3rem;
+  gap: 2rem;
+}
+
+.about-section .section2 h1 {
+  font-size: 24px;
+}
+
+.about-section .section2 .education .educationItem,
+.about-section .section2 .experiences .experienceItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 30px;
+}
+
+.about-section .section2 .education .educationItem h1,
+.about-section .section2 .experiences .experienceItem h1 {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.about-section .section2 .education .educationItem h2,
+.about-section .section2 .experiences .experienceItem h2 {
+  margin-top: 0;
+}
+
+/* Breakpoints */
+@media (max-width: 1400px) {
+  .home-section .introduction-section { gap: 5rem; }
+}
+
+@media (max-width: 1200px) {
+  .home-section .introduction-section { gap: 4rem; }
+  .home-section app-header { width: min(1100px, 92%); }
+  .work-section,
+  .about-section { width: min(1100px, 92%); }
+}
+
+@media (max-width: 992px) {
+  .home-section .introduction-section {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    width: 92%;
+    padding-block: 3rem 0.75rem;
+    text-align: left;
+  }
+  .home-section .introduction-section .col:last-child { order: -1; }
+  .home-section .introduction-section .col .profile-picture {
+    max-width: 520px;
+    margin-inline: auto;
+  }
+
+  .about-section { gap: 1.75rem; padding-block: 3rem 0.75rem; }
+  .about-section .section1 { grid-template-columns: 1fr; }
+  .about-section .section2 { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem; }
+}
+
+@media (max-width: 768px) {
+  .home-section .introduction-section { width: 94%; gap: 2.2rem; }
+  .home-section .introduction-section p,
+  .home-section .introduction-section li { font-size: 1rem; }
+  .home-section .introduction-section ul { padding-left: 1rem; }
+
+  .work-section,
+  .about-section { width: 94%; }
+}
+
+@media (max-width: 600px) {
+  .home-section .introduction-section {
+    width: 92%;
+    gap: 2rem;
+    padding-block: 2.5rem 0.5rem;
+  }
+  .home-section .introduction-section h1 { font-size: clamp(20px, 6vw, 28px); }
+  .home-section .introduction-section h2 { font-size: 1.1rem; }
+  .home-section .introduction-section p,
+  .home-section .introduction-section li { font-size: 0.98rem; }
+
+  .work-section,
+  .about-section {
+    width: 92%;
+    padding-block: 2.5rem 0.5rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .about-section .section1 .details h1,
+  .about-section .section2 h1 { font-size: 22px; }
+
+  .about-section .section2 .education .educationItem h1,
+  .about-section .section2 .experiences .experienceItem h1 { font-size: 16px; }
+}
+
+@media (max-width: 480px) {
+  .home-section app-header,
+  .home-section .introduction-section { width: 100%; }
+
+  .home-section .introduction-section {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 1rem;
+    margin-inline: 0;
+    text-align: left;
+  }
+  .home-section .introduction-section .col:last-child { order: -1; }
+  .home-section .introduction-section .col .profile-picture {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+  .home-section .introduction-section h1 { margin: 0 0 0.75rem; }
+  .home-section .introduction-section h2 { margin: 1rem 0 0.5rem; font-size: 1rem; }
+  .home-section .introduction-section p,
+  .home-section .introduction-section li { font-size: 0.95rem; }
+
+  .cursor { font-size: clamp(16px, 6vw, 22px); max-width: 100%; box-sizing: border-box; }
+
+  .work-section,
+  .about-section { width: 100%; padding: 1rem; margin-inline: 0; }
+}
+
+@media (max-width: 380px) {
+  .cursor { font-size: clamp(18px, 7vw, 24px); }
+}
+
+@media (max-width: 360px) {
+  .home-section .introduction-section { padding: 0.75rem; gap: 1rem; }
+  .cursor { font-size: clamp(14px, 6.5vw, 20px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typewriter-animation { animation: none; border-right: 0; }
+}
