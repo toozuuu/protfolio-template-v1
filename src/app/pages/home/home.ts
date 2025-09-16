@@ -13,7 +13,6 @@ import { isPlatformBrowser } from '@angular/common';
 import { Header } from '../../components/shared/header/header';
 import { Footer } from '../../components/shared/footer/footer';
 import { SocialButtons } from '../../components/social-buttons/social-buttons';
-import { ProjectCard } from '../../components/project-card/project-card';
 
 export interface Project {
   title: string;
@@ -26,7 +25,7 @@ export interface Project {
 
 @Component({
   selector: 'app-home',
-  imports: [Header, Footer, SocialButtons, ProjectCard],
+  imports: [Header, Footer, SocialButtons],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
@@ -38,9 +37,25 @@ export class Home implements AfterViewInit, OnDestroy {
         'A lightweight, standalone Angular 17+ OTP/PIN input component with SCSS theming, mobile-friendly autofill, masking, and full ReactiveForms support.',
       image: 'assets/kr.png',
       tags: [
-        'i18n','angular','ssr','phone-number','phone','rtl','angular-components','libphonenumber','ngx',
-        'reactive-forms','telephone','angular-forms','intl-tel-input','ui-component','template-driven-forms',
-        'standalone-components','angular-17','angular-18','angular-19'
+        'i18n',
+        'angular',
+        'ssr',
+        'phone-number',
+        'phone',
+        'rtl',
+        'angular-components',
+        'libphonenumber',
+        'ngx',
+        'reactive-forms',
+        'telephone',
+        'angular-forms',
+        'intl-tel-input',
+        'ui-component',
+        'template-driven-forms',
+        'standalone-components',
+        'angular-17',
+        'angular-18',
+        'angular-19',
       ],
       liveDemoUrl: '',
       githubUrl: 'https://github.com/toozuuu/ngxsmk-otp-input',
@@ -51,8 +66,20 @@ export class Home implements AfterViewInit, OnDestroy {
         'ngxsmk-skeleton-loader — Angular 17+ standalone skeleton loader (component + directive) with SCSS theming and animations (shimmer, pulse, wave).',
       image: 'assets/kr.png',
       tags: [
-        'angular','scss','wave','skeleton-loader','ui-components','pulse','shimmer','css-variables','loading-state',
-        'angular17','angular-standalone','placeholder-ui','loading-ui','ngxsmk'
+        'angular',
+        'scss',
+        'wave',
+        'skeleton-loader',
+        'ui-components',
+        'pulse',
+        'shimmer',
+        'css-variables',
+        'loading-state',
+        'angular17',
+        'angular-standalone',
+        'placeholder-ui',
+        'loading-ui',
+        'ngxsmk',
       ],
       liveDemoUrl: '',
       githubUrl: 'https://github.com/toozuuu/ngxsmk-skeleton-loader',
@@ -71,51 +98,54 @@ export class Home implements AfterViewInit, OnDestroy {
   ) {}
 
   ngAfterViewInit(): void {
-    afterNextRender(() => {
-      if (!isPlatformBrowser(this.platformId)) return;
+    afterNextRender(
+      () => {
+        if (!isPlatformBrowser(this.platformId)) return;
 
-      document.documentElement.classList.add('js');
+        document.documentElement.classList.add('js');
 
-      if (!('IntersectionObserver' in window)) return;
+        if (!('IntersectionObserver' in window)) return;
 
-      const root = this.host.nativeElement;
+        const root = this.host.nativeElement;
 
-      this.io = new IntersectionObserver(
-        (entries) => {
-          for (const e of entries) {
-            if (e.isIntersecting) {
-              e.target.classList.add('in');
-              this.io?.unobserve(e.target);
+        this.io = new IntersectionObserver(
+          (entries) => {
+            for (const e of entries) {
+              if (e.isIntersecting) {
+                e.target.classList.add('in');
+                this.io?.unobserve(e.target);
+              }
             }
-          }
-        },
-        { threshold: 0.12 }
-      );
+          },
+          { threshold: 0.12 }
+        );
 
-      const observeAll = () => {
-        root.querySelectorAll<HTMLElement>('.reveal:not(.in)').forEach((el) => {
-          this.io!.observe(el);
-        });
-      };
-
-      requestAnimationFrame(observeAll);
-
-      this.mo = new MutationObserver((mutations) => {
-        for (const m of mutations) {
-          m.addedNodes.forEach((n) => {
-            if (!(n instanceof HTMLElement)) return;
-            if (n.matches?.('.reveal') && !n.classList.contains('in')) {
-              this.io?.observe(n);
-            }
-            n.querySelectorAll?.('.reveal:not(.in)').forEach((child) => {
-              this.io?.observe(child as Element);
-            });
+        const observeAll = () => {
+          root.querySelectorAll<HTMLElement>('.reveal:not(.in)').forEach((el) => {
+            this.io!.observe(el);
           });
-        }
-      });
+        };
 
-      this.mo.observe(root, { childList: true, subtree: true });
-    }, { injector: this.injector });
+        requestAnimationFrame(observeAll);
+
+        this.mo = new MutationObserver((mutations) => {
+          for (const m of mutations) {
+            m.addedNodes.forEach((n) => {
+              if (!(n instanceof HTMLElement)) return;
+              if (n.matches?.('.reveal') && !n.classList.contains('in')) {
+                this.io?.observe(n);
+              }
+              n.querySelectorAll?.('.reveal:not(.in)').forEach((child) => {
+                this.io?.observe(child as Element);
+              });
+            });
+          }
+        });
+
+        this.mo.observe(root, { childList: true, subtree: true });
+      },
+      { injector: this.injector }
+    );
   }
 
   ngOnDestroy(): void {
@@ -131,5 +161,12 @@ export class Home implements AfterViewInit, OnDestroy {
 
   toggle(id: string): void {
     this.isExpanded(id) ? this.expanded.delete(id) : this.expanded.add(id);
+  }
+
+  onPlayAudio() {
+    const audio = new Audio();
+    audio.src = 'assets/name_voice.mp3';
+    audio.load();
+    audio.play();
   }
 }

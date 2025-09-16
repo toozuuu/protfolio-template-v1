@@ -6,6 +6,7 @@
   color: #9c9c9c;
   font-size: 14px;
   scroll-behavior: smooth;
+  cursor: url('assets/cursor.png'), auto;
 }
 
 a {
@@ -16,7 +17,6 @@ a {
 
 p {
   line-height: 24px;
-  cursor: pointer;
 }
 
 li {
@@ -24,7 +24,6 @@ li {
 }
 
 button {
-  cursor: pointer;
   border: none;
   background: none;
 
