@@ -3,7 +3,7 @@
 A modern, fast, and accessible developer portfolio built with **Angular (standalone components)**, **SSR/hydration**, and deployed on **Netlify**.
 Includes smooth reveal-on-scroll animations, “see more / see less” lists for long experience items, and a fun **terminal-style About** block with a typing effect.
 
-Live demo: **[https://protfolio-template-v1.netlify.app/](https://protfolio-template-v1.netlify.app/)**
+Live demo: **[(https://protfolio-template-v1.netlify.app/](https://sachindilshan.netlify.app))**
 
 > If you’re using this as a template, replace text, images, and social links in `home.html` and component inputs.
 
