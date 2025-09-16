@@ -1,28 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
+/* ---------- Base (light theme) ---------- */
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f6f7f9;
+  --text: #0f172a;
+  --text-muted: #475569;
+  --primary: #5b8cff;
+  --accent: #22c55e;
+  --border: #e5e7eb;
+  --card: #ffffff;
+  --shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+
+  --radius: 12px;
+  --dur: 0.25s;
+}
+
+/* ---------- Dark theme ---------- */
+:root[data-theme="dark"] {
+  --bg: #0b1220;
+  --bg-soft: #0f172a;
+  --text: #e5e7eb;
+  --text-muted: #94a3b8;
+  --primary: #8ab4ff;
+  --accent: #34d399;
+  --border: #1f2937;
+  --card: #0f172a;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- Reset & globals ---------- */
 * {
-  font-family: 'IBM Plex Mono';
-  background: #080808;
-  color: #9c9c9c;
-  font-size: 14px;
+  font-family: 'IBM Plex Mono', monospace;
   scroll-behavior: smooth;
   cursor: url('assets/cursor.png'), auto;
+  transition: background-color var(--dur) ease, color var(--dur) ease;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
 }
 
 a {
   background-color: transparent;
-  color: white;
+  color: var(--primary);
   text-decoration: none;
 }
 
-p {
-  line-height: 24px;
-}
+p { line-height: 24px; }
+li { margin-bottom: 10px; }
 
-li {
-  margin-bottom: 10px;
-}
-
+/* ---------- Buttons ---------- */
 button {
   border: none;
   background: none;
@@ -30,14 +63,14 @@ button {
   &.default {
     padding: 0.5rem 1rem;
     font-weight: 500;
-    transition: all 0.3s ease;
     border-radius: 4px;
-    border: 1px solid #62ba1b;
-    background: #3f8e00;
-    color: white;
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: #fff;
+    transition: all 0.3s ease;
 
     &:hover {
-      box-shadow: 0 8px 30px 0 rgba(63, 142, 0, 0.5);
+      box-shadow: 0 8px 30px rgba(34, 197, 94, 0.5); /* accent green glow */
     }
   }
 
@@ -45,23 +78,24 @@ button {
     img {
       width: 24px;
       height: 24px;
-      background-color: white;
+      background-color: var(--card);
       border-radius: 50%;
       padding: 1px;
+      transition: all 0.3s ease;
     }
 
-    :hover {
-      img {
-        box-shadow: 0 8px 30px 0 rgba(255, 255, 255, 0.5);
-        background-color: #62ba1b;
-      }
+    &:hover img {
+      box-shadow: 0 8px 30px rgba(255, 255, 255, 0.5);
+      background-color: var(--accent);
     }
   }
 }
 
+/* ---------- Sections ---------- */
 .section-title {
   font-size: 24px;
   margin-bottom: 3rem;
+  color: var(--text);
 }
 
 .tags {
@@ -72,25 +106,29 @@ button {
   margin-bottom: 1.25rem;
 
   .item {
-    color: #ece7e7;
-    border: 1px solid #ece7e7;
+    color: var(--text);
+    border: 1px solid var(--border);
     border-radius: 4px;
     padding: 6px 10px;
     font-size: 0.875rem;
     line-height: 1;
     white-space: nowrap;
+    background: var(--card);
+    transition: all 0.3s ease;
   }
 
   .item:hover {
-    box-shadow: 0 8px 30px 0 rgba(255, 255, 255, 0.5);
-    background-color: #62ba1b;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    background-color: var(--accent);
+    color: #fff;
   }
 }
 
+/* ---------- Preloader ---------- */
 #preloader {
   position: fixed;
   inset: 0;
-  background: #080808;
+  background: var(--bg);
   display: grid;
   place-items: center;
   z-index: 9999;
@@ -114,8 +152,8 @@ button {
   height: 46px;
   margin: 1px;
   border-radius: 50%;
-  border: 5px solid white;
-  border-color: white transparent white transparent;
+  border: 5px solid var(--text);
+  border-color: var(--text) transparent var(--text) transparent;
   animation: spin 1.2s linear infinite;
 }
 
