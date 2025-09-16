@@ -16,7 +16,13 @@ a {
 
 p {
   line-height: 24px;
+  cursor: pointer;
 }
+
+li {
+  margin-bottom: 10px;
+}
+
 
 button {
   cursor: pointer;
@@ -58,8 +64,4 @@ button {
 .section-title {
   font-size: 24px;
   margin-bottom: 3rem;
-}
-
-li {
-  margin-bottom: 10px;
 }
