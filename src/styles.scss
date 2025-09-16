@@ -23,7 +23,6 @@ li {
   margin-bottom: 10px;
 }
 
-
 button {
   cursor: pointer;
   border: none;
@@ -64,4 +63,27 @@ button {
 .section-title {
   font-size: 24px;
   margin-bottom: 3rem;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+
+  .item {
+    color: #ece7e7;
+    border: 1px solid #ece7e7;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 0.875rem;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .item:hover {
+    box-shadow: 0 8px 30px 0 rgba(255, 255, 255, 0.5);
+    background-color: #62ba1b;
+  }
 }
