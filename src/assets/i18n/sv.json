@@ -1,0 +1,73 @@
+{
+  "header": {
+    "work": "Arbete",
+    "about": "Om mig",
+    "resume": "CV"
+  },
+  "intro": {
+    "greeting": "Hej, jag heter Sachin Dilshan.",
+    "speak": "/sa-chin dil-shaan/",
+    "welcome": "Välkommen 👋 Jag är Sachin, Associate Technical Lead på We Make Platforms i Sri Lanka. Jag utvecklar min karriär med mer än 5 års erfarenhet inom frontendutveckling, UI/UX-design och molnbaserad applikationsutveckling. Jag brinner för att omvandla kreativa idéer till smidiga webbupplevelser och fokuserar på att bygga skalbara, användarvänliga applikationer med Angular och moderna frontendramverk. 🚀",
+    "workingWith": "Jag arbetar just nu med,"
+  },
+  "about": {
+    "title": "Om mig",
+    "name": "Sachin Dilshan",
+    "bio": "Hej ✌️ trevligt att träffas! Jag är Sachin, Associate Technical Lead på We Make Platforms i Sri Lanka.\n\nJag brinner för att omvandla kreativa idéer till verkliga webbupplevelser. Mitt fokus ligger på att bygga skalbara och användarvänliga frontendapplikationer med Angular, där målet är att designa produkter som både ser bra ut och känns smidiga att använda.\n\nJag började min karriär som Trainee Associate Software Engineer och utvecklades till seniora roller där jag förbättrade både min kodning och mitt ledarskap. Som Senior Software Engineer ledde jag utvecklingen av viktiga funktioner som ökade användarengagemanget – att se dessa förbättringar göra skillnad är ett av mina stoltaste ögonblick. Ett projekt jag är särskilt stolt över var leveransen av högpresterande REST API:er för ett Jira-ärendehanteringssystem under hårda tidsramar. Det utmanade mig att balansera hastighet och kvalitet och stärkte min förmåga att prestera under press.\n\nUtöver arbetet gillar jag att utforska ny teknik, bidra till open-source och samarbeta med tvärfunktionella team för att skapa sömlösa, responsiva användarupplevelser.\n\nJag tror på kontinuerligt lärande och kunskapsdelning för att växa tillsammans i denna snabbrörliga teknikvärld. När jag inte kodar hittar du mig ofta när jag utforskar kreativa idéer, håller koll på de senaste frontendtrenderna eller experimenterar med design. 🚀"
+  },
+  "education": {
+    "title": "Utbildning",
+    "ccc": {
+      "school": "Canterbury Christ Church University, Storbritannien",
+      "degree": "Kandidatexamen (Hons) i datavetenskap",
+      "time": "Jan 2021 – Jan 2022",
+      "honors": "Förstklassig examen"
+    },
+    "ijse": {
+      "school": "Institute of Java & Software Engineering, Sri Lanka",
+      "degree": "Högre diplom i programvaruteknik",
+      "time": "Jan 2017 – Jan 2019"
+    }
+  },
+  "skills": {
+    "title": "Kärnkompetenser",
+    "frontend": "Frontendutveckling",
+    "backend": "Backendutveckling",
+    "uiux": "UI/UX-design",
+    "devops": "DevOps & CI/CD",
+    "testing": "Testning",
+    "agile": "Agila metoder"
+  },
+  "experience": {
+    "title": "Erfarenheter",
+    "wmp": {
+      "company": "We Make Platforms",
+      "role": "Technical Lead - Frontend",
+      "time": "Aug 2022 - Nuvarande",
+      "location": "Distans"
+    },
+    "epic": {
+      "company": "Epic Lanka",
+      "role": "Mjukvaruingenjör",
+      "time": "Aug 2020 - Jul 2022",
+      "location": "På plats"
+    },
+    "zincat": {
+      "company": "ZinCat Technology",
+      "role": "Mjukvaruutvecklare",
+      "time": "Aug 2019 - Aug 2020",
+      "location": "På plats"
+    },
+    "ceyentra": {
+      "company": "Ceyentra Technologies",
+      "role": "Praktikant",
+      "time": "Jan 2019 - Aug 2019",
+      "location": "På plats"
+    }
+  },
+  "footer": {
+    "contact": "Vill du veta mer om mina erfarenheter och min resa? Jag berättar gärna mer – hör av dig! ✌️",
+    "built": "Byggd med ❤️ i Angular",
+    "rights": "© 2025 Alla rättigheter förbehållna."
+  }
+}

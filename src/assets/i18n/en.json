@@ -1,0 +1,73 @@
+{
+  "header": {
+    "work": "Work",
+    "about": "About",
+    "resume": "Resume"
+  },
+  "intro": {
+    "greeting": "Hello, I'm Sachin Dilshan.",
+    "speak": "/sa-chin dil-shaan/",
+    "welcome": "Welcome 👋 I’m Sachin, an Associate Technical Lead at We Make Platforms based in Sri Lanka. I’m currently advancing my career with over 5 years of experience in Frontend Development, UI/UX Design, and Cloud-based application development. Passionate about turning creative ideas into seamless web experiences, I focus on building scalable, user-friendly applications using Angular and modern frontend frameworks. 🚀",
+    "workingWith": "I'm currently working with,"
+  },
+  "about": {
+    "title": "About Me",
+    "name": "Sachin Dilshan",
+    "bio": "Hi there ✌️ nice to meet you! I’m Sachin, an Associate Technical Lead at We Make Platforms based in Sri Lanka.\n\nI’m passionate about turning creative ideas into real, working web experiences. My focus is on building scalable, user-friendly frontend applications with Angular, where my goal is to design products that not only look great but also feel smooth and intuitive to use.\n\nI started my career as a Trainee Associate Software Engineer and grew into senior roles, where I sharpened both my coding and leadership skills. As a Senior Software Engineer, I led the development of key features that significantly boosted user engagement—seeing those improvements make a real difference was one of my proudest career moments. One project I’m especially proud of was delivering high-performance REST APIs for a Jira ticketing system under tight deadlines. It challenged me to balance speed and quality, and it strengthened my ability to thrive under pressure.\n\nBeyond work, I enjoy exploring new technologies, contributing to open-source projects, and collaborating with cross-functional teams to create seamless, responsive user experiences.\n\nI believe in continuous learning and sharing knowledge to grow together in this fast-moving tech world. When I’m not coding, you’ll often find me exploring creative ideas, keeping up with the latest in frontend trends, or experimenting with design. 🚀"
+  },
+  "education": {
+    "title": "Education",
+    "ccc": {
+      "school": "Canterbury Christ Church University, UK",
+      "degree": "BSc (Hons) in Computing",
+      "time": "Jan 2021 – Jan 2022",
+      "honors": "First Class Honors"
+    },
+    "ijse": {
+      "school": "Institute of Java & Software Engineering, LK",
+      "degree": "Higher Diploma in Software Engineering",
+      "time": "Jan 2017 – Jan 2019"
+    }
+  },
+  "skills": {
+    "title": "Core Competencies",
+    "frontend": "Frontend Development",
+    "backend": "Backend Development",
+    "uiux": "UI/UX Design",
+    "devops": "DevOps & CI/CD",
+    "testing": "Testing",
+    "agile": "Agile Methodologies"
+  },
+  "experience": {
+    "title": "Experiences",
+    "wmp": {
+      "company": "We Make Platforms",
+      "role": "Technical Lead - Frontend",
+      "time": "Aug 2022 - Present",
+      "location": "Remote"
+    },
+    "epic": {
+      "company": "Epic Lanka",
+      "role": "Software Engineer",
+      "time": "Aug 2020 - Jul 2022",
+      "location": "On-site"
+    },
+    "zincat": {
+      "company": "ZinCat Technology",
+      "role": "Software Developer",
+      "time": "Aug 2019 - Aug 2020",
+      "location": "On-site"
+    },
+    "ceyentra": {
+      "company": "Ceyentra Technologies",
+      "role": "Internship",
+      "time": "Jan 2019 - Aug 2019",
+      "location": "On-site"
+    }
+  },
+  "footer": {
+    "contact": "Interested in learning more about my experiences and journey? I’d be happy to connect—let’s get in touch! ✌️",
+    "built": "Built with ❤️ using Angular",
+    "rights": "© 2025 All rights reserved."
+  }
+}

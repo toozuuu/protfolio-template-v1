@@ -3,8 +3,14 @@ import { appConfig } from './app/app.config';
 import { App } from './app/app';
 import { firstValueFrom } from 'rxjs';
 import { filter } from 'rxjs/operators';
+import {registerLocaleData} from '@angular/common';
+import localeEn from '@angular/common/locales/en';
+import localeSv from '@angular/common/locales/sv';
 
-const MIN_SPLASH_MS = 1200; 
+registerLocaleData(localeEn);
+registerLocaleData(localeSv);
+
+const MIN_SPLASH_MS = 1200;
 
 const start = performance.now();
 
@@ -19,7 +25,7 @@ bootstrapApplication(App, appConfig)
     const pre = document.getElementById('preloader');
     if (pre) {
       pre.classList.add('hidden');
-      setTimeout(() => pre.remove(), 400); 
+      setTimeout(() => pre.remove(), 400);
     }
   })
   .catch(err => console.error(err));

@@ -1,11 +1,14 @@
 import { NgOptimizedImage, ViewportScroller } from '@angular/common';
 import { Component } from '@angular/core';
 import {ThemeService} from '../../../core/theme.service';
+import {TranslatePipe} from '@ngx-translate/core';
+import {LanguageService} from '../../../core/language.service';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgOptimizedImage],
+  imports: [NgOptimizedImage, TranslatePipe, FormsModule],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
@@ -13,6 +16,7 @@ export class Header {
   constructor(
     private readonly viewportScroller: ViewportScroller,
     public readonly themeService: ThemeService,
+    public readonly lang: LanguageService
   ) {}
 
   scrollToSection(sectionId: string) {
