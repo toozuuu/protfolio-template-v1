@@ -16,7 +16,5 @@ export interface Project {
   styleUrl: './project-card.scss',
 })
 export class ProjectCard {
-  @Input() hideLiveDemoBtn: boolean = false;
-  @Input() hideGithubBtn: boolean = false;
   @Input() projectDetails:Project[] = []; 
 }
