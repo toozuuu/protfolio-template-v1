@@ -33,7 +33,7 @@
 * {
   font-family: 'IBM Plex Mono', monospace;
   scroll-behavior: smooth;
-  cursor: url('assets/cursor.png'), auto;
+  cursor: url('assets/icons/cursor.png'), auto;
   transition: background-color var(--dur) ease, color var(--dur) ease;
 }
 
@@ -94,7 +94,6 @@ button {
 /* ---------- Sections ---------- */
 .section-title {
   font-size: 24px;
-  margin-bottom: 3rem;
   color: var(--text);
 }
 

@@ -14,6 +14,7 @@ import { Header } from '../../components/shared/header/header';
 import { Footer } from '../../components/shared/footer/footer';
 import { SocialButtons } from '../../components/social-buttons/social-buttons';
 import {TranslatePipe} from '@ngx-translate/core';
+import { ThemeService } from '../../core/theme.service';
 
 export interface Project {
   title: string;
@@ -95,6 +96,7 @@ export class Home implements AfterViewInit, OnDestroy {
 
   constructor(
     private readonly host: ElementRef<HTMLElement>,
+    public readonly themeService: ThemeService,
     @Inject(PLATFORM_ID) private readonly platformId: Object
   ) {}
 
