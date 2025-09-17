@@ -7,7 +7,7 @@
       <br />
       <div class="name-speak">
         {{ 'intro.speak' | translate }}
-        <img src="assets/speaker.png" alt="" (click)="onPlayAudio()" />
+        <img [src]="themeService.theme === 'dark' ? 'assets/icons/speaker_dark.png' : 'assets/icons/speaker_light.png'" alt="" (click)="onPlayAudio()" />
       </div>
       <p class="reveal stagger-1">{{ 'intro.welcome' | translate }}</p>
 

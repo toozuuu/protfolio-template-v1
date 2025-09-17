@@ -50,6 +50,11 @@ body {
   align-items: center;
   gap: 1rem;
   color: var(--text-muted);
+
+  img{
+    width: 24px;
+    height: 24px;
+  }
 }
 
 /* sub-heading */
@@ -126,6 +131,10 @@ body {
   font-size: 24px;
   margin-top: 0;
   color: var(--text);
+}
+
+.about-section .section1 .details .about {
+    white-space: pre-wrap;
 }
 
 /* education + experiences grid */
