@@ -6,6 +6,11 @@
   <div class="header-item" (click)="scrollToSection('about-section')">
     {{ 'header.about' | translate }}
   </div>
+
+  <div class="header-item" routerLink="/hire" class="header-item">
+    {{ 'header.bookCall' | translate }}
+  </div>
+
   <div class="header-item" (click)="onViewResume()">
     {{ 'header.resume' | translate }}
   </div>
@@ -15,7 +20,8 @@
     class="lang-select"
     [ngModel]="lang.lang"
     (ngModelChange)="lang.use($event)"
-    aria-label="Select language">
+    aria-label="Select language"
+  >
     <option value="en">English</option>
     <!-- <option value="sv">Svenska</option> -->
     <option value="si">සිංහල</option>
@@ -27,12 +33,14 @@
     class="header-item theme-toggle"
     (click)="toggleTheme()"
     [attr.aria-pressed]="themeService.theme === 'dark'"
-    [title]="themeService.theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'">
+    [title]="themeService.theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+  >
     <img
       [ngSrc]="themeService.theme === 'dark' ? 'assets/icons/moon.png' : 'assets/icons/light.png'"
       [attr.alt]="themeService.theme === 'dark' ? 'Dark mode' : 'Light mode'"
       width="24"
       height="24"
-      priority />
+      priority
+    />
   </button>
 </div>

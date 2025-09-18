@@ -2,7 +2,8 @@
   "header": {
     "work": "Arbete",
     "about": "Om mig",
-    "resume": "CV"
+    "resume": "CV",
+    "bookCall":"Boka ett samtal"
   },
   "intro": {
     "greeting": "Hej, jag heter Sachin Dilshan.",

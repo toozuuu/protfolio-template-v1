@@ -2,7 +2,8 @@
   "header": {
     "work": "Work",
     "about": "About",
-    "resume": "Resume"
+    "resume": "Resume",
+    "bookCall":"Book a call"
   },
   "intro": {
     "greeting": "Hello, I'm Sachin Dilshan.",
