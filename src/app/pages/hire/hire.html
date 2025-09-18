@@ -1,0 +1,115 @@
+<nav class="backbar">
+  <button type="button" class="back-btn" (click)="goBack()" aria-label="Go back">
+    <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+      <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span>Back</span>
+  </button>
+</nav>
+
+<section class="hero">
+  <h1 class="section-title">Hire Me</h1>
+  <p class="lead">
+    I help teams ship <b>faster Angular</b> apps with clean architecture, great UX, and Core Web
+    Vitals wins.
+  </p>
+  <div class="hero-cta">
+    <a class="btn btn-accent" [href]="calendly" data-umami-event="hire:intro-call" target="_blank"
+      >Book intro call</a
+    >
+    <a class="btn btn-outline" [href]="email">Email me</a>
+  </div>
+</section>
+
+<section class="plans">
+  <div class="grid">
+    @for (p of plans; track p.id) {
+    <article
+      class="plan span-12 md-span-6 lg-span-3"
+      [class.best]="p.best"
+      aria-label="{{ p.title }}"
+    >
+      <div class="plan__head">
+        <h2>{{ p.title }}</h2>
+        <p class="muted">{{ p.subtitle }}</p>
+      </div>
+
+      <div class="tags">
+        @for (b of p.badges; track b) {
+        <span class="item">{{ b }}</span>
+        }
+      </div>
+
+      <ul class="includes">
+        @for (inc of p.includes; track inc) {
+        <li>{{ inc }}</li>
+        }
+      </ul>
+
+      <div class="plan__foot">
+        <div class="price">{{ p.price }}</div>
+        <a class="btn btn-accent" [href]="p.cta.href" attr.data-umami-event="hire:{{ p.id }}:cta" target="_blank">
+          {{ p.cta.label }}
+        </a>
+      </div>
+    </article>
+    } @empty {
+    <p class="muted">Plans coming soon.</p>
+    }
+  </div>
+</section>
+
+<section class="process">
+  <h3 class="section-title">How we’ll work</h3>
+  <ol class="steps">
+    <li><b>01 • Discover</b> — 30-min call, goals, constraints, access.</li>
+    <li><b>02 • Plan</b> — scope & metrics, quick wins first.</li>
+    <li><b>03 • Build</b> — daily progress, PRs, previews.</li>
+    <li><b>04 • Ship</b> — demo, docs, handover, next steps.</li>
+  </ol>
+</section>
+
+<section class="faq">
+  <h3 class="section-title">FAQ</h3>
+  <div class="items">
+    @for (f of faq(); let i = $index; track i) {
+    <div class="item">
+      <button class="faq-btn" (click)="toggle(i)">
+        <span>{{ f.q }}</span>
+        <span class="plus" [class.open]="f.open">+</span>
+      </button>
+
+      @if (f.open) {
+      <div class="answer">
+        <p>{{ f.a }}</p>
+      </div>
+      }
+    </div>
+    } @empty {
+    <p class="muted">Ask me anything about process, pricing, or scope.</p>
+    }
+  </div>
+</section>
+
+<section class="contact">
+  <h3 class="section-title">Contact</h3>
+  <form name="hire-contact" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="hire-contact" />
+    <input class="input" type="text" name="name" placeholder="Your name" required />
+    <input class="input" type="email" name="email" placeholder="Email" required />
+    <textarea class="input" name="message" rows="4" placeholder="Project details…"></textarea>
+    <button class="btn btn-accent" type="submit">Send</button>
+  </form>
+</section>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Sachin Dilshan — Angular Consulting",
+    "url": "https://sachindilshan.netlify.app/hire",
+    "areaServed": "Global",
+    "priceRange": "$$",
+    "serviceType": ["Angular Audit", "Performance Sprint", "UX Polish", "Coaching"]
+  }
+</script>

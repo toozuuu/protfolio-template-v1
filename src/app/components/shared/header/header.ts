@@ -4,11 +4,12 @@ import {ThemeService} from '../../../core/theme.service';
 import {TranslatePipe} from '@ngx-translate/core';
 import {LanguageService} from '../../../core/language.service';
 import {FormsModule} from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgOptimizedImage, TranslatePipe, FormsModule],
+  imports: [NgOptimizedImage, TranslatePipe, FormsModule, RouterLink],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })

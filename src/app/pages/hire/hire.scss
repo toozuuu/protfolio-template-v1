@@ -1,0 +1,301 @@
+$breakpoints: (
+  sm: 480px,
+  md: 768px,
+  lg: 1040px,
+  xl: 1280px,
+);
+
+@mixin up($bp) {
+  @media (min-width: map-get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+/* ---------- Responsive Grid (12 cols) ---------- */
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+@for $i from 1 through 12 {
+  .span-#{$i} {
+    grid-column: span #{$i};
+  }
+
+  @include up(md) {
+    .md-span-#{$i} {
+      grid-column: span #{$i};
+    }
+  }
+  @include up(lg) {
+    .lg-span-#{$i} {
+      grid-column: span #{$i};
+    }
+  }
+  @include up(xl) {
+    .xl-span-#{$i} {
+      grid-column: span #{$i};
+    }
+  }
+}
+
+/* ---------- Spacing Utilities ---------- */
+@for $i from 0 through 6 {
+  .p-#{$i} {
+    padding: #{0.25rem * $i};
+  }
+  .m-#{$i} {
+    margin: #{0.25rem * $i};
+  }
+  .gap-#{$i} {
+    gap: #{0.25rem * $i};
+  }
+}
+
+/* ---------- Buttons ---------- */
+$btn-types: primary, accent, outline;
+
+@each $type in $btn-types {
+  .btn-#{$type} {
+    @if $type == primary {
+      background: var(--primary);
+      color: #fff;
+      border: 1px solid var(--primary);
+    }
+    @if $type == accent {
+      background: var(--accent);
+      color: #fff;
+      border: 1px solid var(--accent);
+    }
+    @if $type == outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    padding: 0.55rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all var(--dur) ease;
+
+    &:hover {
+      @if $type == outline {
+        background: color-mix(in oklab, var(--accent) 15%, transparent);
+        border-color: var(--accent);
+      } @else {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+}
+
+/* ---------- Hero Section ---------- */
+.hero {
+  text-align: center;
+  margin: 3rem auto 2rem;
+  max-width: clamp(320px, 90vw, 840px);
+
+  .section-title {
+    font-size: 1.75rem;
+    color: var(--text);
+  }
+  .lead {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin: 1rem 0;
+  }
+  .hero-cta {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* ---------- Plans ---------- */
+$elevated: true !default;
+
+.plans {
+  display: flex;
+  justify-content: center;
+}
+
+.plan {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  transition: transform var(--dur) ease, box-shadow var(--dur) ease;
+
+  @if $elevated {
+    box-shadow: var(--shadow);
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .plan__head h2 {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+  .muted {
+    color: var(--text-muted);
+    margin: 0.25rem 0;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.75rem 0;
+  }
+  .tags .item {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.85rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--card);
+    color: var(--text);
+    &:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+  }
+
+  .includes {
+    padding-left: 1.25rem;
+    margin: 0.75rem 0;
+  }
+  .includes li {
+    margin: 0.35rem 0;
+  }
+
+  .plan__foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+    .price {
+      font-weight: 600;
+    }
+  }
+
+  &.best {
+    border-color: var(--accent);
+    outline: 2px solid color-mix(in oklab, var(--accent) 40%, transparent);
+  }
+}
+
+/* ---------- Process ---------- */
+.process {
+  margin: 3rem auto 2rem;
+  max-width: clamp(320px, 92vw, 900px);
+
+  .steps {
+    display: grid;
+    gap: 0.5rem;
+    padding-left: 1.25rem;
+  }
+}
+
+/* ---------- FAQ ---------- */
+.faq {
+  margin: 2rem auto;
+  max-width: clamp(320px, 92vw, 900px);
+
+  .items {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .item {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--card);
+  }
+
+  .faq-btn {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    color: var(--text);
+    cursor: pointer;
+  }
+
+  .plus {
+    transition: transform var(--dur) ease;
+  }
+  .plus.open {
+    transform: rotate(45deg);
+  }
+  .answer {
+    padding: 0 1rem 1rem;
+    color: var(--text-muted);
+  }
+}
+
+/* ---------- Contact ---------- */
+.contact {
+  margin: 3rem auto;
+  max-width: clamp(320px, 92vw, 720px);
+
+  form {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .input {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.65rem 0.75rem;
+    background: var(--bg-soft);
+    color: var(--text);
+    &:focus {
+      outline: 2px solid color-mix(in oklab, var(--accent) 35%, transparent);
+    }
+  }
+}
+
+.backbar {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin: 1rem 0 0;
+  margin-left: 30px;
+
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .4rem .7rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--card);
+    color: var(--text);
+    cursor: pointer;
+    transition: background var(--dur) ease, border-color var(--dur) ease, box-shadow var(--dur) ease, transform var(--dur) ease;
+
+    .icon { width: 20px; height: 20px; }
+
+    &:hover {
+      background: color-mix(in oklab, var(--accent) 12%, transparent);
+      border-color: var(--accent);
+      box-shadow: var(--shadow);
+      transform: translateY(-1px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid color-mix(in oklab, var(--accent) 45%, transparent);
+      outline-offset: 2px;
+    }
+  }
+}
