@@ -10,6 +10,8 @@ import {
   afterNextRender,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
+  signal,
+  computed,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Header } from '../../components/shared/header/header';
@@ -32,7 +34,12 @@ import { AnimationsService } from '../../core/animations.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Home implements AfterViewInit, OnDestroy {
-  expanded = new Set<string>();
+  // Signal for expanded sections
+  private readonly _expanded = signal<Set<string>>(new Set());
+  
+  // Computed signals for expansion state
+  readonly expanded = this._expanded.asReadonly();
+  readonly hasExpandedSections = computed(() => this._expanded().size > 0);
 
   private io?: IntersectionObserver;
   private mo?: MutationObserver;
@@ -56,7 +63,7 @@ export class Home implements AfterViewInit, OnDestroy {
         if (!isPlatformBrowser(this.platformId)) return;
 
         // Initialize SEO
-        this.seoService.setHomePageSEO(this.languageService.lang);
+        this.seoService.setHomePageSEO(this.languageService.lang());
 
         // Initialize performance optimizations
         this.performanceService.preloadCriticalResources();
@@ -171,12 +178,18 @@ export class Home implements AfterViewInit, OnDestroy {
   }
 
   isExpanded(id: string): boolean {
-    return this.expanded.has(id);
+    return this._expanded().has(id);
   }
 
   toggle(id: string): void {
-    this.isExpanded(id) ? this.expanded.delete(id) : this.expanded.add(id);
-    this.cdr.detectChanges();
+    const current = this._expanded();
+    const newSet = new Set(current);
+    if (newSet.has(id)) {
+      newSet.delete(id);
+    } else {
+      newSet.add(id);
+    }
+    this._expanded.set(newSet);
   }
 
   onPlayAudio() {

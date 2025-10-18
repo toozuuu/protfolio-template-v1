@@ -1,5 +1,5 @@
 import { ViewportScroller, CommonModule } from '@angular/common';
-import { Component, ChangeDetectionStrategy, ChangeDetectorRef, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, OnDestroy, signal, computed } from '@angular/core';
 import {ThemeService} from '../../../core/theme.service';
 import {LanguageService} from '../../../core/language.service';
 import {FormsModule} from '@angular/forms';
@@ -14,14 +14,25 @@ import { TranslateModule } from '@ngx-translate/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Header implements OnInit, OnDestroy {
-  isScrolled = false;
+  // Signal for scroll state
+  private readonly _isScrolled = signal(false);
+  
+  // Computed signals for scroll-based styling
+  readonly isScrolled = this._isScrolled.asReadonly();
+  readonly headerClasses = computed(() => 
+    this.isScrolled() ? 'scrolled' : ''
+  );
+  
+  // Computed signals for theme and language
+  readonly isDark = computed(() => this.themeService.isDark());
+  readonly currentLang = computed(() => this.lang.lang());
+  
   private scrollListener?: () => void;
 
   constructor(
     private readonly viewportScroller: ViewportScroller,
     public readonly themeService: ThemeService,
-    public readonly lang: LanguageService,
-    private readonly cdr: ChangeDetectorRef
+    public readonly lang: LanguageService
   ) {}
 
   ngOnInit() {
@@ -29,8 +40,7 @@ export class Header implements OnInit, OnDestroy {
     if (typeof window !== 'undefined') {
       this.scrollListener = () => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        this.isScrolled = scrollTop > 50;
-        this.cdr.detectChanges();
+        this._isScrolled.set(scrollTop > 50);
       };
 
       // Use passive listener for better performance
@@ -58,7 +68,6 @@ export class Header implements OnInit, OnDestroy {
 
   toggleTheme() {
     this.themeService.toggle();
-    this.cdr.detectChanges();
   }
 
   useSystemTheme() {

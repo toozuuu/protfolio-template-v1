@@ -40,7 +40,7 @@ export class Hire implements OnInit {
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.seoService.setHirePageSEO(this.languageService.lang);
+      this.seoService.setHirePageSEO(this.languageService.lang());
     }
   }
 
