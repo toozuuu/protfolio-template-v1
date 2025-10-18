@@ -1,0 +1,99 @@
+{
+  "header": {
+    "work": "Trabalho",
+    "about": "Sobre",
+    "experience": "Experiência",
+    "hire": "Contrate-me",
+    "resume": "Ver CV",
+    "bookCall": "Agendar chamada"
+  },
+  "intro": {
+    "greeting": "Olá, eu sou Sachin Dilshan.",
+    "speak": "/sa-chin dil-shaan/",
+    "welcome": "Bem-vindo 👋 Eu sou Sachin, Líder Técnico na We Make Platforms com sede no Sri Lanka. Atualmente estou avançando minha carreira com mais de 5 anos de experiência em Desenvolvimento Frontend, Design UI/UX e desenvolvimento de aplicações baseadas em nuvem. Apaixonado por transformar ideias criativas em experiências web perfeitas, foco em construir aplicações escaláveis e amigáveis ao usuário usando Angular e frameworks frontend modernos. 🚀",
+    "workingWith": "Atualmente estou trabalhando com,"
+  },
+  "about": {
+    "title": "Sobre mim",
+    "name": "Sachin Dilshan",
+    "bio": "Oi ✌️ prazer em conhecê-lo! Eu sou Sachin, Líder Técnico na We Make Platforms com sede no Sri Lanka.\n\nSou apaixonado por transformar ideias criativas em experiências web reais e funcionais. Meu foco está em construir aplicações frontend escaláveis e amigáveis ao usuário com Angular, onde meu objetivo é projetar produtos que não apenas pareçam ótimos, mas também se sintam suaves e intuitivos de usar.\n\nComecei minha carreira como Engenheiro de Software Associado Estagiário e cresci para funções sênior, onde aprimorei tanto minhas habilidades de codificação quanto de liderança. Como Engenheiro de Software Sênior, liderei o desenvolvimento de recursos-chave que aumentaram significativamente o engajamento do usuário—ver essas melhorias fazer uma diferença real foi um dos momentos mais orgulhosos da minha carreira. Um projeto do qual tenho especial orgulho foi entregar APIs REST de alto desempenho para um sistema de tickets Jira sob prazos apertados. Isso me desafiou a equilibrar velocidade e qualidade, e fortaleceu minha capacidade de prosperar sob pressão.\n\nAlém do trabalho, gosto de explorar novas tecnologias, contribuir para projetos de código aberto e colaborar com equipes multifuncionais para criar experiências de usuário perfeitas e responsivas.\n\nAcredito em aprendizado contínuo e compartilhamento de conhecimento para crescer juntos neste mundo tecnológico de movimento rápido. Quando não estou codificando, você frequentemente me encontrará explorando ideias criativas, acompanhando as últimas tendências frontend, ou experimentando com design. 🚀"
+  },
+  "education": {
+    "title": "Educação",
+    "ccc": {
+      "school": "Universidade Canterbury Christ Church, Reino Unido",
+      "degree": "BSc (Hons) em Computação",
+      "time": "Jan 2021 – Jan 2022",
+      "honors": "Primeira Classe com Honras"
+    },
+    "ijse": {
+      "school": "Instituto de Java e Engenharia de Software, Sri Lanka",
+      "degree": "Diploma Superior em Engenharia de Software",
+      "time": "Jan 2017 – Jan 2019"
+    }
+  },
+  "skills": {
+    "title": "Competências Principais",
+    "frontend": "Desenvolvimento Frontend",
+    "backend": "Desenvolvimento Backend",
+    "uiux": "Design UI/UX",
+    "devops": "DevOps e CI/CD",
+    "testing": "Testes",
+    "agile": "Metodologias Ágeis",
+    "technologies": "Tecnologias e Ferramentas",
+    "frameworks": "Frameworks e Bibliotecas",
+    "languages": "Linguagens de Programação"
+  },
+  "experience": {
+    "title": "Experiências",
+    "wmp": {
+      "company": "We Make Platforms",
+      "role": "Líder Técnico - Frontend",
+      "time": "Ago 2022 - Presente",
+      "location": "Remoto"
+    },
+    "epic": {
+      "company": "Epic Lanka",
+      "role": "Engenheiro de Software",
+      "time": "Ago 2020 - Jul 2022",
+      "location": "No local"
+    },
+    "zincat": {
+      "company": "ZinCat Technology",
+      "role": "Desenvolvedor de Software",
+      "time": "Ago 2019 - Ago 2020",
+      "location": "No local"
+    },
+    "ceyentra": {
+      "company": "Ceyentra Technologies",
+      "role": "Estágio",
+      "time": "Jan 2019 - Ago 2019",
+      "location": "No local"
+    }
+  },
+  "opensource": {
+    "title": "Projetos Open Source",
+    "subtitle": "Contribuindo para a comunidade de desenvolvedores com componentes e bibliotecas Angular modernas e de alto desempenho.",
+    "datepicker": {
+      "title": "ngxsmk-datepicker",
+      "description": "Um seletor de intervalo de datas Angular poderoso, moderno e altamente personalizável com componente de tempo. Características 30% bundle menor, 40% renderização mais rápida e zero dependências.",
+      "features": "30% bundle menor, 40% renderização mais rápida e zero dependências"
+    },
+    "telinput": {
+      "title": "ngxsmk-tel-input",
+      "description": "Um componente de entrada de telefone Angular abrangente com seleção de país, validação e suporte de formatação internacional.",
+      "features": "Seleção de país, validação e formatação internacional"
+    }
+  },
+  "projects": {
+    "title": "Projetos em Destaque",
+    "subtitle": "Mostrando minha expertise através de aplicações do mundo real e soluções inovadoras.",
+    "viewProject": "Ver Projeto",
+    "viewCode": "Ver Código"
+  },
+  "footer": {
+    "contact": "Interessado em aprender mais sobre minhas experiências e jornada? Ficaria feliz em conectar—vamos entrar em contato! ✌️",
+    "built": "Construído com ❤️ usando Angular",
+    "rights": "© 2025 Todos os direitos reservados."
+  }
+}

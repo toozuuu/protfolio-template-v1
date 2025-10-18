@@ -1,11 +1,12 @@
-import { Component} from '@angular/core';
+import { Component, ChangeDetectionStrategy} from '@angular/core';
 import { SocialButtons } from "../../social-buttons/social-buttons";
-import {TranslatePipe} from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-footer',
-  imports: [SocialButtons, TranslatePipe],
+  imports: [SocialButtons, TranslateModule],
   templateUrl: './footer.html',
-  styleUrl: './footer.scss',
+  styleUrl: './footer.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Footer {}

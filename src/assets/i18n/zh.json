@@ -1,0 +1,99 @@
+{
+  "header": {
+    "work": "工作",
+    "about": "关于",
+    "experience": "经验",
+    "hire": "雇佣我",
+    "resume": "查看简历",
+    "bookCall": "预约通话"
+  },
+  "intro": {
+    "greeting": "你好，我是Sachin Dilshan。",
+    "speak": "/sa-chin dil-shaan/",
+    "welcome": "欢迎👋 我是Sachin，We Make Platforms的技术负责人，总部位于斯里兰卡。我目前正在推进我的职业生涯，拥有超过5年的前端开发、UI/UX设计和基于云的应用程序开发经验。热衷于将创意想法转化为无缝的Web体验，我专注于使用Angular和现代前端框架构建可扩展、用户友好的应用程序。🚀",
+    "workingWith": "我目前正在使用，"
+  },
+  "about": {
+    "title": "关于我",
+    "name": "Sachin Dilshan",
+    "bio": "你好✌️ 很高兴见到你！我是Sachin，We Make Platforms的技术负责人，总部位于斯里兰卡。\n\n我热衷于将创意想法转化为真实、可用的Web体验。我的重点是使用Angular构建可扩展、用户友好的前端应用程序，我的目标是设计不仅看起来很棒，而且感觉流畅直观的产品。\n\n我作为实习生软件工程师开始了我的职业生涯，并成长为高级角色，在那里我磨练了编码和领导技能。作为高级软件工程师，我领导了关键功能的开发，这些功能显著提高了用户参与度——看到这些改进产生真正的影响是我职业生涯中最自豪的时刻之一。我特别自豪的一个项目是在紧张的时间表下为Jira票务系统交付高性能REST API。这挑战我在速度和质量之间取得平衡，并加强了我承受压力的能力。\n\n除了工作，我喜欢探索新技术，为开源项目做贡献，并与跨职能团队合作创造无缝、响应式的用户体验。\n\n我相信持续学习和知识分享，在这个快速发展的技术世界中共同成长。当我不编码时，你经常会发现我在探索创意想法，跟上最新的前端趋势，或尝试设计。🚀"
+  },
+  "education": {
+    "title": "教育",
+    "ccc": {
+      "school": "坎特伯雷基督教会大学，英国",
+      "degree": "计算学学士（荣誉）",
+      "time": "2021年1月 – 2022年1月",
+      "honors": "一等荣誉学位"
+    },
+    "ijse": {
+      "school": "Java与软件工程学院，斯里兰卡",
+      "degree": "软件工程高级文凭",
+      "time": "2017年1月 – 2019年1月"
+    }
+  },
+  "skills": {
+    "title": "核心能力",
+    "frontend": "前端开发",
+    "backend": "后端开发",
+    "uiux": "UI/UX设计",
+    "devops": "DevOps和CI/CD",
+    "testing": "测试",
+    "agile": "敏捷方法",
+    "technologies": "技术和工具",
+    "frameworks": "框架和库",
+    "languages": "编程语言"
+  },
+  "experience": {
+    "title": "经验",
+    "wmp": {
+      "company": "We Make Platforms",
+      "role": "技术负责人 - 前端",
+      "time": "2022年8月 - 至今",
+      "location": "远程"
+    },
+    "epic": {
+      "company": "Epic Lanka",
+      "role": "软件工程师",
+      "time": "2020年8月 - 2022年7月",
+      "location": "现场"
+    },
+    "zincat": {
+      "company": "ZinCat Technology",
+      "role": "软件开发人员",
+      "time": "2019年8月 - 2020年8月",
+      "location": "现场"
+    },
+    "ceyentra": {
+      "company": "Ceyentra Technologies",
+      "role": "实习",
+      "time": "2019年1月 - 2019年8月",
+      "location": "现场"
+    }
+  },
+  "opensource": {
+    "title": "开源项目",
+    "subtitle": "通过现代、高性能的Angular组件和库为开发者社区做出贡献。",
+    "datepicker": {
+      "title": "ngxsmk-datepicker",
+      "description": "一个强大、现代、高度可定制的Angular日期范围选择器，带时间组件。特点：30%更小的包，40%更快的渲染，零依赖。",
+      "features": "30%更小的包，40%更快的渲染，零依赖"
+    },
+    "telinput": {
+      "title": "ngxsmk-tel-input",
+      "description": "一个全面的Angular电话输入组件，具有国家选择、验证和国际格式化支持。",
+      "features": "国家选择、验证和国际格式化"
+    }
+  },
+  "projects": {
+    "title": "精选项目",
+    "subtitle": "通过真实世界的应用程序和创新解决方案展示我的专业知识。",
+    "viewProject": "查看项目",
+    "viewCode": "查看代码"
+  },
+  "footer": {
+    "contact": "有兴趣了解更多关于我的经验和旅程吗？我很乐意联系——让我们保持联系！✌️",
+    "built": "使用Angular构建 ❤️",
+    "rights": "© 2025 版权所有。"
+  }
+}

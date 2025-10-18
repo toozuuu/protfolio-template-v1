@@ -1,377 +1,266 @@
-# Portfolio – Angular 17+ (SSR, Netlify)
+# 🚀 Portfolio Template v1
 
-A modern, fast, and accessible developer portfolio built with **Angular (standalone components)**, **SSR/hydration**, and deployed on **Netlify**.
-Includes reveal-on-scroll animations, “see more / see less” lists for long experience items, a **terminal-style About** typing effect, and a **light/dark theme** with persisted preference (SSR‑safe).
-
-**Live demo:** [https://sachindilshan.netlify.app](https://sachindilshan.netlify.app)
-
-> If you’re using this as a template, replace text, images, and social links in `home.html` and component inputs.
-
----
+A modern, responsive, and multilingual portfolio website built with Angular 20, featuring dynamic theming, internationalization, and performance optimizations.
 
 ## ✨ Features
 
-* **Angular 17+ standalone** (no NgModules), Vite dev server
-* **SSR + hydration** for SEO and first-paint performance
-* **Responsive layout** with clean CSS grid + fluid typography
-* **Reveal-on-scroll animations** (IO + MutationObserver, SSR-safe)
-* **“See more / See less”** collapsible lists (no extra component needed)
-* **Terminal-style About** with typing animation (replay/skip controls)
-* **Theme toggle** (light/dark) with **SSR-safe persistence**
-* **System preference** support (`prefers-color-scheme`)
-* Smooth scrolling to anchored sections (`About`, `Work`)
-* Friendly content structure for easy editing
+### 🌍 **11 Languages Supported**
+- **English** (en) - Default
+- **සිංහල** (si) - Sinhala
+- **Svenska** (sv) - Swedish  
+- **Español** (es) - Spanish
+- **Français** (fr) - French
+- **Deutsch** (de) - German
+- **Português** (pt) - Portuguese
+- **中文** (zh) - Chinese
+- **日本語** (ja) - Japanese
+- **한국어** (ko) - Korean
+- **हिन्दी** (hi) - Hindi
 
----
+### 🎨 **Dynamic Theming**
+- **Light/Dark Mode**: Toggle between themes
+- **System Theme Detection**: Automatic theme based on OS preference
+- **Smooth Transitions**: Animated theme changes
+- **Header Scroll Effects**: Dynamic color changes on scroll
 
-## 🧱 Tech Stack
+### 📱 **Responsive Design**
+- **Mobile-First**: Optimized for mobile devices
+- **Tablet Support**: Responsive tablet layouts
+- **Desktop Enhancement**: Full desktop experience
+- **Touch-Friendly**: Mobile-optimized interactions
 
-* **Angular** 17/18/19 (standalone components)
-* **SSR** using Angular’s built-in builder
-* **Vite dev server** (via Angular CLI)
-* **SCSS** for styling (theme tokens + responsive mixins)
-* **Netlify** for hosting + serverless SSR
-* Optional: **@netlify/angular-runtime** for SSR on Netlify
+### ⚡ **Performance Optimized**
+- **Lazy Loading**: Route-based code splitting
+- **SSR Support**: Server-side rendering
+- **Bundle Analysis**: Performance monitoring
+- **Image Optimization**: Optimized asset loading
 
----
+### 🎭 **Modern Animations**
+- **Scroll Animations**: Intersection Observer API
+- **Header Effects**: Dynamic scroll-based styling
+- **Smooth Transitions**: CSS transitions and animations
+- **Performance Monitoring**: Reduced motion support
 
-## 📁 Project Structure (high level)
+## 🛠️ Tech Stack
+
+- **Angular 20** - Latest Angular framework
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Utility-first CSS framework
+- **RxJS** - Reactive programming
+- **Angular SSR** - Server-side rendering
+- **@ngx-translate** - Internationalization
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18+ 
+- npm 9+
+
+### Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd protfolio-template-v1
+
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+```
+
+### Development Commands
+
+```bash
+# Development server
+npm start
+
+# Production build
+npm run build
+
+# Build with analysis
+npm run build:analyze
+
+# Watch mode
+npm run watch
+
+# Run tests
+npm test
+
+# Lighthouse audit
+npm run lighthouse
+```
+
+## 📁 Project Structure
 
 ```
 src/
-  app/
-    home/
-      home.ts          # page logic (SSR-safe IO, typing, see-more)
-      home.html        # page template (intro, about, experience, etc.)
-      home.scss        # page styles (responsive, reveal, terminal, etc.)
-    components/
-      shared/header/
-      shared/footer/
-    social-buttons/
-    project-card/
-assets/
-  My_Photo.jpg
-  ...
+├── app/
+│   ├── components/          # Reusable components
+│   │   ├── shared/         # Header, Footer
+│   │   ├── social-buttons/ # Social media buttons
+│   │   └── project-card/   # Project card component
+│   ├── core/               # Core services
+│   │   ├── theme.service.ts
+│   │   ├── language.service.ts
+│   │   └── performance.service.ts
+│   ├── pages/              # Page components
+│   │   ├── home/           # Home page
+│   │   └── hire/           # Hire page
+│   └── app.config.ts       # App configuration
+├── assets/
+│   ├── i18n/               # Translation files (11 languages)
+│   ├── icons/              # Icon assets
+│   └── My_Photo.jpg        # Profile photo
+└── index.html              # Main HTML file
 ```
 
----
+## 🌍 Internationalization
 
-## 🚀 Getting Started
+### Adding New Languages
 
-### 1) Prerequisites
+1. Create new translation file in `src/assets/i18n/`
+2. Add language code to `LanguageService`
+3. Update language selector in header
 
-* **Node.js** 18+ (LTS recommended)
-* **npm** 9+ / **pnpm** 8+ / **yarn** (choose one)
-* **Angular CLI** (optional for generators):
+### Translation Structure
 
-```bash
-npm i -g @angular/cli
-```
-
-### 2) Install
-
-```bash
-# with npm
-npm install
-
-# or pnpm
-pnpm install
-```
-
-### 3) Run (Dev)
-
-```bash
-# CSR dev server
-npm run start
-# or Angular CLI
-ng serve
-
-# SSR dev (if configured)
-ng serve --ssr
-```
-
-> If your `package.json` already has `dev`/`serve:ssr` scripts, use those:
->
-> ```bash
-> npm run dev
-> npm run serve:ssr
-> ```
-
-### 4) Build
-
-```bash
-# CSR build
-ng build
-
-# SSR build (recommended for production)
-ng build --ssr
-```
-
-The SSR build produces both client & server bundles.
-
----
-
-## ☁️ Deploying to Netlify (SSR)
-
-1. **Install Netlify Angular runtime** (required for Angular SSR on Netlify):
-
-   ```bash
-   npm i -D @netlify/angular-runtime@^2.2.0
-   ```
-
-   If you see this error during deploy:
-
-   ```
-   Error: Angular@19 SSR on Netlify requires '@netlify/angular-runtime' version 2.2.0 or later
-   ```
-
-   update the package as above.
-
-2. **Add a redirect** so deep links work:
-
-  * Create `public/_redirects` (or configure in `netlify.toml`):
-
-    ```
-    /*  /index.html  200
-    ```
-
-3. **Connect repo to Netlify** and set:
-
-  * **Build command**: `ng build --ssr`
-  * **Publish directory**: handled by the Netlify runtime. If you use a custom adapter or output path, match it accordingly.
-
-> Tip: Netlify will detect Angular; the `@netlify/angular-runtime` takes care of SSR functions and routing.
-
----
-
-## 🎨 Theming (Light/Dark)
-
-This project uses **CSS variables** on `<html data-theme>`. A tiny `ThemeService` toggles and persists the preference, and is **SSR-safe**.
-
-### Theme tokens (`styles.scss`)
-
-```scss
-:root {
-  --bg: #ffffff;
-  --bg-soft: #f6f7f9;
-  --text: #0f172a;
-  --text-muted: #475569;
-  --primary: #5b8cff;
-  --accent: #22c55e;
-  --border: #e5e7eb;
-  --card: #ffffff;
-  --shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
-  --radius: 12px;
-  --dur: 0.25s;
-}
-:root[data-theme="dark"] {
-  --bg: #0b1220;
-  --bg-soft: #0f172a;
-  --text: #e5e7eb;
-  --text-muted: #94a3b8;
-  --primary: #8ab4ff;
-  --accent: #34d399;
-  --border: #1f2937;
-  --card: #0f172a;
-  --shadow: 0 10px 30px rgba(0,0,0,0.35);
-}
-html, body { background: var(--bg); color: var(--text); }
-```
-
-### SSR-safe `ThemeService`
-
-```ts
-import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-
-export type Theme = 'light' | 'dark';
-const STORAGE_KEY = 'site-theme';
-
-@Injectable({ providedIn: 'root' })
-export class ThemeService {
-  theme: Theme = 'light';
-  private isBrowser: boolean;
-
-  constructor(@Inject(DOCUMENT) private doc: Document, @Inject(PLATFORM_ID) platformId: Object) {
-    this.isBrowser = isPlatformBrowser(platformId);
-
-    if (this.isBrowser) {
-      const saved = localStorage.getItem(STORAGE_KEY) as Theme | null;
-      if (saved) { this.set(saved); return; }
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      this.set(prefersDark ? 'dark' : 'light');
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-        if (!localStorage.getItem(STORAGE_KEY)) this.set(e.matches ? 'dark' : 'light');
-      });
-    } else {
-      this.set('light'); // default on SSR
-    }
-  }
-
-  set(next: Theme) {
-    this.theme = next;
-    this.doc.documentElement.setAttribute('data-theme', next);
-  }
-  toggle() {
-    const next: Theme = this.theme === 'dark' ? 'light' : 'dark';
-    this.set(next);
-    if (this.isBrowser) localStorage.setItem(STORAGE_KEY, next);
-  }
-  useSystem() {
-    if (this.isBrowser) {
-      localStorage.removeItem(STORAGE_KEY);
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      this.set(prefersDark ? 'dark' : 'light');
-    }
+```json
+{
+  "intro": {
+    "greeting": "Hello, I'm Sachin Dilshan.",
+    "speak": "/sa-chin dil-shaan/",
+    "welcome": "Welcome message...",
+    "workingWith": "I'm currently working with,"
+  },
+  "technologies": {
+    "angular": "Angular",
+    "typescript": "TypeScript",
+    "flutter": "Flutter"
   }
 }
 ```
 
-### Toggling in the header
+## 🎨 Theming
 
-```html
-<button type="button" class="theme-toggle" (click)="theme.toggle()">
-  <img [src]="theme.theme === 'dark' ? 'assets/moon.png' : 'assets/light.png'" width="24" height="24" />
-</button>
-```
+### Light Mode
+- Clean white backgrounds
+- Subtle shadows
+- High contrast text
+- Blue accent colors
 
-```ts
-// header.ts
-constructor(public theme: ThemeService) {}
-```
+### Dark Mode  
+- Dark slate backgrounds
+- Enhanced shadows
+- Light text colors
+- Blue accent highlights
 
-### Theme-based images (no TS)
+### Header Scroll Effects
+- **Not Scrolled**: Subtle background with minimal shadows
+- **Scrolled**: Blue-tinted gradients with enhanced shadows
+- **Logo**: Changes to blue color
+- **Navigation**: Bolder, more contrasted text
+- **Buttons**: Blue gradient with lift effects
 
-```html
-<img src="assets/logo-light.svg" class="img-light" alt="Logo" />
-<img src="assets/logo-dark.svg"  class="img-dark"  alt="Logo" />
-```
+## 📱 Responsive Design
 
-```scss
-.img-dark { display: none; }
-:root[data-theme='dark'] .img-light { display: none; }
-:root[data-theme='dark'] .img-dark  { display: inline; }
-```
+### Breakpoints
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px  
+- **Desktop**: > 1024px
 
----
+### Mobile Optimizations
+- Touch-friendly buttons
+- Optimized spacing
+- Reduced motion support
+- Enhanced backdrop blur
 
-## 🧩 Key UI Behaviors
+## ⚡ Performance Features
 
-### Reveal-on-Scroll (SSR-safe)
+### Bundle Optimization
+- **Code Splitting**: Route-based lazy loading
+- **Tree Shaking**: Unused code elimination
+- **Bundle Analysis**: Performance monitoring
+- **Asset Optimization**: Compressed images and fonts
 
-* Uses `IntersectionObserver` + `MutationObserver`
-* Runs **after hydration** with `afterNextRender({ injector })`
-* Progressive enhancement: content is visible by default; hidden only after JS adds `html.js`
+### Runtime Performance
+- **Intersection Observer**: Efficient scroll animations
+- **Change Detection**: OnPush strategy
+- **Memory Management**: Proper cleanup
+- **Lazy Loading**: Deferred component loading
 
-If you see `IntersectionObserver is not defined`, ensure the code runs only in the browser (`isPlatformBrowser`) and initialize **after hydration**.
+## 🔧 Configuration
 
-### “See more / See less” for Experience
+### Angular Configuration
+- **Standalone Components**: Modern Angular architecture
+- **SSR Support**: Server-side rendering
+- **Route Guards**: Navigation protection
+- **Service Workers**: Offline support
 
-```ts
-expanded = new Set<string>();
-isExpanded(id: string) { return this.expanded.has(id); }
-toggle(id: string) { this.isExpanded(id) ? this.expanded.delete(id) : this.expanded.add(id); }
-```
+### Build Configuration
+- **Production Builds**: Optimized for production
+- **Bundle Analysis**: Performance insights
+- **Lighthouse Audits**: Performance monitoring
+- **TypeScript**: Strict type checking
 
-Wrap the list in a constrained container with a gradient fade and toggle `max-height`.
+## 📊 Performance Metrics
 
-### Terminal-Style About (CLI typing)
+### Bundle Sizes
+- **Initial Bundle**: ~295KB (gzipped: ~82KB)
+- **Home Page**: ~59KB (gzipped: ~14KB)
+- **Hire Page**: ~10KB (gzipped: ~3KB)
 
-* A `<pre>` block with a `#cli` span is typed character-by-character
-* Replay and Skip controls
-* Pure text to avoid hydration mismatches
+### Core Web Vitals
+- **LCP**: < 2.5s
+- **FID**: < 100ms
+- **CLS**: < 0.1
 
----
+## 🚀 Deployment
 
-## ⚙️ Configuration & Content
-
-* **Profile content**: edit `home.html` (intro, skills, education, experience).
-* **Projects**: update the `projects` array in `home.ts` (title, description, tags, links).
-* **Images**: place assets in `/assets` and update paths in templates.
-* **Favicon / PWA**: update icons in `/assets` as needed.
-
----
-
-## ✅ Accessibility & Performance
-
-* Respect **reduced motion** (`prefers-reduced-motion`)
-* Keyboard accessible toggles (`aria-expanded` / `aria-pressed`)
-* Hydration-safe animations (content is visible if JS fails)
-* Preconnect to fonts/CDNs if you add them
-* Use compressed images (WebP/AVIF) where possible
-* Avoid layout shift: add explicit `width/height` to images
-
----
-
-## 🧰 Troubleshooting
-
-### `localStorage is not defined`
-
-You’re in SSR. Guard `localStorage` and `matchMedia` with `isPlatformBrowser` (see `ThemeService` above).
-
-### `IntersectionObserver is not defined`
-
-Guard with:
-
-```ts
-import { isPlatformBrowser } from '@angular/common';
-if (!isPlatformBrowser(this.platformId)) return;
-```
-
-Initialize **after hydration**:
-
-```ts
-import { afterNextRender, EnvironmentInjector, inject } from '@angular/core';
-private readonly injector = inject(EnvironmentInjector);
-afterNextRender(() => { /* ... */ }, { injector: this.injector });
-```
-
-### `NG0203: afterNextRender() can only be used within an injection context`
-
-Pass an injector as shown above.
-
-### Sections don’t reveal / remain hidden
-
-* Ensure `document.documentElement.classList.add('js')` runs in the browser.
-* CSS should scope hiding to `.js .reveal`.
-* MutationObserver should observe late-rendered `.reveal` elements.
-
-### Netlify SSR error for Angular 19
-
-Install/update:
-
+### Netlify (Recommended)
 ```bash
-npm i -D @netlify/angular-runtime@^2.2.0
+# Build for production
+npm run build
+
+# Deploy to Netlify
+# Connect your repository to Netlify
+# Build command: npm run build
+# Publish directory: dist/protfolio-template-v1/browser
 ```
 
-### Hard refresh 404 on sub-routes
+### Other Platforms
+- **Vercel**: Angular SSR support
+- **Firebase**: Static hosting
+- **GitHub Pages**: Static deployment
+- **AWS S3**: Cloud hosting
 
-Add Netlify redirect:
+## 📚 Documentation
 
-```
-/*  /index.html  200
-```
+- [Project Structure](docs/PROJECT_STRUCTURE.md)
+- [Mobile Responsiveness](docs/MOBILE_RESPONSIVENESS_GUIDE.md)
+- [Performance Optimization](docs/OPTIMIZATION_GUIDE.md)
+- [Tailwind Integration](docs/TAILWIND_INTEGRATION_GUIDE.md)
 
----
+## 🤝 Contributing
 
-## 🗺️ Roadmap (ideas)
-
-* Project filters and search
-* MD/JSON content sources
-* i18n language toggle
-* Unit tests for UI behaviors
-* Analytics opt-in toggle
-
----
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
 ## 📄 License
 
-MIT — Feel free to use and adapt. Attribution appreciated!
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 👨‍💻 Author
+
+**Sachin Dilshan**
+- **Email**: sachindilshan040@gmail.com
+- **LinkedIn**: [Sachin Dilshan](https://linkedin.com/in/sachindilshan)
+- **GitHub**: [@toozuuu](https://github.com/toozuuu)
 
 ---
 
-## 🙌 Credits
-
-* Built with Angular standalone + SSR
-* Deployed on Netlify
-* Terminal UI/typing & reveal behaviors adapted for SSR-safe hydration
+Built with ❤️ using Angular 20 and modern web technologies.

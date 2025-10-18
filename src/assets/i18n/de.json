@@ -1,0 +1,99 @@
+{
+  "header": {
+    "work": "Arbeit",
+    "about": "Über mich",
+    "experience": "Erfahrung",
+    "hire": "Stellen Sie mich ein",
+    "resume": "CV anzeigen",
+    "bookCall": "Anruf buchen"
+  },
+  "intro": {
+    "greeting": "Hallo, ich bin Sachin Dilshan.",
+    "speak": "/sa-chin dil-shaan/",
+    "welcome": "Willkommen 👋 Ich bin Sachin, Technical Lead bei We Make Platforms mit Sitz in Sri Lanka. Ich entwickle derzeit meine Karriere mit über 5 Jahren Erfahrung in Frontend-Entwicklung, UI/UX-Design und Cloud-basierter Anwendungsentwicklung weiter. Leidenschaftlich daran interessiert, kreative Ideen in nahtlose Web-Erfahrungen zu verwandeln, konzentriere ich mich auf den Aufbau skalierbarer, benutzerfreundlicher Anwendungen mit Angular und modernen Frontend-Frameworks. 🚀",
+    "workingWith": "Ich arbeite derzeit mit,"
+  },
+  "about": {
+    "title": "Über mich",
+    "name": "Sachin Dilshan",
+    "bio": "Hallo ✌️ schön, Sie kennenzulernen! Ich bin Sachin, Technical Lead bei We Make Platforms mit Sitz in Sri Lanka.\n\nIch bin leidenschaftlich daran interessiert, kreative Ideen in echte, funktionierende Web-Erfahrungen zu verwandeln. Mein Fokus liegt auf dem Aufbau skalierbarer, benutzerfreundlicher Frontend-Anwendungen mit Angular, wobei mein Ziel darin besteht, Produkte zu entwerfen, die nicht nur großartig aussehen, sondern sich auch flüssig und intuitiv anfühlen.\n\nIch begann meine Karriere als Trainee Associate Software Engineer und wuchs in Senior-Rollen hinein, wo ich sowohl meine Codierungs- als auch meine Führungsfähigkeiten schärfte. Als Senior Software Engineer leitete ich die Entwicklung von Schlüsselfunktionen, die das Nutzerengagement erheblich steigerten—zu sehen, wie diese Verbesserungen einen echten Unterschied machten, war einer der stolzesten Momente meiner Karriere. Ein Projekt, auf das ich besonders stolz bin, war die Lieferung von hochperformanten REST-APIs für ein Jira-Ticket-System unter engen Zeitplänen. Es forderte mich heraus, Geschwindigkeit und Qualität auszubalancieren und stärkte meine Fähigkeit, unter Druck zu gedeihen.\n\nÜber die Arbeit hinaus genieße ich es, neue Technologien zu erkunden, zu Open-Source-Projekten beizutragen und mit funktionsübergreifenden Teams zusammenzuarbeiten, um nahtlose, responsive Benutzererfahrungen zu schaffen.\n\nIch glaube an kontinuierliches Lernen und Wissensaustausch, um in dieser sich schnell bewegenden Tech-Welt gemeinsam zu wachsen. Wenn ich nicht programmiere, finden Sie mich oft dabei, kreative Ideen zu erkunden, mit den neuesten Frontend-Trends Schritt zu halten oder mit Design zu experimentieren. 🚀"
+  },
+  "education": {
+    "title": "Bildung",
+    "ccc": {
+      "school": "Canterbury Christ Church University, Großbritannien",
+      "degree": "BSc (Hons) in Computing",
+      "time": "Jan 2021 – Jan 2022",
+      "honors": "Erste Klasse mit Auszeichnung"
+    },
+    "ijse": {
+      "school": "Institut für Java & Software Engineering, Sri Lanka",
+      "degree": "Höheres Diplom in Software Engineering",
+      "time": "Jan 2017 – Jan 2019"
+    }
+  },
+  "skills": {
+    "title": "Kernkompetenzen",
+    "frontend": "Frontend-Entwicklung",
+    "backend": "Backend-Entwicklung",
+    "uiux": "UI/UX-Design",
+    "devops": "DevOps & CI/CD",
+    "testing": "Testing",
+    "agile": "Agile Methoden",
+    "technologies": "Technologien & Tools",
+    "frameworks": "Frameworks & Bibliotheken",
+    "languages": "Programmiersprachen"
+  },
+  "experience": {
+    "title": "Erfahrungen",
+    "wmp": {
+      "company": "We Make Platforms",
+      "role": "Technical Lead - Frontend",
+      "time": "Aug 2022 - Gegenwart",
+      "location": "Remote"
+    },
+    "epic": {
+      "company": "Epic Lanka",
+      "role": "Software Engineer",
+      "time": "Aug 2020 - Jul 2022",
+      "location": "Vor Ort"
+    },
+    "zincat": {
+      "company": "ZinCat Technology",
+      "role": "Software Developer",
+      "time": "Aug 2019 - Aug 2020",
+      "location": "Vor Ort"
+    },
+    "ceyentra": {
+      "company": "Ceyentra Technologies",
+      "role": "Praktikum",
+      "time": "Jan 2019 - Aug 2019",
+      "location": "Vor Ort"
+    }
+  },
+  "opensource": {
+    "title": "Open Source Projekte",
+    "subtitle": "Beitrag zur Entwicklergemeinschaft mit modernen, leistungsstarken Angular-Komponenten und Bibliotheken.",
+    "datepicker": {
+      "title": "ngxsmk-datepicker",
+      "description": "Ein leistungsstarker, moderner, hochgradig anpassbarer Angular Datumsbereichsauswahl mit Zeitkomponente. Features 30% kleineres Bundle, 40% schnellere Darstellung und null Abhängigkeiten.",
+      "features": "30% kleineres Bundle, 40% schnellere Darstellung und null Abhängigkeiten"
+    },
+    "telinput": {
+      "title": "ngxsmk-tel-input",
+      "description": "Eine umfassende Angular Telefon-Eingabekomponente mit Länderselektion, Validierung und internationaler Formatierungsunterstützung.",
+      "features": "Länderselektion, Validierung und internationale Formatierung"
+    }
+  },
+  "projects": {
+    "title": "Ausgewählte Projekte",
+    "subtitle": "Zeigen meiner Expertise durch reale Anwendungen und innovative Lösungen.",
+    "viewProject": "Projekt anzeigen",
+    "viewCode": "Code anzeigen"
+  },
+  "footer": {
+    "contact": "Interessiert daran, mehr über meine Erfahrungen und meinen Weg zu erfahren? Ich würde mich gerne verbinden—lassen Sie uns in Kontakt treten! ✌️",
+    "built": "Gebaut mit ❤️ mit Angular",
+    "rights": "© 2025 Alle Rechte vorbehalten."
+  }
+}

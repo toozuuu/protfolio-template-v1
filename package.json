@@ -4,10 +4,23 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:prod": "ng serve --configuration production",
     "build": "ng build",
+    "build:prod": "ng build --configuration production",
+    "build:analyze": "ng build --configuration production --stats-json && npx webpack-bundle-analyzer dist/protfolio-template-v1/browser/stats.json",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:protfolio-template-v1": "node dist/protfolio-template-v1/server/server.mjs"
+    "test:ci": "ng test --watch=false --browsers=ChromeHeadless",
+    "e2e": "ng e2e",
+    "serve:ssr": "node dist/protfolio-template-v1/server/server.mjs",
+    "lighthouse": "lighthouse http://localhost:4200 --output html --output-path ./lighthouse-report.html",
+    "lighthouse:ci": "lighthouse http://localhost:4200 --output json --output-path ./lighthouse-report.json",
+    "lint": "ng lint",
+    "format": "prettier --write \"src/**/*.{ts,html,css,scss,json}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,html,css,scss,json}\"",
+    "clean": "rimraf dist .angular",
+    "prebuild": "npm run clean",
+    "postbuild": "npm run lighthouse:ci"
   },
   "prettier": {
     "printWidth": 100,
@@ -51,6 +64,10 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.9.2"
+    "lighthouse": "^12.0.0",
+    "prettier": "^3.0.0",
+    "rimraf": "^5.0.0",
+    "typescript": "~5.9.2",
+    "webpack-bundle-analyzer": "^4.10.1"
   }
 }

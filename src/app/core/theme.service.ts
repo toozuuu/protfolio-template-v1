@@ -1,4 +1,4 @@
-import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID, signal, computed } from '@angular/core';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 
 export type Theme = 'light' | 'dark';
@@ -6,7 +6,14 @@ const STORAGE_KEY = 'site-theme';
 
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
-  theme: Theme = 'light';
+  // Signal for current theme
+  private readonly _theme = signal<Theme>('light');
+  
+  // Computed signals for theme state
+  readonly theme = this._theme.asReadonly();
+  readonly isDark = computed(() => this._theme() === 'dark');
+  readonly isLight = computed(() => this._theme() === 'light');
+  
   private readonly isBrowser: boolean;
 
   constructor(
@@ -38,12 +45,16 @@ export class ThemeService {
   }
 
   set(next: Theme) {
-    this.theme = next;
-    this.doc.documentElement.setAttribute('data-theme', next);
+    this._theme.set(next);
+    if (next === 'dark') {
+      this.doc.documentElement.classList.add('dark');
+    } else {
+      this.doc.documentElement.classList.remove('dark');
+    }
   }
 
   toggle() {
-    const next: Theme = this.theme === 'dark' ? 'light' : 'dark';
+    const next: Theme = this._theme() === 'dark' ? 'light' : 'dark';
     this.set(next);
     if (this.isBrowser) {
       localStorage.setItem(STORAGE_KEY, next);

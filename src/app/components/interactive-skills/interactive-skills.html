@@ -1,0 +1,106 @@
+<div class="interactive-skills-container">
+  <!-- Skills Grid -->
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
+    <div 
+      *ngFor="let skill of skills; let i = index"
+      class="skill-card reveal hover-lift cursor-pointer p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 transition-all duration-300"
+      [class]="'stagger-' + (i + 1)"
+      [attr.data-skill]="skill.name"
+      (click)="selectSkill(skill)"
+      [style.animation-delay]="(i * 0.1) + 's'">
+      
+      <!-- Skill Icon -->
+      <div class="text-center mb-3">
+        <div class="text-3xl mb-2">{{ skill.icon }}</div>
+        <h3 class="font-semibold text-slate-900 dark:text-white text-sm">{{ skill.name }}</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400">{{ skill.category }}</p>
+      </div>
+      
+      <!-- Skill Level Bar -->
+      <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2 mb-2">
+        <div 
+          class="h-2 rounded-full transition-all duration-1000 ease-out"
+          [class]="skill.color"
+          [style.width.%]="skill.level">
+        </div>
+      </div>
+      
+      <!-- Skill Level Text -->
+      <div class="text-center">
+        <span class="text-xs font-medium" [class]="getSkillLevelClass(skill.level)">
+          {{ skill.level }}% - {{ getSkillLevelText(skill.level) }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Selected Skill Details Modal -->
+  <div 
+    *ngIf="selectedSkill" 
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+    (click)="closeSkillDetails()">
+    
+    <div 
+      class="bg-white dark:bg-slate-800 rounded-lg p-6 max-w-md w-full animate-scale-in"
+      (click)="$event.stopPropagation()">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">{{ selectedSkill.icon }}</span>
+          <div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+              {{ selectedSkill.name }}
+            </h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400">
+              {{ selectedSkill.category }}
+            </p>
+          </div>
+        </div>
+        <button 
+          class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
+          (click)="closeSkillDetails()">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Skill Level Visualization -->
+      <div class="mb-4">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Proficiency Level</span>
+          <span class="text-sm font-bold" [class]="getSkillLevelClass(selectedSkill.level)">
+            {{ selectedSkill.level }}% - {{ getSkillLevelText(selectedSkill.level) }}
+          </span>
+        </div>
+        <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-3">
+          <div 
+            class="h-3 rounded-full transition-all duration-1000 ease-out"
+            [class]="selectedSkill.color"
+            [style.width.%]="selectedSkill.level">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Skill Description -->
+      <div class="mb-4">
+        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+          {{ selectedSkill.description }}
+        </p>
+      </div>
+      
+      <!-- Action Buttons -->
+      <div class="flex gap-2">
+        <button 
+          class="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+          View Projects
+        </button>
+        <button 
+          class="flex-1 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+          Learn More
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

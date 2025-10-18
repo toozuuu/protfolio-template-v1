@@ -1,5 +1,9 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, ChangeDetectionStrategy, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { Location } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
+import { SEOService } from '../../core/seo.service';
+import { LanguageService } from '../../core/language.service';
+import { isPlatformBrowser } from '@angular/common';
 
 type Plan = {
   id: string;
@@ -18,14 +22,27 @@ type FaqItem = { q: string; a: string; open: boolean };
   standalone: true,
   selector: 'app-hire-page',
   templateUrl: './hire.html',
-  styleUrls: ['./hire.scss'],
-  imports: [],
+      styleUrls: ['./hire.css'],
+  imports: [TranslateModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Hire {
+export class Hire implements OnInit {
   calendly = 'https://calendly.com/sachindilshan040/sachin-dilshan-angular-consulting';
   email = 'mailto:sachindilshan040@gmail.com?subject=Project%20Inquiry';
 
-   private readonly loc = inject(Location);
+  private readonly loc = inject(Location);
+  private readonly seoService = inject(SEOService);
+  private readonly languageService = inject(LanguageService);
+
+  constructor(
+    @Inject(PLATFORM_ID) private readonly platformId: Object
+  ) {}
+
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.seoService.setHirePageSEO(this.languageService.lang());
+    }
+  }
 
   plans: Plan[] = [
     {

@@ -2,8 +2,10 @@
   "header": {
     "work": "කාර්යය",
     "about": "මා ගැන",
-    "resume": "ජීව දත්ත",
-    "bookCall":"ඇමතුමක් වෙන්කරවා ගන්න"
+    "experience": "අත්දැකීම්",
+    "hire": "මාව යොදවා ගන්න",
+    "resume": "ජීව දත්ත බලන්න",
+    "bookCall": "ඇමතුමක් වෙන්කරවා ගන්න"
   },
   "intro": {
     "greeting": "ආයුබෝවන්, මම සචින් දිල්ෂාන්.",
@@ -65,6 +67,38 @@
       "time": "2019 ජනවාරි – 2019 අගෝස්තු",
       "location": "On-site"
     }
+  },
+  "opensource": {
+    "title": "Open Source ව්‍යාපෘති",
+    "subtitle": "නවීන, කාර්යක්ෂම Angular components සහ libraries සමඟ developer community වෙත දායකත්වය ලබාදීම.",
+    "datepicker": {
+      "title": "ngxsmk-datepicker",
+      "description": "බලවත්, නවීන, ඉතාමත් අභිරුචිකරණය කළ හැකි Angular දින පරාස තේරීම සහ කාල සංරචක සමඟ. 30% කුඩා bundle, 40% වේගවත් rendering සහ zero dependencies.",
+      "features": "30% කුඩා bundle, 40% වේගවත් rendering සහ zero dependencies"
+    },
+    "telinput": {
+      "title": "ngxsmk-tel-input",
+      "description": "රට තේරීම, සත්‍යාපනය සහ ජාත්‍යන්තර formatting සහාය සහිත සම්පූර්ණ Angular දුරකථන input සංරචකය.",
+      "features": "රට තේරීම, සත්‍යාපනය සහ ජාත්‍යන්තර formatting"
+    }
+  },
+  "projects": {
+    "title": "විශේෂ ව්‍යාපෘති",
+    "subtitle": "සැබෑ ලෝක යෙදුම් සහ නවෝත්පාදනීය විසඳුම් හරහා මගේ විශේෂඥතාව පෙන්වීම.",
+    "viewProject": "ව්‍යාපෘතිය බලන්න",
+    "viewCode": "කේතය බලන්න"
+  },
+  "skills": {
+    "title": "මූලික කුසලතා",
+    "frontend": "Frontend සංවර්ධනය",
+    "backend": "Backend සංවර්ධනය",
+    "uiux": "UI/UX නිර්මාණය",
+    "devops": "DevOps & CI/CD",
+    "testing": "Testing",
+    "agile": "Agile ක්‍රමවේද",
+    "technologies": "තාක්ෂණ සහ මෙවලම්",
+    "frameworks": "Frameworks සහ Libraries",
+    "languages": "ක්‍රමලේඛන භාෂා"
   },
   "footer": {
     "contact": "මගේ අත්දැකීම් සහ ගමන ගැන වැඩි විස්තර දැනගැනීමට කැමතිද? සම්බන්ධ වන්න ✌️",
