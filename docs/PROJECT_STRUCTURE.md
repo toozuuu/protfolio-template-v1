@@ -16,8 +16,7 @@ protfolio-template-v1/
 │   │   │   │   └── 📁 footer/       # Footer component
 │   │   │   ├── 📁 social-buttons/   # Social media buttons
 │   │   │   ├── 📁 project-card/     # Project card component
-│   │   │   ├── 📁 interactive-skills/ # Interactive skills component
-│   │   │   └── 📁 loading-spinner/  # Loading spinner component
+│   │   │   └── 📁 interactive-skills/ # Interactive skills component
 │   │   ├── 📁 core/                 # Core services
 │   │   │   ├── theme.service.ts     # Theme management
 │   │   │   ├── language.service.ts  # i18n management

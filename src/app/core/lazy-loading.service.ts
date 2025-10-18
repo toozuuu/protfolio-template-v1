@@ -25,9 +25,6 @@ export class LazyLoadingService {
         case 'interactive-skills':
           component = await import('../components/interactive-skills/interactive-skills');
           break;
-        case 'loading-spinner':
-          component = await import('../components/loading-spinner/loading-spinner');
-          break;
         case 'analytics':
           component = await import('./analytics.service');
           break;
@@ -52,7 +49,7 @@ export class LazyLoadingService {
     if (!this.isBrowser) return;
 
     // Preload components that are likely to be used
-    const criticalComponents = ['loading-spinner'];
+    const criticalComponents = ['interactive-skills'];
     
     criticalComponents.forEach(component => {
       this.loadComponent(component);

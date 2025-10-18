@@ -98,30 +98,234 @@
     }
     </script>
     
-  <!-- Load Tailwind CSS asynchronously to prevent render blocking -->
-  <script>
-    // Inline critical CSS for immediate rendering
-    const criticalCSS = `
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-      .min-h-screen { min-height: 100vh; }
-      .bg-white { background-color: #ffffff; }
-      .dark\\:bg-slate-900 { background-color: #0f172a; }
-      .text-slate-900 { color: #0f172a; }
-      .dark\\:text-slate-100 { color: #f1f5f9; }
-    `;
-    const style = document.createElement('style');
-    style.textContent = criticalCSS;
-    document.head.appendChild(style);
-  </script>
+  <!-- Critical CSS for immediate rendering to prevent FOUC -->
+  <style>
+    /* Critical CSS for immediate rendering */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    html { 
+      scroll-behavior: smooth; 
+      scroll-padding-top: 4rem;
+    }
+    
+    body { 
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #ffffff;
+      color: #1f2937;
+      line-height: 1.6;
+      overflow-x: hidden;
+      padding-top: 4rem; /* Header height */
+    }
+    
+    /* Dark mode support */
+    .dark body {
+      background-color: #0f172a;
+      color: #f1f5f9;
+    }
+    
+    /* Essential layout classes */
+    .min-h-screen { min-height: 100vh; }
+    .flex { display: flex; }
+    .items-center { align-items: center; }
+    .justify-center { justify-content: center; }
+    .justify-between { justify-content: space-between; }
+    .text-center { text-align: center; }
+    .w-full { width: 100%; }
+    .h-full { height: 100%; }
+    .relative { position: relative; }
+    .fixed { position: fixed; }
+    .absolute { position: absolute; }
+    .top-0 { top: 0; }
+    .left-0 { left: 0; }
+    .right-0 { right: 0; }
+    .z-50 { z-index: 50; }
+    .z-9999 { z-index: 9999; }
+    
+    /* Header styles */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      height: 4rem;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .dark header {
+      background: rgba(15, 23, 42, 0.95);
+      border-bottom: 1px solid rgba(51, 65, 85, 0.8);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Container styles */
+    .max-w-7xl { max-width: 80rem; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .px-4 { padding-left: 1rem; padding-right: 1rem; }
+    .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+    .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+    .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+    
+    /* Typography */
+    .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+    .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+    .text-5xl { font-size: 3rem; line-height: 1; }
+    .text-6xl { font-size: 3.75rem; line-height: 1; }
+    .text-7xl { font-size: 4.5rem; line-height: 1; }
+    .font-bold { font-weight: 700; }
+    .font-semibold { font-weight: 600; }
+    .font-medium { font-weight: 500; }
+    .leading-tight { line-height: 1.25; }
+    .leading-relaxed { line-height: 1.625; }
+    
+    /* Colors */
+    .text-slate-900 { color: #0f172a; }
+    .text-slate-800 { color: #1e293b; }
+    .text-slate-700 { color: #334155; }
+    .text-slate-600 { color: #475569; }
+    .text-slate-500 { color: #64748b; }
+    .text-slate-400 { color: #94a3b8; }
+    .text-slate-300 { color: #cbd5e1; }
+    .text-slate-100 { color: #f1f5f9; }
+    .text-blue-600 { color: #2563eb; }
+    .text-blue-500 { color: #3b82f6; }
+    
+    .bg-white { background-color: #ffffff; }
+    .bg-slate-50 { background-color: #f8fafc; }
+    .bg-slate-100 { background-color: #f1f5f9; }
+    .bg-slate-800 { background-color: #1e293b; }
+    .bg-slate-900 { background-color: #0f172a; }
+    .bg-blue-600 { background-color: #2563eb; }
+    .bg-blue-500 { background-color: #3b82f6; }
+    
+    /* Dark mode colors */
+    .dark .text-slate-100 { color: #f1f5f9; }
+    .dark .text-slate-300 { color: #cbd5e1; }
+    .dark .text-slate-400 { color: #94a3b8; }
+    .dark .bg-slate-900 { background-color: #0f172a; }
+    .dark .bg-slate-800 { background-color: #1e293b; }
+    
+    /* Grid and flexbox */
+    .grid { display: grid; }
+    .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+    .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .gap-4 { gap: 1rem; }
+    .gap-6 { gap: 1.5rem; }
+    .gap-8 { gap: 2rem; }
+    
+    /* Spacing */
+    .space-y-4 > * + * { margin-top: 1rem; }
+    .space-y-6 > * + * { margin-top: 1.5rem; }
+    .space-y-8 > * + * { margin-top: 2rem; }
+    .space-x-4 > * + * { margin-left: 1rem; }
+    .space-x-6 > * + * { margin-left: 1.5rem; }
+    .space-x-8 > * + * { margin-left: 2rem; }
+    
+    /* Additional utility classes */
+    .w-8 { width: 2rem; }
+    .h-8 { height: 2rem; }
+    .w-12 { width: 3rem; }
+    .h-12 { height: 3rem; }
+    .w-16 { width: 4rem; }
+    .h-16 { height: 4rem; }
+    .w-20 { width: 5rem; }
+    .h-20 { height: 5rem; }
+    .w-24 { width: 6rem; }
+    .h-24 { height: 6rem; }
+    .w-32 { width: 8rem; }
+    .h-32 { height: 8rem; }
+    .w-40 { width: 10rem; }
+    .h-40 { height: 10rem; }
+    .w-48 { width: 12rem; }
+    .h-48 { height: 12rem; }
+    .w-64 { width: 16rem; }
+    .h-64 { height: 16rem; }
+    .w-80 { width: 20rem; }
+    .h-80 { height: 20rem; }
+    
+    .border { border-width: 1px; }
+    .border-2 { border-width: 2px; }
+    .border-blue-600 { border-color: #2563eb; }
+    .border-t-transparent { border-top-color: transparent; }
+    .rounded-full { border-radius: 9999px; }
+    .rounded-lg { border-radius: 0.5rem; }
+    .rounded-xl { border-radius: 0.75rem; }
+    
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .mb-4 { margin-bottom: 1rem; }
+    .mb-6 { margin-bottom: 1.5rem; }
+    .mb-8 { margin-bottom: 2rem; }
+    .mt-4 { margin-top: 1rem; }
+    .mt-6 { margin-top: 1.5rem; }
+    .mt-8 { margin-top: 2rem; }
+    
+    .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+    .z-50 { z-index: 50; }
+    
+    /* Responsive design */
+    @media (min-width: 640px) {
+      .sm\\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .sm\\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+    }
+    
+    @media (min-width: 768px) {
+      .md\\:flex { display: flex; }
+      .md\\:hidden { display: none; }
+      .md\\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .md\\:text-5xl { font-size: 3rem; line-height: 1; }
+      .md\\:text-6xl { font-size: 3.75rem; line-height: 1; }
+      .md\\:px-8 { padding-left: 2rem; padding-right: 2rem; }
+      .md\\:py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+    }
+    
+    @media (min-width: 1024px) {
+      .lg\\:px-8 { padding-left: 2rem; padding-right: 2rem; }
+      .lg\\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .lg\\:text-7xl { font-size: 4.5rem; line-height: 1; }
+      .lg\\:py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+    }
+    
+    /* Ensure app-root is visible */
+    app-root {
+      display: block;
+      min-height: 100vh;
+    }
+    
+    /* Smooth transitions */
+    * {
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+    
+    /* Loading spinner animation */
+    .animate-spin {
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
   
   <!-- Load Tailwind CSS asynchronously -->
   <script>
+    let tailwindLoaded = false;
+    
     const loadTailwind = () => {
+      console.log('Loading Tailwind CSS...');
       const script = document.createElement('script');
       script.src = 'https://cdn.tailwindcss.com';
       script.onload = () => {
+        console.log('Tailwind script loaded');
         if (window.tailwind) {
+          console.log('Configuring Tailwind...');
           tailwind.config = {
             theme: {
               extend: {
@@ -149,24 +353,105 @@
             },
             darkMode: 'class'
           };
+          
+          // Mark Tailwind as loaded
+          tailwindLoaded = true;
+          console.log('Tailwind CSS fully configured');
         }
+      };
+      script.onerror = () => {
+        console.error('Failed to load Tailwind CSS');
+        tailwindLoaded = true; // Still mark as loaded to prevent infinite waiting
       };
       document.head.appendChild(script);
     };
     
-    // Load Tailwind after page load
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', loadTailwind);
-    } else {
-      loadTailwind();
-    }
+    // Load Tailwind immediately
+    loadTailwind();
   </script>
   </head>
   <body>
-    <div id="preloader">
-      <div class="spinner"></div>
+    <!-- Scroll to top immediately on page load -->
+    <script>
+      // Scroll to top immediately when page loads
+      window.scrollTo(0, 0);
+      
+      // Also scroll to top when page is refreshed
+      window.addEventListener('beforeunload', function() {
+        window.scrollTo(0, 0);
+      });
+      
+      // Handle browser back/forward navigation
+      window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+          // Page was loaded from cache, scroll to top
+          window.scrollTo(0, 0);
+        }
+      });
+    </script>
+    
+    <!-- Loading screen for 3 seconds -->
+    <div id="app-loading" class="fixed inset-0 bg-white dark:bg-slate-900 flex items-center justify-center z-50">
+      <div class="text-center">
+        <div class="w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+        <p class="text-slate-600 dark:text-slate-400">Loading...</p>
+        <p class="text-sm text-slate-500 dark:text-slate-500 mt-2">Please wait 3 seconds</p>
+      </div>
     </div>
+    
     <app-root> </app-root>
+    
+    <!-- Hide loading after 3 seconds -->
+    <script>
+      // Hide loading function
+      function hideLoading() {
+        console.log('Hiding loading screen after 3 seconds...');
+        const loading = document.getElementById('app-loading');
+        if (loading) {
+          loading.style.opacity = '0';
+          loading.style.transition = 'opacity 0.5s ease';
+          setTimeout(() => {
+            loading.style.display = 'none';
+            console.log('Loading screen hidden');
+          }, 500);
+        }
+      }
+
+      // Countdown timer
+      let countdown = 3;
+      const countdownElement = document.createElement('p');
+      countdownElement.className = 'text-xs text-slate-400 dark:text-slate-500 mt-1';
+      countdownElement.textContent = `${countdown} seconds remaining...`;
+      
+      const loadingContainer = document.querySelector('#app-loading .text-center');
+      if (loadingContainer) {
+        loadingContainer.appendChild(countdownElement);
+      }
+
+      // Update countdown every second
+      const countdownInterval = setInterval(() => {
+        countdown--;
+        if (countdownElement) {
+          countdownElement.textContent = `${countdown} seconds remaining...`;
+        }
+        if (countdown <= 0) {
+          clearInterval(countdownInterval);
+        }
+      }, 1000);
+
+      // Show loading for exactly 3 seconds
+      setTimeout(() => {
+        clearInterval(countdownInterval);
+        hideLoading();
+        
+        // Scroll to top after loading is complete
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        });
+      }, 3000); // 3 seconds
+    </script>
   </body>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YJC8G0R2H"></script>
