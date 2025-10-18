@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-social-buttons',
   imports: [],
   templateUrl: './social-buttons.html',
-  styleUrl: './social-buttons.scss',
+      styleUrl: './social-buttons.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SocialButtons {
   @Input() hideEmail: boolean = false;

@@ -39,7 +39,11 @@ export class ThemeService {
 
   set(next: Theme) {
     this.theme = next;
-    this.doc.documentElement.setAttribute('data-theme', next);
+    if (next === 'dark') {
+      this.doc.documentElement.classList.add('dark');
+    } else {
+      this.doc.documentElement.classList.remove('dark');
+    }
   }
 
   toggle() {

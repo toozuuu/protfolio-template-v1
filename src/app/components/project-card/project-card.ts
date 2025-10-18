@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 export interface Project {
   title: string;
@@ -13,7 +13,8 @@ export interface Project {
   selector: 'app-project-card',
   imports: [],
   templateUrl: './project-card.html',
-  styleUrl: './project-card.scss',
+      styleUrl: './project-card.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectCard {
   @Input() projectDetails:Project[] = []; 

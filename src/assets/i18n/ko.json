@@ -1,0 +1,99 @@
+{
+  "header": {
+    "work": "작업",
+    "about": "소개",
+    "experience": "경험",
+    "hire": "고용해주세요",
+    "resume": "이력서 보기",
+    "bookCall": "통화 예약"
+  },
+  "intro": {
+    "greeting": "안녕하세요, 저는 Sachin Dilshan입니다.",
+    "speak": "/sa-chin dil-shaan/",
+    "welcome": "환영합니다 👋 저는 Sachin으로, 스리랑카에 본사를 둔 We Make Platforms의 기술 리드입니다. 프론트엔드 개발, UI/UX 디자인, 클라우드 기반 애플리케이션 개발에서 5년 이상의 경험을 바탕으로 현재 경력을 발전시키고 있습니다. 창의적인 아이디어를 매끄러운 웹 경험으로 전환하는 데 열정을 가지고 있으며, Angular와 현대적인 프론트엔드 프레임워크를 사용하여 확장 가능하고 사용자 친화적인 애플리케이션 구축에 집중하고 있습니다. 🚀",
+    "workingWith": "현재 작업 중인 기술,"
+  },
+  "about": {
+    "title": "소개",
+    "name": "Sachin Dilshan",
+    "bio": "안녕하세요 ✌️ 만나서 반갑습니다! 저는 Sachin으로, 스리랑카에 본사를 둔 We Make Platforms의 기술 리드입니다.\n\n창의적인 아이디어를 실제로 작동하는 웹 경험으로 전환하는 데 열정을 가지고 있습니다. 제 초점은 Angular를 사용하여 확장 가능하고 사용자 친화적인 프론트엔드 애플리케이션을 구축하는 것이며, 단순히 멋져 보이는 것뿐만 아니라 사용하기 편하고 직관적인 제품을 설계하는 것이 목표입니다.\n\n저는 Trainee Associate Software Engineer로 경력을 시작하여 시니어 역할로 성장했으며, 여기서 코딩과 리더십 기술을 모두 연마했습니다. 시니어 소프트웨어 엔지니어로서 사용자 참여를 크게 향상시키는 핵심 기능 개발을 이끌었습니다—이러한 개선이 실제 차이를 만드는 것을 보는 것은 제 경력에서 가장 자랑스러운 순간 중 하나였습니다. 특히 자랑스러운 프로젝트 중 하나는 타이트한 일정 하에서 Jira 티켓 시스템을 위한 고성능 REST API를 제공한 것입니다. 이는 속도와 품질의 균형을 맞추는 데 도전했고, 압박 속에서도 번영하는 능력을 강화했습니다.\n\n업무 외에도 새로운 기술 탐구, 오픈소스 프로젝트 기여, 크로스 기능 팀과의 협력을 통해 매끄럽고 반응형 사용자 경험을 만드는 것을 즐깁니다.\n\n지속적인 학습과 지식 공유를 믿으며, 이 빠르게 변화하는 기술 세계에서 함께 성장하는 것을 믿습니다. 코딩하지 않을 때는 창의적인 아이디어 탐구, 최신 프론트엔드 트렌드 추적, 디자인 실험을 하고 있는 저를 자주 발견할 수 있을 것입니다. 🚀"
+  },
+  "education": {
+    "title": "교육",
+    "ccc": {
+      "school": "캔터베리 크라이스트 처치 대학교, 영국",
+      "degree": "컴퓨팅 학사 (우등)",
+      "time": "2021년 1월 – 2022년 1월",
+      "honors": "1급 우등학위"
+    },
+    "ijse": {
+      "school": "자바 및 소프트웨어 공학 연구소, 스리랑카",
+      "degree": "소프트웨어 공학 고급 디플로마",
+      "time": "2017년 1월 – 2019년 1월"
+    }
+  },
+  "skills": {
+    "title": "핵심 역량",
+    "frontend": "프론트엔드 개발",
+    "backend": "백엔드 개발",
+    "uiux": "UI/UX 디자인",
+    "devops": "DevOps 및 CI/CD",
+    "testing": "테스팅",
+    "agile": "애자일 방법론",
+    "technologies": "기술 및 도구",
+    "frameworks": "프레임워크 및 라이브러리",
+    "languages": "프로그래밍 언어"
+  },
+  "experience": {
+    "title": "경험",
+    "wmp": {
+      "company": "We Make Platforms",
+      "role": "기술 리드 - 프론트엔드",
+      "time": "2022년 8월 - 현재",
+      "location": "원격"
+    },
+    "epic": {
+      "company": "Epic Lanka",
+      "role": "소프트웨어 엔지니어",
+      "time": "2020년 8월 - 2022년 7월",
+      "location": "현장"
+    },
+    "zincat": {
+      "company": "ZinCat Technology",
+      "role": "소프트웨어 개발자",
+      "time": "2019년 8월 - 2020년 8월",
+      "location": "현장"
+    },
+    "ceyentra": {
+      "company": "Ceyentra Technologies",
+      "role": "인턴십",
+      "time": "2019년 1월 - 2019년 8월",
+      "location": "현장"
+    }
+  },
+  "opensource": {
+    "title": "오픈소스 프로젝트",
+    "subtitle": "현대적이고 고성능의 Angular 컴포넌트와 라이브러리로 개발자 커뮤니티에 기여.",
+    "datepicker": {
+      "title": "ngxsmk-datepicker",
+      "description": "시간 컴포넌트가 포함된 강력하고 현대적이며 높은 수준으로 사용자 정의 가능한 Angular 날짜 범위 선택기. 30% 작은 번들, 40% 빠른 렌더링, 제로 종속성 특징.",
+      "features": "30% 작은 번들, 40% 빠른 렌더링, 제로 종속성"
+    },
+    "telinput": {
+      "title": "ngxsmk-tel-input",
+      "description": "국가 선택, 검증, 국제 형식 지원이 포함된 포괄적인 Angular 전화 입력 컴포넌트.",
+      "features": "국가 선택, 검증, 국제 형식"
+    }
+  },
+  "projects": {
+    "title": "주요 프로젝트",
+    "subtitle": "실제 애플리케이션과 혁신적인 솔루션을 통해 제 전문성을 보여줍니다.",
+    "viewProject": "프로젝트 보기",
+    "viewCode": "코드 보기"
+  },
+  "footer": {
+    "contact": "제 경험과 여정에 대해 더 자세히 알고 싶으신가요? 기꺼이 연결하겠습니다—연락해 주세요! ✌️",
+    "built": "Angular로 ❤️와 함께 구축",
+    "rights": "© 2025 모든 권리 보유."
+  }
+}

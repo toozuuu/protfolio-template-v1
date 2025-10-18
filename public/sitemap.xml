@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Home Page -->
+  <url>
+    <loc>https://sachindilshan.netlify.app/</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sachindilshan.netlify.app/" />
+    <xhtml:link rel="alternate" hreflang="si" href="https://sachindilshan.netlify.app/?lang=si" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sachindilshan.netlify.app/?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://sachindilshan.netlify.app/?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sachindilshan.netlify.app/?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://sachindilshan.netlify.app/?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://sachindilshan.netlify.app/?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://sachindilshan.netlify.app/?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sachindilshan.netlify.app/?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sachindilshan.netlify.app/?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://sachindilshan.netlify.app/?lang=hi" />
+  </url>
+  
+  <!-- Hire Page -->
+  <url>
+    <loc>https://sachindilshan.netlify.app/hire</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sachindilshan.netlify.app/hire" />
+    <xhtml:link rel="alternate" hreflang="si" href="https://sachindilshan.netlify.app/hire?lang=si" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sachindilshan.netlify.app/hire?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://sachindilshan.netlify.app/hire?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sachindilshan.netlify.app/hire?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://sachindilshan.netlify.app/hire?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://sachindilshan.netlify.app/hire?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://sachindilshan.netlify.app/hire?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sachindilshan.netlify.app/hire?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sachindilshan.netlify.app/hire?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://sachindilshan.netlify.app/hire?lang=hi" />
+  </url>
+  
+</urlset>

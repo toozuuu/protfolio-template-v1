@@ -2,8 +2,10 @@
   "header": {
     "work": "Work",
     "about": "About",
-    "resume": "Resume",
-    "bookCall":"Book a call"
+    "experience": "Experience",
+    "hire": "Hire Me",
+    "resume": "View Resume",
+    "bookCall": "Book a call"
   },
   "intro": {
     "greeting": "Hello, I'm Sachin Dilshan.",
@@ -66,9 +68,89 @@
       "location": "On-site"
     }
   },
+  "opensource": {
+    "title": "Open Source Projects",
+    "subtitle": "Contributing to the developer community with modern, performant Angular components and libraries.",
+    "datepicker": {
+      "title": "ngxsmk-datepicker",
+      "description": "A powerful, modern, highly customizable Angular date range picker with time component. Features 30% smaller bundle, 40% faster rendering, and zero dependencies.",
+      "features": "Features 30% smaller bundle, 40% faster rendering, and zero dependencies"
+    },
+    "telinput": {
+      "title": "ngxsmk-tel-input", 
+      "description": "A comprehensive Angular telephone input component with country selection, validation, and international formatting support.",
+      "features": "Country selection, validation, and international formatting"
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Showcasing my expertise through real-world applications and innovative solutions.",
+    "viewProject": "View Project",
+    "viewCode": "View Code"
+  },
+  "skills": {
+    "title": "Core Competencies",
+    "frontend": "Frontend Development",
+    "backend": "Backend Development", 
+    "uiux": "UI/UX Design",
+    "devops": "DevOps & CI/CD",
+    "testing": "Testing",
+    "agile": "Agile Methodologies",
+    "technologies": "Technologies & Tools",
+    "frameworks": "Frameworks & Libraries",
+    "languages": "Programming Languages"
+  },
   "footer": {
-    "contact": "Interested in learning more about my experiences and journey? I’d be happy to connect—let’s get in touch! ✌️",
+    "contact": "Interested in learning more about my experiences and journey? I'd be happy to connect—let's get in touch! ✌️",
     "built": "Built with ❤️ using Angular",
     "rights": "© 2025 All rights reserved."
+  },
+  "technologies": {
+    "angular": "Angular",
+    "typescript": "TypeScript", 
+    "react": "React",
+    "nodejs": "Node.js",
+    "ionic": "Ionic",
+    "flutter": "Flutter",
+    "aws": "AWS",
+    "figma": "Figma",
+    "docker": "Docker"
+  },
+  "ui": {
+    "seeMore": "See more",
+    "seeLess": "See less",
+    "active": "Active",
+    "viewOnGitHub": "View on GitHub",
+    "github": "GitHub",
+    "npm": "NPM",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "experience": "Experience",
+    "hireMe": "Hire Me",
+    "viewResume": "View Resume",
+    "back": "Back",
+    "bookIntroCall": "Book intro call",
+    "emailMe": "Email me",
+    "discover": "Discover",
+    "plan": "Plan",
+    "build": "Build",
+    "ship": "Ship",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "yourName": "Your name",
+    "email": "Email",
+    "projectDetails": "Project details…",
+    "send": "Send",
+    "plansComingSoon": "Plans coming soon.",
+    "askMeAnything": "Ask me anything about process, pricing, or scope."
+  },
+  "hire": {
+    "title": "Hire Me",
+    "subtitle": "I help teams ship <strong>faster Angular</strong> apps with clean architecture, great UX, and Core Web Vitals wins.",
+    "howWeWork": "How we'll work",
+    "discoverDesc": "30-min call, goals, constraints, access.",
+    "planDesc": "scope & metrics, quick wins first.",
+    "buildDesc": "daily progress, PRs, previews.",
+    "shipDesc": "demo, docs, handover, next steps."
   }
 }

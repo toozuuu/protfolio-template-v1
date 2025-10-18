@@ -1,46 +1,95 @@
-<div class="header-section">
-  <!-- Navigation -->
-  <div class="header-item" (click)="scrollToSection('work-section')">
-    {{ 'header.work' | translate }}
-  </div>
-  <div class="header-item" (click)="scrollToSection('about-section')">
-    {{ 'header.about' | translate }}
-  </div>
+<header
+  class="backdrop-blur-lg transition-all duration-300"
+  [class]="isScrolled ? 'scrolled' : ''">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="#" 
+           class="logo text-2xl font-bold text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+           [class]="isScrolled ? 'text-slate-900 dark:text-white' : 'text-slate-900 dark:text-white'">
+          {{ 'ui.portfolio' | translate }}
+        </a>
+      </div>
 
-  <div class="header-item" routerLink="/hire" class="header-item">
-    {{ 'header.bookCall' | translate }}
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#about-section" 
+           class="px-3 py-2 rounded-md text-sm font-medium transition-colors"
+           [class]="isScrolled ? 'text-slate-800 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white bg-slate-50/50 dark:bg-slate-800/50' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'"
+           (click)="scrollToSection('about-section')">
+          {{ 'ui.about' | translate }}
+        </a>
+        <a href="#experience-section" 
+           class="px-3 py-2 rounded-md text-sm font-medium transition-colors"
+           [class]="isScrolled ? 'text-slate-800 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white bg-slate-50/50 dark:bg-slate-800/50' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'"
+           (click)="scrollToSection('experience-section')">
+          {{ 'ui.experience' | translate }}
+        </a>
+        <a href="/hire" 
+           class="px-3 py-2 rounded-md text-sm font-medium transition-colors"
+           [class]="isScrolled ? 'text-slate-800 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white bg-slate-50/50 dark:bg-slate-800/50' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'">
+          {{ 'ui.hireMe' | translate }}
+        </a>
+        <button 
+          class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+          (click)="onViewResume()">
+          {{ 'ui.viewResume' | translate }}
+        </button>
+      </nav>
+
+      <!-- Controls -->
+      <div class="flex items-center space-x-2 sm:space-x-4">
+        <!-- Language Selector -->
+        <div class="relative">
+          <select 
+            [(ngModel)]="lang.lang" 
+            (ngModelChange)="lang.use($event)"
+            class="appearance-none border rounded-lg px-2 sm:px-3 py-2 pr-6 sm:pr-8 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors min-w-[100px] sm:min-w-[120px] w-auto"
+            [class]="isScrolled ? 'bg-slate-100 dark:bg-slate-700 border-slate-300 dark:border-slate-600 text-slate-800 dark:text-slate-200 shadow-sm' : 'bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300'"
+            size="1">
+            <option value="en">English</option>
+            <option value="si">සිංහල</option>
+            <option value="sv">Svenska</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="pt">Português</option>
+            <option value="zh">中文</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="hi">हिन्दी</option>
+          </select>
+          <div class="absolute inset-y-0 right-0 flex items-center pr-1 sm:pr-2 pointer-events-none">
+            <svg class="w-3 h-3 sm:w-4 sm:h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button 
+          class="p-2 rounded-lg transition-colors"
+          [class]="isScrolled ? 'bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 shadow-md' : 'bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400'"
+          (click)="toggleTheme()"
+          [attr.aria-label]="themeService.theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'">
+          <svg *ngIf="themeService.theme === 'light'" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+          </svg>
+          <svg *ngIf="themeService.theme === 'dark'" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button 
+          class="md:hidden p-2 rounded-lg transition-colors"
+          [class]="isScrolled ? 'bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 shadow-md' : 'bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400'">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
-
-  <div class="header-item" (click)="onViewResume()">
-    {{ 'header.resume' | translate }}
-  </div>
-
-  <!-- Language select (uses ngModel) -->
-  <select
-    class="lang-select"
-    [ngModel]="lang.lang"
-    (ngModelChange)="lang.use($event)"
-    aria-label="Select language"
-  >
-    <option value="en">English</option>
-    <!-- <option value="sv">Svenska</option> -->
-    <option value="si">සිංහල</option>
-  </select>
-
-  <!-- Theme toggle -->
-  <button
-    type="button"
-    class="header-item theme-toggle"
-    (click)="toggleTheme()"
-    [attr.aria-pressed]="themeService.theme === 'dark'"
-    [title]="themeService.theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
-  >
-    <img
-      [ngSrc]="themeService.theme === 'dark' ? 'assets/icons/moon.png' : 'assets/icons/light.png'"
-      [attr.alt]="themeService.theme === 'dark' ? 'Dark mode' : 'Light mode'"
-      width="24"
-      height="24"
-      priority
-    />
-  </button>
-</div>
+</header>

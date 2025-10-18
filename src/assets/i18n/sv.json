@@ -2,8 +2,10 @@
   "header": {
     "work": "Arbete",
     "about": "Om mig",
-    "resume": "CV",
-    "bookCall":"Boka ett samtal"
+    "experience": "Erfarenheter",
+    "hire": "Anställ mig",
+    "resume": "Visa CV",
+    "bookCall": "Boka ett samtal"
   },
   "intro": {
     "greeting": "Hej, jag heter Sachin Dilshan.",
@@ -65,6 +67,38 @@
       "time": "Jan 2019 - Aug 2019",
       "location": "På plats"
     }
+  },
+  "opensource": {
+    "title": "Open Source-projekt",
+    "subtitle": "Bidrar till utvecklarsamhället med moderna, prestandaoptimerade Angular-komponenter och bibliotek.",
+    "datepicker": {
+      "title": "ngxsmk-datepicker",
+      "description": "En kraftfull, modern, mycket anpassningsbar Angular datumintervallväljare med tidskomponent. Har 30% mindre bundle, 40% snabbare rendering och noll beroenden.",
+      "features": "30% mindre bundle, 40% snabbare rendering och noll beroenden"
+    },
+    "telinput": {
+      "title": "ngxsmk-tel-input",
+      "description": "En omfattande Angular telefoninput-komponent med landval, validering och internationell formateringsstöd.",
+      "features": "Landval, validering och internationell formatering"
+    }
+  },
+  "projects": {
+    "title": "Utvalda projekt",
+    "subtitle": "Visar min expertis genom verkliga applikationer och innovativa lösningar.",
+    "viewProject": "Visa projekt",
+    "viewCode": "Visa kod"
+  },
+  "skills": {
+    "title": "Kärnkompetenser",
+    "frontend": "Frontendutveckling",
+    "backend": "Backendutveckling",
+    "uiux": "UI/UX-design",
+    "devops": "DevOps & CI/CD",
+    "testing": "Testning",
+    "agile": "Agila metoder",
+    "technologies": "Teknologier & verktyg",
+    "frameworks": "Ramverk & bibliotek",
+    "languages": "Programmeringsspråk"
   },
   "footer": {
     "contact": "Vill du veta mer om mina erfarenheter och min resa? Jag berättar gärna mer – hör av dig! ✌️",

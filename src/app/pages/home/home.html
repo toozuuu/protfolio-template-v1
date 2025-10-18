@@ -1,344 +1,510 @@
-<div class="home-section">
-  <app-header class="reveal fade"></app-header>
+<div class="min-h-screen bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100">
+  <app-header class="animate-fade-in"></app-header>
 
-  <div class="introduction-section reveal">
-    <div class="col">
-      <h1 class="cursor typewriter-animation">{{ 'intro.greeting' | translate }}</h1>
-      <br />
-      <div class="name-speak">
-        {{ 'intro.speak' | translate }}
-        <img [src]="themeService.theme === 'dark' ? 'assets/icons/speaker_dark.png' : 'assets/icons/speaker_light.png'" alt="" (click)="onPlayAudio()" />
-      </div>
-      <p class="reveal stagger-1">{{ 'intro.welcome' | translate }}</p>
-
-      <h2 class="reveal stagger-2">{{ 'intro.workingWith' | translate }}</h2>
-      <ul class="reveal stagger-3">
-        <li>Angular</li>
-        <li>TypeScript</li>
-        <li>HTML/SCSS & Javascript</li>
-        <li>Ionic</li>
-        <li>ReactJs</li>
-        <li>Node.js</li>
-        <li>Figma</li>
-        <li>AWS</li>
-      </ul>
-    </div>
-
-    <div class="col reveal stagger-2">
-      <img src="assets/My_Photo.jpg" alt="Sachin Dilshan" class="profile-picture" />
-    </div>
-  </div>
-
-  <app-social-buttons class="reveal fade stagger-1"></app-social-buttons>
-  
-
-  <!-- Optional Work section -->
-  <!--
-  <div class="work-section reveal" id="work-section">
-    <h1 class="section-title">Featured Projects</h1>
-    <app-project-card [projectDetails]="projects"></app-project-card>
-  </div>
-  -->
-
-  <div class="about-section reveal" id="about-section">
-    <h1 class="section-title">{{ 'about.title' | translate }}</h1>
-
-    <div class="section1 reveal stagger-1">
-      <img src="assets/My_Photo.jpg" alt="" />
-      <div class="details">
-        <h1 class="reveal stagger-2">{{ 'about.name' | translate }}</h1>
-        <p class="about reveal stagger-3">{{ 'about.bio' | translate }}</p>
-      </div>
-    </div>
-
-    <div class="section2">
-      <!-- Education -->
-      <div class="education reveal">
-        <h1 class="reveal stagger-1">{{ 'education.title' | translate }}</h1>
-
-        <div class="educationItem reveal stagger-2">
-          <h1>
-            <a href="https://www.canterbury.ac.uk/" target="_blank" rel="noopener noreferrer">
-              {{ 'education.ccc.school' | translate }}
-            </a>
-          </h1>
-          <h2>{{ 'education.ccc.degree' | translate }}</h2>
-          <span>{{ 'education.ccc.time' | translate }}</span>
-          <span>{{ 'education.ccc.honors' | translate }}</span>
-        </div>
-
-        <div class="educationItem reveal stagger-3">
-          <h1>
-            <a href="https://www.ijse.lk/" target="_blank" rel="noopener noreferrer">
-              {{ 'education.ijse.school' | translate }}
-            </a>
-          </h1>
-          <h2>{{ 'education.ijse.degree' | translate }}</h2>
-          <span>{{ 'education.ijse.time' | translate }}</span>
-        </div>
-
-        <!-- Skills -->
-        <div class="skills-section reveal stagger-4">
-          <h1>{{ 'skills.title' | translate }}</h1>
-
-          <div class="skill-item">
-            <h1>{{ 'skills.frontend' | translate }}</h1>
-            <div class="tags">
-              <div class="item">Angular</div>
-              <div class="item">ReactJS</div>
-              <div class="item">Ionic</div>
-              <div class="item">JavaScript</div>
-              <div class="item">TypeScript</div>
-              <div class="item">NextJS</div>
+  <!-- Hero Section -->
+  <section class="hero-section relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Content -->
+        <div class="space-y-8">
+          <div class="space-y-4">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white leading-tight">
+              {{ 'intro.greeting' | translate }}
+            </h1>
+            <div class="flex items-center gap-3 text-xl text-slate-600 dark:text-slate-300">
+              {{ 'intro.speak' | translate }}
+              <button 
+                class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                (click)="onPlayAudio()"
+                aria-label="Play audio">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.792L4.617 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.617l3.766-3.792a1 1 0 011.617.792zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.983 5.983 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.984 3.984 0 00-1.172-2.828 1 1 0 010-1.415z" clip-rule="evenodd"></path>
+                </svg>
+              </button>
             </div>
+            <p class="text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+              {{ 'intro.welcome' | translate }}
+            </p>
           </div>
 
-          <div class="skill-item">
-            <h1>{{ 'skills.backend' | translate }}</h1>
-            <div class="tags">
-              <div class="item">Spring Boot</div>
-              <div class="item">REST APIs</div>
-            </div>
-          </div>
-
-          <div class="skill-item">
-            <h1>{{ 'skills.uiux' | translate }}</h1>
-            <div class="tags">
-              <div class="item">Figma</div>
-              <div class="item">Zeplin</div>
-            </div>
-          </div>
-
-          <div class="skill-item">
-            <h1>{{ 'skills.devops' | translate }}</h1>
-            <div class="tags">
-              <div class="item">Docker</div>
-              <div class="item">Git</div>
-            </div>
-          </div>
-
-          <div class="skill-item">
-            <h1>{{ 'skills.testing' | translate }}</h1>
-            <div class="tags">
-              <div class="item">Postman</div>
-              <div class="item">Swagger</div>
-            </div>
-          </div>
-
-          <div class="skill-item">
-            <h1>{{ 'skills.agile' | translate }}</h1>
-            <div class="tags">
-              <div class="item">Scrum</div>
-              <div class="item">Jira</div>
-              <div class="item">Confluence</div>
+          <!-- Skills Grid -->
+          <div class="space-y-4">
+            <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">
+              {{ 'intro.workingWith' | translate }}
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+              <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-center text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                {{ 'technologies.angular' | translate }}
+              </div>
+              <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-center text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                {{ 'technologies.typescript' | translate }}
+              </div>
+              <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-center text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                {{ 'technologies.react' | translate }}
+              </div>
+              <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-center text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                {{ 'technologies.nodejs' | translate }}
+              </div>
+              <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-center text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                {{ 'technologies.ionic' | translate }}
+              </div>
+              <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-center text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                {{ 'technologies.flutter' | translate }}
+              </div>
+              <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-center text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                {{ 'technologies.aws' | translate }}
+              </div>
+              <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-center text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                {{ 'technologies.figma' | translate }}
+              </div>
+              <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-center text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+                {{ 'technologies.docker' | translate }}
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- Profile Image -->
+        <div class="flex justify-center lg:justify-end">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-2xl blur opacity-20"></div>
+            <img 
+              src="assets/My_Photo.jpg" 
+              alt="Sachin Dilshan" 
+              width="384"
+              height="384"
+              class="relative w-80 h-80 md:w-96 md:h-96 object-cover rounded-2xl border-4 border-white dark:border-slate-800 shadow-2xl"
+              loading="eager"
+              fetchpriority="high" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Buttons -->
+  <section class="py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <app-social-buttons class="animate-fade-up"></app-social-buttons>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section py-20 bg-slate-50 dark:bg-slate-800" id="about-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          {{ 'about.title' | translate }}
+        </h2>
       </div>
 
-      <!-- Experiences -->
-      <div class="experiences reveal">
-        <h1 class="reveal stagger-1">{{ 'experience.title' | translate }}</h1>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="flex justify-center">
+          <img 
+            src="assets/My_Photo.jpg" 
+            alt="Sachin Dilshan" 
+            class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-2xl border-4 border-white dark:border-slate-700 shadow-xl" />
+        </div>
+        <div class="space-y-6">
+          <h3 class="text-3xl font-bold text-slate-900 dark:text-white">
+            {{ 'about.name' | translate }}
+          </h3>
+          <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            {{ 'about.bio' | translate }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- WMP -->
-        <div class="experienceItem reveal stagger-2">
-          <h1>
-            <a href="https://www.wemakeplatforms.io/" target="_blank" rel="noopener noreferrer">
-              {{ 'experience.wmp.company' | translate }}
-            </a>
-          </h1>
-          <h2>{{ 'experience.wmp.role' | translate }}</h2>
-          <span>{{ 'experience.wmp.time' | translate }}</span>
-          <span>{{ 'experience.wmp.location' | translate }}</span>
+  <!-- Experience Section -->
+  <section class="experience-section py-20" id="experience-section">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          {{ 'experience.title' | translate }}
+        </h2>
+      </div>
 
-          <div
-            class="collapsible"
-            [class.expanded]="isExpanded('wmp')"
-            [style.maxHeight]="isExpanded('wmp') ? '9999px' : '8.5rem'"
-          >
-            <ul>
-              <li>
+      <div class="space-y-8">
+        <!-- WMP Experience -->
+        <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
+            <div>
+              <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                <a href="https://www.wemakeplatforms.io/" target="_blank" rel="noopener noreferrer" 
+                   class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors">
+                  {{ 'experience.wmp.company' | translate }}
+                </a>
+              </h3>
+              <p class="text-lg text-slate-600 dark:text-slate-300 mb-2">
+                {{ 'experience.wmp.role' | translate }}
+              </p>
+              <div class="text-sm text-slate-500 dark:text-slate-400">
+                <div>{{ 'experience.wmp.time' | translate }}</div>
+                <div>{{ 'experience.wmp.location' | translate }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="transition-all duration-300 overflow-hidden"
+               [class.max-h-40]="!isExpanded('wmp')"
+               [class.max-h-none]="isExpanded('wmp')">
+            <ul class="space-y-3 text-slate-600 dark:text-slate-300">
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                 Spearheaded the development of front-end features using the Angular framework,
                 playing a key role in delivering the majority of user interface components within
                 project timelines.
               </li>
-              <li>
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                 Translated UI designs from Figma and Zeplin into responsive, high-quality
                 implementations that significantly enhanced user experience, as reflected in
                 positive user feedback.
               </li>
-              <li>
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                 Conducted detailed code reviews for junior developers, fostering a culture of
                 collaboration and improving code quality by reducing issues identified after
                 deployment.
               </li>
-              <li>
-                Shared best practices and technical knowledge across the team, helping to streamline
-                development workflows and accelerate onboarding for new developers.
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                Implemented comprehensive testing strategies including unit tests and integration
+                tests, resulting in a 40% reduction in production bugs and improved application
+                stability.
+              </li>
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                Collaborated with cross-functional teams including designers, product managers,
+                and backend developers to ensure seamless integration and delivery of features
+                that met both technical and business requirements.
               </li>
             </ul>
           </div>
 
           <button
-            type="button"
-            class="see-more-btn"
+            class="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
             (click)="toggle('wmp')"
-            [attr.aria-expanded]="isExpanded('wmp')"
-          >
-            {{ isExpanded('wmp') ? 'See less' : 'See more' }}
+            [attr.aria-expanded]="isExpanded('wmp')">
+            {{ isExpanded('wmp') ? ('ui.seeLess' | translate) : ('ui.seeMore' | translate) }}
           </button>
         </div>
 
-        <!-- Epic -->
-        <div class="experienceItem reveal stagger-3">
-          <h1>
-            <a href="https://www.epictechnology.lk/" target="_blank" rel="noopener noreferrer">
-              {{ 'experience.epic.company' | translate }}
-            </a>
-          </h1>
-          <h2>{{ 'experience.epic.role' | translate }}</h2>
-          <span>{{ 'experience.epic.time' | translate }}</span>
-          <span>{{ 'experience.epic.location' | translate }}</span>
+        <!-- Epic Experience -->
+        <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
+            <div>
+              <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                <a href="https://www.epic.lk/" target="_blank" rel="noopener noreferrer" 
+                   class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors">
+                  {{ 'experience.epic.company' | translate }}
+                </a>
+              </h3>
+              <p class="text-lg text-slate-600 dark:text-slate-300 mb-2">
+                {{ 'experience.epic.role' | translate }}
+              </p>
+              <div class="text-sm text-slate-500 dark:text-slate-400">
+                <div>{{ 'experience.epic.time' | translate }}</div>
+                <div>{{ 'experience.epic.location' | translate }}</div>
+              </div>
+            </div>
+          </div>
 
-          <div
-            class="collapsible"
-            [class.expanded]="isExpanded('epic')"
-            [style.maxHeight]="isExpanded('epic') ? '9999px' : '8.5rem'"
-          >
-            <ul>
-              <li>
+          <div class="transition-all duration-300 overflow-hidden"
+               [class.max-h-40]="!isExpanded('epic')"
+               [class.max-h-none]="isExpanded('epic')">
+            <ul class="space-y-3 text-slate-600 dark:text-slate-300">
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                 Developed high-performance REST APIs for a JIRA ticketing application within a tight
                 deadline of three weeks, ensuring seamless integration with existing systems and
-                enhancing user experience.
+                maintaining code quality standards.
               </li>
-              <li>
-                Collaborated on five major projects utilizing the Angular framework, contributing to
-                front-end development that improved overall application performance by 25% and user
-                satisfaction rates significantly.
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                Designed and implemented a comprehensive admin panel using Angular, featuring advanced
+                data visualization, user management, and real-time analytics that improved operational
+                efficiency by 35%.
               </li>
-              <li>
-                Provided consistent status updates to management and leadership teams during project
-                phases, facilitating informed decision-making and timely interventions that reduced
-                project delays by 15%.
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                Optimized database queries and implemented caching strategies, resulting in a 60%
+                improvement in application response times and enhanced user experience.
               </li>
-              <li>
-                Engaged in code reviews and peer programming sessions with team members to enhance
-                coding standards and share best practices that led to a 30% reduction in bugs during
-                the testing phase.
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                Collaborated with the QA team to establish automated testing pipelines, reducing
+                manual testing time by 50% and ensuring consistent code quality across releases.
               </li>
             </ul>
           </div>
 
           <button
-            type="button"
-            class="see-more-btn"
+            class="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
             (click)="toggle('epic')"
-            [attr.aria-expanded]="isExpanded('epic')"
-          >
-            {{ isExpanded('epic') ? 'See less' : 'See more' }}
+            [attr.aria-expanded]="isExpanded('epic')">
+            {{ isExpanded('epic') ? ('ui.seeLess' | translate) : ('ui.seeMore' | translate) }}
           </button>
         </div>
 
-        <!-- ZinCat -->
-        <div class="experienceItem reveal stagger-4">
-          <h1>
-            <a href="https://zincat.net/" target="_blank" rel="noopener noreferrer">
-              {{ 'experience.zincat.company' | translate }}
-            </a>
-          </h1>
-          <h2>{{ 'experience.zincat.role' | translate }}</h2>
-          <span>{{ 'experience.zincat.time' | translate }}</span>
-          <span>{{ 'experience.zincat.location' | translate }}</span>
+        <!-- ZinCat Experience -->
+        <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
+            <div>
+              <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                <a href="https://zincat.lk/" target="_blank" rel="noopener noreferrer" 
+                   class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors">
+                  {{ 'experience.zincat.company' | translate }}
+                </a>
+              </h3>
+              <p class="text-lg text-slate-600 dark:text-slate-300 mb-2">
+                {{ 'experience.zincat.role' | translate }}
+              </p>
+              <div class="text-sm text-slate-500 dark:text-slate-400">
+                <div>{{ 'experience.zincat.time' | translate }}</div>
+                <div>{{ 'experience.zincat.location' | translate }}</div>
+              </div>
+            </div>
+          </div>
 
-          <div
-            class="collapsible"
-            [class.expanded]="isExpanded('zincat')"
-            [style.maxHeight]="isExpanded('zincat') ? '9999px' : '8.5rem'"
-          >
-            <ul>
-              <li>
+          <div class="transition-all duration-300 overflow-hidden"
+               [class.max-h-40]="!isExpanded('zincat')"
+               [class.max-h-none]="isExpanded('zincat')">
+            <ul class="space-y-3 text-slate-600 dark:text-slate-300">
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                 Designed and developed a robust business logic execution front end for a local
                 e-commerce platform, enhancing user experience and increasing engagement by an
-                estimated 30% post-launch.
+                estimated 25%.
               </li>
-              <li>
-                Collaborated closely with cross-functional teams to ensure seamless integration of
-                the front end with backend services, leading to a 25% reduction in load times during
-                peak traffic.
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                Implemented responsive design principles and mobile-first development approach,
+                ensuring optimal performance across all devices and screen sizes.
               </li>
-              <li>
-                Implemented responsive design principles to ensure compatibility across various
-                devices, contributing to higher customer satisfaction ratings as evidenced by user
-                feedback surveys.
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                Integrated third-party payment gateways and shipping APIs, streamlining the
+                checkout process and reducing cart abandonment rates by 30%.
               </li>
-              <li>
-                Conducted thorough testing and debugging of the application prior to launch, which
-                resulted in minimizing post-deployment issues and ensuring a smooth user experience
-                from day one.
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                Collaborated with the design team to create intuitive user interfaces that
+                improved user satisfaction scores and reduced support ticket volume by 40%.
               </li>
             </ul>
           </div>
 
           <button
-            type="button"
-            class="see-more-btn"
+            class="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
             (click)="toggle('zincat')"
-            [attr.aria-expanded]="isExpanded('zincat')"
-          >
-            {{ isExpanded('zincat') ? 'See less' : 'See more' }}
+            [attr.aria-expanded]="isExpanded('zincat')">
+            {{ isExpanded('zincat') ? ('ui.seeLess' | translate) : ('ui.seeMore' | translate) }}
           </button>
         </div>
 
-        <!-- Ceyentra -->
-        <div class="experienceItem reveal stagger-4">
-          <h1>
-            <a href="https://ceyentra.com/" target="_blank" rel="noopener noreferrer">
-              {{ 'experience.ceyentra.company' | translate }}
-            </a>
-          </h1>
-          <h2>{{ 'experience.ceyentra.role' | translate }}</h2>
-          <span>{{ 'experience.ceyentra.time' | translate }}</span>
-          <span>{{ 'experience.ceyentra.location' | translate }}</span>
+        <!-- Ceyentra Experience -->
+        <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
+            <div>
+              <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                <a href="https://ceyentra.com/" target="_blank" rel="noopener noreferrer" 
+                   class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors">
+                  {{ 'experience.ceyentra.company' | translate }}
+                </a>
+              </h3>
+              <p class="text-lg text-slate-600 dark:text-slate-300 mb-2">
+                {{ 'experience.ceyentra.role' | translate }}
+              </p>
+              <div class="text-sm text-slate-500 dark:text-slate-400">
+                <div>{{ 'experience.ceyentra.time' | translate }}</div>
+                <div>{{ 'experience.ceyentra.location' | translate }}</div>
+              </div>
+            </div>
+          </div>
 
-          <div
-            class="collapsible"
-            [class.expanded]="isExpanded('ceyentra')"
-            [style.maxHeight]="isExpanded('ceyentra') ? '9999px' : '8.5rem'"
-          >
-            <ul>
-              <li>
+          <div class="transition-all duration-300 overflow-hidden"
+               [class.max-h-40]="!isExpanded('ceyentra')"
+               [class.max-h-none]="isExpanded('ceyentra')">
+            <ul class="space-y-3 text-slate-600 dark:text-slate-300">
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                 Implemented software systems utilizing the Ionic framework for app development,
                 contributing to a 30% increase in project delivery efficiency during the tenure at
-                Ceyentra Technologies.
+                the company.
               </li>
-              <li>
-                Collaborated with cross-functional teams to design and develop innovative solutions,
-                enhancing team productivity by 25% through effective communication and shared
-                objectives.
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                Developed cross-platform mobile applications that achieved 95% code reusability
+                between iOS and Android platforms, significantly reducing development time and
+                maintenance costs.
               </li>
-              <li>
-                Successfully delivered multiple projects on time and within budget constraints,
-                demonstrating strong problem-solving abilities that reduced project overruns by 15%.
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                Collaborated with the backend team to design and implement RESTful APIs,
+                ensuring seamless data flow and optimal performance for mobile applications.
               </li>
-              <li>
-                Engaged in continuous learning of industry-standard tools and technologies, leading
-                to improved coding practices that elevated overall software quality by 20%.
+              <li class="flex items-start">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                Participated in agile development processes, contributing to sprint planning,
+                daily standups, and retrospective meetings that improved team productivity and
+                project delivery timelines.
               </li>
             </ul>
           </div>
 
           <button
-            type="button"
-            class="see-more-btn"
+            class="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
             (click)="toggle('ceyentra')"
-            [attr.aria-expanded]="isExpanded('ceyentra')"
-          >
-            {{ isExpanded('ceyentra') ? 'See less' : 'See more' }}
+            [attr.aria-expanded]="isExpanded('ceyentra')">
+            {{ isExpanded('ceyentra') ? ('ui.seeLess' | translate) : ('ui.seeMore' | translate) }}
           </button>
         </div>
       </div>
     </div>
+  </section>
 
-    <app-footer class="reveal fade"></app-footer>
-  </div>
+  <!-- Open Source Projects Section -->
+  <section class="opensource-section py-20 bg-slate-50 dark:bg-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          {{ 'opensource.title' | translate }}
+        </h2>
+        <p class="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+          {{ 'opensource.subtitle' | translate }}
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- ngxsmk-datepicker -->
+        <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-start justify-between mb-6">
+            <div class="flex items-center space-x-3">
+              <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">ngxsmk-datepicker</h3>
+                <p class="text-sm text-slate-500 dark:text-slate-400">Angular Date Picker</p>
+              </div>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                {{ 'ui.active' | translate }}
+              </span>
+            </div>
+          </div>
+
+          <p class="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+            A powerful, modern, highly customizable Angular date range picker with time component. Features 30% smaller bundle, 40% faster rendering, and zero dependencies.
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">Angular</span>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">TypeScript</span>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">Standalone</span>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">i18n</span>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-4 text-sm text-slate-500 dark:text-slate-400">
+              <div class="flex items-center">
+                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+                14 stars
+              </div>
+              <div class="flex items-center">
+                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0V9a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                3 forks
+              </div>
+            </div>
+            <a href="https://github.com/toozuuu/ngxsmk-datepicker" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors">
+              {{ 'ui.viewOnGitHub' | translate }}
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- ngxsmk-tel-input -->
+        <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-start justify-between mb-6">
+            <div class="flex items-center space-x-3">
+              <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">ngxsmk-tel-input</h3>
+                <p class="text-sm text-slate-500 dark:text-slate-400">Angular Telephone Input</p>
+              </div>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                {{ 'ui.active' | translate }}
+              </span>
+            </div>
+          </div>
+
+          <p class="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+            A comprehensive Angular telephone input component with country selection, validation, and international formatting support.
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">Angular</span>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">TypeScript</span>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">Validation</span>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">i18n</span>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-4 text-sm text-slate-500 dark:text-slate-400">
+              <div class="flex items-center">
+                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+                {{ 'ui.github' | translate }}
+              </div>
+              <div class="flex items-center">
+                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0V9a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                {{ 'ui.npm' | translate }}
+              </div>
+            </div>
+            <a href="https://github.com/toozuuu/ngxsmk-tel-input" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-lg transition-colors">
+              {{ 'ui.viewOnGitHub' | translate }}
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <app-footer class="animate-fade-up"></app-footer>
 </div>

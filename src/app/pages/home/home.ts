@@ -8,6 +8,8 @@ import {
   EnvironmentInjector,
   inject,
   afterNextRender,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Header } from '../../components/shared/header/header';
@@ -15,79 +17,21 @@ import { Footer } from '../../components/shared/footer/footer';
 import { SocialButtons } from '../../components/social-buttons/social-buttons';
 import {TranslatePipe} from '@ngx-translate/core';
 import { ThemeService } from '../../core/theme.service';
+import { PerformanceService } from '../../core/performance.service';
+import { SEOService } from '../../core/seo.service';
+import { LanguageService } from '../../core/language.service';
+import { AnalyticsService } from '../../core/analytics.service';
+import { AnimationsService } from '../../core/animations.service';
 
-export interface Project {
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  liveDemoUrl?: string;
-  githubUrl?: string;
-}
 
 @Component({
   selector: 'app-home',
   imports: [Header, Footer, SocialButtons, TranslatePipe],
   templateUrl: './home.html',
-  styleUrl: './home.scss',
+  styleUrl: './home.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Home implements AfterViewInit, OnDestroy {
-  projects: Project[] = [
-    {
-      title: 'ngxsmk-otp-input',
-      description:
-        'A lightweight, standalone Angular 17+ OTP/PIN input component with SCSS theming, mobile-friendly autofill, masking, and full ReactiveForms support.',
-      image: 'assets/kr.png',
-      tags: [
-        'i18n',
-        'angular',
-        'ssr',
-        'phone-number',
-        'phone',
-        'rtl',
-        'angular-components',
-        'libphonenumber',
-        'ngx',
-        'reactive-forms',
-        'telephone',
-        'angular-forms',
-        'intl-tel-input',
-        'ui-component',
-        'template-driven-forms',
-        'standalone-components',
-        'angular-17',
-        'angular-18',
-        'angular-19',
-      ],
-      liveDemoUrl: '',
-      githubUrl: 'https://github.com/toozuuu/ngxsmk-otp-input',
-    },
-    {
-      title: 'ngxsmk-skeleton-loader',
-      description:
-        'ngxsmk-skeleton-loader — Angular 17+ standalone skeleton loader (component + directive) with SCSS theming and animations (shimmer, pulse, wave).',
-      image: 'assets/kr.png',
-      tags: [
-        'angular',
-        'scss',
-        'wave',
-        'skeleton-loader',
-        'ui-components',
-        'pulse',
-        'shimmer',
-        'css-variables',
-        'loading-state',
-        'angular17',
-        'angular-standalone',
-        'placeholder-ui',
-        'loading-ui',
-        'ngxsmk',
-      ],
-      liveDemoUrl: '',
-      githubUrl: 'https://github.com/toozuuu/ngxsmk-skeleton-loader',
-    },
-  ];
-
   expanded = new Set<string>();
 
   private io?: IntersectionObserver;
@@ -97,6 +41,12 @@ export class Home implements AfterViewInit, OnDestroy {
   constructor(
     private readonly host: ElementRef<HTMLElement>,
     public readonly themeService: ThemeService,
+    private readonly performanceService: PerformanceService,
+    private readonly seoService: SEOService,
+    private readonly languageService: LanguageService,
+    private readonly analyticsService: AnalyticsService,
+    private readonly animationsService: AnimationsService,
+    private readonly cdr: ChangeDetectorRef,
     @Inject(PLATFORM_ID) private readonly platformId: Object
   ) {}
 
@@ -104,6 +54,18 @@ export class Home implements AfterViewInit, OnDestroy {
     afterNextRender(
       () => {
         if (!isPlatformBrowser(this.platformId)) return;
+
+        // Initialize SEO
+        this.seoService.setHomePageSEO(this.languageService.lang);
+
+        // Initialize performance optimizations
+        this.performanceService.preloadCriticalResources();
+        this.performanceService.setupLazyLoading();
+        this.performanceService.setupPerformanceMonitoring();
+        this.performanceService.setupReducedMotion();
+
+        // Fix back/forward cache restoration
+        this.setupBFCacheOptimization();
 
         document.documentElement.classList.add('js');
 
@@ -158,12 +120,63 @@ export class Home implements AfterViewInit, OnDestroy {
     this.mo = undefined;
   }
 
+  private setupBFCacheOptimization(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    // Handle page visibility changes (back/forward cache)
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') {
+        // Page is visible again (restored from cache)
+        this.handlePageRestore();
+      }
+    });
+
+    // Handle page show event (back/forward navigation)
+    window.addEventListener('pageshow', (event) => {
+      if (event.persisted) {
+        // Page was restored from back/forward cache
+        this.handlePageRestore();
+      }
+    });
+
+    // Handle page hide event
+    window.addEventListener('pagehide', (event) => {
+      if (event.persisted) {
+        // Page is being cached for back/forward navigation
+        this.handlePageCache();
+      }
+    });
+  }
+
+  private handlePageRestore(): void {
+    // Reinitialize components that might have been reset
+    this.performanceService.setupLazyLoading();
+    this.performanceService.setupPerformanceMonitoring();
+    
+    // Reinitialize animations
+    if (this.animationsService) {
+      this.animationsService.initializeScrollAnimations();
+    }
+    
+    // Reinitialize analytics
+    if (this.analyticsService) {
+      this.analyticsService.trackPageView('home-restored');
+    }
+  }
+
+  private handlePageCache(): void {
+    // Clean up resources before caching
+    this.io?.disconnect();
+    this.mo?.disconnect();
+  }
+
   isExpanded(id: string): boolean {
     return this.expanded.has(id);
   }
 
   toggle(id: string): void {
     this.isExpanded(id) ? this.expanded.delete(id) : this.expanded.add(id);
+    this.cdr.detectChanges();
   }
 
   onPlayAudio() {
