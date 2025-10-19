@@ -1,5 +1,5 @@
 import { Component, inject, signal, ChangeDetectionStrategy, OnInit, Inject, PLATFORM_ID } from '@angular/core';
-import { Location, isPlatformBrowser } from '@angular/common';
+import { Location, isPlatformBrowser, CommonModule } from '@angular/common';
 import { SEOService } from '../../core/seo.service';
 import { LoadingService } from '../../core/loading.service';
 
@@ -21,7 +21,7 @@ type FaqItem = { q: string; a: string; open: boolean };
   selector: 'app-hire-page',
   templateUrl: './hire.html',
   styleUrls: ['./hire.css'],
-  imports: [],
+  imports: [CommonModule],
   changeDetection: ChangeDetectionStrategy.Default,
 })
 export class Hire implements OnInit {
@@ -136,13 +136,16 @@ export class Hire implements OnInit {
     },
   ]);
 
-  toggle(i: number) {
-    const list = [...this.faq()];
-    list[i] = { ...list[i], open: !list[i].open };
-    this.faq.set(list);
-  }
-
   goBack() {
     this.loc.back();
+  }
+
+  toggle(index: number) {
+    const currentFaq = this.faq();
+    const updatedFaq = currentFaq.map((item, i) => ({
+      ...item,
+      open: i === index ? !item.open : false
+    }));
+    this.faq.set(updatedFaq);
   }
 }

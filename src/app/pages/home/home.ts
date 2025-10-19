@@ -43,15 +43,15 @@ export class Home implements AfterViewInit, OnDestroy {
 
   // Technologies array for @for loop
   readonly technologies = [
-    { key: 'angular', stagger: 1 },
-    { key: 'typescript', stagger: 2 },
-    { key: 'react', stagger: 3 },
-    { key: 'nodejs', stagger: 4 },
-    { key: 'ionic', stagger: 5 },
-    { key: 'flutter', stagger: 6 },
-    { key: 'aws', stagger: 7 },
-    { key: 'figma', stagger: 8 },
-    { key: 'docker', stagger: 1 }
+    { key: 'angular', name: 'Angular', stagger: 1 },
+    { key: 'typescript', name: 'TypeScript', stagger: 2 },
+    { key: 'react', name: 'React', stagger: 3 },
+    { key: 'nodejs', name: 'Node.js', stagger: 4 },
+    { key: 'ionic', name: 'Ionic', stagger: 5 },
+    { key: 'flutter', name: 'Flutter', stagger: 6 },
+    { key: 'aws', name: 'AWS', stagger: 7 },
+    { key: 'figma', name: 'Figma', stagger: 8 },
+    { key: 'docker', name: 'Docker', stagger: 1 }
   ];
 
   // Hire page properties
@@ -62,8 +62,8 @@ export class Home implements AfterViewInit, OnDestroy {
   readonly plans = [
     {
       id: 'audit',
-      title: 'hire.services.angularAudit.title',
-      subtitle: 'hire.services.angularAudit.subtitle',
+      title: 'Angular Audit',
+      subtitle: 'Code review & architecture recommendations',
       price: 'US$499 fixed',
       cta: { label: 'Book audit', href: this.calendly },
       badges: ['Architecture', 'DX', 'Performance'],
@@ -76,8 +76,8 @@ export class Home implements AfterViewInit, OnDestroy {
     },
     {
       id: 'perf',
-      title: 'hire.services.performanceSprint.title',
-      subtitle: 'hire.services.performanceSprint.subtitle',
+      title: 'Performance Sprint',
+      subtitle: 'Core Web Vitals & SSR optimization',
       price: 'US$1,499 / week',
       cta: { label: 'Start sprint', href: this.calendly },
       badges: ['Core Web Vitals', 'SSR/Preload', 'Bundle split'],
@@ -91,10 +91,10 @@ export class Home implements AfterViewInit, OnDestroy {
     },
     {
       id: 'ux',
-      title: 'hire.services.uxPolish.title',
-      subtitle: 'hire.services.uxPolish.subtitle',
+      title: 'UX Polish Pack',
+      subtitle: 'Design tokens, spacing, states, a11y',
       price: 'US$999 fixed',
-      cta: { label: 'hire.services.uxPolish.cta', href: this.calendly },
+      cta: { label: 'Get quote', href: this.calendly },
       badges: ['Design System', 'A11y', 'Micro-animations'],
       includes: [
         'Token pass (colors, radius, shadow, spacing)',
@@ -105,8 +105,8 @@ export class Home implements AfterViewInit, OnDestroy {
     },
     {
       id: 'coaching',
-      title: 'hire.services.angularCoaching.title',
-      subtitle: 'hire.services.angularCoaching.subtitle',
+      title: 'Angular Coaching',
+      subtitle: 'Pair programming & team training',
       price: 'US$129 / hour',
       cta: { label: 'Schedule session', href: this.calendly },
       badges: ['Pair Programming', 'Code Reviews', 'Training'],
@@ -121,23 +121,23 @@ export class Home implements AfterViewInit, OnDestroy {
 
   readonly faq = signal([
     {
-      q: 'hire.faq.howWeStart.q',
-      a: 'hire.faq.howWeStart.a',
+      q: 'How do we start?',
+      a: 'Book a 30-minute intro call (free). We align on scope, timeline, and deliverables. Then I send a simple one-page SoW.',
       open: true,
     },
     {
-      q: 'hire.faq.tools.q',
-      a: 'hire.faq.tools.a',
+      q: 'What tools do you use?',
+      a: 'Angular 20, SSR, Signals, Nx, Storybook, Playwright, Lighthouse, WebPageTest, and your existing stack (GitHub Actions, EKS, etc.).',
       open: false,
     },
     {
-      q: 'hire.faq.async.q',
-      a: 'hire.faq.async.a',
+      q: 'Do you work async?',
+      a: 'Yes. I run sprints and share progress in a dedicated Slack/Teams channel with a daily update and weekly demo.',
       open: false,
     },
     {
-      q: 'hire.faq.payment.q',
-      a: 'hire.faq.payment.a',
+      q: 'Payment & billing?',
+      a: 'Fixed-price for packs; hourly for coaching. 50% upfront for fixed packs. Stripe or bank transfer.',
       open: false,
     },
   ]);
@@ -171,10 +171,10 @@ export class Home implements AfterViewInit, OnDestroy {
         if (!isPlatformBrowser(this.platformId)) return;
 
         // Show loading for home page initialization
-        this.loadingService.startLoading(this.translateService.instant('ui.loadingHomePage'));
+        this.loadingService.startLoading('Loading home page...');
 
         // Initialize SEO
-        this.seoService.setHomePageSEO(this.languageService.lang());
+        this.seoService.setHomePageSEO('en');
 
         // Initialize performance optimizations
         this.performanceService.preloadCriticalResources();
