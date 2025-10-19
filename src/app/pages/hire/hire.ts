@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { SEOService } from '../../core/seo.service';
 import { LanguageService } from '../../core/language.service';
+import { LoadingService } from '../../core/loading.service';
 import { isPlatformBrowser } from '@angular/common';
 
 type Plan = {
@@ -33,6 +34,7 @@ export class Hire implements OnInit {
   private readonly loc = inject(Location);
   private readonly seoService = inject(SEOService);
   private readonly languageService = inject(LanguageService);
+  private readonly loadingService = inject(LoadingService);
 
   constructor(
     @Inject(PLATFORM_ID) private readonly platformId: Object
@@ -40,7 +42,15 @@ export class Hire implements OnInit {
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
+      // Show loading for hire page
+      this.loadingService.startLoading('Loading hire page...');
+      
       this.seoService.setHirePageSEO(this.languageService.lang());
+      
+      // Complete loading after a short delay
+      setTimeout(() => {
+        this.loadingService.completeLoading();
+      }, 800);
     }
   }
 

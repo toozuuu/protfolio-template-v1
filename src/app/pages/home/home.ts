@@ -24,6 +24,7 @@ import { SEOService } from '../../core/seo.service';
 import { LanguageService } from '../../core/language.service';
 import { AnalyticsService } from '../../core/analytics.service';
 import { AnimationsService } from '../../core/animations.service';
+import { LoadingService } from '../../core/loading.service';
 
 
 @Component({
@@ -53,6 +54,7 @@ export class Home implements AfterViewInit, OnDestroy {
     private readonly languageService: LanguageService,
     private readonly analyticsService: AnalyticsService,
     private readonly animationsService: AnimationsService,
+    private readonly loadingService: LoadingService,
     private readonly cdr: ChangeDetectorRef,
     @Inject(PLATFORM_ID) private readonly platformId: Object
   ) {}
@@ -61,6 +63,9 @@ export class Home implements AfterViewInit, OnDestroy {
     afterNextRender(
       () => {
         if (!isPlatformBrowser(this.platformId)) return;
+
+        // Show loading for home page initialization
+        this.loadingService.startLoading('Loading home page...');
 
         // Initialize SEO
         this.seoService.setHomePageSEO(this.languageService.lang());
@@ -115,6 +120,11 @@ export class Home implements AfterViewInit, OnDestroy {
         });
 
         this.mo.observe(root, { childList: true, subtree: true });
+
+        // Complete loading after initialization
+        setTimeout(() => {
+          this.loadingService.completeLoading();
+        }, 1000);
       },
       { injector: this.injector }
     );
