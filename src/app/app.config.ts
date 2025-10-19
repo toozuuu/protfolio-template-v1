@@ -16,6 +16,9 @@ import { AnimationsService } from './core/animations.service';
 import { LazyLoadingService } from './core/lazy-loading.service';
 import { ImageOptimizationService } from './core/image-optimization.service';
 import { CSSOptimizationService } from './core/css-optimization.service';
+import { GDPRService } from './core/gdpr.service';
+import { EuropeanOptimizationService } from './core/european-optimization.service';
+import { EuropeanSEOService } from './core/european-seo.service';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -50,6 +53,9 @@ export const appConfig: ApplicationConfig = {
     LazyLoadingService,
     ImageOptimizationService,
     CSSOptimizationService,
+    GDPRService,
+    EuropeanOptimizationService,
+    EuropeanSEOService,
     { provide: LOCALE_ID, useValue: 'en' },
   ],
 };

@@ -4,6 +4,10 @@
 
 [build.environment]
   NODE_VERSION = "18"
+  # European optimization environment variables
+  EUROPEAN_OPTIMIZATION = "true"
+  GDPR_COMPLIANCE = "true"
+  CDN_ENABLED = "true"
 
 # Performance optimizations
 [[headers]]
@@ -13,6 +17,12 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    # European GDPR compliance headers
+    X-GDPR-Compliance = "true"
+    X-Data-Protection = "GDPR"
+    # European performance headers
+    X-European-Optimization = "true"
+    X-CDN-Region = "eu-west-1"
 
 # Static assets with long-term caching
 [[headers]]
@@ -64,3 +74,36 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+# European CDN redirects for better performance
+[[redirects]]
+  from = "/cdn-eu/*"
+  to = "https://cdn-eu-west-1.sachindilshan.netlify.app/:splat"
+  status = 301
+  force = true
+
+# European language-specific redirects
+[[redirects]]
+  from = "/de/*"
+  to = "/:splat?lang=de"
+  status = 301
+
+[[redirects]]
+  from = "/fr/*"
+  to = "/:splat?lang=fr"
+  status = 301
+
+[[redirects]]
+  from = "/es/*"
+  to = "/:splat?lang=es"
+  status = 301
+
+[[redirects]]
+  from = "/pt/*"
+  to = "/:splat?lang=pt"
+  status = 301
+
+[[redirects]]
+  from = "/sv/*"
+  to = "/:splat?lang=sv"
+  status = 301
