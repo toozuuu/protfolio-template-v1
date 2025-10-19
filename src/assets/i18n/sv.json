@@ -163,6 +163,56 @@
     "loadingComponents": "Laddar komponenter...",
     "preparingInterface": "Förbereder gränssnitt..."
   },
+  "hire": {
+    "title": "Anställ mig",
+    "subtitle": "Jag hjälper team att leverera <strong>snabbare Angular</strong>-appar med ren arkitektur, fantastisk UX och Core Web Vitals-vinster.",
+    "howWeWork": "Hur vi kommer att arbeta",
+    "discoverDesc": "30-min samtal, mål, begränsningar, åtkomst.",
+    "planDesc": "omfattning och mått, snabba vinster först.",
+    "buildDesc": "daglig framsteg, PRs, förhandsvisningar.",
+    "shipDesc": "demo, dokumentation, överlämning, nästa steg.",
+    "services": {
+      "angularAudit": {
+        "title": "Angular-revision",
+        "subtitle": "Kodgranskning och arkitekturrekommendationer",
+        "badges": ["Arkitektur", "DX", "Prestanda"]
+      },
+      "performanceSprint": {
+        "title": "Prestanda-sprint",
+        "subtitle": "Core Web Vitals och SSR-optimering",
+        "badges": ["Core Web Vitals", "SSR/Preload", "Bundle-split"]
+      },
+      "uxPolish": {
+        "title": "UX Polish-paket",
+        "subtitle": "Designtokens, mellanrum, tillstånd, a11y",
+        "cta": "Få offert",
+        "badges": ["Designsystem", "A11y", "Mikroanimationer"]
+      },
+      "angularCoaching": {
+        "title": "Angular-coaching",
+        "subtitle": "Parprogrammering och teamträning",
+        "badges": ["Parprogrammering", "Kodgranskningar", "Träning"]
+      }
+    },
+    "faq": {
+      "howWeStart": {
+        "q": "Hur börjar vi?",
+        "a": "Boka ett 30-minuters introduktionssamtal (gratis). Vi justerar omfattning, tidslinje och leveranser. Sedan skickar jag ett enkelt en-sida SoW."
+      },
+      "tools": {
+        "q": "Vilka verktyg använder du?",
+        "a": "Angular 20, SSR, Signals, Nx, Storybook, Playwright, Lighthouse, WebPageTest, och din befintliga stack (GitHub Actions, EKS, etc.)."
+      },
+      "async": {
+        "q": "Arbetar du asynkront?",
+        "a": "Ja. Jag kör sprints och delar framsteg i en dedikerad Slack/Teams-kanal med daglig uppdatering och veckovis demo."
+      },
+      "payment": {
+        "q": "Betalning och fakturering?",
+        "a": "Fast pris för paket; per timme för coaching. 50% förskott för fasta paket. Stripe eller banköverföring."
+      }
+    }
+  },
   "footer": {
     "contact": "Vill du veta mer om mina erfarenheter och min resa? Jag berättar gärna mer – hör av dig! ✌️",
     "built": "Byggd med ❤️ i Angular",

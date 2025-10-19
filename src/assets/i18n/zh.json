@@ -158,5 +158,55 @@
     "initializingApplication": "正在初始化应用程序...",
     "loadingComponents": "正在加载组件...",
     "preparingInterface": "正在准备界面..."
+  },
+  "hire": {
+    "title": "雇佣我",
+    "subtitle": "我帮助团队交付<strong>更快的Angular</strong>应用程序，具有清洁的架构、出色的UX和Core Web Vitals胜利。",
+    "howWeWork": "我们将如何工作",
+    "discoverDesc": "30分钟通话，目标，约束，访问。",
+    "planDesc": "范围和指标，快速胜利优先。",
+    "buildDesc": "日常进度，PR，预览。",
+    "shipDesc": "演示，文档，交接，下一步。",
+    "services": {
+      "angularAudit": {
+        "title": "Angular审计",
+        "subtitle": "代码审查和架构建议",
+        "badges": ["架构", "DX", "性能"]
+      },
+      "performanceSprint": {
+        "title": "性能冲刺",
+        "subtitle": "Core Web Vitals和SSR优化",
+        "badges": ["Core Web Vitals", "SSR/Preload", "包分割"]
+      },
+      "uxPolish": {
+        "title": "UX抛光包",
+        "subtitle": "设计令牌，间距，状态，a11y",
+        "cta": "获取报价",
+        "badges": ["设计系统", "A11y", "微动画"]
+      },
+      "angularCoaching": {
+        "title": "Angular指导",
+        "subtitle": "结对编程和团队培训",
+        "badges": ["结对编程", "代码审查", "培训"]
+      }
+    },
+    "faq": {
+      "howWeStart": {
+        "q": "我们如何开始？",
+        "a": "预订30分钟的介绍通话（免费）。我们调整范围、时间表和交付物。然后我发送一个简单的一页SoW。"
+      },
+      "tools": {
+        "q": "你使用什么工具？",
+        "a": "Angular 20、SSR、Signals、Nx、Storybook、Playwright、Lighthouse、WebPageTest，以及你现有的技术栈（GitHub Actions、EKS等）。"
+      },
+      "async": {
+        "q": "你异步工作吗？",
+        "a": "是的。我运行冲刺并在专门的Slack/Teams频道中分享进度，每日更新和每周演示。"
+      },
+      "payment": {
+        "q": "付款和计费？",
+        "a": "包固定价格；指导按小时计费。固定包预付50%。Stripe或银行转账。"
+      }
+    }
   }
 }

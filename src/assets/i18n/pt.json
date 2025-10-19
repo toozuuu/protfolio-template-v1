@@ -159,6 +159,56 @@
     "loadingComponents": "Carregando componentes...",
     "preparingInterface": "Preparando interface..."
   },
+  "hire": {
+    "title": "Contrate-me",
+    "subtitle": "Ajudo equipes a entregar aplicações <strong>Angular mais rápidas</strong> com arquitetura limpa, ótima UX e vitórias em Core Web Vitals.",
+    "howWeWork": "Como trabalharemos",
+    "discoverDesc": "Chamada de 30 min, objetivos, restrições, acesso.",
+    "planDesc": "escopo e métricas, vitórias rápidas primeiro.",
+    "buildDesc": "progresso diário, PRs, visualizações.",
+    "shipDesc": "demo, docs, entrega, próximos passos.",
+    "services": {
+      "angularAudit": {
+        "title": "Auditoria Angular",
+        "subtitle": "Revisão de código e recomendações de arquitetura",
+        "badges": ["Arquitetura", "DX", "Performance"]
+      },
+      "performanceSprint": {
+        "title": "Sprint de Performance",
+        "subtitle": "Otimização Core Web Vitals e SSR",
+        "badges": ["Core Web Vitals", "SSR/Preload", "Divisão de pacotes"]
+      },
+      "uxPolish": {
+        "title": "Pacote Polish UX",
+        "subtitle": "Tokens de design, espaçamento, estados, a11y",
+        "cta": "Obter cotação",
+        "badges": ["Sistema de Design", "A11y", "Micro-animações"]
+      },
+      "angularCoaching": {
+        "title": "Coaching Angular",
+        "subtitle": "Programação em par e treinamento de equipe",
+        "badges": ["Programação em Par", "Revisões de Código", "Treinamento"]
+      }
+    },
+    "faq": {
+      "howWeStart": {
+        "q": "Como começamos?",
+        "a": "Agende uma chamada introdutória de 30 minutos (grátis). Alinhamos escopo, cronograma e entregáveis. Então envio um SoW simples de uma página."
+      },
+      "tools": {
+        "q": "Quais ferramentas você usa?",
+        "a": "Angular 20, SSR, Signals, Nx, Storybook, Playwright, Lighthouse, WebPageTest, e sua stack existente (GitHub Actions, EKS, etc.)."
+      },
+      "async": {
+        "q": "Você trabalha de forma assíncrona?",
+        "a": "Sim. Executo sprints e compartilho progresso em um canal dedicado do Slack/Teams com atualização diária e demo semanal."
+      },
+      "payment": {
+        "q": "Pagamento e cobrança?",
+        "a": "Preço fixo para pacotes; por hora para coaching. 50% antecipado para pacotes fixos. Stripe ou transferência bancária."
+      }
+    }
+  },
   "gdpr": {
     "title": "Consentimento de Cookies e Privacidade",
     "description": "Usamos cookies para melhorar sua experiência de navegação, servir conteúdo personalizado e analisar nosso tráfego. Ao clicar em 'Aceitar Todos', você consente com nosso uso de cookies.",
