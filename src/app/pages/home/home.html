@@ -33,33 +33,11 @@
               {{ 'intro.workingWith' | translate }}
             </h2>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-              <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-center text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors animate-grid-item animate-stagger-1">
-                {{ 'technologies.angular' | translate }}
-              </div>
-              <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-center text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors animate-grid-item animate-stagger-2">
-                {{ 'technologies.typescript' | translate }}
-              </div>
-              <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-center text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors animate-grid-item animate-stagger-3">
-                {{ 'technologies.react' | translate }}
-              </div>
-              <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-center text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors animate-grid-item animate-stagger-4">
-                {{ 'technologies.nodejs' | translate }}
-              </div>
-              <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-center text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors animate-grid-item animate-stagger-5">
-                {{ 'technologies.ionic' | translate }}
-              </div>
-              <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-center text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors animate-grid-item animate-stagger-6">
-                {{ 'technologies.flutter' | translate }}
-              </div>
-              <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-center text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors animate-grid-item animate-stagger-7">
-                {{ 'technologies.aws' | translate }}
-              </div>
-              <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-center text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors animate-grid-item animate-stagger-8">
-                {{ 'technologies.figma' | translate }}
-              </div>
-              <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-center text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors animate-grid-item animate-stagger-1">
-                {{ 'technologies.docker' | translate }}
-              </div>
+              @for (tech of technologies; track tech.key) {
+                <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-center text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors animate-grid-item animate-stagger-{{ tech.stagger }}">
+                  {{ 'technologies.' + tech.key | translate }}
+                </div>
+              }
             </div>
           </div>
         </div>

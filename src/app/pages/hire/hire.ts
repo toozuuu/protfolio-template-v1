@@ -1,11 +1,10 @@
 import { Component, inject, signal, ChangeDetectionStrategy, OnInit, Inject, PLATFORM_ID } from '@angular/core';
-import { Location } from '@angular/common';
+import { Location, isPlatformBrowser } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { SEOService } from '../../core/seo.service';
 import { LanguageService } from '../../core/language.service';
 import { LoadingService } from '../../core/loading.service';
 import { TranslateService } from '@ngx-translate/core';
-import { isPlatformBrowser } from '@angular/common';
 
 type Plan = {
   id: string;
@@ -24,9 +23,9 @@ type FaqItem = { q: string; a: string; open: boolean };
   standalone: true,
   selector: 'app-hire-page',
   templateUrl: './hire.html',
-      styleUrls: ['./hire.css'],
+  styleUrls: ['./hire.css'],
   imports: [TranslateModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class Hire implements OnInit {
   calendly = 'https://calendly.com/sachindilshan040/sachin-dilshan-angular-consulting';
@@ -43,6 +42,8 @@ export class Hire implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log('Hire component initialized');
+    
     if (isPlatformBrowser(this.platformId)) {
       // Show loading for hire page
       this.loadingService.startLoading(this.translateService.instant('ui.loadingHirePage'));
@@ -52,6 +53,7 @@ export class Hire implements OnInit {
       // Complete loading after a short delay
       setTimeout(() => {
         this.loadingService.completeLoading();
+        console.log('Hire page loading completed');
       }, 800);
     }
   }

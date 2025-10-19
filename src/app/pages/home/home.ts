@@ -44,6 +44,19 @@ export class Home implements AfterViewInit, OnDestroy {
   readonly expanded = this._expanded.asReadonly();
   readonly hasExpandedSections = computed(() => this._expanded().size > 0);
 
+  // Technologies array for @for loop
+  readonly technologies = [
+    { key: 'angular', stagger: 1 },
+    { key: 'typescript', stagger: 2 },
+    { key: 'react', stagger: 3 },
+    { key: 'nodejs', stagger: 4 },
+    { key: 'ionic', stagger: 5 },
+    { key: 'flutter', stagger: 6 },
+    { key: 'aws', stagger: 7 },
+    { key: 'figma', stagger: 8 },
+    { key: 'docker', stagger: 1 }
+  ];
+
   private io?: IntersectionObserver;
   private mo?: MutationObserver;
   private readonly injector: EnvironmentInjector = inject(EnvironmentInjector);
@@ -125,13 +138,21 @@ export class Home implements AfterViewInit, OnDestroy {
 
         this.mo.observe(root, { childList: true, subtree: true });
 
+        // Force header to render immediately
+        this.cdr.detectChanges();
+        
         // Initialize layout animations after ensuring header is loaded
         setTimeout(() => {
           // Double-check that header is properly loaded
           const header = this.host.nativeElement.querySelector('app-header');
+          console.log('Header element found:', !!header);
           if (header) {
+            console.log('Header is loaded, initializing animations');
             this.initializeLayoutAnimations();
           } else {
+            console.log('Header not found, forcing change detection and retrying...');
+            // Force change detection to ensure header renders
+            this.cdr.detectChanges();
             // Retry after a longer delay if header is not found
             setTimeout(() => {
               this.initializeLayoutAnimations();
@@ -234,6 +255,14 @@ export class Home implements AfterViewInit, OnDestroy {
     // Wait for DOM to be fully rendered before initializing animations
     setTimeout(() => {
       try {
+        // Check if header is visible and properly rendered
+        const header = this.host.nativeElement.querySelector('app-header');
+        if (header) {
+          console.log('Header is visible and ready for animations');
+        } else {
+          console.warn('Header not found during animation initialization');
+        }
+
         // Animate the entire page layout
         this.layoutAnimationsService.animatePageLayout(this.host);
 

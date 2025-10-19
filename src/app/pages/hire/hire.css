@@ -1,1 +1,83 @@
-/* Tailwind CSS classes applied directly to HTML */
+/* Hire Page Styles */
+.bg-card {
+  background-color: #ffffff;
+}
+
+.dark .bg-card-dark {
+  background-color: #1e293b;
+}
+
+.border-border {
+  border-color: #e2e8f0;
+}
+
+.dark .border-border-dark {
+  border-color: #334155;
+}
+
+.text-text {
+  color: #1f2937;
+}
+
+.dark .text-text-dark {
+  color: #f1f5f9;
+}
+
+.text-text-muted {
+  color: #6b7280;
+}
+
+.dark .text-text-muted-dark {
+  color: #9ca3af;
+}
+
+.text-accent {
+  color: #3b82f6;
+}
+
+.bg-accent {
+  background-color: #3b82f6;
+}
+
+.hover\:bg-accent:hover {
+  background-color: #2563eb;
+}
+
+.border-accent {
+  border-color: #3b82f6;
+}
+
+.ring-accent {
+  --tw-ring-color: #3b82f6;
+}
+
+.bg-accent\/10 {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+  
+  .sm\:text-4xl {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .md\:text-5xl {
+    font-size: 3rem;
+  }
+  
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1024px) {
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

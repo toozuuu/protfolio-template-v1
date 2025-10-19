@@ -1,5 +1,5 @@
 import { ViewportScroller, CommonModule } from '@angular/common';
-import { Component, ChangeDetectionStrategy, OnInit, OnDestroy, signal, computed } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, OnDestroy, signal, computed, ChangeDetectorRef } from '@angular/core';
 import {ThemeService} from '../../../core/theme.service';
 import {LanguageService} from '../../../core/language.service';
 import {FormsModule} from '@angular/forms';
@@ -11,7 +11,7 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [CommonModule, FormsModule, TranslateModule],
   templateUrl: './header.html',
   styleUrl: './header.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class Header implements OnInit, OnDestroy {
   // Signal for scroll state
@@ -32,10 +32,16 @@ export class Header implements OnInit, OnDestroy {
   constructor(
     private readonly viewportScroller: ViewportScroller,
     public readonly themeService: ThemeService,
-    public readonly lang: LanguageService
+    public readonly lang: LanguageService,
+    private readonly cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
+    console.log('Header component initialized');
+    
+    // Force change detection to ensure header renders
+    this.cdr.detectChanges();
+    
     // Check if we're in browser environment
     if (typeof window !== 'undefined') {
       this.scrollListener = () => {
