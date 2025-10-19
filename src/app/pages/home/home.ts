@@ -69,7 +69,7 @@ export class Home implements AfterViewInit, OnDestroy {
       subtitle: 'hire.services.angularAudit.subtitle',
       price: 'US$499 fixed',
       cta: { label: 'Book audit', href: this.calendly },
-      badges: ['hire.services.angularAudit.badges.0', 'hire.services.angularAudit.badges.1', 'hire.services.angularAudit.badges.2'],
+      badges: ['Architecture', 'DX', 'Performance'],
       includes: [
         'Repo review & issue list',
         'Architecture diagram & recommendations',
@@ -83,7 +83,7 @@ export class Home implements AfterViewInit, OnDestroy {
       subtitle: 'hire.services.performanceSprint.subtitle',
       price: 'US$1,499 / week',
       cta: { label: 'Start sprint', href: this.calendly },
-      badges: ['hire.services.performanceSprint.badges.0', 'hire.services.performanceSprint.badges.1', 'hire.services.performanceSprint.badges.2'],
+      badges: ['Core Web Vitals', 'SSR/Preload', 'Bundle split'],
       includes: [
         'Perf baseline + goals',
         'Critical-path fixes (SSR/hydration, preconnect, code-split)',
@@ -98,7 +98,7 @@ export class Home implements AfterViewInit, OnDestroy {
       subtitle: 'hire.services.uxPolish.subtitle',
       price: 'US$999 fixed',
       cta: { label: 'hire.services.uxPolish.cta', href: this.calendly },
-      badges: ['hire.services.uxPolish.badges.0', 'hire.services.uxPolish.badges.1', 'hire.services.uxPolish.badges.2'],
+      badges: ['Design System', 'A11y', 'Micro-animations'],
       includes: [
         'Token pass (colors, radius, shadow, spacing)',
         'Interactive states + micro-animations',
@@ -112,7 +112,7 @@ export class Home implements AfterViewInit, OnDestroy {
       subtitle: 'hire.services.angularCoaching.subtitle',
       price: 'US$129 / hour',
       cta: { label: 'Schedule session', href: this.calendly },
-      badges: ['hire.services.angularCoaching.badges.0', 'hire.services.angularCoaching.badges.1', 'hire.services.angularCoaching.badges.2'],
+      badges: ['Pair Programming', 'Code Reviews', 'Training'],
       includes: [
         'Pair-programming & code reviews',
         'API contracts & state management',

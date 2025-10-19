@@ -435,7 +435,7 @@
         class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
         [class.ring-2]="p.best"
         [class.ring-blue-600]="p.best"
-        [attr.aria-label]="p.title"
+        [attr.aria-label]="p.title | translate"
       >
         <div class="mb-6">
           <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-2">{{ p.title | translate }}</h3>
@@ -444,7 +444,7 @@
 
         <div class="flex flex-wrap gap-2 mb-6">
           @for (b of p.badges; track b) {
-          <span class="bg-blue-100 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm">{{ b | translate }}</span>
+          <span class="bg-blue-100 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm">{{ b }}</span>
           }
         </div>
 
