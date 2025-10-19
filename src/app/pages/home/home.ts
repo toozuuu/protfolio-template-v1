@@ -17,21 +17,18 @@ import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { Header } from '../../components/shared/header/header';
 import { Footer } from '../../components/shared/footer/footer';
 import { SocialButtons } from '../../components/social-buttons/social-buttons';
-import {TranslatePipe} from '@ngx-translate/core';
 import { ThemeService } from '../../core/theme.service';
 import { PerformanceService } from '../../core/performance.service';
 import { SEOService } from '../../core/seo.service';
-import { LanguageService } from '../../core/language.service';
 import { AnalyticsService } from '../../core/analytics.service';
 import { AnimationsService } from '../../core/animations.service';
 import { LoadingService } from '../../core/loading.service';
-import { TranslateService } from '@ngx-translate/core';
 import { LayoutAnimationsService } from '../../core/layout-animations.service';
 
 
 @Component({
   selector: 'app-home',
-  imports: [Header, Footer, SocialButtons, TranslatePipe, CommonModule],
+  imports: [Header, Footer, SocialButtons, CommonModule],
   templateUrl: './home.html',
   styleUrl: './home.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -160,11 +157,9 @@ export class Home implements AfterViewInit, OnDestroy {
     public readonly themeService: ThemeService,
     private readonly performanceService: PerformanceService,
     private readonly seoService: SEOService,
-    private readonly languageService: LanguageService,
     private readonly analyticsService: AnalyticsService,
     private readonly animationsService: AnimationsService,
     private readonly loadingService: LoadingService,
-    private readonly translateService: TranslateService,
     private readonly layoutAnimationsService: LayoutAnimationsService,
     private readonly cdr: ChangeDetectorRef,
     @Inject(PLATFORM_ID) private readonly platformId: Object

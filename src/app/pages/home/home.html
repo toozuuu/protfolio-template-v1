@@ -9,10 +9,10 @@
         <div class="space-y-8 animate-hero-content">
           <div class="space-y-4">
             <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white leading-tight animate-text-reveal">
-              {{ 'intro.greeting' | translate }}
+              Hello, I'm Sachin Dilshan.
             </h1>
             <div class="flex items-center gap-3 text-xl text-slate-600 dark:text-slate-300 animate-text-reveal animate-stagger-1">
-              {{ 'intro.speak' | translate }}
+              /sa-chin dil-shaan/
               <button 
                 class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors animate-button"
                 (click)="onPlayAudio()"
@@ -23,19 +23,19 @@
               </button>
             </div>
             <p class="text-xl text-slate-600 dark:text-slate-300 leading-relaxed animate-text-reveal animate-stagger-2">
-              {{ 'intro.welcome' | translate }}
+              Welcome 👋 I’m Sachin, a Technical Lead at We Make Platforms based in Sri Lanka. I’m currently advancing my career with over 5 years of experience in Frontend Development, UI/UX Design, and Cloud-based application development. Passionate about turning creative ideas into seamless web experiences, I focus on building scalable, user-friendly applications using Angular and modern frontend frameworks. 🚀
             </p>
           </div>
 
           <!-- Skills Grid -->
           <div class="space-y-4 animate-text-reveal animate-stagger-3">
             <h2 class="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-white">
-              {{ 'intro.workingWith' | translate }}
+              I'm currently working with,
             </h2>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
               @for (tech of technologies; track tech.key) {
                 <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-center text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors animate-grid-item animate-stagger-{{ tech.stagger }}">
-                  {{ 'technologies.' + tech.key | translate }}
+                  {{ tech.name }}
                 </div>
               }
             </div>
@@ -72,7 +72,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 animate-text-reveal">
         <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-          {{ 'about.title' | translate }}
+          About Me
         </h2>
       </div>
 
@@ -85,10 +85,18 @@
         </div>
         <div class="space-y-6 animate-text-reveal animate-stagger-1">
           <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
-            {{ 'about.name' | translate }}
+            Sachin Dilshan
           </h3>
           <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-            {{ 'about.bio' | translate }}
+            Hi there ✌️ nice to meet you! I’m Sachin, a Technical Lead at We Make Platforms based in Sri Lanka.
+
+I’m passionate about turning creative ideas into real, working web experiences. My focus is on building scalable, user-friendly frontend applications with Angular, where my goal is to design products that not only look great but also feel smooth and intuitive to use.
+
+I started my career as a Trainee Associate Software Engineer and grew into senior roles, where I sharpened both my coding and leadership skills. As a Senior Software Engineer, I led the development of key features that significantly boosted user engagement—seeing those improvements make a real difference was one of my proudest career moments. One project I’m especially proud of was delivering high-performance REST APIs for a Jira ticketing system under tight deadlines. It challenged me to balance speed and quality, and it strengthened my ability to thrive under pressure.
+
+Beyond work, I enjoy exploring new technologies, contributing to open-source projects, and collaborating with cross-functional teams to create seamless, responsive user experiences.
+
+I believe in continuous learning and sharing knowledge to grow together in this fast-moving tech world. When I’m not coding, you’ll often find me exploring creative ideas, keeping up with the latest in frontend trends, or experimenting with design. 🚀
           </p>
         </div>
       </div>
@@ -100,7 +108,7 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-          {{ 'experience.title' | translate }}
+          Experiences
         </h2>
       </div>
 
@@ -112,15 +120,15 @@
               <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2">
                 <a href="https://www.wemakeplatforms.io/" target="_blank" rel="noopener noreferrer" 
                    class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors">
-                  {{ 'experience.wmp.company' | translate }}
+                  We Make Platforms
                 </a>
               </h3>
               <p class="text-lg text-slate-600 dark:text-slate-300 mb-2">
-                {{ 'experience.wmp.role' | translate }}
+                Technical Lead - Frontend
               </p>
               <div class="text-sm text-slate-500 dark:text-slate-400">
-                <div>{{ 'experience.wmp.time' | translate }}</div>
-                <div>{{ 'experience.wmp.location' | translate }}</div>
+                <div>Aug 2022 - Present</div>
+                <div>Remote</div>
               </div>
             </div>
           </div>
@@ -131,7 +139,7 @@
             <ul class="space-y-3 text-slate-600 dark:text-slate-300">
               <li class="flex items-start">
                 <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                {{ 'experience.wmp.points' | translate }}
+                Spearheaded the development of front-end features using the Angular framework, playing a key role in delivering the majority of user interface components within project timelines.,Translated UI designs from Figma and Zeplin into responsive, high-quality implementations that significantly enhanced user experience, as reflected in positive user feedback.,Conducted detailed code reviews for junior developers, fostering a culture of collaboration and improving code quality by reducing issues identified after deployment.,Implemented comprehensive testing strategies including unit tests and integration tests, resulting in a 40% reduction in production bugs and improved application stability.,Collaborated with cross-functional teams including designers, product managers, and backend developers to ensure seamless integration and delivery of features that met both technical and business requirements.
               </li>
             </ul>
           </div>
@@ -140,7 +148,7 @@
             class="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
             (click)="toggle('wmp')"
             [attr.aria-expanded]="isExpanded('wmp')">
-            {{ isExpanded('wmp') ? ('ui.seeLess' | translate) : ('ui.seeMore' | translate) }}
+            {{ isExpanded('wmp') ? 'See Less' : 'See More' }}
           </button>
         </div>
 
@@ -151,15 +159,15 @@
               <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2">
                 <a href="https://www.epic.lk/" target="_blank" rel="noopener noreferrer" 
                    class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors">
-                  {{ 'experience.epic.company' | translate }}
+                  Epic Lanka
                 </a>
               </h3>
               <p class="text-lg text-slate-600 dark:text-slate-300 mb-2">
-                {{ 'experience.epic.role' | translate }}
+                Software Engineer
               </p>
               <div class="text-sm text-slate-500 dark:text-slate-400">
-                <div>{{ 'experience.epic.time' | translate }}</div>
-                <div>{{ 'experience.epic.location' | translate }}</div>
+                <div>Aug 2020 - Jul 2022</div>
+                <div>On-site</div>
               </div>
             </div>
           </div>
@@ -170,7 +178,7 @@
             <ul class="space-y-3 text-slate-600 dark:text-slate-300">
               <li class="flex items-start">
                 <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                {{ 'experience.epic.points' | translate }}
+                Developed high-performance REST APIs for a JIRA ticketing application within a tight deadline of three weeks, ensuring seamless integration with existing systems and maintaining code quality standards.,Designed and implemented a comprehensive admin panel using Angular, featuring advanced data visualization, user management, and real-time analytics that improved operational efficiency by 35%.,Optimized database queries and implemented caching strategies, resulting in a 60% improvement in application response times and enhanced user experience.,Collaborated with the QA team to establish automated testing pipelines, reducing manual testing time by 50% and ensuring consistent code quality across releases.
               </li>
             </ul>
           </div>
@@ -179,7 +187,7 @@
             class="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
             (click)="toggle('epic')"
             [attr.aria-expanded]="isExpanded('epic')">
-            {{ isExpanded('epic') ? ('ui.seeLess' | translate) : ('ui.seeMore' | translate) }}
+            {{ isExpanded('epic') ? 'See Less' : 'See More' }}
           </button>
         </div>
 
@@ -190,15 +198,15 @@
               <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2">
                 <a href="https://zincat.lk/" target="_blank" rel="noopener noreferrer" 
                    class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors">
-                  {{ 'experience.zincat.company' | translate }}
+                  ZinCat Technology
                 </a>
               </h3>
               <p class="text-lg text-slate-600 dark:text-slate-300 mb-2">
-                {{ 'experience.zincat.role' | translate }}
+                Software Developer
               </p>
               <div class="text-sm text-slate-500 dark:text-slate-400">
-                <div>{{ 'experience.zincat.time' | translate }}</div>
-                <div>{{ 'experience.zincat.location' | translate }}</div>
+                <div>Aug 2019 - Aug 2020</div>
+                <div>On-site</div>
               </div>
             </div>
           </div>
@@ -209,7 +217,7 @@
             <ul class="space-y-3 text-slate-600 dark:text-slate-300">
               <li class="flex items-start">
                 <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                {{ 'experience.zincat.points' | translate }}
+                Designed and developed a robust business logic execution front end for a local e-commerce platform, enhancing user experience and increasing engagement by an estimated 25%.,Implemented responsive design principles and mobile-first development approach, ensuring optimal performance across all devices and screen sizes.,Integrated third-party payment gateways and shipping APIs, streamlining the checkout process and reducing cart abandonment rates by 30%.,Collaborated with the design team to create intuitive user interfaces that improved user satisfaction scores and reduced support ticket volume by 40%.
               </li>
             </ul>
           </div>
@@ -218,7 +226,7 @@
             class="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
             (click)="toggle('zincat')"
             [attr.aria-expanded]="isExpanded('zincat')">
-            {{ isExpanded('zincat') ? ('ui.seeLess' | translate) : ('ui.seeMore' | translate) }}
+            {{ isExpanded('zincat') ? 'See Less' : 'See More' }}
           </button>
         </div>
 
@@ -229,15 +237,15 @@
               <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2">
                 <a href="https://ceyentra.com/" target="_blank" rel="noopener noreferrer" 
                    class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors">
-                  {{ 'experience.ceyentra.company' | translate }}
+                  Ceyentra Technologies
                 </a>
               </h3>
               <p class="text-lg text-slate-600 dark:text-slate-300 mb-2">
-                {{ 'experience.ceyentra.role' | translate }}
+                Internship
               </p>
               <div class="text-sm text-slate-500 dark:text-slate-400">
-                <div>{{ 'experience.ceyentra.time' | translate }}</div>
-                <div>{{ 'experience.ceyentra.location' | translate }}</div>
+                <div>Jan 2019 - Aug 2019</div>
+                <div>On-site</div>
               </div>
             </div>
           </div>
@@ -248,7 +256,7 @@
             <ul class="space-y-3 text-slate-600 dark:text-slate-300">
               <li class="flex items-start">
                 <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                {{ 'experience.ceyentra.points' | translate }}
+                Implemented software systems utilizing the Ionic framework for app development, contributing to a 30% increase in project delivery efficiency during the tenure at the company.,Developed cross-platform mobile applications that achieved 95% code reusability between iOS and Android platforms, significantly reducing development time and maintenance costs.,Collaborated with the backend team to design and implement RESTful APIs, ensuring seamless data flow and optimal performance for mobile applications.,Participated in agile development processes, contributing to sprint planning, daily standups, and retrospective meetings that improved team productivity and project delivery timelines.
               </li>
             </ul>
           </div>
@@ -257,7 +265,7 @@
             class="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
             (click)="toggle('ceyentra')"
             [attr.aria-expanded]="isExpanded('ceyentra')">
-            {{ isExpanded('ceyentra') ? ('ui.seeLess' | translate) : ('ui.seeMore' | translate) }}
+            {{ isExpanded('ceyentra') ? 'See Less' : 'See More' }}
           </button>
         </div>
       </div>
@@ -269,10 +277,10 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-          {{ 'opensource.title' | translate }}
+          Open Source Projects
         </h2>
         <p class="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-          {{ 'opensource.subtitle' | translate }}
+          Contributing to the developer community with modern, performant Angular components and libraries.
         </p>
       </div>
 
@@ -296,20 +304,20 @@
                 <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                 </svg>
-                {{ 'ui.active' | translate }}
+                Active
               </span>
             </div>
           </div>
 
           <p class="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-            {{ 'opensource.datepicker.description' | translate }}
+            A powerful, modern, highly customizable Angular date range picker with time component. Features 30% smaller bundle, 40% faster rendering, and zero dependencies.
           </p>
 
           <div class="flex flex-wrap gap-2 mb-6">
-            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">{{ 'opensource.technologies.angular' | translate }}</span>
-            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">{{ 'opensource.technologies.typescript' | translate }}</span>
-            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">{{ 'opensource.technologies.standalone' | translate }}</span>
-            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">{{ 'opensource.technologies.i18n' | translate }}</span>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">Angular</span>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">TypeScript</span>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">Standalone</span>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">i18n</span>
           </div>
 
           <div class="flex items-center justify-between">
@@ -318,20 +326,20 @@
                 <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                 </svg>
-                {{ 'opensource.stars' | translate }}
+                14 stars
               </div>
               <div class="flex items-center">
                 <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0V9a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
-                {{ 'opensource.forks' | translate }}
+                3 forks
               </div>
             </div>
             <a href="https://github.com/toozuuu/ngxsmk-datepicker" 
                target="_blank" 
                rel="noopener noreferrer"
                class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors">
-              {{ 'ui.viewOnGitHub' | translate }}
+              View on GitHub
               <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
               </svg>
@@ -358,20 +366,20 @@
                 <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                 </svg>
-                {{ 'ui.active' | translate }}
+                Active
               </span>
             </div>
           </div>
 
           <p class="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-            {{ 'opensource.telinput.description' | translate }}
+            A comprehensive Angular telephone input component with country selection, validation, and international formatting support.
           </p>
 
           <div class="flex flex-wrap gap-2 mb-6">
-            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">{{ 'opensource.technologies.angular' | translate }}</span>
-            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">{{ 'opensource.technologies.typescript' | translate }}</span>
-            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">{{ 'opensource.technologies.validation' | translate }}</span>
-            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">{{ 'opensource.technologies.i18n' | translate }}</span>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">Angular</span>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">TypeScript</span>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">Validation</span>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">i18n</span>
           </div>
 
           <div class="flex items-center justify-between">
@@ -380,20 +388,20 @@
                 <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                 </svg>
-                {{ 'ui.github' | translate }}
+                GitHub
               </div>
               <div class="flex items-center">
                 <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0V9a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
-                {{ 'ui.npm' | translate }}
+                NPM
               </div>
             </div>
             <a href="https://github.com/toozuuu/ngxsmk-tel-input" 
                target="_blank" 
                rel="noopener noreferrer"
                class="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-lg transition-colors">
-              {{ 'ui.viewOnGitHub' | translate }}
+              View on GitHub
               <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
               </svg>
@@ -408,20 +416,20 @@
   <section id="hire" class="bg-slate-50 dark:bg-slate-900 py-20">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
-        {{ 'hire.title' | translate }}
+        Hire Me
       </h2>
-      <p class="text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto" [innerHTML]="'hire.subtitle' | translate">
+      <p class="text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto" [innerHTML]="'Ready to build something amazing? Let\'s discuss your project and how I can help you achieve your goals.'">
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium" 
            [href]="calendly" 
            data-umami-event="hire:intro-call" 
            target="_blank">
-          {{ 'ui.bookIntroCall' | translate }}
+          Book intro call
         </a>
         <a class="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition-colors font-medium" 
            [href]="email">
-          {{ 'ui.emailMe' | translate }}
+          Email me
         </a>
       </div>
     </div>
@@ -435,11 +443,11 @@
         class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
         [class.ring-2]="p.best"
         [class.ring-blue-600]="p.best"
-        [attr.aria-label]="p.title | translate"
+        [attr.aria-label]="p.title"
       >
         <div class="mb-6">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-2">{{ p.title | translate }}</h3>
-          <p class="text-slate-600 dark:text-slate-300">{{ p.subtitle | translate }}</p>
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-2">{{ p.title }}</h3>
+          <p class="text-slate-600 dark:text-slate-300">{{ p.subtitle }}</p>
         </div>
 
         <div class="flex flex-wrap gap-2 mb-6">
@@ -463,88 +471,88 @@
              [href]="p.cta.href" 
              [attr.data-umami-event]="'hire:' + p.id + ':cta'" 
              target="_blank">
-            {{ p.cta.label | translate }}
+            {{ p.cta.label }}
           </a>
         </div>
       </article>
       } @empty {
-      <p class="text-slate-600 dark:text-slate-300 col-span-full text-center">{{ 'ui.plansComingSoon' | translate }}</p>
+      <p class="text-slate-600 dark:text-slate-300 col-span-full text-center">Plans coming soon.</p>
       }
     </div>
   </section>
 
   <!-- How We Work Section -->
   <section class="max-w-4xl mx-auto px-6 py-16">
-    <h3 class="text-2xl sm:text-3xl font-bold text-center text-slate-900 dark:text-white mb-12">{{ 'hire.howWeWork' | translate }}</h3>
+    <h3 class="text-2xl sm:text-3xl font-bold text-center text-slate-900 dark:text-white mb-12">How we'll work</h3>
     <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       <li class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 text-center">
         <div class="text-2xl font-bold text-blue-600 mb-2">01</div>
-        <div class="font-semibold text-slate-900 dark:text-white mb-2">{{ 'ui.discover' | translate }}</div>
-        <div class="text-slate-600 dark:text-slate-300">{{ 'hire.discoverDesc' | translate }}</div>
+        <div class="font-semibold text-slate-900 dark:text-white mb-2">Discover</div>
+        <div class="text-slate-600 dark:text-slate-300">30-min call, goals, constraints, access.</div>
       </li>
       <li class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 text-center">
         <div class="text-2xl font-bold text-blue-600 mb-2">02</div>
-        <div class="font-semibold text-slate-900 dark:text-white mb-2">{{ 'ui.plan' | translate }}</div>
-        <div class="text-slate-600 dark:text-slate-300">{{ 'hire.planDesc' | translate }}</div>
+        <div class="font-semibold text-slate-900 dark:text-white mb-2">Plan</div>
+        <div class="text-slate-600 dark:text-slate-300">scope & metrics, quick wins first.</div>
       </li>
       <li class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 text-center">
         <div class="text-2xl font-bold text-blue-600 mb-2">03</div>
-        <div class="font-semibold text-slate-900 dark:text-white mb-2">{{ 'ui.build' | translate }}</div>
-        <div class="text-slate-600 dark:text-slate-300">{{ 'hire.buildDesc' | translate }}</div>
+        <div class="font-semibold text-slate-900 dark:text-white mb-2">Build</div>
+        <div class="text-slate-600 dark:text-slate-300">daily progress, PRs, previews.</div>
       </li>
       <li class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 text-center">
         <div class="text-2xl font-bold text-blue-600 mb-2">04</div>
-        <div class="font-semibold text-slate-900 dark:text-white mb-2">{{ 'ui.ship' | translate }}</div>
-        <div class="text-slate-600 dark:text-slate-300">{{ 'hire.shipDesc' | translate }}</div>
+        <div class="font-semibold text-slate-900 dark:text-white mb-2">Ship</div>
+        <div class="text-slate-600 dark:text-slate-300">demo, docs, handover, next steps.</div>
       </li>
     </ol>
   </section>
 
   <!-- FAQ Section -->
   <section class="max-w-4xl mx-auto px-6 py-16">
-    <h3 class="text-2xl sm:text-3xl font-bold text-center text-slate-900 dark:text-white mb-12">{{ 'ui.faq' | translate }}</h3>
+    <h3 class="text-2xl sm:text-3xl font-bold text-center text-slate-900 dark:text-white mb-12">FAQ</h3>
     <div class="space-y-4">
       @for (f of faq(); let i = $index; track i) {
       <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
         <button class="w-full p-6 text-left flex justify-between items-center hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors" 
                 (click)="toggleFaq(i)">
-          <span class="font-medium text-slate-900 dark:text-white">{{ f.q | translate }}</span>
+          <span class="font-medium text-slate-900 dark:text-white">{{ f.q }}</span>
           <span class="text-2xl text-blue-600 transition-transform" [class.rotate-45]="f.open">+</span>
         </button>
 
         @if (f.open) {
         <div class="px-6 pb-6">
-          <p class="text-slate-600 dark:text-slate-300">{{ f.a | translate }}</p>
+          <p class="text-slate-600 dark:text-slate-300">{{ f.a }}</p>
         </div>
         }
       </div>
       } @empty {
-      <p class="text-center text-slate-600 dark:text-slate-300">{{ 'ui.askMeAnything' | translate }}</p>
+      <p class="text-center text-slate-600 dark:text-slate-300">Ask me anything about process, pricing, or scope.</p>
       }
     </div>
   </section>
 
   <!-- Contact Form Section -->
   <section class="max-w-2xl mx-auto px-6 py-16">
-    <h3 class="text-2xl sm:text-3xl font-bold text-center text-slate-900 dark:text-white mb-12">{{ 'ui.contact' | translate }}</h3>
+    <h3 class="text-2xl sm:text-3xl font-bold text-center text-slate-900 dark:text-white mb-12">Contact</h3>
     <form name="hire-contact" method="POST" data-netlify="true" class="space-y-6">
       <input type="hidden" name="form-name" value="hire-contact" />
       <input class="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500/35" 
              type="text" 
              name="name" 
-             placeholder="{{ 'ui.yourName' | translate }}" 
+             placeholder="Your name" 
              required />
       <input class="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500/35" 
              type="email" 
              name="email" 
-             placeholder="{{ 'ui.email' | translate }}" 
+             placeholder="Email" 
              required />
       <textarea class="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500/35" 
                 name="message" 
                 rows="4" 
-                placeholder="{{ 'ui.projectDetails' | translate }}"></textarea>
+                placeholder="Project details…"></textarea>
       <button class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium" 
-              type="submit">{{ 'ui.send' | translate }}</button>
+              type="submit">Send</button>
     </form>
   </section>
 

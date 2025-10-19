@@ -1,12 +1,11 @@
 import { Component, Input, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslatePipe } from '@ngx-translate/core';
 import { LoadingService } from '../../core/loading.service';
 
 @Component({
   selector: 'app-loading-spinner',
   standalone: true,
-  imports: [CommonModule, TranslatePipe],
+  imports: [CommonModule],
   templateUrl: './loading-spinner.component.html',
   styleUrls: ['./loading-spinner.component.css']
 })

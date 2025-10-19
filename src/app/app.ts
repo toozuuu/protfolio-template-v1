@@ -1,15 +1,13 @@
 import { Component, signal, OnInit, OnDestroy } from '@angular/core';
 import { RouterOutlet, Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
-import { GDPRBannerComponent } from './components/gdpr-banner/gdpr-banner.component';
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 import { LoadingService } from './core/loading.service';
-import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, GDPRBannerComponent, LoadingSpinnerComponent],
+  imports: [RouterOutlet, LoadingSpinnerComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -20,7 +18,6 @@ export class App implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private loadingService: LoadingService,
-    private translateService: TranslateService
   ) {}
 
   ngOnInit() {
@@ -36,7 +33,7 @@ export class App implements OnInit, OnDestroy {
       )
       .subscribe(event => {
         if (event instanceof NavigationStart) {
-          this.loadingService.startLoading(this.translateService.instant('ui.loadingPage'));
+          this.loadingService.startLoading('Loading page...');
         } else if (
           event instanceof NavigationEnd || 
           event instanceof NavigationCancel || 
@@ -58,13 +55,13 @@ export class App implements OnInit, OnDestroy {
 
   private async simulateInitialLoading() {
     // Show full-screen loading spinner for 3 seconds
-    this.loadingService.showFullScreenLoading(this.translateService.instant('ui.loadingApplication'));
+    this.loadingService.showFullScreenLoading('Loading application...');
     
     // Simulate loading steps over 3 seconds
     const loadingSteps = [
-      { message: this.translateService.instant('ui.initializingApplication'), duration: 1000 },
-      { message: this.translateService.instant('ui.loadingComponents'), duration: 1000 },
-      { message: this.translateService.instant('ui.preparingInterface'), duration: 1000 }
+      { message: 'Initializing application...', duration: 1000 },
+      { message: 'Loading components...', duration: 1000 },
+      { message: 'Preparing interface...', duration: 1000 }
     ];
 
     await this.loadingService.simulateLoading(loadingSteps);

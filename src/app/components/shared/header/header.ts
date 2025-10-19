@@ -1,14 +1,12 @@
 import { ViewportScroller, CommonModule } from '@angular/common';
 import { Component, ChangeDetectionStrategy, OnInit, OnDestroy, signal, computed, ChangeDetectorRef } from '@angular/core';
 import {ThemeService} from '../../../core/theme.service';
-import {LanguageService} from '../../../core/language.service';
 import {FormsModule} from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, FormsModule, TranslateModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './header.html',
   styleUrl: './header.css',
   changeDetection: ChangeDetectionStrategy.Default,
@@ -23,16 +21,14 @@ export class Header implements OnInit, OnDestroy {
     this.isScrolled() ? 'scrolled' : ''
   );
   
-  // Computed signals for theme and language
+  // Computed signals for theme
   readonly isDark = computed(() => this.themeService.isDark());
-  readonly currentLang = computed(() => this.lang.lang());
   
   private scrollListener?: () => void;
 
   constructor(
     private readonly viewportScroller: ViewportScroller,
     public readonly themeService: ThemeService,
-    public readonly lang: LanguageService,
     private readonly cdr: ChangeDetectorRef
   ) {}
 
@@ -81,11 +77,4 @@ export class Header implements OnInit, OnDestroy {
     this.themeService.useSystem();
   }
 
-  onLanguageChange(lang: string) {
-    try {
-      this.lang.use(lang as any);
-    } catch (error) {
-      console.error('Language change failed:', error);
-    }
-  }
 }

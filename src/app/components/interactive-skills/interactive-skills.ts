@@ -1,8 +1,6 @@
 import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { CommonModule } from '@angular/common';
-import { TranslateService } from '@ngx-translate/core';
-import { TranslateModule } from '@ngx-translate/core';
 
 interface Skill {
   name: string;
@@ -16,7 +14,7 @@ interface Skill {
 @Component({
   selector: 'app-interactive-skills',
   standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule],
   templateUrl: './interactive-skills.html',
   styleUrl: './interactive-skills.css'
 })
@@ -25,8 +23,7 @@ export class InteractiveSkills implements OnInit, OnDestroy {
   isAnimating = false;
 
   constructor(
-    @Inject(PLATFORM_ID) private platformId: Object,
-    private translateService: TranslateService
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   skills: Skill[] = [
@@ -139,9 +136,9 @@ export class InteractiveSkills implements OnInit, OnDestroy {
   }
 
   getSkillLevelText(level: number): string {
-    if (level >= 90) return this.translateService.instant('skills.levels.expert');
-    if (level >= 80) return this.translateService.instant('skills.levels.advanced');
-    if (level >= 70) return this.translateService.instant('skills.levels.intermediate');
-    return this.translateService.instant('skills.levels.beginner');
+    if (level >= 90) return 'Expert';
+    if (level >= 80) return 'Advanced';
+    if (level >= 70) return 'Intermediate';
+    return 'Beginner';
   }
 }

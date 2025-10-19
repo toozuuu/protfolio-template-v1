@@ -1,9 +1,8 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
-import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-social-buttons',
-  imports: [TranslatePipe],
+  imports: [],
   templateUrl: './social-buttons.html',
       styleUrl: './social-buttons.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
