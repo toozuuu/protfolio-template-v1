@@ -39,7 +39,16 @@
     "uiux": "UI/UX Design",
     "devops": "DevOps & CI/CD",
     "testing": "Testing",
-    "agile": "Agile Methodologies"
+    "agile": "Agile Methodologies",
+    "technologies": "Technologies & Tools",
+    "frameworks": "Frameworks & Libraries",
+    "languages": "Programming Languages",
+    "levels": {
+      "expert": "Expert",
+      "advanced": "Advanced",
+      "intermediate": "Intermediate",
+      "beginner": "Beginner"
+    }
   },
   "experience": {
     "title": "Experiences",
@@ -121,24 +130,6 @@
     "subtitle": "Showcasing my expertise through real-world applications and innovative solutions.",
     "viewProject": "View Project",
     "viewCode": "View Code"
-  },
-  "skills": {
-    "title": "Core Competencies",
-    "frontend": "Frontend Development",
-    "backend": "Backend Development", 
-    "uiux": "UI/UX Design",
-    "devops": "DevOps & CI/CD",
-    "testing": "Testing",
-    "agile": "Agile Methodologies",
-    "technologies": "Technologies & Tools",
-    "frameworks": "Frameworks & Libraries",
-    "languages": "Programming Languages",
-    "levels": {
-      "expert": "Expert",
-      "advanced": "Advanced",
-      "intermediate": "Intermediate",
-      "beginner": "Beginner"
-    }
   },
   "footer": {
     "contact": "Interested in learning more about my experiences and journey? I'd be happy to connect—let's get in touch! ✌️",

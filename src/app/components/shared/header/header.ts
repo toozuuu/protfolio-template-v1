@@ -80,4 +80,12 @@ export class Header implements OnInit, OnDestroy {
   useSystemTheme() {
     this.themeService.useSystem();
   }
+
+  onLanguageChange(lang: string) {
+    try {
+      this.lang.use(lang as any);
+    } catch (error) {
+      console.error('Language change failed:', error);
+    }
+  }
 }

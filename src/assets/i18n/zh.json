@@ -237,7 +237,7 @@
   },
   "gdpr": {
     "title": "Cookie和隐私同意",
-    "description": "我们使用cookie来改善您的浏览体验、提供个性化内容并分析我们的流量。点击"接受全部"即表示您同意我们使用cookie。",
+    "description": "我们使用cookie来改善您的浏览体验、提供个性化内容并分析我们的流量。点击\"接受全部\"即表示您同意我们使用cookie。",
     "necessary": "必要Cookie",
     "analytics": "分析Cookie",
     "marketing": "营销Cookie",
