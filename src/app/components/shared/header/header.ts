@@ -39,8 +39,12 @@ export class Header implements OnInit, OnDestroy {
     // Check if we're in browser environment
     if (typeof window !== 'undefined') {
       this.scrollListener = () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        this._isScrolled.set(scrollTop > 50);
+        try {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          this._isScrolled.set(scrollTop > 50);
+        } catch (error) {
+          console.warn('Header scroll listener error:', error);
+        }
       };
 
       // Use passive listener for better performance

@@ -34,12 +34,16 @@ export class LayoutAnimationsService {
   private animateElement(element: Element): void {
     if (this.animatedElements.has(element)) return;
     
-    this.animatedElements.add(element);
-    this.renderer.addClass(element, 'animate-in');
-    
-    // Remove observer after animation
-    if (this.observer) {
-      this.observer.unobserve(element);
+    try {
+      this.animatedElements.add(element);
+      this.renderer.addClass(element, 'animate-in');
+      
+      // Remove observer after animation
+      if (this.observer) {
+        this.observer.unobserve(element);
+      }
+    } catch (error) {
+      console.warn('Animation failed for element:', element, error);
     }
   }
 
@@ -47,19 +51,23 @@ export class LayoutAnimationsService {
    * Animate elements on scroll
    */
   observeElement(element: ElementRef | Element, animationClass: string = 'animate-on-scroll'): void {
-    const el = element instanceof ElementRef ? element.nativeElement : element;
-    
-    if (!el) return;
+    try {
+      const el = element instanceof ElementRef ? element.nativeElement : element;
+      
+      if (!el) return;
 
-    // Add initial animation class
-    this.renderer.addClass(el, animationClass);
-    
-    // Start observing
-    if (this.observer) {
-      this.observer.observe(el);
-    } else {
-      // Fallback for browsers without IntersectionObserver
-      setTimeout(() => this.animateElement(el), 100);
+      // Add initial animation class
+      this.renderer.addClass(el, animationClass);
+      
+      // Start observing
+      if (this.observer) {
+        this.observer.observe(el);
+      } else {
+        // Fallback for browsers without IntersectionObserver
+        setTimeout(() => this.animateElement(el), 100);
+      }
+    } catch (error) {
+      console.warn('Failed to observe element:', error);
     }
   }
 
@@ -364,10 +372,20 @@ export class LayoutAnimationsService {
   /**
    * Animate entire page layout
    */
-  animatePageLayout(container: ElementRef | Element): void {
+  animatePageLayout(container: ElementRef | Element, retryCount: number = 0): void {
     const containerEl = container instanceof ElementRef ? container.nativeElement : container;
     
     if (!containerEl) return;
+
+    // Check if header is loaded before starting animations
+    const header = containerEl.querySelector('app-header');
+    if (!header && retryCount < 5) {
+      console.warn('Header not found, delaying animations, retry:', retryCount);
+      setTimeout(() => this.animatePageLayout(container, retryCount + 1), 200);
+      return;
+    } else if (!header) {
+      console.warn('Header not found after 5 retries, proceeding without header check');
+    }
 
     // Animate different sections with appropriate delays
     setTimeout(() => {

@@ -125,8 +125,19 @@ export class Home implements AfterViewInit, OnDestroy {
 
         this.mo.observe(root, { childList: true, subtree: true });
 
-        // Initialize layout animations
-        this.initializeLayoutAnimations();
+        // Initialize layout animations after ensuring header is loaded
+        setTimeout(() => {
+          // Double-check that header is properly loaded
+          const header = this.host.nativeElement.querySelector('app-header');
+          if (header) {
+            this.initializeLayoutAnimations();
+          } else {
+            // Retry after a longer delay if header is not found
+            setTimeout(() => {
+              this.initializeLayoutAnimations();
+            }, 300);
+          }
+        }, 500);
 
         // Complete loading after initialization
         setTimeout(() => {
@@ -220,43 +231,50 @@ export class Home implements AfterViewInit, OnDestroy {
   private initializeLayoutAnimations(): void {
     if (!isPlatformBrowser(this.platformId)) return;
 
-    // Animate the entire page layout
-    this.layoutAnimationsService.animatePageLayout(this.host);
-
-    // Animate hero section specifically
+    // Wait for DOM to be fully rendered before initializing animations
     setTimeout(() => {
-      this.layoutAnimationsService.animateHeroSection(this.host);
-    }, 200);
+      try {
+        // Animate the entire page layout
+        this.layoutAnimationsService.animatePageLayout(this.host);
 
-    // Animate sections with stagger
-    setTimeout(() => {
-      this.layoutAnimationsService.animateSections(this.host);
-    }, 400);
+        // Animate hero section specifically
+        setTimeout(() => {
+          this.layoutAnimationsService.animateHeroSection(this.host);
+        }, 200);
 
-    // Animate cards and grid items
-    setTimeout(() => {
-      this.layoutAnimationsService.animateCards(this.host);
-      this.layoutAnimationsService.animateGridItems(this.host);
-    }, 600);
+        // Animate sections with stagger
+        setTimeout(() => {
+          this.layoutAnimationsService.animateSections(this.host);
+        }, 400);
 
-    // Animate text elements
-    setTimeout(() => {
-      this.layoutAnimationsService.animateTextElements(this.host);
-    }, 800);
+        // Animate cards and grid items
+        setTimeout(() => {
+          this.layoutAnimationsService.animateCards(this.host);
+          this.layoutAnimationsService.animateGridItems(this.host);
+        }, 600);
 
-    // Animate images
-    setTimeout(() => {
-      this.layoutAnimationsService.animateImages(this.host);
-    }, 1000);
+        // Animate text elements
+        setTimeout(() => {
+          this.layoutAnimationsService.animateTextElements(this.host);
+        }, 800);
 
-    // Animate buttons
-    setTimeout(() => {
-      this.layoutAnimationsService.animateButtons(this.host);
-    }, 1200);
+        // Animate images
+        setTimeout(() => {
+          this.layoutAnimationsService.animateImages(this.host);
+        }, 1000);
 
-    // Animate list items
-    setTimeout(() => {
-      this.layoutAnimationsService.animateListItems(this.host);
-    }, 1400);
+        // Animate buttons
+        setTimeout(() => {
+          this.layoutAnimationsService.animateButtons(this.host);
+        }, 1200);
+
+        // Animate list items
+        setTimeout(() => {
+          this.layoutAnimationsService.animateListItems(this.host);
+        }, 1400);
+      } catch (error) {
+        console.warn('Layout animations initialization failed:', error);
+      }
+    }, 100);
   }
 }
