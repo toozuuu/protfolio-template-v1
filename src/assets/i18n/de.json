@@ -42,7 +42,13 @@
     "agile": "Agile Methoden",
     "technologies": "Technologien & Tools",
     "frameworks": "Frameworks & Bibliotheken",
-    "languages": "Programmiersprachen"
+    "languages": "Programmiersprachen",
+    "levels": {
+      "expert": "Experte",
+      "advanced": "Fortgeschritten",
+      "intermediate": "Mittelstufe",
+      "beginner": "Anfänger"
+    }
   },
   "experience": {
     "title": "Erfahrungen",
@@ -99,6 +105,15 @@
   "opensource": {
     "title": "Open Source Projekte",
     "subtitle": "Beitrag zur Entwicklergemeinschaft mit modernen, leistungsstarken Angular-Komponenten und Bibliotheken.",
+    "stars": "14 Sterne",
+    "forks": "3 Forks",
+    "technologies": {
+      "angular": "Angular",
+      "typescript": "TypeScript",
+      "standalone": "Standalone",
+      "validation": "Validierung",
+      "i18n": "i18n"
+    },
     "datepicker": {
       "title": "ngxsmk-datepicker",
       "description": "Ein leistungsstarker, moderner, hochgradig anpassbarer Angular Datumsbereichsauswahl mit Zeitkomponente. Features 30% kleineres Bundle, 40% schnellere Darstellung und null Abhängigkeiten.",
@@ -223,5 +238,31 @@
         "a": "Festpreis für Packs; stündlich für Coaching. 50% im Voraus für Festpreis-Packs. Stripe oder Banküberweisung."
       }
     }
+  },
+  "technologies": {
+    "angular": "Angular",
+    "typescript": "TypeScript", 
+    "react": "React",
+    "nodejs": "Node.js",
+    "ionic": "Ionic",
+    "flutter": "Flutter",
+    "aws": "AWS",
+    "figma": "Figma",
+    "docker": "Docker"
+  },
+  "gdpr": {
+    "title": "Cookie & Datenschutz-Zustimmung",
+    "description": "Wir verwenden Cookies, um Ihre Browsing-Erfahrung zu verbessern, personalisierte Inhalte zu liefern und unseren Traffic zu analysieren. Durch Klicken auf 'Alle akzeptieren' stimmen Sie unserer Verwendung von Cookies zu.",
+    "necessary": "Notwendige Cookies",
+    "analytics": "Analyse-Cookies",
+    "marketing": "Marketing-Cookies",
+    "preferences": "Präferenz-Cookies",
+    "required": "Erforderlich",
+    "acceptAll": "Alle akzeptieren",
+    "acceptSelected": "Ausgewählte akzeptieren",
+    "rejectAll": "Alle ablehnen",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "cookiePolicy": "Cookie-Richtlinie",
+    "contact": "Kontaktieren Sie uns"
   }
 }

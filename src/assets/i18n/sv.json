@@ -96,6 +96,15 @@
   "opensource": {
     "title": "Open Source-projekt",
     "subtitle": "Bidrar till utvecklarsamhället med moderna, prestandaoptimerade Angular-komponenter och bibliotek.",
+    "stars": "14 stjärnor",
+    "forks": "3 förgreningar",
+    "technologies": {
+      "angular": "Angular",
+      "typescript": "TypeScript",
+      "standalone": "Standalone",
+      "validation": "Validering",
+      "i18n": "i18n"
+    },
     "datepicker": {
       "title": "ngxsmk-datepicker",
       "description": "En kraftfull, modern, mycket anpassningsbar Angular datumintervallväljare med tidskomponent. Har 30% mindre bundle, 40% snabbare rendering och noll beroenden.",
@@ -123,7 +132,13 @@
     "agile": "Agila metoder",
     "technologies": "Teknologier & verktyg",
     "frameworks": "Ramverk & bibliotek",
-    "languages": "Programmeringsspråk"
+    "languages": "Programmeringsspråk",
+    "levels": {
+      "expert": "Expert",
+      "advanced": "Avancerad",
+      "intermediate": "Mellanliggande",
+      "beginner": "Nybörjare"
+    }
   },
   "ui": {
     "seeMore": "Se mer",
@@ -217,5 +232,31 @@
     "contact": "Vill du veta mer om mina erfarenheter och min resa? Jag berättar gärna mer – hör av dig! ✌️",
     "built": "Byggd med ❤️ i Angular",
     "rights": "© 2025 Alla rättigheter förbehållna."
+  },
+  "technologies": {
+    "angular": "Angular",
+    "typescript": "TypeScript", 
+    "react": "React",
+    "nodejs": "Node.js",
+    "ionic": "Ionic",
+    "flutter": "Flutter",
+    "aws": "AWS",
+    "figma": "Figma",
+    "docker": "Docker"
+  },
+  "gdpr": {
+    "title": "Cookie & Integritetssamtycke",
+    "description": "Vi använder cookies för att förbättra din surfupplevelse, servera personligt innehåll och analysera vår trafik. Genom att klicka på 'Acceptera alla' samtycker du till vår användning av cookies.",
+    "necessary": "Nödvändiga Cookies",
+    "analytics": "Analyscookies",
+    "marketing": "Marknadsföringscookies",
+    "preferences": "Preferenscookies",
+    "required": "Obligatorisk",
+    "acceptAll": "Acceptera alla",
+    "acceptSelected": "Acceptera valda",
+    "rejectAll": "Avvisa alla",
+    "privacyPolicy": "Integritetspolicy",
+    "cookiePolicy": "Cookiepolicy",
+    "contact": "Kontakta oss"
   }
 }

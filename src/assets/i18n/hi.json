@@ -42,7 +42,13 @@
     "agile": "एजाइल मेथोडोलॉजी",
     "technologies": "टेक्नोलॉजी और टूल्स",
     "frameworks": "फ्रेमवर्क और लाइब्रेरी",
-    "languages": "प्रोग्रामिंग भाषाएं"
+    "languages": "प्रोग्रामिंग भाषाएं",
+    "levels": {
+      "expert": "विशेषज्ञ",
+      "advanced": "उन्नत",
+      "intermediate": "मध्यम",
+      "beginner": "शुरुआती"
+    }
   },
   "experience": {
     "title": "अनुभव",
@@ -99,6 +105,15 @@
   "opensource": {
     "title": "ओपन सोर्स प्रोजेक्ट्स",
     "subtitle": "आधुनिक, high-performance Angular components और libraries के साथ developer community में योगदान।",
+    "stars": "14 सितारे",
+    "forks": "3 फोर्क",
+    "technologies": {
+      "angular": "Angular",
+      "typescript": "TypeScript",
+      "standalone": "Standalone",
+      "validation": "सत्यापन",
+      "i18n": "i18n"
+    },
     "datepicker": {
       "title": "ngxsmk-datepicker",
       "description": "समय component के साथ एक शक्तिशाली, आधुनिक, अत्यधिक अनुकूलन योग्य Angular date range picker। 30% छोटा bundle, 40% तेज rendering, और zero dependencies की विशेषताएं।",
@@ -208,5 +223,31 @@
         "a": "पैक्स के लिए निश्चित मूल्य; कोचिंग के लिए प्रति घंटा। निश्चित पैक्स के लिए 50% अग्रिम। Stripe या बैंक ट्रांसफर।"
       }
     }
+  },
+  "technologies": {
+    "angular": "Angular",
+    "typescript": "TypeScript", 
+    "react": "React",
+    "nodejs": "Node.js",
+    "ionic": "Ionic",
+    "flutter": "Flutter",
+    "aws": "AWS",
+    "figma": "Figma",
+    "docker": "Docker"
+  },
+  "gdpr": {
+    "title": "कुकी और गोपनीयता सहमति",
+    "description": "हम आपके ब्राउज़िंग अनुभव को बेहतर बनाने, व्यक्तिगत सामग्री प्रदान करने और हमारे ट्रैफ़िक का विश्लेषण करने के लिए कुकीज़ का उपयोग करते हैं। 'सभी स्वीकार करें' पर क्लिक करके, आप हमारे कुकीज़ के उपयोग से सहमत हैं।",
+    "necessary": "आवश्यक कुकीज़",
+    "analytics": "विश्लेषण कुकीज़",
+    "marketing": "मार्केटिंग कुकीज़",
+    "preferences": "प्राथमिकता कुकीज़",
+    "required": "आवश्यक",
+    "acceptAll": "सभी स्वीकार करें",
+    "acceptSelected": "चयनित स्वीकार करें",
+    "rejectAll": "सभी अस्वीकार करें",
+    "privacyPolicy": "गोपनीयता नीति",
+    "cookiePolicy": "कुकी नीति",
+    "contact": "संपर्क करें"
   }
 }

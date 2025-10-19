@@ -42,7 +42,13 @@
     "agile": "アジャイル手法",
     "technologies": "技術とツール",
     "frameworks": "フレームワークとライブラリ",
-    "languages": "プログラミング言語"
+    "languages": "プログラミング言語",
+    "levels": {
+      "expert": "エキスパート",
+      "advanced": "上級",
+      "intermediate": "中級",
+      "beginner": "初級"
+    }
   },
   "experience": {
     "title": "経験",
@@ -99,6 +105,15 @@
   "opensource": {
     "title": "オープンソースプロジェクト",
     "subtitle": "モダンで高性能なAngularコンポーネントとライブラリで開発者コミュニティに貢献。",
+    "stars": "14スター",
+    "forks": "3フォーク",
+    "technologies": {
+      "angular": "Angular",
+      "typescript": "TypeScript",
+      "standalone": "Standalone",
+      "validation": "バリデーション",
+      "i18n": "i18n"
+    },
     "datepicker": {
       "title": "ngxsmk-datepicker",
       "description": "時間コンポーネント付きの強力でモダン、高度にカスタマイズ可能なAngular日付範囲ピッカー。30%小さなバンドル、40%高速レンダリング、ゼロ依存関係の特徴。",
@@ -208,5 +223,31 @@
         "a": "パックは固定価格、コーチングは時間制。固定パックは50%前払い。Stripeまたは銀行振込。"
       }
     }
+  },
+  "technologies": {
+    "angular": "Angular",
+    "typescript": "TypeScript", 
+    "react": "React",
+    "nodejs": "Node.js",
+    "ionic": "Ionic",
+    "flutter": "Flutter",
+    "aws": "AWS",
+    "figma": "Figma",
+    "docker": "Docker"
+  },
+  "gdpr": {
+    "title": "Cookieとプライバシー同意",
+    "description": "ブラウジング体験の向上、パーソナライズされたコンテンツの提供、トラフィックの分析のためにCookieを使用しています。「すべて受け入れる」をクリックすることで、Cookieの使用に同意したことになります。",
+    "necessary": "必要なCookie",
+    "analytics": "分析Cookie",
+    "marketing": "マーケティングCookie",
+    "preferences": "設定Cookie",
+    "required": "必須",
+    "acceptAll": "すべて受け入れる",
+    "acceptSelected": "選択したものを受け入れる",
+    "rejectAll": "すべて拒否",
+    "privacyPolicy": "プライバシーポリシー",
+    "cookiePolicy": "Cookieポリシー",
+    "contact": "お問い合わせ"
   }
 }

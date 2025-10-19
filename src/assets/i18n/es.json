@@ -42,7 +42,13 @@
     "agile": "Metodologías Ágiles",
     "technologies": "Tecnologías y Herramientas",
     "frameworks": "Frameworks y Librerías",
-    "languages": "Lenguajes de Programación"
+    "languages": "Lenguajes de Programación",
+    "levels": {
+      "expert": "Experto",
+      "advanced": "Avanzado",
+      "intermediate": "Intermedio",
+      "beginner": "Principiante"
+    }
   },
   "experience": {
     "title": "Experiencias",
@@ -99,6 +105,15 @@
   "opensource": {
     "title": "Proyectos de Código Abierto",
     "subtitle": "Contribuyendo a la comunidad de desarrolladores con componentes y librerías Angular modernas y de alto rendimiento.",
+    "stars": "14 estrellas",
+    "forks": "3 bifurcaciones",
+    "technologies": {
+      "angular": "Angular",
+      "typescript": "TypeScript",
+      "standalone": "Standalone",
+      "validation": "Validación",
+      "i18n": "i18n"
+    },
     "datepicker": {
       "title": "ngxsmk-datepicker",
       "description": "Un selector de rango de fechas Angular potente, moderno y altamente personalizable con componente de tiempo. Características 30% bundle más pequeño, 40% renderizado más rápido y cero dependencias.",
@@ -223,5 +238,31 @@
         "a": "Precio fijo para paquetes; por hora para entrenamiento. 50% por adelantado para paquetes fijos. Stripe o transferencia bancaria."
       }
     }
+  },
+  "technologies": {
+    "angular": "Angular",
+    "typescript": "TypeScript", 
+    "react": "React",
+    "nodejs": "Node.js",
+    "ionic": "Ionic",
+    "flutter": "Flutter",
+    "aws": "AWS",
+    "figma": "Figma",
+    "docker": "Docker"
+  },
+  "gdpr": {
+    "title": "Consentimiento de Cookies y Privacidad",
+    "description": "Utilizamos cookies para mejorar su experiencia de navegación, servir contenido personalizado y analizar nuestro tráfico. Al hacer clic en 'Aceptar todo', usted consiente nuestro uso de cookies.",
+    "necessary": "Cookies Necesarias",
+    "analytics": "Cookies de Análisis",
+    "marketing": "Cookies de Marketing",
+    "preferences": "Cookies de Preferencias",
+    "required": "Requerido",
+    "acceptAll": "Aceptar todo",
+    "acceptSelected": "Aceptar seleccionadas",
+    "rejectAll": "Rechazar todo",
+    "privacyPolicy": "Política de Privacidad",
+    "cookiePolicy": "Política de Cookies",
+    "contact": "Contáctanos"
   }
 }

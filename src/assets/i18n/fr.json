@@ -42,7 +42,13 @@
     "agile": "Méthodologies Agiles",
     "technologies": "Technologies et Outils",
     "frameworks": "Frameworks et Bibliothèques",
-    "languages": "Langages de Programmation"
+    "languages": "Langages de Programmation",
+    "levels": {
+      "expert": "Expert",
+      "advanced": "Avancé",
+      "intermediate": "Intermédiaire",
+      "beginner": "Débutant"
+    }
   },
   "experience": {
     "title": "Expériences",
@@ -99,6 +105,15 @@
   "opensource": {
     "title": "Projets Open Source",
     "subtitle": "Contribuer à la communauté de développeurs avec des composants et bibliothèques Angular modernes et performants.",
+    "stars": "14 étoiles",
+    "forks": "3 bifurcations",
+    "technologies": {
+      "angular": "Angular",
+      "typescript": "TypeScript",
+      "standalone": "Standalone",
+      "validation": "Validation",
+      "i18n": "i18n"
+    },
     "datepicker": {
       "title": "ngxsmk-datepicker",
       "description": "Un sélecteur de plage de dates Angular puissant, moderne et hautement personnalisable avec composant de temps. Caractéristiques 30% bundle plus petit, 40% rendu plus rapide et zéro dépendances.",
@@ -223,5 +238,31 @@
         "a": "Prix fixe pour les packs ; à l'heure pour le coaching. 50% d'avance pour les packs fixes. Stripe ou virement bancaire."
       }
     }
+  },
+  "technologies": {
+    "angular": "Angular",
+    "typescript": "TypeScript", 
+    "react": "React",
+    "nodejs": "Node.js",
+    "ionic": "Ionic",
+    "flutter": "Flutter",
+    "aws": "AWS",
+    "figma": "Figma",
+    "docker": "Docker"
+  },
+  "gdpr": {
+    "title": "Consentement aux Cookies et Confidentialité",
+    "description": "Nous utilisons des cookies pour améliorer votre expérience de navigation, servir du contenu personnalisé et analyser notre trafic. En cliquant sur 'Accepter tout', vous consentez à notre utilisation des cookies.",
+    "necessary": "Cookies Nécessaires",
+    "analytics": "Cookies d'Analyse",
+    "marketing": "Cookies Marketing",
+    "preferences": "Cookies de Préférences",
+    "required": "Requis",
+    "acceptAll": "Accepter tout",
+    "acceptSelected": "Accepter sélectionnés",
+    "rejectAll": "Rejeter tout",
+    "privacyPolicy": "Politique de Confidentialité",
+    "cookiePolicy": "Politique des Cookies",
+    "contact": "Nous Contacter"
   }
 }

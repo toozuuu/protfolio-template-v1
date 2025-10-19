@@ -42,7 +42,13 @@
     "agile": "애자일 방법론",
     "technologies": "기술 및 도구",
     "frameworks": "프레임워크 및 라이브러리",
-    "languages": "프로그래밍 언어"
+    "languages": "프로그래밍 언어",
+    "levels": {
+      "expert": "전문가",
+      "advanced": "고급",
+      "intermediate": "중급",
+      "beginner": "초급"
+    }
   },
   "experience": {
     "title": "경험",
@@ -99,6 +105,15 @@
   "opensource": {
     "title": "오픈소스 프로젝트",
     "subtitle": "현대적이고 고성능의 Angular 컴포넌트와 라이브러리로 개발자 커뮤니티에 기여.",
+    "stars": "14 스타",
+    "forks": "3 포크",
+    "technologies": {
+      "angular": "Angular",
+      "typescript": "TypeScript",
+      "standalone": "Standalone",
+      "validation": "유효성 검사",
+      "i18n": "i18n"
+    },
     "datepicker": {
       "title": "ngxsmk-datepicker",
       "description": "시간 컴포넌트가 포함된 강력하고 현대적이며 높은 수준으로 사용자 정의 가능한 Angular 날짜 범위 선택기. 30% 작은 번들, 40% 빠른 렌더링, 제로 종속성 특징.",
@@ -208,5 +223,31 @@
         "a": "팩은 고정가격; 코칭은 시간당. 고정 팩은 50% 선불. Stripe 또는 은행 송금."
       }
     }
+  },
+  "technologies": {
+    "angular": "Angular",
+    "typescript": "TypeScript", 
+    "react": "React",
+    "nodejs": "Node.js",
+    "ionic": "Ionic",
+    "flutter": "Flutter",
+    "aws": "AWS",
+    "figma": "Figma",
+    "docker": "Docker"
+  },
+  "gdpr": {
+    "title": "쿠키 및 개인정보 동의",
+    "description": "브라우징 경험을 개선하고, 개인화된 콘텐츠를 제공하며, 트래픽을 분석하기 위해 쿠키를 사용합니다. '모두 수락'을 클릭하면 쿠키 사용에 동의하는 것입니다.",
+    "necessary": "필수 쿠키",
+    "analytics": "분석 쿠키",
+    "marketing": "마케팅 쿠키",
+    "preferences": "선호도 쿠키",
+    "required": "필수",
+    "acceptAll": "모두 수락",
+    "acceptSelected": "선택한 것 수락",
+    "rejectAll": "모두 거부",
+    "privacyPolicy": "개인정보 보호정책",
+    "cookiePolicy": "쿠키 정책",
+    "contact": "문의하기"
   }
 }

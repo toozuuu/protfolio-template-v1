@@ -96,6 +96,15 @@
   "opensource": {
     "title": "Open Source ව්‍යාපෘති",
     "subtitle": "නවීන, කාර්යක්ෂම Angular components සහ libraries සමඟ developer community වෙත දායකත්වය ලබාදීම.",
+    "stars": "තරු 14",
+    "forks": "කොටස් 3",
+    "technologies": {
+      "angular": "Angular",
+      "typescript": "TypeScript",
+      "standalone": "Standalone",
+      "validation": "සත්‍යාපනය",
+      "i18n": "i18n"
+    },
     "datepicker": {
       "title": "ngxsmk-datepicker",
       "description": "බලවත්, නවීන, ඉතාමත් අභිරුචිකරණය කළ හැකි Angular දින පරාස තේරීම සහ කාල සංරචක සමඟ. 30% කුඩා bundle, 40% වේගවත් rendering සහ zero dependencies.",
@@ -123,7 +132,13 @@
     "agile": "Agile ක්‍රමවේද",
     "technologies": "තාක්ෂණ සහ මෙවලම්",
     "frameworks": "Frameworks සහ Libraries",
-    "languages": "ක්‍රමලේඛන භාෂා"
+    "languages": "ක්‍රමලේඛන භාෂා",
+    "levels": {
+      "expert": "විශේෂඥ",
+      "advanced": "උසස්",
+      "intermediate": "මධ්‍යම",
+      "beginner": "ආරම්භක"
+    }
   },
   "footer": {
     "contact": "මගේ අත්දැකීම් සහ ගමන ගැන වැඩි විස්තර දැනගැනීමට කැමතිද? සම්බන්ධ වන්න ✌️",
@@ -217,5 +232,31 @@
         "a": "පැකේජ සඳහා ස්ථිර මිල; පුහුණුව සඳහා පැයකට. ස්ථිර පැකේජ සඳහා 50% කල් ගෙවීම. Stripe හෝ බැංකු මාරුව."
       }
     }
+  },
+  "technologies": {
+    "angular": "Angular",
+    "typescript": "TypeScript", 
+    "react": "React",
+    "nodejs": "Node.js",
+    "ionic": "Ionic",
+    "flutter": "Flutter",
+    "aws": "AWS",
+    "figma": "Figma",
+    "docker": "Docker"
+  },
+  "gdpr": {
+    "title": "කුකී සහ රහස්‍යතා එකඟතාව",
+    "description": "ඔබේ බ්‍රවුසිං අත්දැකීම වැඩිදියුණු කිරීම, පුද්ගලික අන්තර්ගතය සේවය කිරීම සහ අපගේ ගමනාගමනය විශ්ලේෂණය කිරීම සඳහා අපි කුකී භාවිතා කරමු. 'සියල්ල පිළිගන්න' මත ක්ලික් කිරීමෙන්, ඔබ අපගේ කුකී භාවිතයට එකඟ වේ.",
+    "necessary": "අවශ්‍ය කුකී",
+    "analytics": "විශ්ලේෂණ කුකී",
+    "marketing": "අලෙවිකරණ කුකී",
+    "preferences": "ප්‍රියතා කුකී",
+    "required": "අවශ්‍ය",
+    "acceptAll": "සියල්ල පිළිගන්න",
+    "acceptSelected": "තෝරාගත් ඒවා පිළිගන්න",
+    "rejectAll": "සියල්ල ප්‍රතික්ෂේප කරන්න",
+    "privacyPolicy": "රහස්‍යතා ප්‍රතිපත්තිය",
+    "cookiePolicy": "කුකී ප්‍රතිපත්තිය",
+    "contact": "අප හා සම්බන්ධ වන්න"
   }
 }

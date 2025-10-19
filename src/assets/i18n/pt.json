@@ -42,7 +42,13 @@
     "agile": "Metodologias Ágeis",
     "technologies": "Tecnologias e Ferramentas",
     "frameworks": "Frameworks e Bibliotecas",
-    "languages": "Linguagens de Programação"
+    "languages": "Linguagens de Programação",
+    "levels": {
+      "expert": "Especialista",
+      "advanced": "Avançado",
+      "intermediate": "Intermediário",
+      "beginner": "Iniciante"
+    }
   },
   "experience": {
     "title": "Experiências",
@@ -99,6 +105,15 @@
   "opensource": {
     "title": "Projetos Open Source",
     "subtitle": "Contribuindo para a comunidade de desenvolvedores com componentes e bibliotecas Angular modernas e de alto desempenho.",
+    "stars": "14 estrelas",
+    "forks": "3 forks",
+    "technologies": {
+      "angular": "Angular",
+      "typescript": "TypeScript",
+      "standalone": "Standalone",
+      "validation": "Validação",
+      "i18n": "i18n"
+    },
     "datepicker": {
       "title": "ngxsmk-datepicker",
       "description": "Um seletor de intervalo de datas Angular poderoso, moderno e altamente personalizável com componente de tempo. Características 30% bundle menor, 40% renderização mais rápida e zero dependências.",
@@ -220,6 +235,32 @@
     "acceptAll": "Aceitar Todos",
     "acceptSelected": "Aceitar Selecionados",
     "rejectAll": "Rejeitar Todos",
+    "privacyPolicy": "Política de Privacidade",
+    "cookiePolicy": "Política de Cookies",
+    "contact": "Entre em Contato"
+  },
+  "technologies": {
+    "angular": "Angular",
+    "typescript": "TypeScript", 
+    "react": "React",
+    "nodejs": "Node.js",
+    "ionic": "Ionic",
+    "flutter": "Flutter",
+    "aws": "AWS",
+    "figma": "Figma",
+    "docker": "Docker"
+  },
+  "gdpr": {
+    "title": "Consentimento de Cookies e Privacidade",
+    "description": "Usamos cookies para melhorar sua experiência de navegação, servir conteúdo personalizado e analisar nosso tráfego. Ao clicar em 'Aceitar todos', você consente com nosso uso de cookies.",
+    "necessary": "Cookies Necessários",
+    "analytics": "Cookies de Análise",
+    "marketing": "Cookies de Marketing",
+    "preferences": "Cookies de Preferências",
+    "required": "Obrigatório",
+    "acceptAll": "Aceitar todos",
+    "acceptSelected": "Aceitar selecionados",
+    "rejectAll": "Rejeitar todos",
     "privacyPolicy": "Política de Privacidade",
     "cookiePolicy": "Política de Cookies",
     "contact": "Entre em Contato"

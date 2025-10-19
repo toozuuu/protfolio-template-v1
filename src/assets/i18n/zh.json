@@ -42,7 +42,13 @@
     "agile": "敏捷方法",
     "technologies": "技术和工具",
     "frameworks": "框架和库",
-    "languages": "编程语言"
+    "languages": "编程语言",
+    "levels": {
+      "expert": "专家",
+      "advanced": "高级",
+      "intermediate": "中级",
+      "beginner": "初级"
+    }
   },
   "experience": {
     "title": "经验",
@@ -99,6 +105,15 @@
   "opensource": {
     "title": "开源项目",
     "subtitle": "通过现代、高性能的Angular组件和库为开发者社区做出贡献。",
+    "stars": "14星",
+    "forks": "3分叉",
+    "technologies": {
+      "angular": "Angular",
+      "typescript": "TypeScript",
+      "standalone": "Standalone",
+      "validation": "验证",
+      "i18n": "i18n"
+    },
     "datepicker": {
       "title": "ngxsmk-datepicker",
       "description": "一个强大、现代、高度可定制的Angular日期范围选择器，带时间组件。特点：30%更小的包，40%更快的渲染，零依赖。",
@@ -208,5 +223,31 @@
         "a": "包固定价格；指导按小时计费。固定包预付50%。Stripe或银行转账。"
       }
     }
+  },
+  "technologies": {
+    "angular": "Angular",
+    "typescript": "TypeScript", 
+    "react": "React",
+    "nodejs": "Node.js",
+    "ionic": "Ionic",
+    "flutter": "Flutter",
+    "aws": "AWS",
+    "figma": "Figma",
+    "docker": "Docker"
+  },
+  "gdpr": {
+    "title": "Cookie和隐私同意",
+    "description": "我们使用cookie来改善您的浏览体验、提供个性化内容并分析我们的流量。点击"接受全部"即表示您同意我们使用cookie。",
+    "necessary": "必要Cookie",
+    "analytics": "分析Cookie",
+    "marketing": "营销Cookie",
+    "preferences": "偏好Cookie",
+    "required": "必需",
+    "acceptAll": "接受全部",
+    "acceptSelected": "接受选中的",
+    "rejectAll": "拒绝全部",
+    "privacyPolicy": "隐私政策",
+    "cookiePolicy": "Cookie政策",
+    "contact": "联系我们"
   }
 }
