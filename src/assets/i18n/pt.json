@@ -95,5 +95,20 @@
     "contact": "Interessado em aprender mais sobre minhas experiências e jornada? Ficaria feliz em conectar—vamos entrar em contato! ✌️",
     "built": "Construído com ❤️ usando Angular",
     "rights": "© 2025 Todos os direitos reservados."
+  },
+  "gdpr": {
+    "title": "Consentimento de Cookies e Privacidade",
+    "description": "Usamos cookies para melhorar sua experiência de navegação, servir conteúdo personalizado e analisar nosso tráfego. Ao clicar em 'Aceitar Todos', você consente com nosso uso de cookies.",
+    "necessary": "Cookies Necessários",
+    "analytics": "Cookies de Análise",
+    "marketing": "Cookies de Marketing",
+    "preferences": "Cookies de Preferências",
+    "required": "Obrigatório",
+    "acceptAll": "Aceitar Todos",
+    "acceptSelected": "Aceitar Selecionados",
+    "rejectAll": "Rejeitar Todos",
+    "privacyPolicy": "Política de Privacidade",
+    "cookiePolicy": "Política de Cookies",
+    "contact": "Entre em Contato"
   }
 }

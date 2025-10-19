@@ -95,5 +95,20 @@
     "contact": "¿Interesado en aprender más sobre mis experiencias y viaje? Me encantaría conectar—¡pongámonos en contacto! ✌️",
     "built": "Construido con ❤️ usando Angular",
     "rights": "© 2025 Todos los derechos reservados."
+  },
+  "gdpr": {
+    "title": "Consentimiento de Cookies y Privacidad",
+    "description": "Utilizamos cookies para mejorar su experiencia de navegación, servir contenido personalizado y analizar nuestro tráfico. Al hacer clic en 'Aceptar Todo', usted consiente nuestro uso de cookies.",
+    "necessary": "Cookies Necesarias",
+    "analytics": "Cookies de Análisis",
+    "marketing": "Cookies de Marketing",
+    "preferences": "Cookies de Preferencias",
+    "required": "Requerido",
+    "acceptAll": "Aceptar Todo",
+    "acceptSelected": "Aceptar Seleccionados",
+    "rejectAll": "Rechazar Todo",
+    "privacyPolicy": "Política de Privacidad",
+    "cookiePolicy": "Política de Cookies",
+    "contact": "Contáctanos"
   }
 }
