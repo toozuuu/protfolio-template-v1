@@ -63,4 +63,20 @@ export class LoadingService {
     
     this.completeLoading();
   }
+
+  // Full-screen loading methods
+  showFullScreenLoading(message: string = 'Loading...') {
+    this.startLoading(message);
+  }
+
+  hideFullScreenLoading() {
+    this.completeLoading();
+  }
+
+  // Quick full-screen loading with auto-hide
+  async showFullScreenLoadingWithDelay(message: string, delay: number = 2000) {
+    this.startLoading(message);
+    await new Promise(resolve => setTimeout(resolve, delay));
+    this.completeLoading();
+  }
 }

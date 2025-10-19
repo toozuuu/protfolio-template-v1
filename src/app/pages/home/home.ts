@@ -13,7 +13,7 @@ import {
   signal,
   computed,
 } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { Header } from '../../components/shared/header/header';
 import { Footer } from '../../components/shared/footer/footer';
 import { SocialButtons } from '../../components/social-buttons/social-buttons';
@@ -25,11 +25,13 @@ import { LanguageService } from '../../core/language.service';
 import { AnalyticsService } from '../../core/analytics.service';
 import { AnimationsService } from '../../core/animations.service';
 import { LoadingService } from '../../core/loading.service';
+import { TranslateService } from '@ngx-translate/core';
+import { LayoutAnimationsService } from '../../core/layout-animations.service';
 
 
 @Component({
   selector: 'app-home',
-  imports: [Header, Footer, SocialButtons, TranslatePipe],
+  imports: [Header, Footer, SocialButtons, TranslatePipe, CommonModule],
   templateUrl: './home.html',
   styleUrl: './home.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -55,6 +57,8 @@ export class Home implements AfterViewInit, OnDestroy {
     private readonly analyticsService: AnalyticsService,
     private readonly animationsService: AnimationsService,
     private readonly loadingService: LoadingService,
+    private readonly translateService: TranslateService,
+    private readonly layoutAnimationsService: LayoutAnimationsService,
     private readonly cdr: ChangeDetectorRef,
     @Inject(PLATFORM_ID) private readonly platformId: Object
   ) {}
@@ -65,7 +69,7 @@ export class Home implements AfterViewInit, OnDestroy {
         if (!isPlatformBrowser(this.platformId)) return;
 
         // Show loading for home page initialization
-        this.loadingService.startLoading('Loading home page...');
+        this.loadingService.startLoading(this.translateService.instant('ui.loadingHomePage'));
 
         // Initialize SEO
         this.seoService.setHomePageSEO(this.languageService.lang());
@@ -121,6 +125,9 @@ export class Home implements AfterViewInit, OnDestroy {
 
         this.mo.observe(root, { childList: true, subtree: true });
 
+        // Initialize layout animations
+        this.initializeLayoutAnimations();
+
         // Complete loading after initialization
         setTimeout(() => {
           this.loadingService.completeLoading();
@@ -133,6 +140,7 @@ export class Home implements AfterViewInit, OnDestroy {
   ngOnDestroy(): void {
     this.io?.disconnect();
     this.mo?.disconnect();
+    this.layoutAnimationsService.destroy();
     this.io = undefined;
     this.mo = undefined;
   }
@@ -207,5 +215,48 @@ export class Home implements AfterViewInit, OnDestroy {
     audio.src = 'assets/name_voice.mp3';
     audio.load();
     audio.play();
+  }
+
+  private initializeLayoutAnimations(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    // Animate the entire page layout
+    this.layoutAnimationsService.animatePageLayout(this.host);
+
+    // Animate hero section specifically
+    setTimeout(() => {
+      this.layoutAnimationsService.animateHeroSection(this.host);
+    }, 200);
+
+    // Animate sections with stagger
+    setTimeout(() => {
+      this.layoutAnimationsService.animateSections(this.host);
+    }, 400);
+
+    // Animate cards and grid items
+    setTimeout(() => {
+      this.layoutAnimationsService.animateCards(this.host);
+      this.layoutAnimationsService.animateGridItems(this.host);
+    }, 600);
+
+    // Animate text elements
+    setTimeout(() => {
+      this.layoutAnimationsService.animateTextElements(this.host);
+    }, 800);
+
+    // Animate images
+    setTimeout(() => {
+      this.layoutAnimationsService.animateImages(this.host);
+    }, 1000);
+
+    // Animate buttons
+    setTimeout(() => {
+      this.layoutAnimationsService.animateButtons(this.host);
+    }, 1200);
+
+    // Animate list items
+    setTimeout(() => {
+      this.layoutAnimationsService.animateListItems(this.host);
+    }, 1400);
   }
 }

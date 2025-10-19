@@ -47,25 +47,50 @@
       "company": "We Make Platforms",
       "role": "Technical Lead - Frontend",
       "time": "2022 අගෝස්තු – වර්තමානය",
-      "location": "Remote"
+      "location": "Remote",
+      "points": [
+        "Angular framework භාවිතා කරමින් frontend features වර්ධනය කිරීමේ නායකත්වය ගත් අතර, ව්‍යාපෘති කාලසීමා තුළ user interface components බහුතරයක් ලබා දීමේදී ප්‍රධාන කාර්යභාරයක් ඉටු කළේය.",
+        "Figma සහ Zeplin වලින් UI designs responsive, high-quality implementations බවට පරිවර්තනය කළ අතර, ධනාත්මක user feedback වලින් ප්‍රතිඵල වන පරිදි user experience සැලකිය යුතු ලෙස වැඩිදියුණු කළේය.",
+        "Junior developers සඳහා detailed code reviews සිදු කළ අතර, collaboration culture ප්‍රවර්ධනය කර deployment අනතුරුව හඳුනාගත් issues අඩු කිරීමෙන් code quality වැඩිදියුණු කළේය.",
+        "Unit tests සහ integration tests ඇතුළු comprehensive testing strategies implement කළ අතර, production bugs 40% අඩු කිරීම සහ improved application stability ලබා ගත්තේය.",
+        "Designers, product managers, සහ backend developers ඇතුළු cross-functional teams සමඟ සහයෝගයෙන් කටයුතු කළ අතර, technical සහ business requirements දෙකම සපුරාලන features හි seamless integration සහ delivery සහතික කළේය."
+      ]
     },
     "epic": {
       "company": "Epic Lanka",
       "role": "Software Engineer",
       "time": "2020 අගෝස්තු – 2022 ජූලි",
-      "location": "On-site"
+      "location": "On-site",
+      "points": [
+        "සති තුනක tight deadline තුළ JIRA ticket application සඳහා high-performance REST APIs develop කළ අතර, existing systems සමඟ seamless integration සහතික කර code quality standards maintain කළේය.",
+        "Angular භාවිතා කර comprehensive admin panel design කර implement කළ අතර, advanced data visualization, user management, සහ real-time analytics සමඟ operational efficiency 35% වැඩි කළේය.",
+        "Database queries optimize කර caching strategies implement කළ අතර, application response times 60% improvement සහ enhanced user experience ලබා ගත්තේය.",
+        "QA team සමඟ collaborate කර automated testing pipelines establish කළ අතර, manual testing time 50% අඩු කර releases පුරා consistent code quality සහතික කළේය."
+      ]
     },
     "zincat": {
       "company": "ZinCat Technology",
       "role": "Software Developer",
       "time": "2019 අගෝස්තු – 2020 අගෝස්තු",
-      "location": "On-site"
+      "location": "On-site",
+      "points": [
+        "Local e-commerce platform සඳහා robust business logic execution frontend design කර develop කළ අතර, user experience improve කර engagement ආසන්න වශයෙන් 25% වැඩි කළේය.",
+        "Responsive design principles සහ mobile-first development approach implement කළ අතර, සියලුම devices සහ screen sizes වල optimal performance සහතික කළේය.",
+        "Third-party payment gateways සහ shipping APIs integrate කළ අතර, checkout process optimize කර cart abandonment rates 30% අඩු කළේය.",
+        "Design team සමඟ collaborate කර intuitive user interfaces create කළ අතර, user satisfaction scores improve කර support ticket volume 40% අඩු කළේය."
+      ]
     },
     "ceyentra": {
       "company": "Ceyentra Technologies",
       "role": "Internship",
       "time": "2019 ජනවාරි – 2019 අගෝස්තු",
-      "location": "On-site"
+      "location": "On-site",
+      "points": [
+        "App development සඳහා Ionic framework භාවිතා කර software systems implement කළ අතර, company තුළ employment period තුළ project delivery efficiency 30% වැඩි කිරීමට contribute කළේය.",
+        "iOS සහ Android platforms අතර 95% code reusability achieve කළ cross-platform mobile applications develop කළ අතර, development time සහ maintenance costs significantly reduce කළේය.",
+        "Backend team සමඟ collaborate කර RESTful APIs design කර implement කළ අතර, mobile applications සඳහා seamless data flow සහ optimal performance සහතික කළේය.",
+        "Agile development processes වල participate කළ අතර, sprint planning, daily standups, සහ retrospective meetings වල contribute කර team productivity සහ project delivery timelines improve කළේය."
+      ]
     }
   },
   "opensource": {
@@ -104,5 +129,43 @@
     "contact": "මගේ අත්දැකීම් සහ ගමන ගැන වැඩි විස්තර දැනගැනීමට කැමතිද? සම්බන්ධ වන්න ✌️",
     "built": "Angular භාවිතයෙන් ❤️ සමග නිර්මාණය කළා",
     "rights": "© 2025 සියලුම අයිතිවාසිකම් සුරක්ෂිතයි."
+  },
+  "ui": {
+    "seeMore": "වැඩිදුර බලන්න",
+    "seeLess": "අඩුවෙන් බලන්න",
+    "active": "ක්‍රියාකාරී",
+    "viewOnGitHub": "GitHub හි බලන්න",
+    "github": "GitHub",
+    "npm": "NPM",
+    "portfolio": "Portfolio",
+    "about": "පිළිබඳ",
+    "experience": "අත්දැකීම්",
+    "hireMe": "මාව ගොඩනඟන්න",
+    "viewResume": "Resume බලන්න",
+    "back": "ආපසු",
+    "bookIntroCall": "හඳුන්වාදීමේ ඇමතුමක් වෙන්කරන්න",
+    "emailMe": "මට email එකක් එවන්න",
+    "discover": "සොයාගන්න",
+    "plan": "සැලසුම්",
+    "build": "ගොඩනඟන්න",
+    "ship": "භාරදෙන්න",
+    "faq": "FAQ",
+    "contact": "සම්බන්ධතා",
+    "yourName": "ඔබේ නම",
+    "email": "Email",
+    "projectDetails": "ව්‍යාපෘති විස්තර…",
+    "send": "යවන්න",
+    "plansComingSoon": "සැලසුම් ඉක්මනින් එනවා.",
+    "askMeAnything": "ක්‍රියාවලිය, මිල නියම කිරීම හෝ විෂය පථය ගැන ඕනෑම දෙයක් අසන්න.",
+    "linkedin": "LinkedIn",
+    "resume": "Resume",
+    "processing": "සැකසීම...",
+    "loadingApplication": "අයදුම්පත loading වෙමින්...",
+    "loadingHomePage": "මුල් පිටුව loading වෙමින්...",
+    "loadingHirePage": "ගොඩනැගීමේ පිටුව loading වෙමින්...",
+    "loadingPage": "පිටුව loading වෙමින්...",
+    "initializingApplication": "අයදුම්පත ආරම්භ කරමින්...",
+    "loadingComponents": "අංග loading වෙමින්...",
+    "preparingInterface": "අතුරුමුහුණත සූදානම් කරමින්..."
   }
 }

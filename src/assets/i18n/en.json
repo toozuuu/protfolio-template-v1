@@ -47,30 +47,64 @@
       "company": "We Make Platforms",
       "role": "Technical Lead - Frontend",
       "time": "Aug 2022 - Present",
-      "location": "Remote"
+      "location": "Remote",
+      "points": [
+        "Spearheaded the development of front-end features using the Angular framework, playing a key role in delivering the majority of user interface components within project timelines.",
+        "Translated UI designs from Figma and Zeplin into responsive, high-quality implementations that significantly enhanced user experience, as reflected in positive user feedback.",
+        "Conducted detailed code reviews for junior developers, fostering a culture of collaboration and improving code quality by reducing issues identified after deployment.",
+        "Implemented comprehensive testing strategies including unit tests and integration tests, resulting in a 40% reduction in production bugs and improved application stability.",
+        "Collaborated with cross-functional teams including designers, product managers, and backend developers to ensure seamless integration and delivery of features that met both technical and business requirements."
+      ]
     },
     "epic": {
       "company": "Epic Lanka",
       "role": "Software Engineer",
       "time": "Aug 2020 - Jul 2022",
-      "location": "On-site"
+      "location": "On-site",
+      "points": [
+        "Developed high-performance REST APIs for a JIRA ticketing application within a tight deadline of three weeks, ensuring seamless integration with existing systems and maintaining code quality standards.",
+        "Designed and implemented a comprehensive admin panel using Angular, featuring advanced data visualization, user management, and real-time analytics that improved operational efficiency by 35%.",
+        "Optimized database queries and implemented caching strategies, resulting in a 60% improvement in application response times and enhanced user experience.",
+        "Collaborated with the QA team to establish automated testing pipelines, reducing manual testing time by 50% and ensuring consistent code quality across releases."
+      ]
     },
     "zincat": {
       "company": "ZinCat Technology",
       "role": "Software Developer",
       "time": "Aug 2019 - Aug 2020",
-      "location": "On-site"
+      "location": "On-site",
+      "points": [
+        "Designed and developed a robust business logic execution front end for a local e-commerce platform, enhancing user experience and increasing engagement by an estimated 25%.",
+        "Implemented responsive design principles and mobile-first development approach, ensuring optimal performance across all devices and screen sizes.",
+        "Integrated third-party payment gateways and shipping APIs, streamlining the checkout process and reducing cart abandonment rates by 30%.",
+        "Collaborated with the design team to create intuitive user interfaces that improved user satisfaction scores and reduced support ticket volume by 40%."
+      ]
     },
     "ceyentra": {
       "company": "Ceyentra Technologies",
       "role": "Internship",
       "time": "Jan 2019 - Aug 2019",
-      "location": "On-site"
+      "location": "On-site",
+      "points": [
+        "Implemented software systems utilizing the Ionic framework for app development, contributing to a 30% increase in project delivery efficiency during the tenure at the company.",
+        "Developed cross-platform mobile applications that achieved 95% code reusability between iOS and Android platforms, significantly reducing development time and maintenance costs.",
+        "Collaborated with the backend team to design and implement RESTful APIs, ensuring seamless data flow and optimal performance for mobile applications.",
+        "Participated in agile development processes, contributing to sprint planning, daily standups, and retrospective meetings that improved team productivity and project delivery timelines."
+      ]
     }
   },
   "opensource": {
     "title": "Open Source Projects",
     "subtitle": "Contributing to the developer community with modern, performant Angular components and libraries.",
+    "stars": "14 stars",
+    "forks": "3 forks",
+    "technologies": {
+      "angular": "Angular",
+      "typescript": "TypeScript",
+      "standalone": "Standalone",
+      "validation": "Validation",
+      "i18n": "i18n"
+    },
     "datepicker": {
       "title": "ngxsmk-datepicker",
       "description": "A powerful, modern, highly customizable Angular date range picker with time component. Features 30% smaller bundle, 40% faster rendering, and zero dependencies.",
@@ -98,7 +132,13 @@
     "agile": "Agile Methodologies",
     "technologies": "Technologies & Tools",
     "frameworks": "Frameworks & Libraries",
-    "languages": "Programming Languages"
+    "languages": "Programming Languages",
+    "levels": {
+      "expert": "Expert",
+      "advanced": "Advanced",
+      "intermediate": "Intermediate",
+      "beginner": "Beginner"
+    }
   },
   "footer": {
     "contact": "Interested in learning more about my experiences and journey? I'd be happy to connect—let's get in touch! ✌️",
@@ -142,7 +182,17 @@
     "projectDetails": "Project details…",
     "send": "Send",
     "plansComingSoon": "Plans coming soon.",
-    "askMeAnything": "Ask me anything about process, pricing, or scope."
+    "askMeAnything": "Ask me anything about process, pricing, or scope.",
+    "linkedin": "LinkedIn",
+    "resume": "Resume",
+    "processing": "Processing...",
+    "loadingApplication": "Loading application...",
+    "loadingHomePage": "Loading home page...",
+    "loadingHirePage": "Loading hire page...",
+    "loadingPage": "Loading page...",
+    "initializingApplication": "Initializing application...",
+    "loadingComponents": "Loading components...",
+    "preparingInterface": "Preparing interface..."
   },
   "hire": {
     "title": "Hire Me",
@@ -151,7 +201,27 @@
     "discoverDesc": "30-min call, goals, constraints, access.",
     "planDesc": "scope & metrics, quick wins first.",
     "buildDesc": "daily progress, PRs, previews.",
-    "shipDesc": "demo, docs, handover, next steps."
+    "shipDesc": "demo, docs, handover, next steps.",
+    "services": {
+      "angularAudit": {
+        "title": "Angular Audit",
+        "subtitle": "Code quality, architecture & DX review",
+        "badges": ["Angular 17–20", "Standalone", "Signals"]
+      },
+      "performanceSprint": {
+        "title": "Performance Sprint",
+        "subtitle": "Metrics first: LCP, CLS, TTI"
+      },
+      "uxPolish": {
+        "cta": "Polish my UI",
+        "badges": ["A11y", "Design Tokens", "Motion"]
+      },
+      "angularCoaching": {
+        "title": "Angular Coaching",
+        "subtitle": "Mentoring for teams or individuals",
+        "badges": ["Architecture", "Testing", "DevEx"]
+      }
+    }
   },
   "gdpr": {
     "title": "Cookie & Privacy Consent",

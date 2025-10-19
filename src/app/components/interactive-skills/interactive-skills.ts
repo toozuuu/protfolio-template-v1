@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { CommonModule } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 interface Skill {
@@ -22,6 +23,11 @@ interface Skill {
 export class InteractiveSkills implements OnInit, OnDestroy {
   selectedSkill: Skill | null = null;
   isAnimating = false;
+
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private translateService: TranslateService
+  ) {}
 
   skills: Skill[] = [
     {
@@ -73,8 +79,6 @@ export class InteractiveSkills implements OnInit, OnDestroy {
       description: 'Cross-platform mobile development'
     }
   ];
-
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -135,9 +139,9 @@ export class InteractiveSkills implements OnInit, OnDestroy {
   }
 
   getSkillLevelText(level: number): string {
-    if (level >= 90) return 'Expert';
-    if (level >= 80) return 'Advanced';
-    if (level >= 70) return 'Intermediate';
-    return 'Beginner';
+    if (level >= 90) return this.translateService.instant('skills.levels.expert');
+    if (level >= 80) return this.translateService.instant('skills.levels.advanced');
+    if (level >= 70) return this.translateService.instant('skills.levels.intermediate');
+    return this.translateService.instant('skills.levels.beginner');
   }
 }

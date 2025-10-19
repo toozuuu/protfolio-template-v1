@@ -4,6 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { SEOService } from '../../core/seo.service';
 import { LanguageService } from '../../core/language.service';
 import { LoadingService } from '../../core/loading.service';
+import { TranslateService } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
 
 type Plan = {
@@ -35,6 +36,7 @@ export class Hire implements OnInit {
   private readonly seoService = inject(SEOService);
   private readonly languageService = inject(LanguageService);
   private readonly loadingService = inject(LoadingService);
+  private readonly translateService = inject(TranslateService);
 
   constructor(
     @Inject(PLATFORM_ID) private readonly platformId: Object
@@ -43,7 +45,7 @@ export class Hire implements OnInit {
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       // Show loading for hire page
-      this.loadingService.startLoading('Loading hire page...');
+      this.loadingService.startLoading(this.translateService.instant('ui.loadingHirePage'));
       
       this.seoService.setHirePageSEO(this.languageService.lang());
       
@@ -57,11 +59,11 @@ export class Hire implements OnInit {
   plans: Plan[] = [
     {
       id: 'audit',
-      title: 'Angular Audit',
-      subtitle: 'Code quality, architecture & DX review',
+      title: this.translateService.instant('hire.services.angularAudit.title'),
+      subtitle: this.translateService.instant('hire.services.angularAudit.subtitle'),
       price: 'US$499 fixed',
       cta: { label: 'Book audit', href: this.calendly },
-      badges: ['Angular 17–20', 'Standalone', 'Signals'],
+      badges: this.translateService.instant('hire.services.angularAudit.badges'),
       includes: [
         'Repo review & issue list',
         'Architecture diagram & recommendations',
@@ -71,8 +73,8 @@ export class Hire implements OnInit {
     },
     {
       id: 'perf',
-      title: 'Performance Sprint',
-      subtitle: 'Metrics first: LCP, CLS, TTI',
+      title: this.translateService.instant('hire.services.performanceSprint.title'),
+      subtitle: this.translateService.instant('hire.services.performanceSprint.subtitle'),
       price: 'US$1,499 / week',
       cta: { label: 'Start sprint', href: this.calendly },
       badges: ['Core Web Vitals', 'SSR/Preload', 'Bundle split'],
@@ -89,8 +91,8 @@ export class Hire implements OnInit {
       title: 'UX Polish Pack',
       subtitle: 'Design tokens, spacing, states, a11y',
       price: 'US$999 fixed',
-      cta: { label: 'Polish my UI', href: this.calendly },
-      badges: ['A11y', 'Design Tokens', 'Motion'],
+      cta: { label: this.translateService.instant('hire.services.uxPolish.cta'), href: this.calendly },
+      badges: this.translateService.instant('hire.services.uxPolish.badges'),
       includes: [
         'Token pass (colors, radius, shadow, spacing)',
         'Interactive states + micro-animations',
@@ -100,11 +102,11 @@ export class Hire implements OnInit {
     },
     {
       id: 'coaching',
-      title: 'Angular Coaching',
-      subtitle: 'Mentoring for teams or individuals',
+      title: this.translateService.instant('hire.services.angularCoaching.title'),
+      subtitle: this.translateService.instant('hire.services.angularCoaching.subtitle'),
       price: 'US$129 / hour',
       cta: { label: 'Schedule session', href: this.calendly },
-      badges: ['Architecture', 'Testing', 'DevEx'],
+      badges: this.translateService.instant('hire.services.angularCoaching.badges'),
       includes: [
         'Pair-programming & code reviews',
         'API contracts & state management',

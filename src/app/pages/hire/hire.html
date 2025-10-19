@@ -11,7 +11,7 @@
 </nav>
 
 <section class="max-w-4xl mx-auto px-6 py-16 text-center">
-  <h1 class="text-4xl md:text-5xl font-bold text-text dark:text-text-dark mb-6">{{ 'hire.title' | translate }}</h1>
+  <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-text dark:text-text-dark mb-6">{{ 'hire.title' | translate }}</h1>
   <p class="text-xl text-text-muted dark:text-text-muted-dark mb-8 max-w-2xl mx-auto">
     I help teams ship <strong class="text-accent">faster Angular</strong> apps with clean architecture, great UX, and Core Web
     Vitals wins.
@@ -40,7 +40,7 @@
       aria-label="{{ p.title }}"
     >
       <div class="mb-6">
-        <h2 class="text-xl font-bold text-text dark:text-text-dark mb-2">{{ p.title }}</h2>
+        <h2 class="text-lg sm:text-xl font-bold text-text dark:text-text-dark mb-2">{{ p.title }}</h2>
         <p class="text-text-muted dark:text-text-muted-dark">{{ p.subtitle }}</p>
       </div>
 
@@ -76,33 +76,33 @@
 </section>
 
 <section class="max-w-4xl mx-auto px-6 py-16">
-  <h3 class="text-3xl font-bold text-center text-text dark:text-text-dark mb-12">How we'll work</h3>
+  <h3 class="text-2xl sm:text-3xl font-bold text-center text-text dark:text-text-dark mb-12">{{ 'hire.howWeWork' | translate }}</h3>
   <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
     <li class="bg-card dark:bg-card-dark border border-border dark:border-border-dark rounded-xl p-6 text-center">
       <div class="text-2xl font-bold text-accent mb-2">01</div>
-      <div class="font-semibold text-text dark:text-text-dark mb-2">Discover</div>
-      <div class="text-text-muted dark:text-text-muted-dark">30-min call, goals, constraints, access.</div>
+      <div class="font-semibold text-text dark:text-text-dark mb-2">{{ 'ui.discover' | translate }}</div>
+      <div class="text-text-muted dark:text-text-muted-dark">{{ 'hire.discoverDesc' | translate }}</div>
     </li>
     <li class="bg-card dark:bg-card-dark border border-border dark:border-border-dark rounded-xl p-6 text-center">
       <div class="text-2xl font-bold text-accent mb-2">02</div>
-      <div class="font-semibold text-text dark:text-text-dark mb-2">Plan</div>
-      <div class="text-text-muted dark:text-text-muted-dark">scope & metrics, quick wins first.</div>
+      <div class="font-semibold text-text dark:text-text-dark mb-2">{{ 'ui.plan' | translate }}</div>
+      <div class="text-text-muted dark:text-text-muted-dark">{{ 'hire.planDesc' | translate }}</div>
     </li>
     <li class="bg-card dark:bg-card-dark border border-border dark:border-border-dark rounded-xl p-6 text-center">
       <div class="text-2xl font-bold text-accent mb-2">03</div>
-      <div class="font-semibold text-text dark:text-text-dark mb-2">Build</div>
-      <div class="text-text-muted dark:text-text-muted-dark">daily progress, PRs, previews.</div>
+      <div class="font-semibold text-text dark:text-text-dark mb-2">{{ 'ui.build' | translate }}</div>
+      <div class="text-text-muted dark:text-text-muted-dark">{{ 'hire.buildDesc' | translate }}</div>
     </li>
     <li class="bg-card dark:bg-card-dark border border-border dark:border-border-dark rounded-xl p-6 text-center">
       <div class="text-2xl font-bold text-accent mb-2">04</div>
-      <div class="font-semibold text-text dark:text-text-dark mb-2">Ship</div>
-      <div class="text-text-muted dark:text-text-muted-dark">demo, docs, handover, next steps.</div>
+      <div class="font-semibold text-text dark:text-text-dark mb-2">{{ 'ui.ship' | translate }}</div>
+      <div class="text-text-muted dark:text-text-muted-dark">{{ 'hire.shipDesc' | translate }}</div>
     </li>
   </ol>
 </section>
 
 <section class="max-w-4xl mx-auto px-6 py-16">
-  <h3 class="text-3xl font-bold text-center text-text dark:text-text-dark mb-12">FAQ</h3>
+  <h3 class="text-2xl sm:text-3xl font-bold text-center text-text dark:text-text-dark mb-12">{{ 'ui.faq' | translate }}</h3>
   <div class="space-y-4">
     @for (f of faq(); let i = $index; track i) {
     <div class="bg-card dark:bg-card-dark border border-border dark:border-border-dark rounded-xl overflow-hidden">
@@ -125,25 +125,25 @@
 </section>
 
 <section class="max-w-2xl mx-auto px-6 py-16">
-  <h3 class="text-3xl font-bold text-center text-text dark:text-text-dark mb-12">Contact</h3>
+  <h3 class="text-2xl sm:text-3xl font-bold text-center text-text dark:text-text-dark mb-12">{{ 'ui.contact' | translate }}</h3>
   <form name="hire-contact" method="POST" data-netlify="true" class="space-y-6">
     <input type="hidden" name="form-name" value="hire-contact" />
     <input class="w-full px-4 py-3 border border-border dark:border-border-dark rounded-lg bg-bg-soft dark:bg-bg-soft-dark text-text dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/35" 
            type="text" 
            name="name" 
-           placeholder="Your name" 
+           placeholder="{{ 'ui.yourName' | translate }}" 
            required />
     <input class="w-full px-4 py-3 border border-border dark:border-border-dark rounded-lg bg-bg-soft dark:bg-bg-soft-dark text-text dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/35" 
            type="email" 
            name="email" 
-           placeholder="Email" 
+           placeholder="{{ 'ui.email' | translate }}" 
            required />
     <textarea class="w-full px-4 py-3 border border-border dark:border-border-dark rounded-lg bg-bg-soft dark:bg-bg-soft-dark text-text dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/35" 
               name="message" 
               rows="4" 
-              placeholder="Project details…"></textarea>
+              placeholder="{{ 'ui.projectDetails' | translate }}"></textarea>
     <button class="w-full bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent-dark transition-colors font-medium" 
-            type="submit">Send</button>
+            type="submit">{{ 'ui.send' | translate }}</button>
   </form>
 </section>
 

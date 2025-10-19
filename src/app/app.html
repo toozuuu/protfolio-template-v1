@@ -1,5 +1,10 @@
-<!-- Loading Spinner -->
-<app-loading-spinner></app-loading-spinner>
+<!-- Loading Spinner - Full Screen -->
+<app-loading-spinner 
+  [fullscreen]="true" 
+  [overlay]="true" 
+  type="spinner" 
+  size="large">
+</app-loading-spinner>
 
 <!-- Main Content -->
 <router-outlet></router-outlet>

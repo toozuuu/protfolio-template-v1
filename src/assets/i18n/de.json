@@ -50,25 +50,50 @@
       "company": "We Make Platforms",
       "role": "Technical Lead - Frontend",
       "time": "Aug 2022 - Gegenwart",
-      "location": "Remote"
+      "location": "Remote",
+      "points": [
+        "Leitete die Entwicklung von Frontend-Funktionen mit dem Angular-Framework und spielte eine Schlüsselrolle bei der Bereitstellung der meisten Benutzeroberflächenkomponenten innerhalb der Projektzeitpläne.",
+        "Übersetzte UI-Designs von Figma und Zeplin in responsive, hochwertige Implementierungen, die die Benutzererfahrung erheblich verbesserten, wie sich in positiver Benutzerfeedback widerspiegelt.",
+        "Durchführte detaillierte Code-Reviews für Junior-Entwickler, förderte eine Kultur der Zusammenarbeit und verbesserte die Code-Qualität durch Reduzierung von Problemen, die nach dem Deployment identifiziert wurden.",
+        "Implementierte umfassende Teststrategien einschließlich Unit-Tests und Integrationstests, was zu einer 40%igen Reduzierung der Produktionsfehler und verbesserter Anwendungsstabilität führte.",
+        "Arbeitete mit funktionsübergreifenden Teams zusammen, einschließlich Designern, Produktmanagern und Backend-Entwicklern, um nahtlose Integration und Bereitstellung von Funktionen zu gewährleisten, die sowohl technische als auch geschäftliche Anforderungen erfüllten."
+      ]
     },
     "epic": {
       "company": "Epic Lanka",
       "role": "Software Engineer",
       "time": "Aug 2020 - Jul 2022",
-      "location": "Vor Ort"
+      "location": "Vor Ort",
+      "points": [
+        "Entwickelte hochperformante REST-APIs für eine JIRA-Ticket-Anwendung innerhalb einer engen Frist von drei Wochen, gewährleistete nahtlose Integration mit bestehenden Systemen und Aufrechterhaltung der Code-Qualitätsstandards.",
+        "Entwarf und implementierte ein umfassendes Admin-Panel mit Angular, mit erweiterten Datenvisualisierungen, Benutzerverwaltung und Echtzeit-Analysen, die die operative Effizienz um 35% verbesserten.",
+        "Optimierte Datenbankabfragen und implementierte Caching-Strategien, was zu einer 60%igen Verbesserung der Anwendungsantwortzeiten und verbesserter Benutzererfahrung führte.",
+        "Arbeitete mit dem QA-Team zusammen, um automatisierte Test-Pipelines einzurichten, reduzierte die manuelle Testzeit um 50% und gewährleistete konsistente Code-Qualität über Releases hinweg."
+      ]
     },
     "zincat": {
       "company": "ZinCat Technology",
       "role": "Software Developer",
       "time": "Aug 2019 - Aug 2020",
-      "location": "Vor Ort"
+      "location": "Vor Ort",
+      "points": [
+        "Entwarf und entwickelte eine robuste Frontend-Geschäftslogik-Ausführung für eine lokale E-Commerce-Plattform, verbesserte die Benutzererfahrung und steigerte das Engagement um geschätzte 25%.",
+        "Implementierte responsive Design-Prinzipien und Mobile-First-Entwicklungsansatz, gewährleistete optimale Leistung über alle Geräte und Bildschirmgrößen hinweg.",
+        "Integrierte Drittanbieter-Zahlungsgateways und Versand-APIs, optimierte den Checkout-Prozess und reduzierte Warenkorb-Abbrüche um 30%.",
+        "Arbeitete mit dem Design-Team zusammen, um intuitive Benutzeroberflächen zu erstellen, die die Benutzerzufriedenheitswerte verbesserten und das Support-Ticket-Volumen um 40% reduzierten."
+      ]
     },
     "ceyentra": {
       "company": "Ceyentra Technologies",
       "role": "Praktikum",
       "time": "Jan 2019 - Aug 2019",
-      "location": "Vor Ort"
+      "location": "Vor Ort",
+      "points": [
+        "Implementierte Softwaresysteme mit dem Ionic-Framework für App-Entwicklung, trug zu einer 30%igen Steigerung der Projektdelivery-Effizienz während der Beschäftigungszeit bei dem Unternehmen bei.",
+        "Entwickelte plattformübergreifende mobile Anwendungen, die 95% Code-Wiederverwendbarkeit zwischen iOS- und Android-Plattformen erreichten, reduzierten erheblich die Entwicklungszeit und Wartungskosten.",
+        "Arbeitete mit dem Backend-Team zusammen, um RESTful-APIs zu entwerfen und zu implementieren, gewährleistete nahtlosen Datenfluss und optimale Leistung für mobile Anwendungen.",
+        "Nahm an agilen Entwicklungsprozessen teil, trug zu Sprint-Planung, täglichen Standups und retrospektiven Meetings bei, die die Teamproduktivität und Projektlieferzeiten verbesserten."
+      ]
     }
   },
   "opensource": {
@@ -95,6 +120,44 @@
     "contact": "Interessiert daran, mehr über meine Erfahrungen und meinen Weg zu erfahren? Ich würde mich gerne verbinden—lassen Sie uns in Kontakt treten! ✌️",
     "built": "Gebaut mit ❤️ mit Angular",
     "rights": "© 2025 Alle Rechte vorbehalten."
+  },
+  "ui": {
+    "seeMore": "Mehr anzeigen",
+    "seeLess": "Weniger anzeigen",
+    "active": "Aktiv",
+    "viewOnGitHub": "Auf GitHub anzeigen",
+    "github": "GitHub",
+    "npm": "NPM",
+    "portfolio": "Portfolio",
+    "about": "Über mich",
+    "experience": "Erfahrung",
+    "hireMe": "Stelle mich ein",
+    "viewResume": "Lebenslauf anzeigen",
+    "back": "Zurück",
+    "bookIntroCall": "Intro-Anruf buchen",
+    "emailMe": "E-Mail senden",
+    "discover": "Entdecken",
+    "plan": "Planen",
+    "build": "Bauen",
+    "ship": "Liefern",
+    "faq": "FAQ",
+    "contact": "Kontakt",
+    "yourName": "Ihr Name",
+    "email": "E-Mail",
+    "projectDetails": "Projektdetails…",
+    "send": "Senden",
+    "plansComingSoon": "Pläne kommen bald.",
+    "askMeAnything": "Fragen Sie mich alles über Prozess, Preisgestaltung oder Umfang.",
+    "linkedin": "LinkedIn",
+    "resume": "Lebenslauf",
+    "processing": "Verarbeitung...",
+    "loadingApplication": "Anwendung wird geladen...",
+    "loadingHomePage": "Startseite wird geladen...",
+    "loadingHirePage": "Einstellungsseite wird geladen...",
+    "loadingPage": "Seite wird geladen...",
+    "initializingApplication": "Anwendung wird initialisiert...",
+    "loadingComponents": "Komponenten werden geladen...",
+    "preparingInterface": "Oberfläche wird vorbereitet..."
   },
   "gdpr": {
     "title": "Cookie- & Datenschutz-Zustimmung",

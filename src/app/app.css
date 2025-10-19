@@ -518,3 +518,72 @@ select option {
 select:focus {
   max-height: 300px;
 }
+
+/* ===========================================
+   LAYOUT ANIMATIONS (OPTIMIZED)
+   =========================================== */
+
+/* Core Animation Keyframes */
+@keyframes slideInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes slideInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes zoomIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Animation Classes */
+.animate-slide-in-up { animation: slideInUp 0.6s ease-out; }
+.animate-slide-in-left { animation: slideInLeft 0.6s ease-out; }
+.animate-slide-in-right { animation: slideInRight 0.6s ease-out; }
+.animate-zoom-in { animation: zoomIn 0.6s ease-out; }
+.animate-fade-in { animation: fadeIn 0.6s ease-out; }
+
+/* Stagger Delays */
+.animate-stagger-1 { animation-delay: 0.1s; }
+.animate-stagger-2 { animation-delay: 0.2s; }
+.animate-stagger-3 { animation-delay: 0.3s; }
+.animate-stagger-4 { animation-delay: 0.4s; }
+.animate-stagger-5 { animation-delay: 0.5s; }
+.animate-stagger-6 { animation-delay: 0.6s; }
+.animate-stagger-7 { animation-delay: 0.7s; }
+.animate-stagger-8 { animation-delay: 0.8s; }
+
+/* Scroll Animations */
+.animate-on-scroll, .animate-grid-item, .animate-card, .animate-text-reveal, 
+.animate-image-reveal, .animate-button, .animate-hero-content, .animate-hero-image, 
+.animate-section, .animate-list-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.animate-on-scroll.animate-in, .animate-grid-item.animate-in, .animate-card.animate-in, 
+.animate-text-reveal.animate-in, .animate-image-reveal.animate-in, .animate-button.animate-in, 
+.animate-hero-content.animate-in, .animate-hero-image.animate-in, .animate-section.animate-in, 
+.animate-list-item.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Special Animations */
+.animate-hero-content { transform: translateY(30px); }
+.animate-hero-image { transform: scale(0.95) translateX(15px); }
+.animate-grid-item { transform: scale(0.9); }
+.animate-card { transform: translateY(15px) scale(0.95); }
+.animate-image-reveal { transform: scale(0.9) translateY(15px); }
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .animate-hero-content { transform: translateY(20px); }
+  .animate-hero-image { transform: scale(0.95) translateX(10px); }
+}
+
+/* Performance & Accessibility */
+.animate-on-scroll, .animate-grid-item, .animate-card, .animate-text-reveal, 
+.animate-image-reveal, .animate-button, .animate-hero-content, .animate-hero-image, 
+.animate-section, .animate-list-item { will-change: opacity, transform; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll, .animate-grid-item, .animate-card, .animate-text-reveal, 
+  .animate-image-reveal, .animate-button, .animate-hero-content, .animate-hero-image, 
+  .animate-section, .animate-list-item { animation: none; transition: opacity 0.3s ease; }
+}

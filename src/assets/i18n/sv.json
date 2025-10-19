@@ -47,25 +47,50 @@
       "company": "We Make Platforms",
       "role": "Technical Lead - Frontend",
       "time": "Aug 2022 - Nuvarande",
-      "location": "Distans"
+      "location": "Distans",
+      "points": [
+        "Ledde utvecklingen av frontend-funktioner med Angular-ramverket och spelade en nyckelroll i att leverera majoriteten av användargränssnittskomponenter inom projekttidsramar.",
+        "Översatte UI-designs från Figma och Zeplin till responsiva, högkvalitativa implementationer som avsevärt förbättrade användarupplevelsen, vilket återspeglas i positiv användarfeedback.",
+        "Genomförde detaljerade kodgranskningar för juniorutvecklare, främjade ett samarbetsklimat och förbättrade kodkvaliteten genom att minska problem som identifierades efter deployment.",
+        "Implementerade omfattande teststrategier inklusive enhetstester och integrationstester, vilket resulterade i en 40% minskning av produktionsbuggar och förbättrad applikationsstabilitet.",
+        "Samarbetade med tvärfunktionella team inklusive designers, produktchefer och backendutvecklare för att säkerställa sömlös integration och leverans av funktioner som uppfyllde både tekniska och affärsmässiga krav."
+      ]
     },
     "epic": {
       "company": "Epic Lanka",
       "role": "Mjukvaruingenjör",
       "time": "Aug 2020 - Jul 2022",
-      "location": "På plats"
+      "location": "På plats",
+      "points": [
+        "Utvecklade högpresterande REST API:er för en JIRA-biljettapplikation inom en snäv tidsram av tre veckor, säkerställde sömlös integration med befintliga system och upprätthöll kodkvalitetsstandarder.",
+        "Designade och implementerade en omfattande adminpanel med Angular, med avancerad datavisualisering, användarhantering och realtidsanalys som förbättrade operativ effektivitet med 35%.",
+        "Optimerade databasfrågor och implementerade cachningsstrategier, vilket resulterade i en 60% förbättring av applikationssvarstider och förbättrad användarupplevelse.",
+        "Samarbetade med QA-teamet för att etablera automatiserade testpipelines, minskade manuell testtid med 50% och säkerställde konsekvent kodkvalitet över releaser."
+      ]
     },
     "zincat": {
       "company": "ZinCat Technology",
       "role": "Mjukvaruutvecklare",
       "time": "Aug 2019 - Aug 2020",
-      "location": "På plats"
+      "location": "På plats",
+      "points": [
+        "Designade och utvecklade en robust affärslogikexekveringsfrontend för en lokal e-handelsplattform, förbättrade användarupplevelsen och ökade engagemanget med uppskattningsvis 25%.",
+        "Implementerade responsiva designprinciper och mobil-först utvecklingsmetod, säkerställde optimal prestanda över alla enheter och skärmstorlekar.",
+        "Integrerade tredjepartsbetalningsportar och frakt-API:er, strömlinjeformade utcheckningsprocessen och minskade kundvagnsövergivning med 30%.",
+        "Samarbetade med designteamet för att skapa intuitiva användargränssnitt som förbättrade användarnöjdhetspoäng och minskade supportbiljettvolym med 40%."
+      ]
     },
     "ceyentra": {
       "company": "Ceyentra Technologies",
       "role": "Praktikant",
       "time": "Jan 2019 - Aug 2019",
-      "location": "På plats"
+      "location": "På plats",
+      "points": [
+        "Implementerade mjukvarusystem med Ionic-ramverket för apputveckling, bidrog till en 30% ökning av projekteleveranseffektivitet under anställningstiden på företaget.",
+        "Utvecklade plattformsoberoende mobilapplikationer som uppnådde 95% kodåteranvändbarhet mellan iOS- och Android-plattformar, minskade avsevärt utvecklingstid och underhållskostnader.",
+        "Samarbetade med backendteamet för att designa och implementera RESTful API:er, säkerställde sömlös dataflöde och optimal prestanda för mobilapplikationer.",
+        "Deltog i agila utvecklingsprocesser, bidrog till sprintplanering, dagliga standups och retrospektiva möten som förbättrade teamproduktivitet och projekteleveranstidslinjer."
+      ]
     }
   },
   "opensource": {
@@ -99,6 +124,44 @@
     "technologies": "Teknologier & verktyg",
     "frameworks": "Ramverk & bibliotek",
     "languages": "Programmeringsspråk"
+  },
+  "ui": {
+    "seeMore": "Se mer",
+    "seeLess": "Se mindre",
+    "active": "Aktiv",
+    "viewOnGitHub": "Visa på GitHub",
+    "github": "GitHub",
+    "npm": "NPM",
+    "portfolio": "Portfolio",
+    "about": "Om mig",
+    "experience": "Erfarenhet",
+    "hireMe": "Anlita mig",
+    "viewResume": "Visa CV",
+    "back": "Tillbaka",
+    "bookIntroCall": "Boka introduktionssamtal",
+    "emailMe": "Mejla mig",
+    "discover": "Upptäck",
+    "plan": "Planera",
+    "build": "Bygg",
+    "ship": "Leverera",
+    "faq": "FAQ",
+    "contact": "Kontakt",
+    "yourName": "Ditt namn",
+    "email": "E-post",
+    "projectDetails": "Projektdetaljer…",
+    "send": "Skicka",
+    "plansComingSoon": "Planer kommer snart.",
+    "askMeAnything": "Fråga mig vad som helst om process, prissättning eller omfattning.",
+    "linkedin": "LinkedIn",
+    "resume": "CV",
+    "processing": "Bearbetar...",
+    "loadingApplication": "Laddar applikation...",
+    "loadingHomePage": "Laddar startsida...",
+    "loadingHirePage": "Laddar anställningssida...",
+    "loadingPage": "Laddar sida...",
+    "initializingApplication": "Initierar applikation...",
+    "loadingComponents": "Laddar komponenter...",
+    "preparingInterface": "Förbereder gränssnitt..."
   },
   "footer": {
     "contact": "Vill du veta mer om mina erfarenheter och min resa? Jag berättar gärna mer – hör av dig! ✌️",

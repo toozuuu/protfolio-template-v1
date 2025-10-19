@@ -50,25 +50,50 @@
       "company": "We Make Platforms",
       "role": "Lead Technique - Frontend",
       "time": "Août 2022 - Présent",
-      "location": "Distant"
+      "location": "Distant",
+      "points": [
+        "Dirigé le développement de fonctionnalités frontend en utilisant le framework Angular, jouant un rôle clé dans la livraison de la majorité des composants d'interface utilisateur dans les délais du projet.",
+        "Traduit les conceptions UI de Figma et Zeplin en implémentations responsives et de haute qualité qui ont considérablement amélioré l'expérience utilisateur, comme reflété dans les commentaires positifs des utilisateurs.",
+        "Effectué des revues de code détaillées pour les développeurs juniors, favorisant une culture de collaboration et améliorant la qualité du code en réduisant les problèmes identifiés après le déploiement.",
+        "Implémenté des stratégies de test complètes incluant les tests unitaires et d'intégration, résultant en une réduction de 40% des bugs de production et une stabilité d'application améliorée.",
+        "Collaboré avec des équipes interfonctionnelles incluant des designers, des gestionnaires de produits et des développeurs backend pour assurer une intégration transparente et la livraison de fonctionnalités répondant aux exigences techniques et commerciales."
+      ]
     },
     "epic": {
       "company": "Epic Lanka",
       "role": "Ingénieur Logiciel",
       "time": "Août 2020 - Juil 2022",
-      "location": "Sur site"
+      "location": "Sur site",
+      "points": [
+        "Développé des APIs REST haute performance pour une application de tickets JIRA dans un délai serré de trois semaines, assurant une intégration transparente avec les systèmes existants et maintenant les standards de qualité de code.",
+        "Conçu et implémenté un panneau d'administration complet utilisant Angular, avec visualisation de données avancée, gestion des utilisateurs et analyses en temps réel qui ont amélioré l'efficacité opérationnelle de 35%.",
+        "Optimisé les requêtes de base de données et implémenté des stratégies de mise en cache, résultant en une amélioration de 60% des temps de réponse de l'application et une expérience utilisateur améliorée.",
+        "Collaboré avec l'équipe QA pour établir des pipelines de test automatisés, réduisant le temps de test manuel de 50% et assurant une qualité de code cohérente à travers les releases."
+      ]
     },
     "zincat": {
       "company": "ZinCat Technology",
       "role": "Développeur Logiciel",
       "time": "Août 2019 - Août 2020",
-      "location": "Sur site"
+      "location": "Sur site",
+      "points": [
+        "Conçu et développé un frontend robuste d'exécution de logique métier pour une plateforme e-commerce locale, améliorant l'expérience utilisateur et augmentant l'engagement d'environ 25%.",
+        "Implémenté des principes de design responsive et une approche de développement mobile-first, assurant des performances optimales sur tous les appareils et tailles d'écran.",
+        "Intégré des passerelles de paiement tierces et des APIs d'expédition, optimisant le processus de checkout et réduisant les taux d'abandon de panier de 30%.",
+        "Collaboré avec l'équipe de design pour créer des interfaces utilisateur intuitives qui ont amélioré les scores de satisfaction utilisateur et réduit le volume de tickets de support de 40%."
+      ]
     },
     "ceyentra": {
       "company": "Ceyentra Technologies",
       "role": "Stage",
       "time": "Jan 2019 - Août 2019",
-      "location": "Sur site"
+      "location": "Sur site",
+      "points": [
+        "Implémenté des systèmes logiciels utilisant le framework Ionic pour le développement d'applications, contribuant à une augmentation de 30% de l'efficacité de livraison de projets pendant la durée d'emploi dans l'entreprise.",
+        "Développé des applications mobiles multiplateformes qui ont atteint 95% de réutilisation de code entre les plateformes iOS et Android, réduisant considérablement le temps de développement et les coûts de maintenance.",
+        "Collaboré avec l'équipe backend pour concevoir et implémenter des APIs RESTful, assurant un flux de données transparent et des performances optimales pour les applications mobiles.",
+        "Participé aux processus de développement agile, contribuant à la planification de sprint, aux standups quotidiens et aux réunions rétrospectives qui ont amélioré la productivité de l'équipe et les délais de livraison de projets."
+      ]
     }
   },
   "opensource": {
@@ -95,6 +120,44 @@
     "contact": "Intéressé à en apprendre plus sur mes expériences et mon parcours ? Je serais ravi de me connecter—entrons en contact ! ✌️",
     "built": "Construit avec ❤️ en utilisant Angular",
     "rights": "© 2025 Tous droits réservés."
+  },
+  "ui": {
+    "seeMore": "Voir plus",
+    "seeLess": "Voir moins",
+    "active": "Actif",
+    "viewOnGitHub": "Voir sur GitHub",
+    "github": "GitHub",
+    "npm": "NPM",
+    "portfolio": "Portfolio",
+    "about": "À propos",
+    "experience": "Expérience",
+    "hireMe": "Engagez-moi",
+    "viewResume": "Voir le CV",
+    "back": "Retour",
+    "bookIntroCall": "Réserver un appel d'intro",
+    "emailMe": "M'envoyer un email",
+    "discover": "Découvrir",
+    "plan": "Planifier",
+    "build": "Construire",
+    "ship": "Livrer",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "yourName": "Votre nom",
+    "email": "Email",
+    "projectDetails": "Détails du projet…",
+    "send": "Envoyer",
+    "plansComingSoon": "Plans à venir bientôt.",
+    "askMeAnything": "Demandez-moi n'importe quoi sur le processus, les prix ou la portée.",
+    "linkedin": "LinkedIn",
+    "resume": "CV",
+    "processing": "Traitement...",
+    "loadingApplication": "Chargement de l'application...",
+    "loadingHomePage": "Chargement de la page d'accueil...",
+    "loadingHirePage": "Chargement de la page d'embauche...",
+    "loadingPage": "Chargement de la page...",
+    "initializingApplication": "Initialisation de l'application...",
+    "loadingComponents": "Chargement des composants...",
+    "preparingInterface": "Préparation de l'interface..."
   },
   "gdpr": {
     "title": "Consentement Cookies & Confidentialité",

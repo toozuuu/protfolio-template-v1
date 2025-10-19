@@ -50,25 +50,50 @@
       "company": "We Make Platforms",
       "role": "Líder Técnico - Frontend",
       "time": "Ago 2022 - Presente",
-      "location": "Remoto"
+      "location": "Remoto",
+      "points": [
+        "Liderei o desenvolvimento de funcionalidades frontend usando o framework Angular, desempenhando um papel fundamental na entrega da maioria dos componentes de interface do usuário dentro dos cronogramas do projeto.",
+        "Traduzi designs de UI do Figma e Zeplin para implementações responsivas e de alta qualidade que melhoraram significativamente a experiência do usuário, conforme refletido no feedback positivo dos usuários.",
+        "Realizei revisões detalhadas de código para desenvolvedores júnior, promovendo uma cultura de colaboração e melhorando a qualidade do código ao reduzir problemas identificados após o deploy.",
+        "Implementei estratégias abrangentes de testes incluindo testes unitários e de integração, resultando em uma redução de 40% nos bugs de produção e melhor estabilidade da aplicação.",
+        "Colaborei com equipes multifuncionais incluindo designers, gerentes de produto e desenvolvedores backend para garantir integração perfeita e entrega de funcionalidades que atendiam tanto requisitos técnicos quanto de negócios."
+      ]
     },
     "epic": {
       "company": "Epic Lanka",
       "role": "Engenheiro de Software",
       "time": "Ago 2020 - Jul 2022",
-      "location": "No local"
+      "location": "No local",
+      "points": [
+        "Desenvolvi APIs REST de alta performance para uma aplicação de tickets JIRA dentro de um prazo apertado de três semanas, garantindo integração perfeita com sistemas existentes e mantendo padrões de qualidade de código.",
+        "Projetei e implementei um painel administrativo abrangente usando Angular, com visualização de dados avançada, gerenciamento de usuários e análises em tempo real que melhoraram a eficiência operacional em 35%.",
+        "Otimizei consultas de banco de dados e implementei estratégias de cache, resultando em uma melhoria de 60% nos tempos de resposta da aplicação e experiência do usuário aprimorada.",
+        "Colaborei com a equipe de QA para estabelecer pipelines de testes automatizados, reduzindo o tempo de testes manuais em 50% e garantindo qualidade de código consistente através dos releases."
+      ]
     },
     "zincat": {
       "company": "ZinCat Technology",
       "role": "Desenvolvedor de Software",
       "time": "Ago 2019 - Ago 2020",
-      "location": "No local"
+      "location": "No local",
+      "points": [
+        "Projetei e desenvolvi um frontend robusto de execução de lógica de negócio para uma plataforma de e-commerce local, melhorando a experiência do usuário e aumentando o engajamento em aproximadamente 25%.",
+        "Implementei princípios de design responsivo e abordagem de desenvolvimento mobile-first, garantindo performance ótima em todos os dispositivos e tamanhos de tela.",
+        "Integrei gateways de pagamento de terceiros e APIs de envio, otimizando o processo de checkout e reduzindo as taxas de abandono do carrinho em 30%.",
+        "Colaborei com a equipe de design para criar interfaces de usuário intuitivas que melhoraram as pontuações de satisfação do usuário e reduziram o volume de tickets de suporte em 40%."
+      ]
     },
     "ceyentra": {
       "company": "Ceyentra Technologies",
       "role": "Estágio",
       "time": "Jan 2019 - Ago 2019",
-      "location": "No local"
+      "location": "No local",
+      "points": [
+        "Implementei sistemas de software utilizando o framework Ionic para desenvolvimento de aplicações, contribuindo para um aumento de 30% na eficiência de entrega de projetos durante o período de emprego na empresa.",
+        "Desenvolvi aplicações móveis multiplataforma que alcançaram 95% de reutilização de código entre plataformas iOS e Android, reduzindo significativamente o tempo de desenvolvimento e custos de manutenção.",
+        "Colaborei com a equipe backend para projetar e implementar APIs RESTful, garantindo fluxo de dados perfeito e performance ótima para aplicações móveis.",
+        "Participei de processos de desenvolvimento ágil, contribuindo para planejamento de sprints, standups diários e reuniões retrospectivas que melhoraram a produtividade da equipe e cronogramas de entrega de projetos."
+      ]
     }
   },
   "opensource": {
@@ -95,6 +120,44 @@
     "contact": "Interessado em aprender mais sobre minhas experiências e jornada? Ficaria feliz em conectar—vamos entrar em contato! ✌️",
     "built": "Construído com ❤️ usando Angular",
     "rights": "© 2025 Todos os direitos reservados."
+  },
+  "ui": {
+    "seeMore": "Ver mais",
+    "seeLess": "Ver menos",
+    "active": "Ativo",
+    "viewOnGitHub": "Ver no GitHub",
+    "github": "GitHub",
+    "npm": "NPM",
+    "portfolio": "Portfolio",
+    "about": "Sobre",
+    "experience": "Experiência",
+    "hireMe": "Contrate-me",
+    "viewResume": "Ver currículo",
+    "back": "Voltar",
+    "bookIntroCall": "Agendar chamada introdutória",
+    "emailMe": "Enviar email",
+    "discover": "Descobrir",
+    "plan": "Planejar",
+    "build": "Construir",
+    "ship": "Entregar",
+    "faq": "FAQ",
+    "contact": "Contato",
+    "yourName": "Seu nome",
+    "email": "Email",
+    "projectDetails": "Detalhes do projeto…",
+    "send": "Enviar",
+    "plansComingSoon": "Planos em breve.",
+    "askMeAnything": "Pergunte-me qualquer coisa sobre processo, preços ou escopo.",
+    "linkedin": "LinkedIn",
+    "resume": "Currículo",
+    "processing": "Processando...",
+    "loadingApplication": "Carregando aplicação...",
+    "loadingHomePage": "Carregando página inicial...",
+    "loadingHirePage": "Carregando página de contratação...",
+    "loadingPage": "Carregando página...",
+    "initializingApplication": "Inicializando aplicação...",
+    "loadingComponents": "Carregando componentes...",
+    "preparingInterface": "Preparando interface..."
   },
   "gdpr": {
     "title": "Consentimento de Cookies e Privacidade",
