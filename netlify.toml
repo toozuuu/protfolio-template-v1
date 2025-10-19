@@ -13,6 +13,7 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Type = "text/html; charset=utf-8"
 
 # Static assets with long-term caching
 [[headers]]
@@ -24,18 +25,21 @@
 [[headers]]
   for = "/*.js"
   [headers.values]
+    Content-Type = "application/javascript; charset=utf-8"
     Cache-Control = "public, max-age=31536000, immutable"
 
 # CSS files
 [[headers]]
   for = "/*.css"
   [headers.values]
+    Content-Type = "text/css; charset=utf-8"
     Cache-Control = "public, max-age=31536000, immutable"
 
 # HTML files
 [[headers]]
   for = "/*.html"
   [headers.values]
+    Content-Type = "text/html; charset=utf-8"
     Cache-Control = "public, max-age=3600"
 
 # Image files
@@ -44,9 +48,22 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# JSON files
+[[headers]]
+  for = "/*.json"
+  [headers.values]
+    Content-Type = "application/json; charset=utf-8"
+    Cache-Control = "public, max-age=31536000, immutable"
+
 # Font files
 [[headers]]
   for = "/*.{woff,woff2,ttf,eot}"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Audio files
+[[headers]]
+  for = "/*.{mp3,wav,ogg}"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
