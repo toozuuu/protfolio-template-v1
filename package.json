@@ -19,8 +19,7 @@
     "format": "prettier --write \"src/**/*.{ts,html,css,scss,json}\"",
     "format:check": "prettier --check \"src/**/*.{ts,html,css,scss,json}\"",
     "clean": "rimraf dist .angular",
-    "prebuild": "npm run clean",
-    "postbuild": "npm run lighthouse:ci"
+    "prebuild": "npm run clean"
   },
   "prettier": {
     "printWidth": 100,
