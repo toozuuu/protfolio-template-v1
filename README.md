@@ -53,7 +53,7 @@ A modern, responsive, and multilingual portfolio website built with Angular 20, 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ 
+- Node.js 20+ (^20.19.0 || ^22.12.0 || >=23)
 - npm 9+
 
 ### Installation

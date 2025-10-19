@@ -122,7 +122,7 @@ CDN_ENABLED=true
 ### Netlify Configuration
 ```toml
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "20"
   EUROPEAN_OPTIMIZATION = "true"
   GDPR_COMPLIANCE = "true"
   CDN_ENABLED = "true"
