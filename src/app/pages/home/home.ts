@@ -231,9 +231,6 @@ export class Home implements AfterViewInit, OnDestroy {
         });
 
         this.mo.observe(root, { childList: true, subtree: true });
-
-        // Force header to render immediately
-        this.cdr.detectChanges();
         
         // Initialize layout animations after ensuring header is loaded
         setTimeout(() => {
@@ -244,9 +241,7 @@ export class Home implements AfterViewInit, OnDestroy {
             console.log('Header is loaded, initializing animations');
             this.initializeLayoutAnimations();
           } else {
-            console.log('Header not found, forcing change detection and retrying...');
-            // Force change detection to ensure header renders
-            this.cdr.detectChanges();
+            console.log('Header not found, retrying...');
             // Retry after a longer delay if header is not found
             setTimeout(() => {
               this.initializeLayoutAnimations();

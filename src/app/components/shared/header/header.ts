@@ -39,9 +39,6 @@ export class Header implements OnInit, OnDestroy {
   ngOnInit() {
     console.log('Header component initialized');
     
-    // Force change detection to ensure header renders
-    this.cdr.detectChanges();
-    
     // Check if we're in browser environment
     if (typeof window !== 'undefined') {
       this.scrollListener = () => {
