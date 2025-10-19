@@ -57,6 +57,100 @@ export class Home implements AfterViewInit, OnDestroy {
     { key: 'docker', stagger: 1 }
   ];
 
+  // Hire page properties
+  readonly calendly = 'https://calendly.com/sachindilshan040/sachin-dilshan-angular-consulting';
+  readonly email = 'mailto:sachindilshan040@gmail.com?subject=Project%20Inquiry';
+
+  // Hire page data
+  readonly plans = [
+    {
+      id: 'audit',
+      title: 'hire.services.angularAudit.title',
+      subtitle: 'hire.services.angularAudit.subtitle',
+      price: 'US$499 fixed',
+      cta: { label: 'Book audit', href: this.calendly },
+      badges: ['hire.services.angularAudit.badges.0', 'hire.services.angularAudit.badges.1', 'hire.services.angularAudit.badges.2'],
+      includes: [
+        'Repo review & issue list',
+        'Architecture diagram & recommendations',
+        'DX improvements (linting, scripts, CI hints)',
+        '1-hour handover call',
+      ],
+    },
+    {
+      id: 'perf',
+      title: 'hire.services.performanceSprint.title',
+      subtitle: 'hire.services.performanceSprint.subtitle',
+      price: 'US$1,499 / week',
+      cta: { label: 'Start sprint', href: this.calendly },
+      badges: ['hire.services.performanceSprint.badges.0', 'hire.services.performanceSprint.badges.1', 'hire.services.performanceSprint.badges.2'],
+      includes: [
+        'Perf baseline + goals',
+        'Critical-path fixes (SSR/hydration, preconnect, code-split)',
+        'Before/after report',
+        'Slack check-ins + 1 demo',
+      ],
+      best: true,
+    },
+    {
+      id: 'ux',
+      title: 'hire.services.uxPolish.title',
+      subtitle: 'hire.services.uxPolish.subtitle',
+      price: 'US$999 fixed',
+      cta: { label: 'hire.services.uxPolish.cta', href: this.calendly },
+      badges: ['hire.services.uxPolish.badges.0', 'hire.services.uxPolish.badges.1', 'hire.services.uxPolish.badges.2'],
+      includes: [
+        'Token pass (colors, radius, shadow, spacing)',
+        'Interactive states + micro-animations',
+        'A11y quick-wins (labels, roles, contrast)',
+        'Component QA checklist',
+      ],
+    },
+    {
+      id: 'coaching',
+      title: 'hire.services.angularCoaching.title',
+      subtitle: 'hire.services.angularCoaching.subtitle',
+      price: 'US$129 / hour',
+      cta: { label: 'Schedule session', href: this.calendly },
+      badges: ['hire.services.angularCoaching.badges.0', 'hire.services.angularCoaching.badges.1', 'hire.services.angularCoaching.badges.2'],
+      includes: [
+        'Pair-programming & code reviews',
+        'API contracts & state management',
+        'Testing strategy',
+        'Career & roadmap guidance',
+      ],
+    },
+  ];
+
+  readonly faq = signal([
+    {
+      q: 'hire.faq.howWeStart.q',
+      a: 'hire.faq.howWeStart.a',
+      open: true,
+    },
+    {
+      q: 'hire.faq.tools.q',
+      a: 'hire.faq.tools.a',
+      open: false,
+    },
+    {
+      q: 'hire.faq.async.q',
+      a: 'hire.faq.async.a',
+      open: false,
+    },
+    {
+      q: 'hire.faq.payment.q',
+      a: 'hire.faq.payment.a',
+      open: false,
+    },
+  ]);
+
+  toggleFaq(i: number) {
+    const list = [...this.faq()];
+    list[i] = { ...list[i], open: !list[i].open };
+    this.faq.set(list);
+  }
+
   private io?: IntersectionObserver;
   private mo?: MutationObserver;
   private readonly injector: EnvironmentInjector = inject(EnvironmentInjector);

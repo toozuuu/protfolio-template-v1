@@ -173,5 +173,55 @@
     "privacyPolicy": "Datenschutzerklärung",
     "cookiePolicy": "Cookie-Richtlinie",
     "contact": "Kontakt"
+  },
+  "hire": {
+    "title": "Stellen Sie mich ein",
+    "subtitle": "Ich helfe Teams dabei, <strong>schnellere Angular</strong>-Apps mit sauberer Architektur, großartiger UX und Core Web Vitals-Erfolgen zu liefern.",
+    "howWeWork": "Wie wir arbeiten werden",
+    "discoverDesc": "30-min Anruf, Ziele, Einschränkungen, Zugang.",
+    "planDesc": "Umfang & Metriken, schnelle Siege zuerst.",
+    "buildDesc": "täglicher Fortschritt, PRs, Vorschauen.",
+    "shipDesc": "Demo, Docs, Übergabe, nächste Schritte.",
+    "services": {
+      "angularAudit": {
+        "title": "Angular Audit",
+        "subtitle": "Code-Review und Architektur-Empfehlungen",
+        "badges": ["Architektur", "DX", "Leistung"]
+      },
+      "performanceSprint": {
+        "title": "Performance Sprint",
+        "subtitle": "Core Web Vitals & SSR Optimierung",
+        "badges": ["Core Web Vitals", "SSR/Preload", "Bundle-Split"]
+      },
+      "uxPolish": {
+        "title": "UX Polish Pack",
+        "subtitle": "Design-Tokens, Abstände, Zustände, a11y",
+        "cta": "Angebot erhalten",
+        "badges": ["Design System", "A11y", "Mikro-Animationen"]
+      },
+      "angularCoaching": {
+        "title": "Angular Coaching",
+        "subtitle": "Pair Programming & Team-Training",
+        "badges": ["Pair Programming", "Code Reviews", "Training"]
+      }
+    },
+    "faq": {
+      "howWeStart": {
+        "q": "Wie fangen wir an?",
+        "a": "Buchen Sie einen 30-minütigen Einführungsanruf (kostenlos). Wir stimmen Umfang, Zeitplan und Lieferungen ab. Dann sende ich ein einfaches einseitiges SoW."
+      },
+      "tools": {
+        "q": "Welche Tools verwenden Sie?",
+        "a": "Angular 20, SSR, Signals, Nx, Storybook, Playwright, Lighthouse, WebPageTest und Ihr bestehender Stack (GitHub Actions, EKS, etc.)."
+      },
+      "async": {
+        "q": "Arbeiten Sie asynchron?",
+        "a": "Ja. Ich führe Sprints durch und teile Fortschritte in einem dedizierten Slack/Teams-Kanal mit täglichen Updates und wöchentlichen Demos."
+      },
+      "payment": {
+        "q": "Zahlung & Abrechnung?",
+        "a": "Festpreis für Packs; stündlich für Coaching. 50% im Voraus für Festpreis-Packs. Stripe oder Banküberweisung."
+      }
+    }
   }
 }

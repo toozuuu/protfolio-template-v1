@@ -158,5 +158,55 @@
     "initializingApplication": "アプリケーションを初期化中...",
     "loadingComponents": "コンポーネントを読み込み中...",
     "preparingInterface": "インターフェースを準備中..."
+  },
+  "hire": {
+    "title": "私を雇う",
+    "subtitle": "クリーンなアーキテクチャ、優れたUX、Core Web Vitalsの勝利で、チームが<strong>より高速なAngular</strong>アプリを出荷するのを支援します。",
+    "howWeWork": "私たちの働き方",
+    "discoverDesc": "30分の電話、目標、制約、アクセス。",
+    "planDesc": "スコープとメトリクス、まずはクイックウィン。",
+    "buildDesc": "日々の進捗、PR、プレビュー。",
+    "shipDesc": "デモ、ドキュメント、引き渡し、次のステップ。",
+    "services": {
+      "angularAudit": {
+        "title": "Angular監査",
+        "subtitle": "コードレビューとアーキテクチャの推奨事項",
+        "badges": ["アーキテクチャ", "DX", "パフォーマンス"]
+      },
+      "performanceSprint": {
+        "title": "パフォーマンススプリント",
+        "subtitle": "Core Web VitalsとSSR最適化",
+        "badges": ["Core Web Vitals", "SSR/Preload", "バンドル分割"]
+      },
+      "uxPolish": {
+        "title": "UXポリッシュパック",
+        "subtitle": "デザイントークン、スペーシング、状態、a11y",
+        "cta": "見積もりを取得",
+        "badges": ["デザインシステム", "A11y", "マイクロアニメーション"]
+      },
+      "angularCoaching": {
+        "title": "Angularコーチング",
+        "subtitle": "ペアプログラミングとチームトレーニング",
+        "badges": ["ペアプログラミング", "コードレビュー", "トレーニング"]
+      }
+    },
+    "faq": {
+      "howWeStart": {
+        "q": "どのように始めますか？",
+        "a": "30分の紹介電話（無料）を予約してください。スコープ、タイムライン、成果物を調整します。その後、シンプルな1ページのSoWを送信します。"
+      },
+      "tools": {
+        "q": "どのツールを使用しますか？",
+        "a": "Angular 20、SSR、Signals、Nx、Storybook、Playwright、Lighthouse、WebPageTest、および既存のスタック（GitHub Actions、EKSなど）。"
+      },
+      "async": {
+        "q": "非同期で作業しますか？",
+        "a": "はい。スプリントを実行し、専用のSlack/Teamsチャンネルで進捗を共有し、日々の更新と週次のデモを行います。"
+      },
+      "payment": {
+        "q": "支払いと請求？",
+        "a": "パックは固定価格、コーチングは時間制。固定パックは50%前払い。Stripeまたは銀行振込。"
+      }
+    }
   }
 }

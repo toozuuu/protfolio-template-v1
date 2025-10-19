@@ -205,21 +205,42 @@
     "services": {
       "angularAudit": {
         "title": "Angular Audit",
-        "subtitle": "Code quality, architecture & DX review",
-        "badges": ["Angular 17–20", "Standalone", "Signals"]
+        "subtitle": "Code review & architecture recommendations",
+        "badges": ["Architecture", "DX", "Performance"]
       },
       "performanceSprint": {
         "title": "Performance Sprint",
-        "subtitle": "Metrics first: LCP, CLS, TTI"
+        "subtitle": "Core Web Vitals & SSR optimization",
+        "badges": ["Core Web Vitals", "SSR/Preload", "Bundle split"]
       },
       "uxPolish": {
-        "cta": "Polish my UI",
-        "badges": ["A11y", "Design Tokens", "Motion"]
+        "title": "UX Polish Pack",
+        "subtitle": "Design tokens, spacing, states, a11y",
+        "cta": "Get quote",
+        "badges": ["Design System", "A11y", "Micro-animations"]
       },
       "angularCoaching": {
         "title": "Angular Coaching",
-        "subtitle": "Mentoring for teams or individuals",
-        "badges": ["Architecture", "Testing", "DevEx"]
+        "subtitle": "Pair programming & team training",
+        "badges": ["Pair Programming", "Code Reviews", "Training"]
+      }
+    },
+    "faq": {
+      "howWeStart": {
+        "q": "How do we start?",
+        "a": "Book a 30-minute intro call (free). We align on scope, timeline, and deliverables. Then I send a simple one-page SoW."
+      },
+      "tools": {
+        "q": "What tools do you use?",
+        "a": "Angular 20, SSR, Signals, Nx, Storybook, Playwright, Lighthouse, WebPageTest, and your existing stack (GitHub Actions, EKS, etc.)."
+      },
+      "async": {
+        "q": "Do you work async?",
+        "a": "Yes. I run sprints and share progress in a dedicated Slack/Teams channel with a daily update and weekly demo."
+      },
+      "payment": {
+        "q": "Payment & billing?",
+        "a": "Fixed-price for packs; hourly for coaching. 50% upfront for fixed packs. Stripe or bank transfer."
       }
     }
   },
