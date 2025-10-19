@@ -3,7 +3,7 @@
   command = "npm run build"
 
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "20.19"
   # European optimization environment variables
   EUROPEAN_OPTIMIZATION = "true"
   GDPR_COMPLIANCE = "true"
