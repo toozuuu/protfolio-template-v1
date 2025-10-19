@@ -390,68 +390,9 @@
       });
     </script>
     
-    <!-- Loading screen for 3 seconds -->
-    <div id="app-loading" class="fixed inset-0 bg-white dark:bg-slate-900 flex items-center justify-center z-50">
-      <div class="text-center">
-        <div class="w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-        <p class="text-slate-600 dark:text-slate-400">Loading...</p>
-        <p class="text-sm text-slate-500 dark:text-slate-500 mt-2">Please wait 3 seconds</p>
-      </div>
-    </div>
     
     <app-root> </app-root>
     
-    <!-- Hide loading after 3 seconds -->
-    <script>
-      // Hide loading function
-      function hideLoading() {
-        console.log('Hiding loading screen after 3 seconds...');
-        const loading = document.getElementById('app-loading');
-        if (loading) {
-          loading.style.opacity = '0';
-          loading.style.transition = 'opacity 0.5s ease';
-          setTimeout(() => {
-            loading.style.display = 'none';
-            console.log('Loading screen hidden');
-          }, 500);
-        }
-      }
-
-      // Countdown timer
-      let countdown = 3;
-      const countdownElement = document.createElement('p');
-      countdownElement.className = 'text-xs text-slate-400 dark:text-slate-500 mt-1';
-      countdownElement.textContent = `${countdown} seconds remaining...`;
-      
-      const loadingContainer = document.querySelector('#app-loading .text-center');
-      if (loadingContainer) {
-        loadingContainer.appendChild(countdownElement);
-      }
-
-      // Update countdown every second
-      const countdownInterval = setInterval(() => {
-        countdown--;
-        if (countdownElement) {
-          countdownElement.textContent = `${countdown} seconds remaining...`;
-        }
-        if (countdown <= 0) {
-          clearInterval(countdownInterval);
-        }
-      }, 1000);
-
-      // Show loading for exactly 3 seconds
-      setTimeout(() => {
-        clearInterval(countdownInterval);
-        hideLoading();
-        
-        // Scroll to top after loading is complete
-        window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: 'smooth'
-        });
-      }, 3000); // 3 seconds
-    </script>
   </body>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YJC8G0R2H"></script>
