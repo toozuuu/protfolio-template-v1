@@ -14,8 +14,9 @@ protfolio-template-v1/
 │   │   │   └── 📁 project-card/      # Project card component
 │   │   ├── 📁 core/                 # Core services
 │   │   │   ├── theme.service.ts     # Theme management
-│   │   │   ├── language.service.ts  # i18n management
-│   │   │   └── performance.service.ts # Performance optimization
+│   │   │   ├── performance.service.ts # Performance optimization
+│   │   │   ├── analytics.service.ts # Analytics tracking
+│   │   │   └── seo.service.ts       # SEO management
 │   │   ├── 📁 pages/                # Page components
 │   │   │   ├── 📁 home/             # Home page
 │   │   │   └── 📁 hire/             # Hire page
@@ -25,18 +26,6 @@ protfolio-template-v1/
 │   │   ├── app.html                 # App template
 │   │   └── app.css                  # Global styles
 │   ├── 📁 assets/                   # Static assets
-│   │   ├── 📁 i18n/                 # Translation files
-│   │   │   ├── en.json              # English
-│   │   │   ├── si.json              # Sinhala
-│   │   │   ├── sv.json              # Swedish
-│   │   │   ├── es.json              # Spanish
-│   │   │   ├── fr.json              # French
-│   │   │   ├── de.json              # German
-│   │   │   ├── pt.json              # Portuguese
-│   │   │   ├── zh.json              # Chinese
-│   │   │   ├── ja.json              # Japanese
-│   │   │   ├── ko.json              # Korean
-│   │   │   └── hi.json              # Hindi
 │   │   ├── 📁 icons/                # Icon assets
 │   │   ├── My_Photo.jpg             # Profile photo
 │   │   └── name_voice.mp3           # Audio file
@@ -56,11 +45,11 @@ protfolio-template-v1/
 
 ## 🎯 Key Features
 
-### 🌍 Internationalization (i18n)
-- **11 Languages Supported**: English, Sinhala, Swedish, Spanish, French, German, Portuguese, Chinese, Japanese, Korean, Hindi
-- **Dynamic Language Switching**: Real-time language changes
-- **Browser Language Detection**: Automatic language detection
-- **Local Storage**: Language preference persistence
+### 🎯 Single Language
+- **English Only**: Clean, focused content
+- **No Translation Overhead**: Faster loading and simpler maintenance
+- **SEO Optimized**: Single language for better search rankings
+- **Direct Content**: All text written directly in components
 
 ### 🎨 Theme System
 - **Light/Dark Mode**: Toggle between themes
@@ -121,9 +110,10 @@ npm run lighthouse
 - **Angular Forms**: Form handling
 - **CSS Grid/Flexbox**: Modern layout
 
-### Internationalization
-- **@ngx-translate**: Translation management
-- **@ngx-translate/http-loader**: HTTP translation loading
+### State Management
+- **Angular Signals**: Reactive state management
+- **RxJS**: Reactive programming patterns
+- **Component State**: Local component state management
 
 ### Performance
 - **Angular SSR**: Server-side rendering
@@ -142,6 +132,6 @@ npm run lighthouse
 
 - **Browser Bundle**: Client-side application
 - **Server Bundle**: SSR application
-- **Assets**: Static files and translations
+- **Assets**: Static files and media
 - **Chunks**: Optimized code splitting
 - **Analysis**: Bundle size reports
