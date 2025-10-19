@@ -1,21 +1,13 @@
 # 🚀 Portfolio Template v1
 
-A modern, responsive, and multilingual portfolio website built with Angular 20, featuring dynamic theming, internationalization, and performance optimizations.
+A modern, responsive portfolio website built with Angular 20, featuring dynamic theming, performance optimizations, and clean architecture.
 
 ## ✨ Features
 
-### 🌍 **11 Languages Supported**
-- **English** (en) - Default
-- **සිංහල** (si) - Sinhala
-- **Svenska** (sv) - Swedish  
-- **Español** (es) - Spanish
-- **Français** (fr) - French
-- **Deutsch** (de) - German
-- **Português** (pt) - Portuguese
-- **中文** (zh) - Chinese
-- **日本語** (ja) - Japanese
-- **한국어** (ko) - Korean
-- **हिन्दी** (hi) - Hindi
+### 🎯 **Single Language**
+- **English** - Clean, focused content
+- **No Translation Overhead** - Faster loading and simpler maintenance
+- **SEO Optimized** - Single language for better search rankings
 
 ### 🎨 **Dynamic Theming**
 - **Light/Dark Mode**: Toggle between themes
@@ -48,7 +40,7 @@ A modern, responsive, and multilingual portfolio website built with Angular 20, 
 - **Tailwind CSS** - Utility-first CSS framework
 - **RxJS** - Reactive programming
 - **Angular SSR** - Server-side rendering
-- **@ngx-translate** - Internationalization
+- **Angular Signals** - Reactive state management
 
 ## 🚀 Quick Start
 
@@ -110,36 +102,31 @@ src/
 │   │   └── hire/           # Hire page
 │   └── app.config.ts       # App configuration
 ├── assets/
-│   ├── i18n/               # Translation files (11 languages)
 │   ├── icons/              # Icon assets
 │   └── My_Photo.jpg        # Profile photo
 └── index.html              # Main HTML file
 ```
 
-## 🌍 Internationalization
+## 🎯 Content Management
 
-### Adding New Languages
+### Static Content
+- **Direct Text**: All content is written directly in templates
+- **No Translation Files**: Simplified content management
+- **Easy Updates**: Change text directly in components
+- **Better Performance**: No translation overhead
 
-1. Create new translation file in `src/assets/i18n/`
-2. Add language code to `LanguageService`
-3. Update language selector in header
-
-### Translation Structure
-
-```json
-{
-  "intro": {
-    "greeting": "Hello, I'm Sachin Dilshan.",
-    "speak": "/sa-chin dil-shaan/",
-    "welcome": "Welcome message...",
-    "workingWith": "I'm currently working with,"
-  },
-  "technologies": {
-    "angular": "Angular",
-    "typescript": "TypeScript",
-    "flutter": "Flutter"
+### Content Structure
+```typescript
+// Example: Service plans in home component
+readonly plans = [
+  {
+    id: 'audit',
+    title: 'Angular Audit',
+    subtitle: 'Code review & architecture recommendations',
+    price: 'US$499 fixed',
+    // ... more properties
   }
-}
+];
 ```
 
 ## 🎨 Theming
@@ -207,8 +194,8 @@ src/
 ## 📊 Performance Metrics
 
 ### Bundle Sizes
-- **Initial Bundle**: ~295KB (gzipped: ~82KB)
-- **Home Page**: ~59KB (gzipped: ~14KB)
+- **Initial Bundle**: ~352KB (gzipped: ~95KB)
+- **Home Page**: ~48KB (gzipped: ~12KB)
 - **Hire Page**: ~10KB (gzipped: ~3KB)
 
 ### Core Web Vitals

@@ -19,7 +19,6 @@ protfolio-template-v1/
 │   │   │   └── 📁 interactive-skills/ # Interactive skills component
 │   │   ├── 📁 core/                 # Core services
 │   │   │   ├── theme.service.ts     # Theme management
-│   │   │   ├── language.service.ts  # i18n management
 │   │   │   ├── performance.service.ts # Performance optimization
 │   │   │   ├── seo.service.ts       # SEO management
 │   │   │   ├── analytics.service.ts # Analytics tracking
@@ -38,7 +37,6 @@ protfolio-template-v1/
 │   │   ├── app.html                 # App template
 │   │   └── app.css                  # Global styles
 │   ├── 📁 assets/                   # Static assets
-│   │   ├── 📁 i18n/                 # Translation files (11 languages)
 │   │   ├── 📁 icons/                # Icon assets
 │   │   ├── My_Photo.jpg             # Profile photo
 │   │   └── name_voice.mp3           # Audio file
