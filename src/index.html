@@ -114,7 +114,7 @@
       color: #1f2937;
       line-height: 1.6;
       overflow-x: hidden;
-      padding-top: 4rem; /* Header height */
+      padding-top: 0; /* No padding - header is inside content */
     }
     
     /* Dark mode support */
@@ -155,7 +155,9 @@
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                  box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                  border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .dark header {
