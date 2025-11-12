@@ -13,14 +13,14 @@ export class LazyLoadingService {
   // Lazy load components only when needed
   async loadComponent(componentName: string): Promise<any> {
     if (!this.isBrowser) return null;
-    
+
     if (this.loadedModules.has(componentName)) {
       return null; // Already loaded
     }
 
     try {
       let component;
-      
+
       switch (componentName) {
         case 'interactive-skills':
           component = await import('../components/interactive-skills/interactive-skills');
@@ -50,8 +50,8 @@ export class LazyLoadingService {
 
     // Preload components that are likely to be used
     const criticalComponents = ['interactive-skills'];
-    
-    criticalComponents.forEach(component => {
+
+    criticalComponents.forEach((component) => {
       this.loadComponent(component);
     });
   }

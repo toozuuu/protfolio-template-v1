@@ -19,7 +19,8 @@
     "format": "prettier --write \"src/**/*.{ts,html,css,scss,json}\"",
     "format:check": "prettier --check \"src/**/*.{ts,html,css,scss,json}\"",
     "clean": "rimraf dist .angular",
-    "prebuild": "npm run clean"
+    "tokens:generate": "node scripts/generate-tokens.mjs",
+    "prebuild": "npm run tokens:generate && npm run clean"
   },
   "prettier": {
     "printWidth": 100,
@@ -35,13 +36,13 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/common": "^20.3.0",
-    "@angular/compiler": "^20.3.0",
-    "@angular/core": "^20.3.0",
-    "@angular/forms": "^20.3.0",
-    "@angular/platform-browser": "^20.3.0",
-    "@angular/platform-server": "^20.3.0",
-    "@angular/router": "^20.3.0",
+    "@angular/common": "^20.3.1",
+    "@angular/compiler": "^20.3.1",
+    "@angular/core": "^20.3.1",
+    "@angular/forms": "^20.3.1",
+    "@angular/platform-browser": "^20.3.1",
+    "@angular/platform-server": "^20.3.1",
+    "@angular/router": "^20.3.1",
     "@angular/ssr": "^20.3.1",
     "express": "^5.1.0",
     "rxjs": "~7.8.0",
@@ -50,7 +51,7 @@
   "devDependencies": {
     "@angular/build": "^20.3.1",
     "@angular/cli": "^20.3.1",
-    "@angular/compiler-cli": "^20.3.0",
+    "@angular/compiler-cli": "^20.3.1",
     "@netlify/angular-runtime": "^2.4.0",
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",

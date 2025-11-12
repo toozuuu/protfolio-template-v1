@@ -126,7 +126,9 @@ $elevated: true !default;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.25rem;
-  transition: transform var(--dur) ease, box-shadow var(--dur) ease;
+  transition:
+    transform var(--dur) ease,
+    box-shadow var(--dur) ease;
 
   @if $elevated {
     box-shadow: var(--shadow);
@@ -268,23 +270,30 @@ $elevated: true !default;
 .backbar {
   display: flex;
   align-items: center;
-  gap: .5rem;
+  gap: 0.5rem;
   margin: 1rem 0 0;
   margin-left: 30px;
 
   .back-btn {
     display: inline-flex;
     align-items: center;
-    gap: .5rem;
-    padding: .4rem .7rem;
+    gap: 0.5rem;
+    padding: 0.4rem 0.7rem;
     border: 1px solid var(--border);
     border-radius: 8px;
     background: var(--card);
     color: var(--text);
     cursor: pointer;
-    transition: background var(--dur) ease, border-color var(--dur) ease, box-shadow var(--dur) ease, transform var(--dur) ease;
+    transition:
+      background var(--dur) ease,
+      border-color var(--dur) ease,
+      box-shadow var(--dur) ease,
+      transform var(--dur) ease;
 
-    .icon { width: 20px; height: 20px; }
+    .icon {
+      width: 20px;
+      height: 20px;
+    }
 
     &:hover {
       background: color-mix(in oklab, var(--accent) 12%, transparent);

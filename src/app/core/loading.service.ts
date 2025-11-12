@@ -6,12 +6,12 @@ export class LoadingService {
   private readonly _isLoading = signal(false);
   private readonly _loadingMessage = signal('Loading...');
   private readonly _loadingProgress = signal(0);
-  
+
   // Computed signals for loading state
   readonly isLoading = this._isLoading.asReadonly();
   readonly loadingMessage = this._loadingMessage.asReadonly();
   readonly loadingProgress = this._loadingProgress.asReadonly();
-  
+
   // Computed signals for loading UI
   readonly showSpinner = computed(() => this._isLoading());
   readonly progressPercentage = computed(() => `${this._loadingProgress()}%`);
@@ -49,18 +49,18 @@ export class LoadingService {
   // Simulate loading with steps
   async simulateLoading(steps: Array<{ message: string; duration: number }>) {
     this.startLoading(steps[0]?.message || 'Loading...');
-    
+
     for (let i = 0; i < steps.length; i++) {
       const step = steps[i];
       const progress = ((i + 1) / steps.length) * 100;
-      
+
       this.updateProgress(progress, step.message);
-      
+
       if (i < steps.length - 1) {
-        await new Promise(resolve => setTimeout(resolve, step.duration));
+        await new Promise((resolve) => setTimeout(resolve, step.duration));
       }
     }
-    
+
     this.completeLoading();
   }
 
@@ -76,7 +76,7 @@ export class LoadingService {
   // Quick full-screen loading with auto-hide
   async showFullScreenLoadingWithDelay(message: string, delay: number = 2000) {
     this.startLoading(message);
-    await new Promise(resolve => setTimeout(resolve, delay));
+    await new Promise((resolve) => setTimeout(resolve, delay));
     this.completeLoading();
   }
 }

@@ -20,13 +20,13 @@ export class EuropeanOptimizationService {
   private readonly isBrowser: boolean;
   private readonly _userRegion = signal<EuropeanRegion | null>(null);
   private readonly _optimizationLevel = signal<'basic' | 'enhanced' | 'premium'>('basic');
-  
+
   // Computed signals
   readonly userRegion = this._userRegion.asReadonly();
   readonly optimizationLevel = this._optimizationLevel.asReadonly();
   readonly isEuropeanUser = computed(() => this._userRegion() !== null);
   readonly shouldUseCDN = computed(() => this._userRegion()?.cdnEndpoint !== undefined);
-  
+
   // European regions configuration
   private readonly europeanRegions: EuropeanRegion[] = [
     {
@@ -39,8 +39,8 @@ export class EuropeanOptimizationService {
       performanceTargets: {
         maxLoadTime: 2000,
         maxBundleSize: 500,
-        maxImageSize: 200
-      }
+        maxImageSize: 200,
+      },
     },
     {
       code: 'FR',
@@ -52,8 +52,8 @@ export class EuropeanOptimizationService {
       performanceTargets: {
         maxLoadTime: 2000,
         maxBundleSize: 500,
-        maxImageSize: 200
-      }
+        maxImageSize: 200,
+      },
     },
     {
       code: 'ES',
@@ -65,8 +65,8 @@ export class EuropeanOptimizationService {
       performanceTargets: {
         maxLoadTime: 2000,
         maxBundleSize: 500,
-        maxImageSize: 200
-      }
+        maxImageSize: 200,
+      },
     },
     {
       code: 'PT',
@@ -78,8 +78,8 @@ export class EuropeanOptimizationService {
       performanceTargets: {
         maxLoadTime: 2000,
         maxBundleSize: 500,
-        maxImageSize: 200
-      }
+        maxImageSize: 200,
+      },
     },
     {
       code: 'SE',
@@ -91,8 +91,8 @@ export class EuropeanOptimizationService {
       performanceTargets: {
         maxLoadTime: 2000,
         maxBundleSize: 500,
-        maxImageSize: 200
-      }
+        maxImageSize: 200,
+      },
     },
     {
       code: 'IT',
@@ -104,8 +104,8 @@ export class EuropeanOptimizationService {
       performanceTargets: {
         maxLoadTime: 2000,
         maxBundleSize: 500,
-        maxImageSize: 200
-      }
+        maxImageSize: 200,
+      },
     },
     {
       code: 'NL',
@@ -117,8 +117,8 @@ export class EuropeanOptimizationService {
       performanceTargets: {
         maxLoadTime: 2000,
         maxBundleSize: 500,
-        maxImageSize: 200
-      }
+        maxImageSize: 200,
+      },
     },
     {
       code: 'BE',
@@ -130,8 +130,8 @@ export class EuropeanOptimizationService {
       performanceTargets: {
         maxLoadTime: 2000,
         maxBundleSize: 500,
-        maxImageSize: 200
-      }
+        maxImageSize: 200,
+      },
     },
     {
       code: 'AT',
@@ -143,8 +143,8 @@ export class EuropeanOptimizationService {
       performanceTargets: {
         maxLoadTime: 2000,
         maxBundleSize: 500,
-        maxImageSize: 200
-      }
+        maxImageSize: 200,
+      },
     },
     {
       code: 'CH',
@@ -156,9 +156,9 @@ export class EuropeanOptimizationService {
       performanceTargets: {
         maxLoadTime: 2000,
         maxBundleSize: 500,
-        maxImageSize: 200
-      }
-    }
+        maxImageSize: 200,
+      },
+    },
   ];
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
@@ -168,7 +168,7 @@ export class EuropeanOptimizationService {
 
   private async initializeEuropeanOptimization(): Promise<void> {
     if (!this.isBrowser) return;
-    
+
     try {
       const region = await this.detectUserRegion();
       if (region) {
@@ -182,35 +182,34 @@ export class EuropeanOptimizationService {
 
   private async detectUserRegion(): Promise<EuropeanRegion | null> {
     if (!this.isBrowser) return null;
-    
+
     try {
       // Try to detect region from browser language and timezone
       const browserLang = navigator.language.toLowerCase();
       const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-      
+
       // Check if user is in a European timezone
       const isEuropeanTimezone = timezone.startsWith('Europe/');
-      
+
       if (isEuropeanTimezone) {
         // Find matching region
-        const region = this.europeanRegions.find(r => 
-          r.timezone === timezone || 
-          browserLang.startsWith(r.language)
+        const region = this.europeanRegions.find(
+          (r) => r.timezone === timezone || browserLang.startsWith(r.language),
         );
-        
+
         if (region) {
           return region;
         }
       }
-      
+
       // Fallback: check browser language for European languages
       const europeanLanguages = ['de', 'fr', 'es', 'pt', 'sv', 'it', 'nl'];
-      const detectedLang = europeanLanguages.find(lang => browserLang.startsWith(lang));
-      
+      const detectedLang = europeanLanguages.find((lang) => browserLang.startsWith(lang));
+
       if (detectedLang) {
-        return this.europeanRegions.find(r => r.language === detectedLang) || null;
+        return this.europeanRegions.find((r) => r.language === detectedLang) || null;
       }
-      
+
       return null;
     } catch (error) {
       console.warn('Error detecting user region:', error);
@@ -222,7 +221,7 @@ export class EuropeanOptimizationService {
     // Set optimization level based on region
     const optimizationLevel = this.determineOptimizationLevel(region);
     this._optimizationLevel.set(optimizationLevel);
-    
+
     // Apply region-specific optimizations
     this.optimizeForRegion(region);
   }
@@ -233,7 +232,7 @@ export class EuropeanOptimizationService {
     if (premiumRegions.includes(region.code)) {
       return 'premium';
     }
-    
+
     // Other European regions get enhanced optimization
     return 'enhanced';
   }
@@ -243,10 +242,10 @@ export class EuropeanOptimizationService {
     if (region.cdnEndpoint) {
       this.configureCDN(region.cdnEndpoint);
     }
-    
+
     // Apply performance optimizations
     this.applyPerformanceOptimizations(region);
-    
+
     // Apply region-specific settings
     this.applyRegionSettings(region);
   }
@@ -262,12 +261,12 @@ export class EuropeanOptimizationService {
   private applyPerformanceOptimizations(region: EuropeanRegion): void {
     // Apply performance optimizations based on region
     const targets = region.performanceTargets;
-    
+
     // Configure performance monitoring
     if (this.isBrowser) {
       // Set performance targets
       sessionStorage.setItem('performance-targets', JSON.stringify(targets));
-      
+
       // Enable enhanced monitoring for European users
       this.enableEnhancedMonitoring();
     }
@@ -278,10 +277,10 @@ export class EuropeanOptimizationService {
     if (this.isBrowser) {
       // Set timezone
       sessionStorage.setItem('user-timezone', region.timezone);
-      
+
       // Set currency
       sessionStorage.setItem('user-currency', region.currency);
-      
+
       // Set language preference
       sessionStorage.setItem('preferred-language', region.language);
     }
@@ -292,10 +291,10 @@ export class EuropeanOptimizationService {
     if (this.isBrowser) {
       // Monitor Core Web Vitals more closely
       this.monitorCoreWebVitals();
-      
+
       // Monitor bundle size
       this.monitorBundleSize();
-      
+
       // Monitor image optimization
       this.monitorImageOptimization();
     }

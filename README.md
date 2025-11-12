@@ -14,6 +14,7 @@ A modern, responsive portfolio website built with Angular 20, featuring dynamic 
 - **System Theme Detection**: Automatic theme based on OS preference
 - **Smooth Transitions**: Animated theme changes
 - **Header Scroll Effects**: Dynamic color changes on scroll
+- **Design Tokens**: TokiForge-inspired token system with CSS variables (zero JS overhead)
 
 ### 📱 **Responsive Design**
 - **Mobile-First**: Optimized for mobile devices
@@ -38,6 +39,7 @@ A modern, responsive portfolio website built with Angular 20, featuring dynamic 
 - **Angular 20** - Latest Angular framework
 - **TypeScript** - Type-safe development
 - **Tailwind CSS** - Utility-first CSS framework
+- **TokiForge-inspired Design Tokens** - Zero JS overhead design system
 - **RxJS** - Reactive programming
 - **Angular SSR** - Server-side rendering
 - **Angular Signals** - Reactive state management
@@ -228,6 +230,7 @@ npm run build
 - [Mobile Responsiveness](docs/MOBILE_RESPONSIVENESS_GUIDE.md)
 - [Performance Optimization](docs/OPTIMIZATION_GUIDE.md)
 - [Tailwind Integration](docs/TAILWIND_INTEGRATION_GUIDE.md)
+- [TokiForge Design Tokens](docs/TOKIFORGE_INTEGRATION.md)
 
 ## 🤝 Contributing
 

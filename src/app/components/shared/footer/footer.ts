@@ -1,5 +1,5 @@
-import { Component, ChangeDetectionStrategy} from '@angular/core';
-import { SocialButtons } from "../../social-buttons/social-buttons";
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { SocialButtons } from '../../social-buttons/social-buttons';
 
 @Component({
   selector: 'app-footer',

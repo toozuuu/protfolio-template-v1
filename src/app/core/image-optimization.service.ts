@@ -41,7 +41,7 @@ export class ImageOptimizationService {
     if (!this.isBrowser) return;
 
     const imageObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const img = entry.target as HTMLImageElement;
           if (img.dataset['src']) {
@@ -54,7 +54,7 @@ export class ImageOptimizationService {
     });
 
     // Observe all images with data-src attribute
-    document.querySelectorAll('img[data-src]').forEach(img => {
+    document.querySelectorAll('img[data-src]').forEach((img) => {
       imageObserver.observe(img);
     });
   }
@@ -63,12 +63,9 @@ export class ImageOptimizationService {
   preloadCriticalImages(): void {
     if (!this.isBrowser) return;
 
-    const criticalImages = [
-      'assets/My_Photo.jpg',
-      'assets/kr.png'
-    ];
+    const criticalImages = ['assets/My_Photo.jpg', 'assets/kr.png'];
 
-    criticalImages.forEach(src => {
+    criticalImages.forEach((src) => {
       const link = document.createElement('link');
       link.rel = 'preload';
       link.as = 'image';
@@ -83,7 +80,7 @@ export class ImageOptimizationService {
       sm: `${baseSrc}?w=480&h=480&fit=crop&auto=format`,
       md: `${baseSrc}?w=768&h=768&fit=crop&auto=format`,
       lg: `${baseSrc}?w=1024&h=1024&fit=crop&auto=format`,
-      xl: `${baseSrc}?w=1920&h=1920&fit=crop&auto=format`
+      xl: `${baseSrc}?w=1920&h=1920&fit=crop&auto=format`,
     };
 
     return sizes;
@@ -101,7 +98,8 @@ export class ImageOptimizationService {
     img.onerror = () => {
       console.warn(`Failed to load image: ${img.src}`);
       // Fallback to placeholder or default image
-      img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2Y3ZjhmYSIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjNjQ3NDhiIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+SW1hZ2U8L3RleHQ+PC9zdmc+';
+      img.src =
+        'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2Y3ZjhmYSIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjNjQ3NDhiIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+SW1hZ2U8L3RleHQ+PC9zdmc+';
     };
   }
 
@@ -132,7 +130,7 @@ export class ImageOptimizationService {
         <text x="50%" y="50%" font-family="Arial" font-size="14" fill="#64748b" text-anchor="middle" dy=".3em">${text}</text>
       </svg>
     `;
-    
+
     return `data:image/svg+xml;base64,${btoa(svg)}`;
   }
 }

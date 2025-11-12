@@ -5,21 +5,19 @@ import { isPlatformBrowser } from '@angular/common';
 export class AnalyticsService {
   private readonly isBrowser: boolean;
 
-  constructor(
-    @Inject(PLATFORM_ID) private platformId: Object
-  ) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
   // Track page views
   trackPageView(page: string): void {
     if (!this.isBrowser) return;
-    
+
     // Google Analytics 4
     if (typeof (window as any).gtag !== 'undefined') {
       (window as any).gtag('config', 'G-0YJC8G0R2H', {
         page_title: page,
-        page_location: window.location.href
+        page_location: window.location.href,
       });
     }
 
@@ -43,7 +41,7 @@ export class AnalyticsService {
 
     this.trackEvent('scroll_depth', {
       value: depth,
-      event_category: 'engagement'
+      event_category: 'engagement',
     });
   }
 
@@ -53,7 +51,7 @@ export class AnalyticsService {
 
     this.trackEvent('time_on_page', {
       value: timeSpent,
-      event_category: 'engagement'
+      event_category: 'engagement',
     });
   }
 
@@ -63,7 +61,7 @@ export class AnalyticsService {
 
     this.trackEvent('skill_click', {
       skill_name: skill,
-      event_category: 'interaction'
+      event_category: 'interaction',
     });
   }
 
@@ -73,7 +71,7 @@ export class AnalyticsService {
 
     this.trackEvent('language_change', {
       language: language,
-      event_category: 'preference'
+      event_category: 'preference',
     });
   }
 
@@ -83,7 +81,7 @@ export class AnalyticsService {
 
     this.trackEvent('theme_change', {
       theme: theme,
-      event_category: 'preference'
+      event_category: 'preference',
     });
   }
 
@@ -93,7 +91,7 @@ export class AnalyticsService {
 
     this.trackEvent('contact_form', {
       action: action,
-      event_category: 'conversion'
+      event_category: 'conversion',
     });
   }
 
@@ -103,7 +101,7 @@ export class AnalyticsService {
 
     this.trackEvent('project_view', {
       project_name: projectName,
-      event_category: 'engagement'
+      event_category: 'engagement',
     });
   }
 
@@ -112,7 +110,7 @@ export class AnalyticsService {
     if (!this.isBrowser) return;
 
     this.trackEvent('resume_download', {
-      event_category: 'conversion'
+      event_category: 'conversion',
     });
   }
 }

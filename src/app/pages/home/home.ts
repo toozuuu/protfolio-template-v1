@@ -13,7 +13,7 @@ import {
   signal,
   computed,
 } from '@angular/core';
-import { isPlatformBrowser, CommonModule } from '@angular/common';
+import { isPlatformBrowser, CommonModule, ViewportScroller } from '@angular/common';
 import { Header } from '../../components/shared/header/header';
 import { Footer } from '../../components/shared/footer/footer';
 import { SocialButtons } from '../../components/social-buttons/social-buttons';
@@ -24,7 +24,7 @@ import { AnalyticsService } from '../../core/analytics.service';
 import { AnimationsService } from '../../core/animations.service';
 import { LoadingService } from '../../core/loading.service';
 import { LayoutAnimationsService } from '../../core/layout-animations.service';
-
+import { GitHubService, GitHubRepoStats } from '../../core/github.service';
 
 @Component({
   selector: 'app-home',
@@ -36,7 +36,7 @@ import { LayoutAnimationsService } from '../../core/layout-animations.service';
 export class Home implements AfterViewInit, OnDestroy {
   // Signal for expanded sections
   private readonly _expanded = signal<Set<string>>(new Set());
-  
+
   // Computed signals for expansion state
   readonly expanded = this._expanded.asReadonly();
   readonly hasExpandedSections = computed(() => this._expanded().size > 0);
@@ -51,12 +51,73 @@ export class Home implements AfterViewInit, OnDestroy {
     { key: 'flutter', name: 'Flutter', stagger: 6 },
     { key: 'aws', name: 'AWS', stagger: 7 },
     { key: 'figma', name: 'Figma', stagger: 8 },
-    { key: 'docker', name: 'Docker', stagger: 1 }
+    { key: 'docker', name: 'Docker', stagger: 1 },
   ];
 
   // Hire page properties
   readonly calendly = 'https://calendly.com/sachindilshan040/sachin-dilshan-angular-consulting';
   readonly email = 'mailto:sachindilshan040@gmail.com?subject=Project%20Inquiry';
+
+  // Experience data with full descriptions
+  readonly experiences = signal([
+    {
+      id: 'wmp',
+      company: 'We Make Platforms',
+      role: 'Technical Lead - Frontend',
+      period: 'Aug 2022 - Present',
+      location: 'Remote',
+      link: 'https://www.wemakeplatforms.io/',
+      achievements: [
+        'Spearheaded the development of front-end features using the Angular framework, playing a key role in delivering the majority of user interface components within project timelines.',
+        'Translated UI designs from Figma and Zeplin into responsive, high-quality implementations that significantly enhanced user experience, as reflected in positive user feedback.',
+        'Conducted detailed code reviews for junior developers, fostering a culture of collaboration and improving code quality by reducing issues identified after deployment.',
+        'Implemented comprehensive testing strategies including unit tests and integration tests, resulting in a 40% reduction in production bugs and improved application stability.',
+        'Collaborated with cross-functional teams including designers, product managers, and backend developers to ensure seamless integration and delivery of features that met both technical and business requirements.',
+      ],
+    },
+    {
+      id: 'epic',
+      company: 'Epic Lanka',
+      role: 'Software Engineer',
+      period: 'Aug 2020 - Jul 2022',
+      location: 'On-site',
+      link: 'https://www.epic.lk/',
+      achievements: [
+        'Developed high-performance REST APIs for a JIRA ticketing application within a tight deadline of three weeks, ensuring seamless integration with existing systems and maintaining code quality standards.',
+        'Designed and implemented a comprehensive admin panel using Angular, featuring advanced data visualization, user management, and real-time analytics that improved operational efficiency by 35%.',
+        'Optimized database queries and implemented caching strategies, resulting in a 60% improvement in application response times and enhanced user experience.',
+        'Collaborated with the QA team to establish automated testing pipelines, reducing manual testing time by 50% and ensuring consistent code quality across releases.',
+      ],
+    },
+    {
+      id: 'zincat',
+      company: 'ZinCat Technology',
+      role: 'Software Developer',
+      period: 'Aug 2019 - Aug 2020',
+      location: 'On-site',
+      link: 'https://zincat.lk/',
+      achievements: [
+        'Designed and developed a robust business logic execution front end for a local e-commerce platform, enhancing user experience and increasing engagement by an estimated 25%.',
+        'Implemented responsive design principles and mobile-first development approach, ensuring optimal performance across all devices and screen sizes.',
+        'Integrated third-party payment gateways and shipping APIs, streamlining the checkout process and reducing cart abandonment rates by 30%.',
+        'Collaborated with the design team to create intuitive user interfaces that improved user satisfaction scores and reduced support ticket volume by 40%.',
+      ],
+    },
+    {
+      id: 'ceyentra',
+      company: 'Ceyentra Technologies',
+      role: 'Internship',
+      period: 'Jan 2019 - Aug 2019',
+      location: 'On-site',
+      link: 'https://ceyentra.com/',
+      achievements: [
+        'Implemented software systems utilizing the Ionic framework for app development, contributing to a 30% increase in project delivery efficiency during the tenure at the company.',
+        'Developed cross-platform mobile applications that achieved 95% code reusability between iOS and Android platforms, significantly reducing development time and maintenance costs.',
+        'Collaborated with the backend team to design and implement RESTful APIs, ensuring seamless data flow and optimal performance for mobile applications.',
+        'Participated in agile development processes, contributing to sprint planning, daily standups, and retrospective meetings that improved team productivity and project delivery timelines.',
+      ],
+    },
+  ]);
 
   // Hire page data
   readonly plans = [
@@ -152,6 +213,32 @@ export class Home implements AfterViewInit, OnDestroy {
   private mo?: MutationObserver;
   private readonly injector: EnvironmentInjector = inject(EnvironmentInjector);
 
+  // GitHub repository stats signals
+  readonly tokiForgeStats = signal<GitHubRepoStats>({
+    stars: 0,
+    forks: 0,
+    loading: true,
+    error: false,
+  });
+  readonly ngxsmkDatepickerStats = signal<GitHubRepoStats>({
+    stars: 0,
+    forks: 0,
+    loading: true,
+    error: false,
+  });
+  readonly ngxsmkTelInputStats = signal<GitHubRepoStats>({
+    stars: 0,
+    forks: 0,
+    loading: true,
+    error: false,
+  });
+  readonly ngxsmkDatatableStats = signal<GitHubRepoStats>({
+    stars: 0,
+    forks: 0,
+    loading: true,
+    error: false,
+  });
+
   constructor(
     private readonly host: ElementRef<HTMLElement>,
     public readonly themeService: ThemeService,
@@ -162,10 +249,15 @@ export class Home implements AfterViewInit, OnDestroy {
     private readonly loadingService: LoadingService,
     private readonly layoutAnimationsService: LayoutAnimationsService,
     private readonly cdr: ChangeDetectorRef,
-    @Inject(PLATFORM_ID) private readonly platformId: Object
+    private readonly viewportScroller: ViewportScroller,
+    private readonly githubService: GitHubService,
+    @Inject(PLATFORM_ID) private readonly platformId: Object,
   ) {}
 
   ngAfterViewInit(): void {
+    // Fetch GitHub stats for all repositories
+    this.fetchGitHubStats();
+
     afterNextRender(
       () => {
         if (!isPlatformBrowser(this.platformId)) return;
@@ -200,7 +292,7 @@ export class Home implements AfterViewInit, OnDestroy {
               }
             }
           },
-          { threshold: 0.12 }
+          { threshold: 0.12 },
         );
 
         const observeAll = () => {
@@ -226,17 +318,14 @@ export class Home implements AfterViewInit, OnDestroy {
         });
 
         this.mo.observe(root, { childList: true, subtree: true });
-        
+
         // Initialize layout animations after ensuring header is loaded
         setTimeout(() => {
           // Double-check that header is properly loaded
           const header = this.host.nativeElement.querySelector('app-header');
-          console.log('Header element found:', !!header);
           if (header) {
-            console.log('Header is loaded, initializing animations');
             this.initializeLayoutAnimations();
           } else {
-            console.log('Header not found, retrying...');
             // Retry after a longer delay if header is not found
             setTimeout(() => {
               this.initializeLayoutAnimations();
@@ -249,7 +338,7 @@ export class Home implements AfterViewInit, OnDestroy {
           this.loadingService.completeLoading();
         }, 1000);
       },
-      { injector: this.injector }
+      { injector: this.injector },
     );
   }
 
@@ -293,12 +382,12 @@ export class Home implements AfterViewInit, OnDestroy {
     // Reinitialize components that might have been reset
     this.performanceService.setupLazyLoading();
     this.performanceService.setupPerformanceMonitoring();
-    
+
     // Reinitialize animations
     if (this.animationsService) {
       this.animationsService.initializeScrollAnimations();
     }
-    
+
     // Reinitialize analytics
     if (this.analyticsService) {
       this.analyticsService.trackPageView('home-restored');
@@ -324,13 +413,63 @@ export class Home implements AfterViewInit, OnDestroy {
       newSet.add(id);
     }
     this._expanded.set(newSet);
+    // Force change detection for OnPush strategy
+    this.cdr.detectChanges();
   }
 
   onPlayAudio() {
-    const audio = new Audio();
-    audio.src = 'assets/name_voice.mp3';
-    audio.load();
-    audio.play();
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    try {
+      const audio = new Audio();
+      audio.src = 'assets/name_voice.mp3';
+      audio.load();
+
+      // Handle audio playback errors silently
+      audio.addEventListener('error', () => {
+        // Audio file not found or failed to load - fail silently
+      });
+
+      // Play audio with error handling
+      audio.play().catch(() => {
+        // User interaction may be required or autoplay blocked - fail silently
+      });
+    } catch (error) {
+      // Fail silently if audio creation fails
+    }
+  }
+
+  scrollToSection(sectionId: string) {
+    if (!isPlatformBrowser(this.platformId)) return;
+    this.viewportScroller.scrollToAnchor(sectionId);
+  }
+
+  /**
+   * Fetch GitHub repository statistics for all projects
+   */
+  private async fetchGitHubStats(): Promise<void> {
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    try {
+      // Fetch all repository stats in parallel
+      const [tokiForge, datepicker, telInput, datatable] = await Promise.all([
+        this.githubService.getRepoStats('TokiForge', 'tokiforge'),
+        this.githubService.getRepoStats('NGXSMK', 'ngxsmk-datepicker'),
+        this.githubService.getRepoStats('NGXSMK', 'ngxsmk-tel-input'),
+        this.githubService.getRepoStats('NGXSMK', 'ngxsmk-datatable'),
+      ]);
+
+      // Update signals
+      this.tokiForgeStats.set(tokiForge);
+      this.ngxsmkDatepickerStats.set(datepicker);
+      this.ngxsmkTelInputStats.set(telInput);
+      this.ngxsmkDatatableStats.set(datatable);
+
+      // Trigger change detection
+      this.cdr.detectChanges();
+    } catch (error) {
+      // Silently handle errors - stats will remain in loading state
+    }
   }
 
   private initializeLayoutAnimations(): void {
@@ -341,10 +480,9 @@ export class Home implements AfterViewInit, OnDestroy {
       try {
         // Check if header is visible and properly rendered
         const header = this.host.nativeElement.querySelector('app-header');
-        if (header) {
-          console.log('Header is visible and ready for animations');
-        } else {
-          console.warn('Header not found during animation initialization');
+        if (!header) {
+          // Header not found, but continue with animations
+          return;
         }
 
         // Animate the entire page layout

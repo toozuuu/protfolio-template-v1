@@ -1,5 +1,12 @@
 import { Component, signal, OnInit, OnDestroy } from '@angular/core';
-import { RouterOutlet, Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
+import {
+  RouterOutlet,
+  Router,
+  NavigationStart,
+  NavigationEnd,
+  NavigationCancel,
+  NavigationError,
+} from '@angular/router';
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 import { LoadingService } from './core/loading.service';
 import { Subscription } from 'rxjs';
@@ -9,7 +16,7 @@ import { filter } from 'rxjs/operators';
   selector: 'app-root',
   imports: [RouterOutlet, LoadingSpinnerComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App implements OnInit, OnDestroy {
   protected readonly title = signal('Protfolio • Sachin Dilshan');
@@ -21,29 +28,27 @@ export class App implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    // Handle router navigation loading states
     this.routerSubscription = this.router.events
       .pipe(
-        filter(event => 
-          event instanceof NavigationStart || 
-          event instanceof NavigationEnd || 
-          event instanceof NavigationCancel || 
-          event instanceof NavigationError
-        )
+        filter(
+          (event) =>
+            event instanceof NavigationStart ||
+            event instanceof NavigationEnd ||
+            event instanceof NavigationCancel ||
+            event instanceof NavigationError,
+        ),
       )
-      .subscribe(event => {
+      .subscribe((event) => {
         if (event instanceof NavigationStart) {
           this.loadingService.startLoading('Loading page...');
         } else if (
-          event instanceof NavigationEnd || 
-          event instanceof NavigationCancel || 
+          event instanceof NavigationEnd ||
+          event instanceof NavigationCancel ||
           event instanceof NavigationError
         ) {
           this.loadingService.completeLoading();
         }
       });
-
-    // Simulate initial app loading
     this.simulateInitialLoading();
   }
 
@@ -54,14 +59,11 @@ export class App implements OnInit, OnDestroy {
   }
 
   private async simulateInitialLoading() {
-    // Show full-screen loading spinner for 3 seconds
     this.loadingService.showFullScreenLoading('Loading application...');
-    
-    // Simulate loading steps over 3 seconds
     const loadingSteps = [
       { message: 'Initializing application...', duration: 1000 },
       { message: 'Loading components...', duration: 1000 },
-      { message: 'Preparing interface...', duration: 1000 }
+      { message: 'Preparing interface...', duration: 1000 },
     ];
 
     await this.loadingService.simulateLoading(loadingSteps);

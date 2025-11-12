@@ -1,4 +1,12 @@
-import { Component, inject, signal, ChangeDetectionStrategy, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import {
+  Component,
+  inject,
+  signal,
+  ChangeDetectionStrategy,
+  OnInit,
+  Inject,
+  PLATFORM_ID,
+} from '@angular/core';
 import { Location, isPlatformBrowser, CommonModule } from '@angular/common';
 import { SEOService } from '../../core/seo.service';
 import { LoadingService } from '../../core/loading.service';
@@ -32,19 +40,17 @@ export class Hire implements OnInit {
   private readonly seoService = inject(SEOService);
   private readonly loadingService = inject(LoadingService);
 
-  constructor(
-    @Inject(PLATFORM_ID) private readonly platformId: Object
-  ) {}
+  constructor(@Inject(PLATFORM_ID) private readonly platformId: Object) {}
 
   ngOnInit(): void {
     console.log('Hire component initialized');
-    
+
     if (isPlatformBrowser(this.platformId)) {
       // Show loading for hire page
       this.loadingService.startLoading('Loading hire page...');
-      
+
       this.seoService.setHirePageSEO('en');
-      
+
       // Complete loading after a short delay
       setTimeout(() => {
         this.loadingService.completeLoading();
@@ -144,7 +150,7 @@ export class Hire implements OnInit {
     const currentFaq = this.faq();
     const updatedFaq = currentFaq.map((item, i) => ({
       ...item,
-      open: i === index ? !item.open : false
+      open: i === index ? !item.open : false,
     }));
     this.faq.set(updatedFaq);
   }

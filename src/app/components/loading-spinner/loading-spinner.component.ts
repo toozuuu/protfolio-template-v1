@@ -7,7 +7,7 @@ import { LoadingService } from '../../core/loading.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './loading-spinner.component.html',
-  styleUrls: ['./loading-spinner.component.css']
+  styleUrls: ['./loading-spinner.component.css'],
 })
 export class LoadingSpinnerComponent {
   @Input() show: boolean = false;

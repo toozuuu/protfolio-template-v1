@@ -16,15 +16,13 @@ interface Skill {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './interactive-skills.html',
-  styleUrl: './interactive-skills.css'
+  styleUrl: './interactive-skills.css',
 })
 export class InteractiveSkills implements OnInit, OnDestroy {
   selectedSkill: Skill | null = null;
   isAnimating = false;
 
-  constructor(
-    @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   skills: Skill[] = [
     {
@@ -33,7 +31,7 @@ export class InteractiveSkills implements OnInit, OnDestroy {
       category: 'Frontend',
       icon: '🅰️',
       color: 'bg-red-500',
-      description: 'Expert level Angular development with 5+ years experience'
+      description: 'Expert level Angular development with 5+ years experience',
     },
     {
       name: 'TypeScript',
@@ -41,7 +39,7 @@ export class InteractiveSkills implements OnInit, OnDestroy {
       category: 'Language',
       icon: '🔷',
       color: 'bg-blue-500',
-      description: 'Advanced TypeScript with complex type systems'
+      description: 'Advanced TypeScript with complex type systems',
     },
     {
       name: 'React',
@@ -49,7 +47,7 @@ export class InteractiveSkills implements OnInit, OnDestroy {
       category: 'Frontend',
       icon: '⚛️',
       color: 'bg-cyan-500',
-      description: 'Proficient in React with hooks and modern patterns'
+      description: 'Proficient in React with hooks and modern patterns',
     },
     {
       name: 'Node.js',
@@ -57,7 +55,7 @@ export class InteractiveSkills implements OnInit, OnDestroy {
       category: 'Backend',
       icon: '🟢',
       color: 'bg-green-500',
-      description: 'Server-side JavaScript with Express and APIs'
+      description: 'Server-side JavaScript with Express and APIs',
     },
     {
       name: 'AWS',
@@ -65,7 +63,7 @@ export class InteractiveSkills implements OnInit, OnDestroy {
       category: 'Cloud',
       icon: '☁️',
       color: 'bg-orange-500',
-      description: 'Cloud architecture and deployment on AWS'
+      description: 'Cloud architecture and deployment on AWS',
     },
     {
       name: 'Flutter',
@@ -73,8 +71,8 @@ export class InteractiveSkills implements OnInit, OnDestroy {
       category: 'Mobile',
       icon: '🦋',
       color: 'bg-indigo-500',
-      description: 'Cross-platform mobile development'
-    }
+      description: 'Cross-platform mobile development',
+    },
   ];
 
   ngOnInit(): void {
@@ -99,7 +97,7 @@ export class InteractiveSkills implements OnInit, OnDestroy {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     document.querySelectorAll('.skill-card').forEach((el) => {
@@ -109,16 +107,16 @@ export class InteractiveSkills implements OnInit, OnDestroy {
 
   selectSkill(skill: Skill): void {
     if (this.isAnimating) return;
-    
+
     this.isAnimating = true;
     this.selectedSkill = skill;
-    
+
     // Add animation class
     const element = document.querySelector(`[data-skill="${skill.name}"]`);
     if (element) {
       element.classList.add('animate-scale-in');
     }
-    
+
     setTimeout(() => {
       this.isAnimating = false;
     }, 300);

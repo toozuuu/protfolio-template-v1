@@ -20,7 +20,7 @@ export class CSSOptimizationService {
         if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
           const element = mutation.target as HTMLElement;
           if (element.className) {
-            element.className.split(' ').forEach(className => {
+            element.className.split(' ').forEach((className) => {
               if (className.trim()) {
                 this.usedClasses.add(className.trim());
               }
@@ -34,7 +34,7 @@ export class CSSOptimizationService {
     observer.observe(document.body, {
       attributes: true,
       attributeFilter: ['class'],
-      subtree: true
+      subtree: true,
     });
 
     // Track existing classes
@@ -46,9 +46,9 @@ export class CSSOptimizationService {
     if (!this.isBrowser) return;
 
     const elements = document.querySelectorAll('*');
-    elements.forEach(element => {
+    elements.forEach((element) => {
       if (element.className) {
-        element.className.split(' ').forEach(className => {
+        element.className.split(' ').forEach((className) => {
           if (className.trim()) {
             this.usedClasses.add(className.trim());
           }
@@ -60,17 +60,42 @@ export class CSSOptimizationService {
   // Generate critical CSS for above-the-fold content
   generateCriticalCSS(): string {
     const criticalClasses = [
-      'min-h-screen', 'bg-white', 'dark:bg-slate-900', 'text-slate-900', 'dark:text-slate-100',
-      'flex', 'items-center', 'justify-center', 'p-4', 'text-center',
-      'w-full', 'h-full', 'relative', 'absolute', 'top-0', 'left-0',
-      'z-50', 'backdrop-blur-lg', 'transition-all', 'duration-300',
-      'text-5xl', 'md:text-6xl', 'lg:text-7xl', 'font-bold', 'leading-tight',
-      'max-w-7xl', 'mx-auto', 'px-4', 'sm:px-6', 'lg:px-8', 'py-12'
+      'min-h-screen',
+      'bg-white',
+      'dark:bg-slate-900',
+      'text-slate-900',
+      'dark:text-slate-100',
+      'flex',
+      'items-center',
+      'justify-center',
+      'p-4',
+      'text-center',
+      'w-full',
+      'h-full',
+      'relative',
+      'absolute',
+      'top-0',
+      'left-0',
+      'z-50',
+      'backdrop-blur-lg',
+      'transition-all',
+      'duration-300',
+      'text-5xl',
+      'md:text-6xl',
+      'lg:text-7xl',
+      'font-bold',
+      'leading-tight',
+      'max-w-7xl',
+      'mx-auto',
+      'px-4',
+      'sm:px-6',
+      'lg:px-8',
+      'py-12',
     ];
 
     return criticalClasses
-      .filter(className => this.usedClasses.has(className))
-      .map(className => this.getCSSForClass(className))
+      .filter((className) => this.usedClasses.has(className))
+      .map((className) => this.getCSSForClass(className))
       .join('\n');
   }
 
@@ -130,7 +155,7 @@ export class CSSOptimizationService {
     return {
       used,
       total: totalClasses,
-      unused
+      unused,
     };
   }
 
@@ -146,7 +171,7 @@ export class CSSOptimizationService {
 
     // Load non-critical CSS asynchronously
     const nonCriticalCSS = document.querySelectorAll('link[rel="stylesheet"]:not([data-critical])');
-    nonCriticalCSS.forEach(link => {
+    nonCriticalCSS.forEach((link) => {
       link.setAttribute('media', 'print');
       link.setAttribute('onload', "this.media='all'");
     });

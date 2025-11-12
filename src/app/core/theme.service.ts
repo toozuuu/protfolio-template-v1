@@ -6,19 +6,16 @@ const STORAGE_KEY = 'site-theme';
 
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
-  // Signal for current theme
   private readonly _theme = signal<Theme>('light');
-  
-  // Computed signals for theme state
   readonly theme = this._theme.asReadonly();
   readonly isDark = computed(() => this._theme() === 'dark');
   readonly isLight = computed(() => this._theme() === 'light');
-  
+
   private readonly isBrowser: boolean;
 
   constructor(
     @Inject(DOCUMENT) private readonly doc: Document,
-    @Inject(PLATFORM_ID) platformId: Object
+    @Inject(PLATFORM_ID) platformId: Object,
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
 
@@ -32,13 +29,11 @@ export class ThemeService {
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       this.set(prefersDark ? 'dark' : 'light');
 
-      window
-        .matchMedia('(prefers-color-scheme: dark)')
-        .addEventListener('change', e => {
-          if (!localStorage.getItem(STORAGE_KEY)) {
-            this.set(e.matches ? 'dark' : 'light');
-          }
-        });
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem(STORAGE_KEY)) {
+          this.set(e.matches ? 'dark' : 'light');
+        }
+      });
     } else {
       this.set('light');
     }

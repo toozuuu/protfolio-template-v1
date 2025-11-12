@@ -2,7 +2,7 @@ import { Injectable, PLATFORM_ID, Inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PerformanceService {
   private readonly isBrowser: boolean;
@@ -18,12 +18,9 @@ export class PerformanceService {
     if (!this.isBrowser) return;
 
     // Preload critical images
-    const criticalImages = [
-      'assets/My_Photo.jpg',
-      'assets/kr.png'
-    ];
+    const criticalImages = ['assets/My_Photo.jpg', 'assets/kr.png'];
 
-    criticalImages.forEach(src => {
+    criticalImages.forEach((src) => {
       const link = document.createElement('link');
       link.rel = 'preload';
       link.as = 'image';
@@ -40,7 +37,7 @@ export class PerformanceService {
 
     if ('IntersectionObserver' in window) {
       const imageObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const img = entry.target as HTMLImageElement;
             if (img.dataset['src']) {
@@ -52,7 +49,7 @@ export class PerformanceService {
         });
       });
 
-      document.querySelectorAll('img[data-src]').forEach(img => {
+      document.querySelectorAll('img[data-src]').forEach((img) => {
         imageObserver.observe(img);
       });
     }
@@ -78,7 +75,7 @@ export class PerformanceService {
     if (!this.isBrowser) return;
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
+
     if (prefersReducedMotion) {
       document.documentElement.style.setProperty('--dur', '0s');
     }

@@ -28,7 +28,7 @@ export class SEOService {
     private readonly meta: Meta,
     private readonly title: Title,
     @Inject(DOCUMENT) private readonly document: Document,
-    @Inject(PLATFORM_ID) platformId: Object
+    @Inject(PLATFORM_ID) platformId: Object,
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
@@ -63,7 +63,7 @@ export class SEOService {
     // Language and alternate locales
     this.document.documentElement.setAttribute('lang', data.locale);
     if (data.alternateLocales) {
-      data.alternateLocales.forEach(locale => {
+      data.alternateLocales.forEach((locale) => {
         this.meta.updateTag({ property: 'og:locale:alternate', content: locale });
       });
     }
@@ -79,7 +79,7 @@ export class SEOService {
 
     const canonicalUrl = `${this.baseUrl}${url}`;
     let canonicalLink = this.document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
-    
+
     if (canonicalLink) {
       canonicalLink.setAttribute('href', canonicalUrl);
     } else {
@@ -110,7 +110,7 @@ export class SEOService {
   // Home page SEO
   setHomePageSEO(language: string = 'en'): void {
     const translations = this.getHomePageTranslations(language);
-    
+
     this.updateSEO({
       title: translations.title,
       description: translations.description,
@@ -122,7 +122,7 @@ export class SEOService {
       siteName: 'Sachin Dilshan Portfolio',
       locale: language,
       alternateLocales: ['en', 'si', 'sv', 'es', 'fr', 'de', 'pt', 'zh', 'ja', 'ko', 'hi'],
-      canonicalUrl: '/'
+      canonicalUrl: '/',
     });
 
     // Add structured data for Person
@@ -137,7 +137,7 @@ export class SEOService {
       sameAs: [
         'https://github.com/toozuuu',
         'https://linkedin.com/in/sachindilshan',
-        'https://twitter.com/sachindilshan'
+        'https://twitter.com/sachindilshan',
       ],
       knowsAbout: [
         'Angular',
@@ -148,23 +148,23 @@ export class SEOService {
         'Flutter',
         'AWS',
         'Frontend Development',
-        'UI/UX Design'
+        'UI/UX Design',
       ],
       worksFor: {
         '@type': 'Organization',
-        name: 'We Make Platforms'
+        name: 'We Make Platforms',
       },
       address: {
         '@type': 'PostalAddress',
-        addressCountry: 'LK'
-      }
+        addressCountry: 'LK',
+      },
     });
   }
 
   // Hire page SEO
   setHirePageSEO(language: string = 'en'): void {
     const translations = this.getHirePageTranslations(language);
-    
+
     this.updateSEO({
       title: translations.title,
       description: translations.description,
@@ -175,7 +175,7 @@ export class SEOService {
       type: 'website',
       siteName: 'Sachin Dilshan Portfolio',
       locale: language,
-      canonicalUrl: '/hire'
+      canonicalUrl: '/hire',
     });
 
     // Add structured data for ProfessionalService
@@ -188,16 +188,11 @@ export class SEOService {
       provider: {
         '@type': 'Person',
         name: 'Sachin Dilshan',
-        jobTitle: 'Technical Lead - Frontend'
+        jobTitle: 'Technical Lead - Frontend',
       },
       areaServed: 'Global',
-      serviceType: [
-        'Angular Audit',
-        'Performance Sprint',
-        'UX Polish',
-        'Coaching'
-      ],
-      priceRange: '$$'
+      serviceType: ['Angular Audit', 'Performance Sprint', 'UX Polish', 'Coaching'],
+      priceRange: '$$',
     });
   }
 
@@ -205,13 +200,17 @@ export class SEOService {
     const translations: { [key: string]: any } = {
       en: {
         title: 'Sachin Dilshan - Technical Lead & Frontend Developer',
-        description: 'Technical Lead at We Make Platforms with 5+ years of experience in Frontend Development, UI/UX Design, and Cloud-based applications. Specialized in Angular, TypeScript, React, and modern web technologies.',
-        keywords: 'Sachin Dilshan, Technical Lead, Frontend Developer, Angular, TypeScript, React, Node.js, UI/UX Design, Sri Lanka, We Make Platforms'
+        description:
+          'Technical Lead at We Make Platforms with 5+ years of experience in Frontend Development, UI/UX Design, and Cloud-based applications. Specialized in Angular, TypeScript, React, and modern web technologies.',
+        keywords:
+          'Sachin Dilshan, Technical Lead, Frontend Developer, Angular, TypeScript, React, Node.js, UI/UX Design, Sri Lanka, We Make Platforms',
       },
       si: {
         title: 'සචින් දිල්ශාන් - තාක්ෂණික නායක සහ පෙරබිම් සංවර්ධක',
-        description: 'We Make Platforms හි තාක්ෂණික නායකයෙක් වන අතර පෙරබිම් සංවර්ධනය, UI/UX නිර්මාණය සහ වලාකුළු-ආධාරිත යෙදුම් වල වසර 5+ අත්දැකීමක් ඇත. Angular, TypeScript, React සහ නවීන වෙබ් තාක්ෂණයන් වල විශේෂඥයෙක්.',
-        keywords: 'සචින් දිල්ශාන්, තාක්ෂණික නායක, පෙරබිම් සංවර්ධක, Angular, TypeScript, React, Node.js, UI/UX නිර්මාණය, ශ්‍රී ලංකාව'
+        description:
+          'We Make Platforms හි තාක්ෂණික නායකයෙක් වන අතර පෙරබිම් සංවර්ධනය, UI/UX නිර්මාණය සහ වලාකුළු-ආධාරිත යෙදුම් වල වසර 5+ අත්දැකීමක් ඇත. Angular, TypeScript, React සහ නවීන වෙබ් තාක්ෂණයන් වල විශේෂඥයෙක්.',
+        keywords:
+          'සචින් දිල්ශාන්, තාක්ෂණික නායක, පෙරබිම් සංවර්ධක, Angular, TypeScript, React, Node.js, UI/UX නිර්මාණය, ශ්‍රී ලංකාව',
       },
       // Add more languages as needed
     };
@@ -223,14 +222,18 @@ export class SEOService {
     const translations: { [key: string]: any } = {
       en: {
         title: 'Hire Sachin Dilshan - Angular Consulting & Frontend Development',
-        description: 'Professional Angular consulting services including code audits, performance optimization, UX improvements, and team coaching. 5+ years experience in frontend development.',
-        keywords: 'Angular consulting, Frontend development, Performance optimization, Code audit, UX design, Team coaching, Angular training, TypeScript'
+        description:
+          'Professional Angular consulting services including code audits, performance optimization, UX improvements, and team coaching. 5+ years experience in frontend development.',
+        keywords:
+          'Angular consulting, Frontend development, Performance optimization, Code audit, UX design, Team coaching, Angular training, TypeScript',
       },
       si: {
         title: 'සචින් දිල්ශාන් ගෙන් සේවා ලබා ගන්න - Angular සමුලාචාර සහ පෙරබිම් සංවර්ධනය',
-        description: 'කේත සමාලෝචන, කාර්ය සාධන ප්‍රශස්තකරණය, UX වැඩිදියුණු කිරීම් සහ කණ්ඩායම් පුහුණුව ඇතුළු වෘත්තීය Angular සමුලාචාර සේවා. පෙරබිම් සංවර්ධනයේ වසර 5+ අත්දැකීම.',
-        keywords: 'Angular සමුලාචාර, පෙරබිම් සංවර්ධනය, කාර්ය සාධන ප්‍රශස්තකරණය, කේත සමාලෝචන, UX නිර්මාණය, කණ්ඩායම් පුහුණුව'
-      }
+        description:
+          'කේත සමාලෝචන, කාර්ය සාධන ප්‍රශස්තකරණය, UX වැඩිදියුණු කිරීම් සහ කණ්ඩායම් පුහුණුව ඇතුළු වෘත්තීය Angular සමුලාචාර සේවා. පෙරබිම් සංවර්ධනයේ වසර 5+ අත්දැකීම.',
+        keywords:
+          'Angular සමුලාචාර, පෙරබිම් සංවර්ධනය, කාර්ය සාධන ප්‍රශස්තකරණය, කේත සමාලෝචන, UX නිර්මාණය, කණ්ඩායම් පුහුණුව',
+      },
     };
 
     return translations[language] || translations['en'];

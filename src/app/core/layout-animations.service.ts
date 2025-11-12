@@ -1,7 +1,7 @@
 import { Injectable, ElementRef, Renderer2, RendererFactory2 } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LayoutAnimationsService {
   private renderer: Renderer2;
@@ -17,7 +17,7 @@ export class LayoutAnimationsService {
     if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
       this.observer = new IntersectionObserver(
         (entries) => {
-          entries.forEach(entry => {
+          entries.forEach((entry) => {
             if (entry.isIntersecting) {
               this.animateElement(entry.target);
             }
@@ -25,19 +25,19 @@ export class LayoutAnimationsService {
         },
         {
           threshold: 0.1,
-          rootMargin: '0px 0px -50px 0px'
-        }
+          rootMargin: '0px 0px -50px 0px',
+        },
       );
     }
   }
 
   private animateElement(element: Element): void {
     if (this.animatedElements.has(element)) return;
-    
+
     try {
       this.animatedElements.add(element);
       this.renderer.addClass(element, 'animate-in');
-      
+
       // Remove observer after animation
       if (this.observer) {
         this.observer.unobserve(element);
@@ -50,15 +50,18 @@ export class LayoutAnimationsService {
   /**
    * Animate elements on scroll
    */
-  observeElement(element: ElementRef | Element, animationClass: string = 'animate-on-scroll'): void {
+  observeElement(
+    element: ElementRef | Element,
+    animationClass: string = 'animate-on-scroll',
+  ): void {
     try {
       const el = element instanceof ElementRef ? element.nativeElement : element;
-      
+
       if (!el) return;
 
       // Add initial animation class
       this.renderer.addClass(el, animationClass);
-      
+
       // Start observing
       if (this.observer) {
         this.observer.observe(el);
@@ -74,15 +77,19 @@ export class LayoutAnimationsService {
   /**
    * Animate multiple elements with stagger
    */
-  observeElements(elements: (ElementRef | Element)[], animationClass: string = 'animate-on-scroll', staggerDelay: number = 100): void {
+  observeElements(
+    elements: (ElementRef | Element)[],
+    animationClass: string = 'animate-on-scroll',
+    staggerDelay: number = 100,
+  ): void {
     elements.forEach((element, index) => {
       const el = element instanceof ElementRef ? element.nativeElement : element;
-      
+
       if (!el) return;
 
       // Add stagger delay
       const delay = index * staggerDelay;
-      
+
       setTimeout(() => {
         this.observeElement(el, animationClass);
       }, delay);
@@ -94,7 +101,7 @@ export class LayoutAnimationsService {
    */
   animateGridItems(container: ElementRef | Element, itemSelector: string = '.grid-item'): void {
     const containerEl = container instanceof ElementRef ? container.nativeElement : container;
-    
+
     if (!containerEl) return;
 
     const items = containerEl.querySelectorAll(itemSelector);
@@ -106,7 +113,7 @@ export class LayoutAnimationsService {
    */
   animateCards(container: ElementRef | Element, cardSelector: string = '.card'): void {
     const containerEl = container instanceof ElementRef ? container.nativeElement : container;
-    
+
     if (!containerEl) return;
 
     const cards = containerEl.querySelectorAll(cardSelector);
@@ -116,9 +123,12 @@ export class LayoutAnimationsService {
   /**
    * Animate text elements
    */
-  animateTextElements(container: ElementRef | Element, textSelector: string = 'h1, h2, h3, p'): void {
+  animateTextElements(
+    container: ElementRef | Element,
+    textSelector: string = 'h1, h2, h3, p',
+  ): void {
     const containerEl = container instanceof ElementRef ? container.nativeElement : container;
-    
+
     if (!containerEl) return;
 
     const textElements = containerEl.querySelectorAll(textSelector);
@@ -130,7 +140,7 @@ export class LayoutAnimationsService {
    */
   animateImages(container: ElementRef | Element, imageSelector: string = 'img'): void {
     const containerEl = container instanceof ElementRef ? container.nativeElement : container;
-    
+
     if (!containerEl) return;
 
     const images = containerEl.querySelectorAll(imageSelector);
@@ -142,7 +152,7 @@ export class LayoutAnimationsService {
    */
   animateButtons(container: ElementRef | Element, buttonSelector: string = 'button, .btn'): void {
     const containerEl = container instanceof ElementRef ? container.nativeElement : container;
-    
+
     if (!containerEl) return;
 
     const buttons = containerEl.querySelectorAll(buttonSelector);
@@ -152,9 +162,12 @@ export class LayoutAnimationsService {
   /**
    * Animate form fields
    */
-  animateFormFields(container: ElementRef | Element, fieldSelector: string = 'input, textarea, select'): void {
+  animateFormFields(
+    container: ElementRef | Element,
+    fieldSelector: string = 'input, textarea, select',
+  ): void {
     const containerEl = container instanceof ElementRef ? container.nativeElement : container;
-    
+
     if (!containerEl) return;
 
     const fields = containerEl.querySelectorAll(fieldSelector);
@@ -166,7 +179,7 @@ export class LayoutAnimationsService {
    */
   animateNavItems(container: ElementRef | Element, navSelector: string = 'nav a'): void {
     const containerEl = container instanceof ElementRef ? container.nativeElement : container;
-    
+
     if (!containerEl) return;
 
     const navItems = containerEl.querySelectorAll(navSelector);
@@ -178,7 +191,7 @@ export class LayoutAnimationsService {
    */
   animateHeroSection(container: ElementRef | Element): void {
     const containerEl = container instanceof ElementRef ? container.nativeElement : container;
-    
+
     if (!containerEl) return;
 
     // Animate hero content
@@ -199,7 +212,7 @@ export class LayoutAnimationsService {
    */
   animateSections(container: ElementRef | Element, sectionSelector: string = 'section'): void {
     const containerEl = container instanceof ElementRef ? container.nativeElement : container;
-    
+
     if (!containerEl) return;
 
     const sections = containerEl.querySelectorAll(sectionSelector);
@@ -211,7 +224,7 @@ export class LayoutAnimationsService {
    */
   animateListItems(container: ElementRef | Element, listSelector: string = 'li'): void {
     const containerEl = container instanceof ElementRef ? container.nativeElement : container;
-    
+
     if (!containerEl) return;
 
     const listItems = containerEl.querySelectorAll(listSelector);
@@ -223,11 +236,11 @@ export class LayoutAnimationsService {
    */
   animateModal(modal: ElementRef | Element): void {
     const modalEl = modal instanceof ElementRef ? modal.nativeElement : modal;
-    
+
     if (!modalEl) return;
 
     this.renderer.addClass(modalEl, 'animate-modal');
-    
+
     // Trigger animation
     setTimeout(() => {
       this.renderer.addClass(modalEl, 'animate-in');
@@ -239,11 +252,11 @@ export class LayoutAnimationsService {
    */
   animateLoading(loading: ElementRef | Element): void {
     const loadingEl = loading instanceof ElementRef ? loading.nativeElement : loading;
-    
+
     if (!loadingEl) return;
 
     this.renderer.addClass(loadingEl, 'animate-loading');
-    
+
     // Trigger animation
     setTimeout(() => {
       this.renderer.addClass(loadingEl, 'animate-in');
@@ -255,7 +268,7 @@ export class LayoutAnimationsService {
    */
   animatePageEnter(element: ElementRef | Element): void {
     const el = element instanceof ElementRef ? element.nativeElement : element;
-    
+
     if (!el) return;
 
     this.renderer.addClass(el, 'animate-page-enter');
@@ -266,7 +279,7 @@ export class LayoutAnimationsService {
    */
   animatePageExit(element: ElementRef | Element): void {
     const el = element instanceof ElementRef ? element.nativeElement : element;
-    
+
     if (!el) return;
 
     this.renderer.addClass(el, 'animate-page-exit');
@@ -277,7 +290,7 @@ export class LayoutAnimationsService {
    */
   applyAnimation(element: ElementRef | Element, animationClass: string): void {
     const el = element instanceof ElementRef ? element.nativeElement : element;
-    
+
     if (!el) return;
 
     this.renderer.addClass(el, animationClass);
@@ -288,7 +301,7 @@ export class LayoutAnimationsService {
    */
   removeAnimation(element: ElementRef | Element, animationClass: string): void {
     const el = element instanceof ElementRef ? element.nativeElement : element;
-    
+
     if (!el) return;
 
     this.renderer.removeClass(el, animationClass);
@@ -299,7 +312,7 @@ export class LayoutAnimationsService {
    */
   animateWithDelay(element: ElementRef | Element, animationClass: string, delay: number): void {
     const el = element instanceof ElementRef ? element.nativeElement : element;
-    
+
     if (!el) return;
 
     setTimeout(() => {
@@ -310,7 +323,11 @@ export class LayoutAnimationsService {
   /**
    * Animate staggered elements
    */
-  animateStaggered(elements: (ElementRef | Element)[], animationClass: string, staggerDelay: number = 100): void {
+  animateStaggered(
+    elements: (ElementRef | Element)[],
+    animationClass: string,
+    staggerDelay: number = 100,
+  ): void {
     elements.forEach((element, index) => {
       this.animateWithDelay(element, animationClass, index * staggerDelay);
     });
@@ -321,7 +338,7 @@ export class LayoutAnimationsService {
    */
   isElementInViewport(element: ElementRef | Element): boolean {
     const el = element instanceof ElementRef ? element.nativeElement : element;
-    
+
     if (!el) return false;
 
     const rect = el.getBoundingClientRect();
@@ -349,19 +366,29 @@ export class LayoutAnimationsService {
    */
   resetAnimation(element: ElementRef | Element): void {
     const el = element instanceof ElementRef ? element.nativeElement : element;
-    
+
     if (!el) return;
 
     // Remove all animation classes
     const animationClasses = [
-      'animate-in', 'animate-on-scroll', 'animate-grid-item', 'animate-card',
-      'animate-text-reveal', 'animate-image-reveal', 'animate-button',
-      'animate-form-field', 'animate-nav-item', 'animate-hero-content',
-      'animate-hero-image', 'animate-section', 'animate-list-item',
-      'animate-modal', 'animate-loading'
+      'animate-in',
+      'animate-on-scroll',
+      'animate-grid-item',
+      'animate-card',
+      'animate-text-reveal',
+      'animate-image-reveal',
+      'animate-button',
+      'animate-form-field',
+      'animate-nav-item',
+      'animate-hero-content',
+      'animate-hero-image',
+      'animate-section',
+      'animate-list-item',
+      'animate-modal',
+      'animate-loading',
     ];
 
-    animationClasses.forEach(className => {
+    animationClasses.forEach((className) => {
       this.renderer.removeClass(el, className);
     });
 
@@ -374,7 +401,7 @@ export class LayoutAnimationsService {
    */
   animatePageLayout(container: ElementRef | Element, retryCount: number = 0): void {
     const containerEl = container instanceof ElementRef ? container.nativeElement : container;
-    
+
     if (!containerEl) return;
 
     // Check if header is loaded before starting animations

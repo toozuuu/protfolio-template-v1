@@ -13,9 +13,9 @@ export interface Project {
   selector: 'app-project-card',
   imports: [],
   templateUrl: './project-card.html',
-      styleUrl: './project-card.css',
+  styleUrl: './project-card.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectCard {
-  @Input() projectDetails:Project[] = []; 
+  @Input() projectDetails: Project[] = [];
 }

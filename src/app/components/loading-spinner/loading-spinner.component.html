@@ -1,46 +1,52 @@
 <div *ngIf="displayLoading()" [class]="containerClasses" [ngClass]="overlayClasses">
-  <div class="loading-card flex flex-col items-center justify-center space-y-6 p-12 rounded-2xl max-w-md mx-auto">
-    
+  <div
+    class="loading-card flex flex-col items-center justify-center space-y-6 p-12 rounded-2xl max-w-md mx-auto"
+  >
     <!-- Spinner Types -->
     <div *ngIf="type === 'spinner'" class="flex items-center justify-center">
       <div [class]="spinnerClasses + ' spinner-enhanced'"></div>
     </div>
-    
+
     <div *ngIf="type === 'dots'" class="flex space-x-4">
       <div class="w-5 h-5 rounded-full animate-bounce" style="animation-delay: 0ms"></div>
       <div class="w-5 h-5 rounded-full animate-bounce" style="animation-delay: 150ms"></div>
       <div class="w-5 h-5 rounded-full animate-bounce" style="animation-delay: 300ms"></div>
     </div>
-    
+
     <div *ngIf="type === 'pulse'" class="flex items-center justify-center">
       <div class="w-20 h-20 rounded-full animate-pulse"></div>
     </div>
-    
+
     <!-- Progress Bar -->
     <div *ngIf="type === 'progress'" class="w-72">
       <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-3 shadow-inner">
-        <div 
+        <div
           class="progress-bar-enhanced h-3 rounded-full transition-all duration-500 ease-out"
-          [style.width.%]="displayProgress()">
-        </div>
+          [style.width.%]="displayProgress()"
+        ></div>
       </div>
     </div>
-    
+
     <!-- Loading Message -->
     <div *ngIf="displayMessage()" class="text-center">
       <p class="loading-text text-2xl font-bold">{{ displayMessage() }}</p>
-      <p *ngIf="type === 'progress'" class="text-xl text-slate-600 dark:text-slate-400 mt-3 font-semibold">
+      <p
+        *ngIf="type === 'progress'"
+        class="text-xl text-slate-600 dark:text-slate-400 mt-3 font-semibold"
+      >
         {{ displayProgress() }}%
       </p>
     </div>
-    
+
     <!-- Additional Loading Steps (for complex loading) -->
-    <div *ngIf="type === 'progress' && displayProgress() < 100" class="text-lg text-slate-600 dark:text-slate-400">
+    <div
+      *ngIf="type === 'progress' && displayProgress() < 100"
+      class="text-lg text-slate-600 dark:text-slate-400"
+    >
       <div class="flex items-center space-x-3">
         <div class="w-2 h-2 rounded-full animate-pulse"></div>
         <span class="font-medium">Processing...</span>
       </div>
     </div>
-    
   </div>
 </div>

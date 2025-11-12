@@ -12,47 +12,47 @@ export interface PerformanceMetrics {
 @Injectable({ providedIn: 'root' })
 export class PerformanceMonitorService {
   private readonly isBrowser: boolean;
-  
+
   // Signals for performance metrics
   private readonly _metrics = signal<PerformanceMetrics>({
     lcp: 0,
     fid: 0,
     cls: 0,
     fcp: 0,
-    tti: 0
+    tti: 0,
   });
-  
+
   private readonly _isMonitoring = signal(false);
   private readonly _lastUpdate = signal<Date | null>(null);
-  
+
   // Computed signals for performance state
   readonly metrics = this._metrics.asReadonly();
   readonly isMonitoring = this._isMonitoring.asReadonly();
   readonly lastUpdate = this._lastUpdate.asReadonly();
-  
+
   // Computed signals for performance analysis
   readonly performanceScore = computed(() => {
     const m = this._metrics();
     let score = 100;
-    
+
     // LCP scoring (0-100)
     if (m.lcp > 4000) score -= 30;
     else if (m.lcp > 2500) score -= 20;
     else if (m.lcp > 1500) score -= 10;
-    
+
     // FID scoring (0-100)
     if (m.fid > 300) score -= 25;
     else if (m.fid > 100) score -= 15;
     else if (m.fid > 50) score -= 5;
-    
+
     // CLS scoring (0-100)
     if (m.cls > 0.25) score -= 25;
     else if (m.cls > 0.1) score -= 15;
     else if (m.cls > 0.05) score -= 5;
-    
+
     return Math.max(0, score);
   });
-  
+
   readonly performanceGrade = computed(() => {
     const score = this.performanceScore();
     if (score >= 90) return 'A';
@@ -61,7 +61,7 @@ export class PerformanceMonitorService {
     if (score >= 60) return 'D';
     return 'F';
   });
-  
+
   readonly isGoodPerformance = computed(() => this.performanceScore() >= 80);
   readonly needsOptimization = computed(() => this.performanceScore() < 70);
 
@@ -72,7 +72,7 @@ export class PerformanceMonitorService {
   // Start monitoring performance
   startMonitoring() {
     if (!this.isBrowser) return;
-    
+
     this._isMonitoring.set(true);
     this.observeWebVitals();
     this.observeNavigationTiming();
@@ -97,7 +97,7 @@ export class PerformanceMonitorService {
       fid: 0,
       cls: 0,
       fcp: 0,
-      tti: 0
+      tti: 0,
     });
     this._lastUpdate.set(null);
   }
@@ -115,7 +115,7 @@ export class PerformanceMonitorService {
     // Observe FID
     new PerformanceObserver((list) => {
       const entries = list.getEntries();
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         const fid = (entry as any).processingStart - entry.startTime;
         this.updateMetrics({ fid });
       });
@@ -125,7 +125,7 @@ export class PerformanceMonitorService {
     new PerformanceObserver((list) => {
       const entries = list.getEntries();
       let clsValue = 0;
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (!(entry as any).hadRecentInput) {
           clsValue += (entry as any).value;
         }
@@ -138,14 +138,16 @@ export class PerformanceMonitorService {
     if (!this.isBrowser) return;
 
     window.addEventListener('load', () => {
-      const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-      
+      const navigation = performance.getEntriesByType(
+        'navigation',
+      )[0] as PerformanceNavigationTiming;
+
       // FCP
       const fcpEntry = performance.getEntriesByName('first-contentful-paint')[0];
       if (fcpEntry) {
         this.updateMetrics({ fcp: fcpEntry.startTime });
       }
-      
+
       // TTI (approximation)
       const tti = navigation.loadEventEnd - navigation.fetchStart;
       this.updateMetrics({ tti });
@@ -157,14 +159,14 @@ export class PerformanceMonitorService {
     const metrics = this._metrics();
     const score = this.performanceScore();
     const grade = this.performanceGrade();
-    
+
     return {
       metrics,
       score,
       grade,
       isGood: this.isGoodPerformance(),
       needsOptimization: this.needsOptimization(),
-      lastUpdate: this._lastUpdate()
+      lastUpdate: this._lastUpdate(),
     };
   }
 }

@@ -1,30 +1,45 @@
 <nav class="bg-card dark:bg-card-dark border-b border-border dark:border-border-dark p-4">
-  <button type="button" 
-          class="flex items-center gap-2 text-text dark:text-text-dark hover:text-accent transition-colors" 
-          (click)="goBack()" 
-          aria-label="Go back">
+  <button
+    type="button"
+    class="flex items-center gap-2 text-text dark:text-text-dark hover:text-accent transition-colors"
+    (click)="goBack()"
+    aria-label="Go back"
+  >
     <svg viewBox="0 0 24 24" class="w-5 h-5" aria-hidden="true">
-      <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path
+        d="M15 18l-6-6 6-6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
     </svg>
     <span>Back</span>
   </button>
 </nav>
 
 <section class="max-w-4xl mx-auto px-6 py-16 text-center">
-  <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-text dark:text-text-dark mb-6">Hire Me</h1>
+  <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-text dark:text-text-dark mb-6">
+    Hire Me
+  </h1>
   <p class="text-xl text-text-muted dark:text-text-muted-dark mb-8 max-w-2xl mx-auto">
-    I help teams ship <strong class="text-accent">faster Angular</strong> apps with clean architecture, great UX, and Core Web
-    Vitals wins.
+    I help teams ship <strong class="text-accent">faster Angular</strong> apps with clean
+    architecture, great UX, and Core Web Vitals wins.
   </p>
   <div class="flex flex-col sm:flex-row gap-4 justify-center">
-    <a class="bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent-dark transition-colors font-medium" 
-       [href]="calendly" 
-       data-umami-event="hire:intro-call" 
-       target="_blank">
+    <a
+      class="bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent-dark transition-colors font-medium"
+      [href]="calendly"
+      data-umami-event="hire:intro-call"
+      target="_blank"
+    >
       Book intro call
     </a>
-    <a class="border border-accent text-accent px-6 py-3 rounded-lg hover:bg-accent hover:text-white transition-colors font-medium" 
-       [href]="email">
+    <a
+      class="border border-accent text-accent px-6 py-3 rounded-lg hover:bg-accent hover:text-white transition-colors font-medium"
+      [href]="email"
+    >
       Email me
     </a>
   </div>
@@ -33,67 +48,87 @@
 <section class="max-w-6xl mx-auto px-6 py-16">
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
     @for (p of plans; track p.id) {
-    <article
-      class="bg-card dark:bg-card-dark border border-border dark:border-border-dark rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
-      [class.ring-2]="p.best"
-      [class.ring-accent]="p.best"
-      [attr.aria-label]="p.title"
-    >
-      <div class="mb-6">
-        <h2 class="text-lg sm:text-xl font-bold text-text dark:text-text-dark mb-2">{{ p.title }}</h2>
-        <p class="text-text-muted dark:text-text-muted-dark">{{ p.subtitle }}</p>
-      </div>
+      <article
+        class="bg-card dark:bg-card-dark border border-border dark:border-border-dark rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+        [class.ring-2]="p.best"
+        [class.ring-accent]="p.best"
+        [attr.aria-label]="p.title"
+      >
+        <div class="mb-6">
+          <h2 class="text-lg sm:text-xl font-bold text-text dark:text-text-dark mb-2">
+            {{ p.title }}
+          </h2>
+          <p class="text-text-muted dark:text-text-muted-dark">{{ p.subtitle }}</p>
+        </div>
 
-      <div class="flex flex-wrap gap-2 mb-6">
-        @for (b of p.badges; track b) {
-        <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">{{ b }}</span>
-        }
-      </div>
+        <div class="flex flex-wrap gap-2 mb-6">
+          @for (b of p.badges; track b) {
+            <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">{{ b }}</span>
+          }
+        </div>
 
-      <ul class="space-y-2 mb-6 text-text-muted dark:text-text-muted-dark">
-        @for (inc of p.includes; track inc) {
-        <li class="flex items-start">
-          <span class="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></span>
-          {{ inc }}
-        </li>
-        }
-      </ul>
+        <ul class="space-y-2 mb-6 text-text-muted dark:text-text-muted-dark">
+          @for (inc of p.includes; track inc) {
+            <li class="flex items-start">
+              <span class="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              {{ inc }}
+            </li>
+          }
+        </ul>
 
-      <div class="space-y-4">
-        <div class="text-2xl font-bold text-text dark:text-text-dark">{{ p.price }}</div>
-        <a class="w-full bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent-dark transition-colors font-medium text-center block" 
-           [href]="p.cta.href" 
-           [attr.data-umami-event]="'hire:' + p.id + ':cta'" 
-           target="_blank">
-          {{ p.cta.label }}
-        </a>
-      </div>
-    </article>
+        <div class="space-y-4">
+          <div class="text-2xl font-bold text-text dark:text-text-dark">{{ p.price }}</div>
+          <a
+            class="w-full bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent-dark transition-colors font-medium text-center block"
+            [href]="p.cta.href"
+            [attr.data-umami-event]="'hire:' + p.id + ':cta'"
+            target="_blank"
+          >
+            {{ p.cta.label }}
+          </a>
+        </div>
+      </article>
     } @empty {
-    <p class="text-text-muted dark:text-text-muted-dark col-span-full text-center">Plans coming soon.</p>
+      <p class="text-text-muted dark:text-text-muted-dark col-span-full text-center">
+        Plans coming soon.
+      </p>
     }
   </div>
 </section>
 
 <section class="max-w-4xl mx-auto px-6 py-16">
-  <h3 class="text-2xl sm:text-3xl font-bold text-center text-text dark:text-text-dark mb-12">How we'll work</h3>
+  <h3 class="text-2xl sm:text-3xl font-bold text-center text-text dark:text-text-dark mb-12">
+    How we'll work
+  </h3>
   <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-    <li class="bg-card dark:bg-card-dark border border-border dark:border-border-dark rounded-xl p-6 text-center">
+    <li
+      class="bg-card dark:bg-card-dark border border-border dark:border-border-dark rounded-xl p-6 text-center"
+    >
       <div class="text-2xl font-bold text-accent mb-2">01</div>
       <div class="font-semibold text-text dark:text-text-dark mb-2">Discover</div>
-      <div class="text-text-muted dark:text-text-muted-dark">30-min call, goals, constraints, access.</div>
+      <div class="text-text-muted dark:text-text-muted-dark">
+        30-min call, goals, constraints, access.
+      </div>
     </li>
-    <li class="bg-card dark:bg-card-dark border border-border dark:border-border-dark rounded-xl p-6 text-center">
+    <li
+      class="bg-card dark:bg-card-dark border border-border dark:border-border-dark rounded-xl p-6 text-center"
+    >
       <div class="text-2xl font-bold text-accent mb-2">02</div>
       <div class="font-semibold text-text dark:text-text-dark mb-2">Plan</div>
-      <div class="text-text-muted dark:text-text-muted-dark">scope & metrics, quick wins first.</div>
+      <div class="text-text-muted dark:text-text-muted-dark">
+        scope & metrics, quick wins first.
+      </div>
     </li>
-    <li class="bg-card dark:bg-card-dark border border-border dark:border-border-dark rounded-xl p-6 text-center">
+    <li
+      class="bg-card dark:bg-card-dark border border-border dark:border-border-dark rounded-xl p-6 text-center"
+    >
       <div class="text-2xl font-bold text-accent mb-2">03</div>
       <div class="font-semibold text-text dark:text-text-dark mb-2">Build</div>
       <div class="text-text-muted dark:text-text-muted-dark">daily progress, PRs, previews.</div>
     </li>
-    <li class="bg-card dark:bg-card-dark border border-border dark:border-border-dark rounded-xl p-6 text-center">
+    <li
+      class="bg-card dark:bg-card-dark border border-border dark:border-border-dark rounded-xl p-6 text-center"
+    >
       <div class="text-2xl font-bold text-accent mb-2">04</div>
       <div class="font-semibold text-text dark:text-text-dark mb-2">Ship</div>
       <div class="text-text-muted dark:text-text-muted-dark">demo, docs, handover, next steps.</div>
@@ -102,48 +137,70 @@
 </section>
 
 <section class="max-w-4xl mx-auto px-6 py-16">
-  <h3 class="text-2xl sm:text-3xl font-bold text-center text-text dark:text-text-dark mb-12">FAQ</h3>
+  <h3 class="text-2xl sm:text-3xl font-bold text-center text-text dark:text-text-dark mb-12">
+    FAQ
+  </h3>
   <div class="space-y-4">
     @for (f of faq(); let i = $index; track i) {
-    <div class="bg-card dark:bg-card-dark border border-border dark:border-border-dark rounded-xl overflow-hidden">
-      <button class="w-full p-6 text-left flex justify-between items-center hover:bg-bg-soft dark:hover:bg-bg-soft-dark transition-colors" 
-              (click)="toggle(i)">
-        <span class="font-medium text-text dark:text-text-dark">{{ f.q }}</span>
-        <span class="text-2xl text-accent transition-transform" [class.rotate-45]="f.open">+</span>
-      </button>
+      <div
+        class="bg-card dark:bg-card-dark border border-border dark:border-border-dark rounded-xl overflow-hidden"
+      >
+        <button
+          class="w-full p-6 text-left flex justify-between items-center hover:bg-bg-soft dark:hover:bg-bg-soft-dark transition-colors"
+          (click)="toggle(i)"
+        >
+          <span class="font-medium text-text dark:text-text-dark">{{ f.q }}</span>
+          <span class="text-2xl text-accent transition-transform" [class.rotate-45]="f.open"
+            >+</span
+          >
+        </button>
 
-      @if (f.open) {
-      <div class="px-6 pb-6">
-        <p class="text-text-muted dark:text-text-muted-dark">{{ f.a }}</p>
+        @if (f.open) {
+          <div class="px-6 pb-6">
+            <p class="text-text-muted dark:text-text-muted-dark">{{ f.a }}</p>
+          </div>
+        }
       </div>
-      }
-    </div>
     } @empty {
-    <p class="text-center text-text-muted dark:text-text-muted-dark">Ask me anything about process, pricing, or scope.</p>
+      <p class="text-center text-text-muted dark:text-text-muted-dark">
+        Ask me anything about process, pricing, or scope.
+      </p>
     }
   </div>
 </section>
 
 <section class="max-w-2xl mx-auto px-6 py-16">
-  <h3 class="text-2xl sm:text-3xl font-bold text-center text-text dark:text-text-dark mb-12">Contact</h3>
+  <h3 class="text-2xl sm:text-3xl font-bold text-center text-text dark:text-text-dark mb-12">
+    Contact
+  </h3>
   <form name="hire-contact" method="POST" data-netlify="true" class="space-y-6">
     <input type="hidden" name="form-name" value="hire-contact" />
-    <input class="w-full px-4 py-3 border border-border dark:border-border-dark rounded-lg bg-bg-soft dark:bg-bg-soft-dark text-text dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/35" 
-           type="text" 
-           name="name" 
-           placeholder="Your name" 
-           required />
-    <input class="w-full px-4 py-3 border border-border dark:border-border-dark rounded-lg bg-bg-soft dark:bg-bg-soft-dark text-text dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/35" 
-           type="email" 
-           name="email" 
-           placeholder="Email" 
-           required />
-    <textarea class="w-full px-4 py-3 border border-border dark:border-border-dark rounded-lg bg-bg-soft dark:bg-bg-soft-dark text-text dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/35" 
-              name="message" 
-              rows="4" 
-              placeholder="Project details…"></textarea>
-    <button class="w-full bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent-dark transition-colors font-medium" 
-            type="submit">Send</button>
+    <input
+      class="w-full px-4 py-3 border border-border dark:border-border-dark rounded-lg bg-bg-soft dark:bg-bg-soft-dark text-text dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/35"
+      type="text"
+      name="name"
+      placeholder="Your name"
+      required
+    />
+    <input
+      class="w-full px-4 py-3 border border-border dark:border-border-dark rounded-lg bg-bg-soft dark:bg-bg-soft-dark text-text dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/35"
+      type="email"
+      name="email"
+      placeholder="Email"
+      required
+    />
+    <textarea
+      class="w-full px-4 py-3 border border-border dark:border-border-dark rounded-lg bg-bg-soft dark:bg-bg-soft-dark text-text dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/35"
+      name="message"
+      rows="4"
+      placeholder="Project details…"
+    ></textarea>
+    <button
+      class="w-full bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent-dark transition-colors font-medium"
+      type="submit"
+    >
+      Send
+    </button>
   </form>
 </section>
 

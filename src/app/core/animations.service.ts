@@ -22,7 +22,7 @@ export class AnimationsService {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     // Observe all elements with reveal class
@@ -37,11 +37,11 @@ export class AnimationsService {
 
     let start = 0;
     const increment = target / (duration / 16);
-    
+
     const timer = setInterval(() => {
       start += increment;
       element.textContent = Math.floor(start).toString();
-      
+
       if (start >= target) {
         element.textContent = target.toString();
         clearInterval(timer);
@@ -55,11 +55,11 @@ export class AnimationsService {
 
     element.textContent = '';
     let i = 0;
-    
+
     const timer = setInterval(() => {
       element.textContent += text.charAt(i);
       i++;
-      
+
       if (i >= text.length) {
         clearInterval(timer);
       }
@@ -85,7 +85,7 @@ export class AnimationsService {
     if (!this.isBrowser) return;
 
     element.style.animation = 'shake 0.5s ease-in-out';
-    
+
     setTimeout(() => {
       element.style.animation = '';
     }, 500);
@@ -96,21 +96,24 @@ export class AnimationsService {
     if (!this.isBrowser) return;
 
     element.style.animation = 'bounce 0.6s ease-in-out';
-    
+
     setTimeout(() => {
       element.style.animation = '';
     }, 600);
   }
 
   // Slide in animation
-  addSlideInAnimation(element: HTMLElement, direction: 'left' | 'right' | 'up' | 'down' = 'up'): void {
+  addSlideInAnimation(
+    element: HTMLElement,
+    direction: 'left' | 'right' | 'up' | 'down' = 'up',
+  ): void {
     if (!this.isBrowser) return;
 
     const transformMap = {
       left: 'translateX(-100px)',
       right: 'translateX(100px)',
       up: 'translateY(100px)',
-      down: 'translateY(-100px)'
+      down: 'translateY(-100px)',
     };
 
     element.style.transform = transformMap[direction];
@@ -180,12 +183,17 @@ export class AnimationsService {
   }
 
   // Morphing animation between shapes
-  morphShape(element: HTMLElement, fromShape: string, toShape: string, duration: number = 1000): void {
+  morphShape(
+    element: HTMLElement,
+    fromShape: string,
+    toShape: string,
+    duration: number = 1000,
+  ): void {
     if (!this.isBrowser) return;
 
     element.style.transition = `all ${duration}ms ease-in-out`;
     element.style.clipPath = fromShape;
-    
+
     setTimeout(() => {
       element.style.clipPath = toShape;
     }, 50);
@@ -208,7 +216,7 @@ export class AnimationsService {
       particle.style.left = Math.random() * 100 + '%';
       particle.style.top = Math.random() * 100 + '%';
       particle.style.animationDelay = Math.random() * 2 + 's';
-      
+
       container.appendChild(particle);
     }
   }
